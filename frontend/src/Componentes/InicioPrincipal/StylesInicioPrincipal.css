@@ -1,0 +1,610 @@
+.InicioPrincipalDivFather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.divInicioPrincipal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+.btnInicioPrincipalU {
+  font-size: 100%;
+  background-color: white;
+  color: black;
+  border: black solid 1px;
+  font-weight: bold;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  margin: 17px;
+  margin-bottom: 4%;
+  margin-top: 0%;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.btnInicioPrincipalT {
+  font-size: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border: black solid 1px;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  margin: 17px;
+  margin-bottom: 4%;
+  margin-top: 0%;
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+.btnInicioPrincipalT,
+.btnInicioPrincipalU {
+  text-decoration: none;
+  padding: 15px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.InicioPrincipalBOTON {
+  border: white solid 0px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.InicioPrincipalIMAGEN {
+  width: 500px;
+  height: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+  .InicioPrincipalIMAGEN {
+    width: 500px;
+    height: 500px;
+  }
+
+  .btnInicioPrincipalT,
+  .btnInicioPrincipalU {
+    text-decoration: none;
+    padding: 15px;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  .btnInicioPrincipalT {
+    margin: 10px;
+    margin-bottom: 4%;
+    margin-top: 0%;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .btnInicioPrincipalU {
+    margin: 10px;
+    margin-bottom: 4%;
+    margin-top: 0%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .divInicioPrincipal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+  @media only screen and (max-width: 500px) {
+    .InicioPrincipalIMAGEN {
+      width: 450px;
+      height: 470px;
+    }
+    .btnInicioPrincipalT,
+    .btnInicioPrincipalU {
+      text-decoration: none;
+      padding: 15px;
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+    .btnInicioPrincipalT {
+      margin: 10px;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+    .btnInicioPrincipalU {
+      margin: 10px;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .divInicioPrincipal {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+    }
+    @media only screen and (max-width: 450px) {
+      .InicioPrincipalIMAGEN {
+        width: 400px;
+        height: 420px;
+      }
+
+      .btnInicioPrincipalT,
+      .btnInicioPrincipalU {
+        text-decoration: none;
+        padding: 15px;
+        padding-right: 35px;
+        padding-left: 35px;
+      }
+      .btnInicioPrincipalT {
+        margin: 10px;
+        margin-bottom: 0%;
+        margin-top: 0%;
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .btnInicioPrincipalU {
+        margin: 10px;
+        margin-bottom: 0%;
+        margin-top: 0%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      .divInicioPrincipal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+      }
+      @media only screen and (max-width: 400px) {
+        .InicioPrincipalIMAGEN {
+          width: 370px;
+          height: 400px;
+        }
+
+        .btnInicioPrincipalT,
+        .btnInicioPrincipalU {
+          text-decoration: none;
+          padding: 10px;
+          padding-right: 30px;
+          padding-left: 30px;
+        }
+        .btnInicioPrincipalT {
+          margin: 10px;
+          margin-bottom: 5px;
+          margin-top: 0%;
+          grid-column: 1/2;
+          grid-row: 1/2;
+        }
+        .btnInicioPrincipalU {
+          margin: 10px;
+          margin-bottom: 0%;
+          margin-top: 5px;
+          grid-column: 1/2;
+          grid-row: 2/3;
+        }
+        .divInicioPrincipal {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, 1fr);
+        }
+        @media only screen and (max-width: 370px) {
+          .InicioPrincipalIMAGEN {
+            width: 340px;
+            height: 370px;
+          }
+
+          .btnInicioPrincipalT,
+          .btnInicioPrincipalU {
+            text-decoration: none;
+            padding: 17px;
+            padding-right: 30px;
+            padding-left: 30px;
+          }
+          .btnInicioPrincipalT {
+            margin: 7px;
+            margin-bottom: 7px;
+            margin-top: 7%;
+            grid-column: 1/2;
+            grid-row: 1/2;
+          }
+          .btnInicioPrincipalU {
+            margin: 7px;
+            margin-bottom: 7%;
+            margin-top: 7px;
+            grid-column: 1/2;
+            grid-row: 2/3;
+          }
+          .divInicioPrincipal {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+          }
+          @media only screen and (max-width: 340px) {
+            .InicioPrincipalIMAGEN {
+              width: 300px;
+              height: 330px;
+            }
+
+            .btnInicioPrincipalT,
+            .btnInicioPrincipalU {
+              text-decoration: none;
+              padding: 10px;
+              padding-right: 30px;
+              padding-left: 30px;
+            }
+            .btnInicioPrincipalT {
+              margin: 15px;
+              margin-bottom: 3px;
+              margin-top: 0%;
+              grid-column: 1/2;
+              grid-row: 1/2;
+            }
+            .btnInicioPrincipalU {
+              margin: 15px;
+              margin-bottom: 0%;
+              margin-top: 3px;
+              grid-column: 1/2;
+              grid-row: 2/3;
+            }
+            .divInicioPrincipal {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-template-rows: repeat(2, 1fr);
+            }
+            @media only screen and (max-width: 300px) {
+              .InicioPrincipalIMAGEN {
+                width: 270px;
+                height: 300px;
+              }
+
+              .btnInicioPrincipalT,
+              .btnInicioPrincipalU {
+                text-decoration: none;
+                padding: 10px;
+                padding-right: 30px;
+                padding-left: 30px;
+              }
+              .btnInicioPrincipalT {
+                margin: 15px;
+                margin-bottom: 3px;
+                margin-top: 0%;
+                grid-column: 1/2;
+                grid-row: 1/2;
+              }
+              .btnInicioPrincipalU {
+                margin: 15px;
+                margin-bottom: 0%;
+                margin-top: 3px;
+                grid-column: 1/2;
+                grid-row: 2/3;
+              }
+              .divInicioPrincipal {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, 1fr);
+              }
+              @media only screen and (max-width: 270px) {
+                .InicioPrincipalIMAGEN {
+                  width: 240px;
+                  height: 260px;
+                }
+
+                .btnInicioPrincipalT,
+                .btnInicioPrincipalU {
+                  text-decoration: none;
+                  padding: 10px;
+                  padding-right: 30px;
+                  padding-left: 30px;
+                }
+                .btnInicioPrincipalT {
+                  margin: 15px;
+                  margin-bottom: 3px;
+                  margin-top: 0%;
+                  grid-column: 1/2;
+                  grid-row: 1/2;
+                }
+                .btnInicioPrincipalU {
+                  margin: 15px;
+                  margin-bottom: 0%;
+                  margin-top: 3px;
+                  grid-column: 1/2;
+                  grid-row: 2/3;
+                }
+                .divInicioPrincipal {
+                  display: grid;
+                  grid-template-columns: 1fr;
+                  grid-template-rows: repeat(2, 1fr);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* POSICION DE LAS IMAGENES Y ANIMACION */
+
+.img-1 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 11%;
+  left: 6%;
+}
+.img-2 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 59%;
+  left: 60%;
+}
+.img-3 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 55%;
+  left: 15%;
+}
+.img-4 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 70%;
+  right: 6%;
+}
+.img-5 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 5%;
+  right: 30%;
+}
+.img-6 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 18%;
+  right: 5%;
+}
+
+.my-custom-shake {
+  display: inherit;
+  transform-origin: center center;
+}
+.shake-freeze,
+.shake-constant.shake-constant--hover:hover,
+.shake-trigger:hover .shake-constant.shake-constant--hover {
+  animation-play-state: paused;
+}
+.shake-freeze:hover,
+.shake-trigger:hover .shake-freeze,
+.my-custom-shake:hover,
+.shake-trigger:hover .my-custom-shake {
+  animation-play-state: running;
+}
+@keyframes my-custom-shake {
+  2% {
+    transform: translate(0, -1px) rotate(0);
+  }
+  4% {
+    transform: translate(0, -1px) rotate(0);
+  }
+  6% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  8% {
+    transform: translate(0, 0px) rotate(0);
+  }
+  10% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  12% {
+    transform: translate(0, -4px) rotate(0);
+  }
+  14% {
+    transform: translate(0, 6px) rotate(0);
+  }
+  16% {
+    transform: translate(0, 6px) rotate(0);
+  }
+  18% {
+    transform: translate(0, 0px) rotate(0);
+  }
+  20% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  22% {
+    transform: translate(0, -3px) rotate(0);
+  }
+  24% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  26% {
+    transform: translate(0, -6px) rotate(0);
+  }
+  28% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  30% {
+    transform: translate(0, -6px) rotate(0);
+  }
+  32% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  34% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  36% {
+    transform: translate(0, 0px) rotate(0);
+  }
+  38% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  40% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  42% {
+    transform: translate(0, 6px) rotate(0);
+  }
+  44% {
+    transform: translate(0, 3px) rotate(0);
+  }
+  46% {
+    transform: translate(0, 6px) rotate(0);
+  }
+  48% {
+    transform: translate(0, -7px) rotate(0);
+  }
+  50% {
+    transform: translate(0, -4px) rotate(0);
+  }
+  52% {
+    transform: translate(0, 1px) rotate(0);
+  }
+  54% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  56% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  58% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  60% {
+    transform: translate(0, -1px) rotate(0);
+  }
+  62% {
+    transform: translate(0, -1px) rotate(0);
+  }
+  64% {
+    transform: translate(0, -1px) rotate(0);
+  }
+  66% {
+    transform: translate(0, -3px) rotate(0);
+  }
+  68% {
+    transform: translate(0, 3px) rotate(0);
+  }
+  70% {
+    transform: translate(0, -4px) rotate(0);
+  }
+  72% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  74% {
+    transform: translate(0, -2px) rotate(0);
+  }
+  76% {
+    transform: translate(0, -8px) rotate(0);
+  }
+  78% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  80% {
+    transform: translate(0, -8px) rotate(0);
+  }
+  82% {
+    transform: translate(0, 3px) rotate(0);
+  }
+  84% {
+    transform: translate(0, 3px) rotate(0);
+  }
+  86% {
+    transform: translate(0, -4px) rotate(0);
+  }
+  88% {
+    transform: translate(0, 0px) rotate(0);
+  }
+  90% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  92% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  94% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  96% {
+    transform: translate(0, 4px) rotate(0);
+  }
+  98% {
+    transform: translate(0, 8px) rotate(0);
+  }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+.my-custom-shake:hover,
+.shake-trigger:hover .my-custom-shake,
+.my-custom-shake.shake-freeze,
+.my-custom-shake.shake-constant {
+  animation-name: my-custom-shake;
+  animation-duration: 80s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+
+
+/* EFECTO PARA BOTONES */
+
+.boton {
+  position: relative;
+  font-size: 100%;
+  color: white !important;
+  font-weight: bold;
+  background-color: black;
+  border: black solid 1px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.boton:before {
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 1s ease;
+  border-radius: 15px;
+}
+.boton:hover:before {
+width: 100%;
+}
+
+.boton2 {
+  position: relative;
+  cursor: pointer;
+  font-size: 100%;
+  background-color: white;
+  color: black !important;
+  border: black solid 1px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.boton2:before {
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  background: rgba(68, 68, 68, 0.1);
+  transition: all 1s ease;
+  border-radius: 15px;
+}
+.boton2:hover:before {
+width: 100%;
+}

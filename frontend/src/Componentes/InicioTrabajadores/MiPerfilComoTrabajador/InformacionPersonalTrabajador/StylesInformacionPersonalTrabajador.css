@@ -1,0 +1,248 @@
+.div-padre-grid-formulario-InformacionPersonal{
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+    padding-bottom: 3%;
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-top: 3%;
+}
+.texto-descriptivo-superior-InformacionPersonal{
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    color: black;
+    opacity: 0.6;
+    margin-bottom: 1px;
+}
+.texto-informacion-inferior-InformacionPersonal{
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    color: black;
+}
+
+.img-botones-lapiz-InformacionPersonalTrabajador{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+/* VENTANA EMERGENTE  */
+
+.modal-content{
+    border-radius: 30px;
+}
+.close{
+    color: black;
+    font-size: 40px;
+}
+.close:hover{
+    color: red;
+}
+
+.modal-header{
+    border: 0px;
+}
+
+.modal-footer{
+    border: solid 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.btn-cerrar-InformacionPersonalTrabajador{
+    border: black solid 1px;
+    width: 90%;
+    height: 50px;
+    transition: all 100ms;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.btn-cerrar-InformacionPersonalTrabajador:hover{
+    background-color: white;
+    color: black;
+    transition: all 100ms;
+    text-decoration: none;
+    border: black solid 3px;
+}
+
+
+
+
+
+/* VENTANA COSTO TRABAJADOR */
+.input-costoTrabajoTrabajador-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.input-costoTrabajoTrabajador-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+.body-div-grid-inputs-costoTrabajoTrabajador{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 20px;
+}
+
+
+
+
+
+/* VENTANA CALENDARIO */
+.modal-body-fechaNacimientoTrabajador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* VENTANA SEXO TRABAJADOR */
+.form-control-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    width: 100%;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.form-control-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+
+/* VENTANA NUMERO TRABAJADOR */
+.body-div-grid-inputs-numeroTrabajador{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 20px;
+}
+.input-numeroTrabajador-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.input-numeroTrabajador-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+
+
+/* VENTANA DIRECCION TRABAJADOR */
+
+.body-div-grid-inputs-direccionTrabajador{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 20px;
+}
+
+.input-direccionTrabajador-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.input-direccionTrabajador-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+
+
+/* VENTANA CONTRASEÑA TRABAJADOR */
+.input-contrasenaTrabajador-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.input-contrasenaTrabajador-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+.body-div-grid-inputs-ContrasenaTrabajador{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 20px;
+}
+
+/* VENTANA CORREO TRABAJADOR */
+
+.input-correoActualTrabajador-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.input-correoActualTrabajador-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+.input-correoNuevoTrabajador-InformacionPersonalTrabajador{
+    border: 2px solid gray;
+    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    height: 45px;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.input-correoNuevoTrabajador-InformacionPersonalTrabajador:hover{
+    border: 3px solid gray;
+    box-shadow: 0px 0px 8px 1px grey;
+}
+.body-div-grid-inputs-CorreoTrabajador{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 20px;
+}

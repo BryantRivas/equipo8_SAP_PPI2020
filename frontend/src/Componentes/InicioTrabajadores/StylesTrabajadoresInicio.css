@@ -1,0 +1,239 @@
+.imgLogoPrincipalTrabajadoresInicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 450px;
+}
+.imgLogoFotoPerfilTrabajadoresInicio {
+  border: black solid 1px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+.ButonTrabajadoresInicio {
+  border: black solid 1px;
+  width: 100%;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ButonTrabajadoresInicio:hover {
+  background-color: white;
+  color: black;
+  transition: all 100ms;
+  text-decoration: none;
+  border: black solid 3px;
+}
+.divBotonesTrabajadoresInicio {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 12%;
+  padding-right: 12%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 25px;
+}
+.divMiPerfilTrabajadoresInicio {
+  color: black;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.divGridPrincipalTrabajadoresInicio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+.divimgFotoPerfilTrabajadoresInicio {
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.divimgPrincipalTrabajadoresInicio {
+  grid-column: 2/3;
+}
+.divGridFOTOTRABAJADORTrabajadoresInicio{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+
+
+@media only screen and (max-width: 688px) {
+  .imgLogoPrincipalTrabajadoresInicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+  }
+  .imgLogoFotoPerfilTrabajadoresInicio {
+    border: black solid 1.5px;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+  }
+  .divMiPerfilTrabajadoresInicio {
+    color: black;
+    font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .divBotonesTrabajadoresInicio {
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 23px;
+  }
+  @media only screen and (max-width: 435px) {
+    .divGridPrincipalTrabajadoresInicio {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .divimgPrincipalTrabajadoresInicio {
+      grid-column: 2/6;
+      grid-row: 1/4;
+    }
+    .imgLogoPrincipalTrabajadoresInicio {
+      width: 300px;
+      height: 300px;
+    }
+    .imgLogoFotoPerfilTrabajadoresInicio {
+      border: black solid 1.5px;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+    }
+    .divBotonesTrabajadoresInicio {
+      padding-left: 5%;
+      padding-right: 5%;
+      gap: 23px;
+    }
+  }
+  @media only screen and (max-width: 300px) {
+    .ButonTrabajadoresInicio {
+      font-size: 13px;
+    }
+    .divGridPrincipalTrabajadoresInicio {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+    .divimgPrincipalTrabajadoresInicio {
+      grid-column: 1/6;
+      grid-row: 1/4;
+    }
+    .imgLogoPrincipalTrabajadoresInicio {
+      width: 250px;
+      height: 250px;
+    }
+    .imgLogoFotoPerfilTrabajadoresInicio {
+      border: black solid 1px;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+    }
+    .BTN300 {
+      padding-bottom: 0%;
+      padding-right: 0%;
+      padding-top: 0%;
+      padding-left: 0%;
+    }
+    .divBotonesTrabajadoresInicio {
+      padding-bottom: 2%;
+      padding-right: 2%;
+      padding-top: 0%;
+      padding-left: 2%;
+    }
+    body {
+      height: 100%;
+    }
+  }
+  @media only screen and (max-width: 400px){
+    .divGridPrincipalTrabajadoresInicio {
+      display: flex;
+      justify-content: center;
+
+    }
+    .divimgPrincipalTrabajadoresInicio {
+     display: flex;
+     justify-content: center;
+    }
+    .imgLogoPrincipalTrabajadoresInicio {
+      width: 300px;
+      height: 300px;
+    }
+    .imgLogoFotoPerfilTrabajadoresInicio {
+      border: black solid 1.5px;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+    }
+    .divBotonesTrabajadoresInicio {
+      padding-left: 5%;
+      padding-right: 5%;
+      gap: 23px;
+    }
+  }
+}
+
+
+/* POSICION DE LAS IMAGENES Y ANIMACION */
+
+.img-1-TrabajadoresInicio{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.img-2-TrabajadoresInicio {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 80%;
+  left: 60%;
+}
+.img-3-TrabajadoresInicio {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 70%;
+  left: 15%;
+}
+.img-4-TrabajadoresInicio {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 70%;
+  right: 6%;
+}
+.img-5-TrabajadoresInicio {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 5%;
+  right: 45%;
+}
+.img-6-TrabajadoresInicio {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}

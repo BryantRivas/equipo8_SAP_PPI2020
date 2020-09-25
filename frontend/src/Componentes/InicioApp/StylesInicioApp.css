@@ -1,0 +1,214 @@
+.IncioAppBOTON {
+  border: white solid 0px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.IncioAppBOTON:hover {
+  opacity: 0.9;
+  background: transparent;
+}
+.IncioAppIMAGEN {
+  background: transparent;
+  width: 500px;
+  height: 500px;
+}
+.div-padre-InicioAppBoton {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* POSICION DE LAS IMAGENES Y ANIMACION */
+
+.img-1-InicioAPP {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.img-2-InicioAPP {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 70%;
+  left: 60%;
+}
+.img-3-InicioAPP {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 65%;
+  left: 15%;
+}
+.img-4-InicioAPP {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 70%;
+  right: 6%;
+}
+.img-5-InicioAPP {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 5%;
+  right: 45%;
+}
+.img-6-InicioAPP {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+
+/* RESPONSIVE PARA LAS IMAGENES */
+@media only screen and (max-width: 900px) {
+  .img-1-InicioAPP {
+    width: 120px;
+    height: 120px;
+    top: 13%;
+    left: 7%;
+  }
+  .img-2-InicioAPP {
+    width: 120px;
+    height: 120px;
+    top: 75%;
+    left: 55%;
+  }
+  .img-3-InicioAPP {
+    width: 120px;
+    height: 120px;
+    top: 75%;
+    left: 13%;
+  }
+  .img-4-InicioAPP {
+    width: 120px;
+    height: 120px;
+    top: 70%;
+    right: 6%;
+  }
+  .img-5-InicioAPP {
+    width: 120px;
+    height: 120px;
+    top: 5%;
+    right: 45%;
+  }
+  .img-6-InicioAPP {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 10%;
+  }
+  @media only screen and (max-width: 700px){
+    .img-1-InicioAPP {
+      width: 110px;
+      height: 110px;
+      top: 8%;
+      left: 7%;
+    }
+    .img-2-InicioAPP {
+      width: 110px;
+      height: 110px;
+      top: 75%;
+      left: 55%;
+    }
+    .img-3-InicioAPP {
+      width: 110px;
+      height: 110px;
+      top: 78%;
+      left: 13%;
+    }
+    .img-4-InicioAPP {
+      width: 110px;
+      height: 110px;
+      top: 70%;
+      right: 5%;
+    }
+    .img-5-InicioAPP {
+      width: 110px;
+      height: 110px;
+      top: 5%;
+      right: 40%;
+    }
+    .img-6-InicioAPP {
+      width: 110px;
+      height: 110px;
+      top: 8%;
+      right: 8%;
+    }
+    @media only screen and (max-width: 500px){
+      .img-1-InicioAPP {
+        width: 110px;
+        height: 110px;
+        top: 8%;
+        left: 7%;
+      }
+      .img-2-InicioAPP {
+        width: 100px;
+        height: 100px;
+        top: 75%;
+        left: 45%;
+      }
+      .img-3-InicioAPP {
+        width: 100px;
+        height: 100px;
+        top: 78%;
+        left: 13%;
+      }
+      .img-4-InicioAPP {
+        width: 100px;
+        height: 100px;
+        top: 70%;
+        right: 5%;
+      }
+      .img-5-InicioAPP {
+        width: 100px;
+        height: 100px;
+        top: 5%;
+        right: 40%;
+      }
+      .img-6-InicioAPP {
+        width: 100px;
+        height: 100px;
+        top: 8%;
+        right: 8%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .IncioAppIMAGEN {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+  }
+  @media only screen and (max-width: 450px) {
+    .IncioAppIMAGEN {
+      width: 100%;
+      height: 400px;
+      position: absolute;
+    }
+    @media only screen and (max-width: 340px) {
+      .IncioAppIMAGEN {
+        width: 100%;
+        height: 350px;
+        position: absolute;
+      }
+      @media only screen and (max-width: 300px) {
+        .IncioAppIMAGEN {
+          width: 100%;
+          height: 300px;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

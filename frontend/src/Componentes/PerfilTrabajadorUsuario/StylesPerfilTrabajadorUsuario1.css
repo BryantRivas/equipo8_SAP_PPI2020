@@ -1,0 +1,273 @@
+.img-perfil_trabajador-PerfilTrabajadorUsuario1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+.div-div-img-perfil_trabajador-PerfilTrabajadorUsuario1 {
+  display: flex;
+  justify-content: center;
+}
+.div-nombreTrabajador-PerfilTrabajadorUsuario1 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuario1 {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-img-perfil_trabajador-PerfilTrabajadorUsuario1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.div-top-PerfilTrabajadorUsuario1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+}
+.div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1 {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+}
+.div-tipoTrabajador-PerfilTrabajadorUsuario1 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+.div-div-tipoTrabajador-PerfilTrabajadorUsuario1 {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1 {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+.div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1 {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-bot-PerfilTrabajadorUsuario1 {
+  padding-bottom: 2%;
+  padding-right: 2%;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+.div-div-TextoDescripcion-PerfilTrabajadorUsuario1 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TituloDescripcion-PerfilTrabajadorUsuario1 {
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TitulodireccionTrabajador-PerfilTrabajadorUsuario1 {
+  font-weight: bold;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TextodireccionTrabajador-PerfilTrabajadorUsuario1 {
+  padding-top: 2px;
+  padding-bottom: 10px;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TituloCorreoElectronicoTrabajador-PerfilTrabajadorUsuario1 {
+  font-weight: bold;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TextoCorreoElectronicoTrabajador-PerfilTrabajadorUsuario1 {
+  padding-top: 2px;
+  padding-bottom: 10px;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TitulonumeroTelefonicoTrabajador-PerfilTrabajadorUsuario1 {
+  font-weight: bold;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-TextonumeroTelefonicoTrabajador-PerfilTrabajadorUsuario1 {
+  padding-top: 2px;
+  padding-bottom: 10px;
+  color: black;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-boton-bot-SOLICITAR-PerfilTrabajadorUsuario1 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1%;
+  padding-right: 0%;
+  padding-top: 0%;
+  padding-left: 0%;
+}
+.div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1 {
+  font-size: 350%;
+  color: black;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+}
+.div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1 {
+  font-size: 25px;
+  color: black;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+}
+.div-div-tipoTrabajador-PerfilTrabajadorUsuario1 {
+  font-size: 35px;
+  color: black;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+}
+.div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1 {
+  font-size: 40px;
+  color: black;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+}
+.boton-Solicitar-PerfilTrabajadorUsuario1 {
+  border: black solid 2px;
+  width: 90%;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  font-family: "Comfortaa", cursive;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.boton-Solicitar-PerfilTrabajadorUsuario1:hover {
+  background-color: black;
+  border:white solid 3px;
+  color: white;
+  transition: all 100ms;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 990px) {
+  .div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1 {
+    font-size: 300%;
+  }
+  @media only screen and (max-width: 850px) {
+    .div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1 {
+      font-size: 250%;
+    }
+    @media only screen and (max-width: 710px) {
+      .div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1 {
+        font-size: 35px;
+      }
+      .img-perfil_trabajador-PerfilTrabajadorUsuario1 {
+        width: 180px;
+        height: 180px;
+      }
+      .div-bot-PerfilTrabajadorUsuario1 {
+        padding-bottom: 2%;
+        padding-right: 2%;
+        padding-top: 3%;
+        padding-left: 2%;
+      }
+      .div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1 {
+        font-size: 30px;
+      }
+      .div-div-tipoTrabajador-PerfilTrabajadorUsuario1 {
+        font-size: 25px;
+      }
+      .div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1 {
+        font-size: 20px;
+      }
+      .div-div-TituloDescripcion-PerfilTrabajadorUsuario1 {
+        font-size: 35px;
+      }
+      @media only screen and (max-width: 625px) {
+        .div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1 {
+          font-size: 30px;
+        }
+        .img-perfil_trabajador-PerfilTrabajadorUsuario1 {
+          width: 170px;
+          height: 170px;
+        }
+        .div-bot-PerfilTrabajadorUsuario1 {
+          padding-bottom: 2%;
+          padding-right: 2%;
+          padding-top: 3%;
+          padding-left: 2%;
+        }
+        .div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1 {
+          font-size: 20px;
+        }
+        .div-div-tipoTrabajador-PerfilTrabajadorUsuario1 {
+          font-size: 20px;
+        }
+        .div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1 {
+          font-size: 20px;
+        }
+        .div-div-TituloDescripcion-PerfilTrabajadorUsuario1 {
+          font-size: 25px;
+        }
+        @media only screen and (max-width: 530px) {
+          .div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1 {
+            font-size: 25px;
+          }
+          .img-perfil_trabajador-PerfilTrabajadorUsuario1 {
+            width: 160px;
+            height: 160px;
+          }
+          .div-bot-PerfilTrabajadorUsuario1 {
+            padding-bottom: 2%;
+            padding-right: 2%;
+            padding-top: 3%;
+            padding-left: 2%;
+          }
+          .div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1 {
+            font-size: 20px;
+          }
+          .div-div-tipoTrabajador-PerfilTrabajadorUsuario1 {
+            font-size: 20px;
+          }
+          .div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1 {
+            font-size: 15px;
+          }
+          .div-div-TituloDescripcion-PerfilTrabajadorUsuario1 {
+            font-size: 25px;
+          }
+          .div-div-TextoDescripcion-PerfilTrabajadorUsuario1 {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

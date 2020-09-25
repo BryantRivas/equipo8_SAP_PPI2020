@@ -1,0 +1,298 @@
+.botonFacebookPerfilTrabajadorUsuario2 {
+  border: black solid 1px;
+  width: 90%;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.botonFacebookPerfilTrabajadorUsuario2:hover {
+  background-color: white;
+  color: black;
+  transition: all 100ms;
+  text-decoration: none;
+  border: black solid 3px;
+}
+.botonGooglePerfilTrabajadorUsuario2 {
+  border: black solid 1px;
+  width: 90%;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.botonGooglePerfilTrabajadorUsuario2:hover {
+  background-color: white;
+  color: black;
+  transition: all 100ms;
+  text-decoration: none;
+  border: black solid 3px;
+}
+.input-borderbox-PerfilTrabajadorUsuario2 {
+  border: 0px solid gray;
+  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+  width: 100%;
+}
+.input-borderbox-PerfilTrabajadorUsuario2 :hover {
+  border: 1px solid gray;
+}
+.img-boton-iconGoogle-IniciarSesionUsuario {
+  width: auto;
+  height: 100%;
+  background: transparent;
+  border: black solid 1px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.img-boton-iconFacebook-IniciarSesionUsuario {
+  width: auto;
+  height: 100%;
+  background: transparent;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.img-fotoperfilTrabajador-VerificacionPerfil {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.div-botones-incioSesionUsuarios {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 15px;
+  width: 100%;
+}
+.div-botones-inicioSesionUsuarios-Padre {
+  display: flex;
+  justify-content: center;
+}
+.div-div-boton-IniciarConFacebook {
+  display: flex;
+  justify-content: center;
+}
+.div-div-boton-IniciarGoogle {
+  display: flex;
+  justify-content: center;
+}
+.form-datosUsuario-VerificacionTrabajador {
+  padding-bottom: 3%;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.div-textoSuperior-VerificacionTrabajador {
+  color: black;
+  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  opacity: 0.7;
+  margin: 3px;
+}
+
+.div-MiDireccion-Form-VerificacionPerfilTrabajador {
+  border-bottom: 1px solid gray;
+  padding-bottom: 2%;
+}
+.div-MiTelefono-Form-VerificacionPerfilTrabajador {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid gray;
+}
+
+/* PRECIO A PAGAR */
+
+.div-texto-precioTrabajo{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.div-div-texto-precioTrabajo{
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+
+}
+
+/* INFORMACION DEL TRABAJADOR A CONTRATAR */
+
+.div-informacionTrabajador {
+ border-bottom: 1px solid grey;
+ padding-left: 5%;
+ padding-top: 0%;
+ padding-bottom: 2%;
+ padding-right: 5%;
+}
+
+.div-descripcionTrabajador-VerificacionInformacion{
+  border-bottom: solid 1px grey;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  color: black;
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+}
+
+.div-grid-InformacionTrabajador-VerificarInformacion{
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-template-rows: repeat(4, auto);
+}
+.div-div-grid-fotoDePerfil-VerificacionInformacion{
+  grid-column: 1/2;
+  grid-row: 1/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-div-grid-NombreTrabajador-VerificacionInformacion{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: "Comfortaa", cursive;
+}
+.div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  color: black;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  opacity: 0.7;
+}
+.div-div-grid-direccionTrabajador-VerificacionInformacion{
+  grid-column: 2/3;
+  grid-row: 3/4;
+  color: black;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  opacity: 0.7;
+}
+.div-div-grid-correoTrabajador-VerificacionInformacion{
+  grid-column: 2/3;
+  grid-row: 4/5;
+  color: black;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  opacity: 0.7;
+}
+
+
+
+/* CURSOR CUSTOM */
+
+body {
+  cursor: url(), auto;
+  cursor: url(), auto;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 490px){
+  .img-fotoperfilTrabajador-VerificacionPerfil {
+    width: 120px;
+    height: 120px;
+  }
+  .div-div-grid-NombreTrabajador-VerificacionInformacion{
+    font-size: 35px;
+  }
+  .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+    font-size: 15px;
+  }
+  .div-div-grid-direccionTrabajador-VerificacionInformacion{
+    font-size: 15px;
+  }
+  .div-div-grid-correoTrabajador-VerificacionInformacion{
+    font-size: 15px;
+  }
+  .div-descripcionTrabajador-VerificacionInformacion{
+    font-size: 13px;
+  }
+  @media only screen and (max-width: 400px){
+    .img-fotoperfilTrabajador-VerificacionPerfil {
+      width: 100px;
+      height: 100px;
+    }
+    .div-div-grid-NombreTrabajador-VerificacionInformacion{
+      font-size: 30px;
+    }
+    .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+      font-size: 13px;
+    }
+    .div-div-grid-direccionTrabajador-VerificacionInformacion{
+      font-size: 13px;
+    }
+    .div-div-grid-correoTrabajador-VerificacionInformacion{
+      font-size: 13px;
+    }
+    .div-descripcionTrabajador-VerificacionInformacion{
+      font-size: 12px;
+    }
+    @media only screen and (max-width: 370px){
+      .img-fotoperfilTrabajador-VerificacionPerfil {
+        width: 100px;
+        height: 100px;
+      }
+      .div-div-grid-NombreTrabajador-VerificacionInformacion{
+        font-size: 23px;
+      }
+      .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+        font-size: 11px;
+      }
+      .div-div-grid-direccionTrabajador-VerificacionInformacion{
+        font-size: 11px;
+      }
+      .div-div-grid-correoTrabajador-VerificacionInformacion{
+        font-size: 11px;
+      }
+      .div-descripcionTrabajador-VerificacionInformacion{
+        font-size: 10px;
+      }
+      .div-informacionTrabajador {
+        padding-left: 2%;
+        padding-top: 0%;
+        padding-bottom: 2%;
+        padding-right: 2%;
+       }
+       .div-grid-InformacionTrabajador-VerificarInformacion{
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-template-rows: repeat(4, auto);
+      }
+      .div-div-grid-fotoDePerfil-VerificacionInformacion{
+        margin: 0%;
+        margin-right: 5px;
+      }
+      @media only screen and (max-width: 320px){
+        .botonFacebookPerfilTrabajadorUsuario2 {
+          font-size: 13px;
+          height: 40px;
+        }
+        .botonGooglePerfilTrabajadorUsuario2 {
+          font-size: 13px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}

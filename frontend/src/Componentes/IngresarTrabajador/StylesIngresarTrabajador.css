@@ -1,0 +1,253 @@
+.ButonIngresarTrabajador {
+  font-size: 100%;
+  border: black solid 1px;
+  width: 200px;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.ButonIngresarTrabajador:hover {
+  background-color: white;
+  color: black;
+  transition: all 100ms;
+  text-decoration: none;
+  border: black solid 3px;
+}
+.Buton-REGISTRARSE-IngresarTrabajador {
+  font-size: 100%;
+  border: black solid 1px;
+  width: 200px;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.Buton-REGISTRARSE-IngresarTrabajador:hover {
+  background-color: white;
+  color: black;
+  transition: all 100ms;
+  text-decoration: none;
+  border: black solid 3px;
+}
+.borderBoxIngresarTrabajador {
+  border: 2px solid gray;
+  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.borderBoxIngresarTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
+}
+.divFormIngresarTrabajador {
+  padding-bottom: 4%;
+  padding-right: 14%;
+  padding-top: 3%;
+  padding-left: 14%;
+}
+.divButonIngresarTrabajador {
+  margin: 20px;
+}
+.divbutonIngresarTrabajador_Principal {
+  display: flex;
+  justify-content: center;
+}
+.h1IngresarTrabajador {
+  color: black;
+  font-size: 60px;
+  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  padding-bottom: 5px;
+}
+.formGridIngresarTrabajador {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+}
+@media only screen and (max-width: 700px) {
+  .ButonIngresarTrabajador {
+    font-size: 100%;
+    border: black solid 1px;
+    width: 200px;
+    height: 50px;
+    transition: all 100ms;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+  }
+
+  .Buton-REGISTRARSE-IngresarTrabajador {
+    font-size: 100%;
+    border: black solid 1px;
+    width: 170px;
+    height: 40px;
+    transition: all 100ms;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+  }
+
+  @media only screen and (max-width: 465px) {
+    .Buton-REGISTRARSE-IngresarTrabajador {
+      font-size: 100%;
+      border: black solid 1px;
+      width: 150px;
+      height: 40px;
+      transition: all 100ms;
+      text-decoration: none;
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+      font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+    }
+
+    @media only screen and (max-width: 370px) {
+      .ButonIngresarTrabajador {
+        font-size: 100%;
+        border: black solid 1px;
+        width: 180px;
+        height: 45px;
+        transition: all 100ms;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+      }
+
+      .Buton-REGISTRARSE-IngresarTrabajador {
+        font-size: 90%;
+        border: black solid 1px;
+        width: 140px;
+        height: 35px;
+        transition: all 100ms;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+      }
+
+      .divFormIngresarTrabajador {
+        padding-bottom: 4%;
+        padding-right: 12%;
+        padding-top: 3%;
+        padding-left: 12%;
+      }
+      @media only screen and (max-width: 350px) {
+        .divFormIngresarTrabajador {
+          padding-bottom: 4%;
+          padding-right: 10%;
+          padding-top: 3%;
+          padding-left: 10%;
+        }
+        @media only screen and (max-width: 300px) {
+          .ButonIngresarTrabajador {
+            font-size: 100%;
+            width: 170px;
+            height: 42px;
+          }
+          .Buton-REGISTRARSE-IngresarTrabajador {
+            font-size: 80%;
+            width: 135px;
+            height: 30px;
+          }
+          .divFormIngresarTrabajador {
+            padding-bottom: 4%;
+            padding-right: 8%;
+            padding-top: 3%;
+            padding-left: 8%;
+          }
+          .h1IngresarTrabajador {
+            font-size: 50px;
+            padding-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* POSICION DE LAS IMAGENES Y ANIMACION */
+
+.img-1-IngresarTrabajador {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.img-2-IngresarTrabajador {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 59%;
+  left: 60%;
+}
+.img-3-IngresarTrabajador {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 70%;
+  left: 15%;
+}
+.img-4-IngresarTrabajador {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 70%;
+  right: 6%;
+}
+.img-5-IngresarTrabajador {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 5%;
+  right: 45%;
+}
+.img-6-IngresarTrabajador {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}
