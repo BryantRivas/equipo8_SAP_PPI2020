@@ -1,6 +1,6 @@
 import React from "react";
 import "./StylesRegistroBarberos2.css";
-import FileUpload from "../../FileUpload";
+
 
 import { useState } from "react";
 

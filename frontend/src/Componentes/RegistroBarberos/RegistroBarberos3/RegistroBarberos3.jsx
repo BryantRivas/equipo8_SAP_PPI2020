@@ -1,6 +1,6 @@
 import React from "react";
 import "./StylesRegistroBarberos3.css";
-import FileUpload from "../../FileUpload";
+
 
 import { useState } from "react";
 
@@ -130,7 +130,7 @@ function RegistroBarberos3() {
                         </button>
                       </div>
                       <div className="modal-body">
-                        <FileUpload />
+                        En esta parte ira 
                       </div>
                       <div className="modal-footer">
                         <button
