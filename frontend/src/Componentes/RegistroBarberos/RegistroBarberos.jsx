@@ -135,9 +135,9 @@ function RegistroBarberos() {
               </div>
             </form>
             <div className="DivButon">
-              
+              <Link to="/PerfilTrabajadorUsuario2">
                 <button type="submit" className="btn Buton">SIGUIENTE</button>
-              
+                </Link>
             </div>
           </div>
         </div>
