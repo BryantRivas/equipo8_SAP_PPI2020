@@ -18,7 +18,7 @@
   border: black solid 1px;
   font-weight: bold;
   border-radius: 15px;
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   cursor: pointer;
   margin: 17px;
   margin-bottom: 4%;
@@ -34,7 +34,7 @@
   background-color: black;
   border: black solid 1px;
   border-radius: 15px;
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   cursor: pointer;
   margin: 17px;
   margin-bottom: 4%;
@@ -559,6 +559,7 @@
 /* EFECTO PARA BOTONES */
 
 .boton {
+  font-family: "Comfortaa", cursive;
   position: relative;
   font-size: 100%;
   color: white !important;
@@ -584,6 +585,7 @@ width: 100%;
 }
 
 .boton2 {
+  font-family: "Comfortaa", cursive;
   position: relative;
   cursor: pointer;
   font-size: 100%;

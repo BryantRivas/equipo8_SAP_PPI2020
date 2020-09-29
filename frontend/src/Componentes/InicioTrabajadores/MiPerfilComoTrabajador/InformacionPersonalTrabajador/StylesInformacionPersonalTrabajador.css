@@ -8,13 +8,13 @@
     padding-top: 3%;
 }
 .texto-descriptivo-superior-InformacionPersonal{
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     color: black;
     opacity: 0.6;
     margin-bottom: 1px;
 }
 .texto-informacion-inferior-InformacionPersonal{
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     color: black;
 }
 
@@ -65,7 +65,7 @@
     background-color: black;
     color: white;
     border-radius: 15px;
-    font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
@@ -85,7 +85,7 @@
 /* VENTANA COSTO TRABAJADOR */
 .input-costoTrabajoTrabajador-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;
@@ -120,7 +120,7 @@
 /* VENTANA SEXO TRABAJADOR */
 .form-control-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;
@@ -144,7 +144,7 @@
 }
 .input-numeroTrabajador-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;
@@ -170,7 +170,7 @@
 
 .input-direccionTrabajador-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;
@@ -188,7 +188,7 @@
 /* VENTANA CONTRASEÑA TRABAJADOR */
 .input-contrasenaTrabajador-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;
@@ -212,7 +212,7 @@
 
 .input-correoActualTrabajador-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;
@@ -227,7 +227,7 @@
 }
 .input-correoNuevoTrabajador-InformacionPersonalTrabajador{
     border: 2px solid gray;
-    font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     border-radius: 15px;
     padding-top: 8px;
     padding-right: 12px;

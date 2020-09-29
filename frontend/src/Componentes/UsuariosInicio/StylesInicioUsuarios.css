@@ -91,7 +91,7 @@
   grid-template-rows: 1fr;
 }
 .Numero_UsuarioInicio {
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   color: black;
   width: 100%;
   margin: 5px;
@@ -105,7 +105,7 @@
   background-color: white;
   color: black;
   border-radius: 15px;
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   cursor: pointer;
   font-weight: bold;
   box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
@@ -128,7 +128,7 @@
   margin: 0%;
   color: black;
   text-decoration: none;
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   width: 100%;
 }
 .div-Nombre_Trabajador_UsuariosInicio {
@@ -138,7 +138,7 @@
 .textarea_Descripcion_UsuariosInicio {
   border: grey solid 1px;
   box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   cursor: pointer;
   transition: all 100ms;
   text-decoration: none;
@@ -174,7 +174,7 @@
     margin: 0%;
     color: black;
     text-decoration: none;
-    font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+    font-family: "Comfortaa", cursive;
     width: 100%;
   }
   .ButonUsuariosInicio {

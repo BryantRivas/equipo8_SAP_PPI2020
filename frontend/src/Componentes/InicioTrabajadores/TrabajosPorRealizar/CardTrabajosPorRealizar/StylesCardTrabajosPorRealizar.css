@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-img-perfil_trabajador-PerfilTrabajadorUsuario {
   grid-column: 2/3;
@@ -34,7 +34,7 @@
   display: flex;
   justify-content: center;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-tipoTrabajador-PerfilTrabajadorUsuario {
   grid-column: 2/3;
@@ -44,7 +44,7 @@
   display: flex;
   justify-content: center;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-contoTrabajoTrabajador-PerfilTrabajadorUsuario {
   grid-column: 2/3;
@@ -54,7 +54,7 @@
   display: flex;
   justify-content: center;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-bot-PerfilTrabajadorUsuario {
   padding-bottom: 2%;
@@ -66,46 +66,46 @@
   padding-top: 10px;
   padding-bottom: 20px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TituloDescripcion-PerfilTrabajadorUsuario {
   padding-bottom: 5px;
   font-weight: bold;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TitulodireccionTrabajador-PerfilTrabajadorUsuario {
   font-weight: bold;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TextodireccionTrabajador-PerfilTrabajadorUsuario {
   padding-top: 2px;
   padding-bottom: 10px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TituloCorreoElectronicoTrabajador-PerfilTrabajadorUsuario {
   font-weight: bold;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TextoCorreoElectronicoTrabajador-PerfilTrabajadorUsuario {
   padding-top: 2px;
   padding-bottom: 10px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TitulonumeroTelefonicoTrabajador-PerfilTrabajadorUsuario {
   font-weight: bold;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-TextonumeroTelefonicoTrabajador-PerfilTrabajadorUsuario {
   padding-top: 2px;
   padding-bottom: 10px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 .div-div-boton-bot-SOLICITAR-PerfilTrabajadorUsuario {
   display: flex;
@@ -118,25 +118,25 @@
 .div-nombreCompletoDelTrabajador {
   font-size: 60px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   font-weight: bold;
 }
 .div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario {
   font-size: 25px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   font-weight: bold;
 }
 .div-div-tipoTrabajador-PerfilTrabajadorUsuario {
   font-size: 35px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   font-weight: bold;
 }
 .div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario {
   font-size: 40px;
   color: black;
-  font-family: Poppins-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   font-weight: bold;
 }
 .boton-Solicitar-PerfilTrabajadorUsuario {
@@ -148,7 +148,7 @@
   background-color: black;
   color: white;
   border-radius: 15px;
-  font-family: Poppins-SemiBold, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", cursive;
   cursor: pointer;
   font-weight: bold;
   box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
