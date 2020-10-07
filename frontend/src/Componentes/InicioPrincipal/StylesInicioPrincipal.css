@@ -19,6 +19,7 @@
   font-weight: bold;
   border-radius: 15px;
   font-family: "Comfortaa", cursive;
+  font-weight: bold;
   cursor: pointer;
   margin: 17px;
   margin-bottom: 4%;
@@ -35,6 +36,7 @@
   border: black solid 1px;
   border-radius: 15px;
   font-family: "Comfortaa", cursive;
+  font-weight: bold;
   cursor: pointer;
   margin: 17px;
   margin-bottom: 4%;
@@ -551,11 +553,6 @@
   animation-iteration-count: infinite;
 }
 
-
-
-
-
-
 /* EFECTO PARA BOTONES */
 
 .boton {
@@ -570,7 +567,7 @@
   cursor: pointer;
 }
 .boton:before {
-  content:"";
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -581,7 +578,7 @@
   border-radius: 15px;
 }
 .boton:hover:before {
-width: 100%;
+  width: 100%;
 }
 
 .boton2 {
@@ -597,7 +594,7 @@ width: 100%;
   cursor: pointer;
 }
 .boton2:before {
-  content:"";
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -608,5 +605,5 @@ width: 100%;
   border-radius: 15px;
 }
 .boton2:hover:before {
-width: 100%;
+  width: 100%;
 }
