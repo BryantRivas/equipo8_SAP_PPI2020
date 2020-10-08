@@ -13,37 +13,32 @@ class CardTrabajosPorRealizar extends Component {
     const { data1 } = this.props;
     return (
       <div>
-        <div className="btnFlechaInicioUsuarios">
-          <div className="btnInicioUsuarios">
-            <Link to="/TrabajadoresInicio/TrabajosRealizados">
-              <button className="btn">
-                <img
-                  className="InicioUsuariosFlecha"
-                  src="https://1.bp.blogspot.com/-Kx3H603WVwI/X07UEW5JQAI/AAAAAAAAHO8/dYMvzLNDFbk9N6QCHaanQQUFckaTGkW1gCLcBGAsYHQ/s1280/Retroseder.png"
-                  alt="Retroceder"
-                />
-              </button>
-            </Link>
-          </div>
-          <div className="divimgInicioUsuarios">
-            <div className="imgInicioUsuariosLogo">
+        <div className="btnFlechaRegistroBarberos">
+        <div className="btnRegistroBarberos">
+          <Link to="/TrabajadoresInicio/TrabajosRealizados">
+            <button className="btn">
               <img
-                className="imgInicioUsuariosBarppi"
-                src="https://1.bp.blogspot.com/-03a8qmALrxM/X03AZ0jV5LI/AAAAAAAAHOc/AVcOiDX1mvEM45J9VASPR9coUqJJRaZ2gCLcBGAsYHQ/s1000/Barppilogo.png"
-                alt="LogoBarppi"
-              />
-            </div>
-          </div>
-          <div className="divBuscarInicioUsuarios">
-            <button className="btn imgBuscarInicioUsuariosLogo">
-              <img
-                className="imgBuscarInicioUsuariosBarppi"
-                src="https://1.bp.blogspot.com/--XV_byQLSAY/X1QgjWxRh3I/AAAAAAAAHP0/rGuxK8rYUWgFy0sQfftCmqohdBXqD1ugwCLcBGAsYHQ/s1280/BotonBuscarSinfondo.jpg"
-                alt="LogoBarppi"
+                className="RegistroBarberosFlecha"
+                src="https://1.bp.blogspot.com/-Kx3H603WVwI/X07UEW5JQAI/AAAAAAAAHO8/dYMvzLNDFbk9N6QCHaanQQUFckaTGkW1gCLcBGAsYHQ/s1280/Retroseder.png"
+                alt="Retroceder"
               />
             </button>
+          </Link>
+        </div>
+        <div className="divimgRegistroBarberosBarppi">
+          <div className="imgRegistroBarberosLogo">
+            <img
+              className="imgRegistroBarberosBarppi"
+              src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
+              alt="LogoBarppi"
+            />
           </div>
         </div>
+      </div>
+
+
+
+
 
 
 
