@@ -24,6 +24,11 @@ import CardTrabajosRealizadosP from "./Paginas/CardTrabajosRealizadosP";
 import RegistroBarberos1P from "./Paginas/RegistroBarberos1P";
 import RegistroBarberos2P from "./Paginas/RegistroBarberos2P";
 import RegistroBarberos3P from "./Paginas/RegistroBarberos3P";
+import BusquedaTrabajosRealizadosP from "./Paginas/BusquedaTrabajosRealizadosP";
+import BusquedaTrabajosPorRealizarP from "./Paginas/BusquedaTrabajosPorRealizarP";
+import BuscarTrabajadorUsuariosInicioP from "./Paginas/BuscarTrabajadorUsuariosInicioP";
+
+
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -35,6 +40,20 @@ ReactDOM.render(
         <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar">
           <TrabajosPorRealizarP />
         </Route>
+
+        <Route exact path="/UsuariosInicio/BuscarTrabajador">
+          <BuscarTrabajadorUsuariosInicioP />
+        </Route>
+
+        <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar">
+          <BusquedaTrabajosPorRealizarP />
+        </Route>
+
+        <Route exact path="/TrabajadoresInicio/TrabajosRealizados/busquedaTrabajosRealizados">
+          <BusquedaTrabajosRealizadosP />
+        </Route>
+
+
 
         <Route exact path="/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados">
           <CardTrabajosRealizadosP />

@@ -1,0 +1,22 @@
+.div-texto-buscar-buscarTrabajosPorRealizar{
+    font-weight: bold;
+    font-family: "Comfortaa", cursive;
+    color: black;
+    font-size: 300%;
+}
+.input-buscar-buscarTabajosPorRealizar{
+    border-radius: 4px;
+    border: solid 2px black;
+    width: 90%;
+    font-family: "Comfortaa", cursive;
+    font-weight: bold;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.div-input-buscar-buscarTrabajosPorRealizar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 1px grey;
+    padding-bottom: 10px;
+}

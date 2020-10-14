@@ -35,6 +35,7 @@ class inicioUsuarios extends Component {
             </div>
           </div>
           <div className="divBuscarInicioUsuarios">
+            <Link to="/UsuariosInicio/BuscarTrabajador">
             <button className="btn imgBuscarInicioUsuariosLogo">
               <img
                 className="imgBuscarInicioUsuariosBarppi"
@@ -42,6 +43,7 @@ class inicioUsuarios extends Component {
                 alt="LogoBarppi"
               />
             </button>
+            </Link>
           </div>
         </div>
 

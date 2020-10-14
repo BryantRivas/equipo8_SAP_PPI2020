@@ -34,6 +34,7 @@ class TrabajosRealizados extends Component {
             </div>
           </div>
           <div className="divBuscar_TrabajosRealizados">
+            <Link to="/TrabajadoresInicio/TrabajosRealizados/busquedaTrabajosRealizados">
             <button className="btn imgBuscar_TrabajosRealizados_Logo">
               <img
                 className="imgBuscar_TrabajosRealizados_Barppi"
@@ -41,6 +42,7 @@ class TrabajosRealizados extends Component {
                 alt="LogoBarppi"
               />
             </button>
+            </Link>
           </div>
         </div>
         {data1.map((datosT, index) => {
