@@ -3,13 +3,16 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+
+// Inicializacion de espress
 const app = express();
 
 
 
-//MIDDLEWARES
+// Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 
 
@@ -25,8 +28,10 @@ app.get('/', (req, res) => {
 
 
 
-//PUERTO EN EL CUAL SE CORRERA EL SERVIDOR
-app.set('port', 6000);
+// Configuraciones
+app.set('port', 4020);
+
+// Incializacion del servidor
 app.listen(app.get('port'), () => {
-    console.log('Servidor de barppi corriendo en el puerto 6000');
-});
+    console.log('Servidor de barppi corriendo en el puerto', app.get('port'));
+})
