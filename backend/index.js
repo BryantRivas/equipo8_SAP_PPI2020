@@ -3,7 +3,9 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-
+const trabajador = require('./routes/trabajador');
+const cita = require('./routes/cita');
+const cliente = require('./routes/cliente');
 // Inicializacion de espress
 const app = express();
 
@@ -22,7 +24,9 @@ app.get('/', (req, res) => {
 });
 
 
-
+app.use('/api', trabajador);
+app.use('/api', cliente);
+app.use('/api', cita);
 
 
 
