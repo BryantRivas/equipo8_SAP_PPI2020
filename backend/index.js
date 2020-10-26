@@ -25,8 +25,8 @@ app.get('/', (req, res) => {
 
 
 app.use('/api', trabajador);
-app.use('/api', cliente);
-app.use('/api', cita);
+app.use('/api/cliente', cliente);
+app.use('/api/cita', cita);
 
 
 

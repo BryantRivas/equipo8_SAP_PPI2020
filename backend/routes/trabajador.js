@@ -14,12 +14,15 @@ trabajador.get('/trabajador', (req,res)=>{
     });
 });
 
+
+
+
 // segundo servicio, necesito ingresar un registro a la tabla trabajadores GOOD
 trabajador.post('/nuevo-trabajador', (req,res)=>{
     const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
-    let trabajador = [  codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador ];
+    const trabajador = [  codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador ];
 
-    let nuevoTrabajador = `INSERT INTO trabajador(codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+    const nuevoTrabajador = `INSERT INTO trabajador(codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
 
     mysqlConnection.query(nuevoTrabajador, trabajador, (err, results, fields)=>{
         if(err){
@@ -32,10 +35,11 @@ trabajador.post('/nuevo-trabajador', (req,res)=>{
 
 // tercer servicio, actualizacion de la informacion de un trabajador NOT GOOD
 trabajador.put('/trabajador/:id', (req,res)=>{
-    const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
     const { id } = req.params;
+    const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
+    
 
-    mysqlConnection.query('UPDATE trabajador SET codigo_cita = ?,direccion_trabajador = ?,contrasena_trabajador = ?,tipo_trabajador = ?,nombres_trabajador = ?,apellidos_trabajador = ?,telefono_trabajador = ?,correo_electronico_trabajador = ?, precio_trabajador = ?, pais_trabajador = ?, ciudad_trabajador = ? WHERE '[codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador ,apellidos_trabajador ,telefono_trabajador ,correo_electronico_trabajador , precio_trabajador , pais_trabajador, ciudad_trabajador ], (err, rows, fields)=>{
+    mysqlConnection.query('UPDATE trabajador SET codigo_cita = ?,direccion_trabajador = ?,contrasena_trabajador = ?,tipo_trabajador = ?,nombres_trabajador = ?,apellidos_trabajador = ?,telefono_trabajador = ?,correo_electronico_trabajador = ?, precio_trabajador = ?, pais_trabajador = ?, ciudad_trabajador = ? WHERE id= ?'[ codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador,id ], (err, rows, fields)=>{
         if(!err){
             res.json({status : 'Se han actualizado los datos del trabajador'});
         }else{
@@ -45,10 +49,10 @@ trabajador.put('/trabajador/:id', (req,res)=>{
 });
 
 // cuarto servicio, eliminacion de un registro de una tabla NOT GOOD
-trabajador.delete('/estudiante/:id', (req,res)=>{
-    const { id } = req.params;
+trabajador.delete('/trabajador/:id', (req,res)=>{
+    const { numero_id_trabajador } = req.params;
 
-    mysqlConnection.query('DELETE FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
+    mysqlConnection.query('DELETE FROM trabajador WHERE numero_id_trabajador=?',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json({status : 'Se elimino el registro'});
         }else{
