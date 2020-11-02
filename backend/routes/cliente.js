@@ -11,5 +11,4 @@ const mysqlConnection = require('../db/db');
 
 
 
-
 module.exports = cliente;
