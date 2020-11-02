@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const BusquedaTrabajosRealizados = () => {
   return (
     <div>
+      <header>
+      <nav className="menu-fixed-busqueda-trabajosRealizados">
         <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/TrabajadoresInicio/TrabajosRealizados">
@@ -28,8 +30,10 @@ const BusquedaTrabajosRealizados = () => {
             </div>
           </div>
         </div>
+        </nav>
+      </header>
 
-        <div className="">
+        <div className="busqueda-fixed-trabajosRealizados">
           <div className="div-texto-buscar-buscarTrabajosPorRealizar">Buscar</div>
           <div className="div-input-buscar-buscarTrabajosPorRealizar">
             <input

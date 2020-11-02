@@ -1,292 +1,273 @@
-.div-padre-grid-formulario-InformacionPersonal{
-    display: grid;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: 1fr;
-    padding-bottom: 3%;
-    padding-right: 4%;
-    padding-left: 4%;
-    padding-top: 3%;
+.div-padre-grid-formulario-InformacionPersonal {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: 1fr;
+  padding-bottom: 3%;
+  padding-right: 4%;
+  padding-left: 4%;
+  padding-top: 3%;
 }
-.texto-descriptivo-superior-InformacionPersonal{
-    font-family: "Comfortaa", cursive;
-    color: black;
-    opacity: 0.6;
-    margin-bottom: 1px;
+.texto-descriptivo-superior-InformacionPersonal {
+  font-family: "Comfortaa", cursive;
+  color: black;
+  opacity: 0.6;
+  margin-bottom: 1px;
 }
-.texto-informacion-inferior-InformacionPersonal{
-    font-family: "Comfortaa", cursive;
-    color: black;
-}
-
-.img-botones-lapiz-InformacionPersonalTrabajador{
-    width: 25px;
-    height: 25px;
-    margin-right: 15px;
+.texto-informacion-inferior-InformacionPersonal {
+  font-family: "Comfortaa", cursive;
+  color: black;
 }
 
-
-
-
-
-
-
+.img-botones-lapiz-InformacionPersonalTrabajador {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
 
 /* VENTANA EMERGENTE  */
 
-.modal-content{
-    border-radius: 30px;
+.modal-content {
+  border-radius: 30px;
 }
-.close{
-    color: black;
-    font-size: 40px;
+.close {
+  color: black;
+  font-size: 40px;
 }
-.close:hover{
-    color: red;
-}
-
-.modal-header{
-    border: 0px;
+.close:hover {
+  color: red;
 }
 
-.modal-footer{
-    border: solid 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
+.modal-header {
+  border: 0px;
 }
 
-.btn-cerrar-InformacionPersonalTrabajador{
-    border: black solid 1px;
-    width: 90%;
-    height: 50px;
-    transition: all 100ms;
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-    font-family: "Comfortaa", cursive;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
-}
-.btn-cerrar-InformacionPersonalTrabajador:hover{
-    background-color: white;
-    color: black;
-    transition: all 100ms;
-    text-decoration: none;
-    border: black solid 3px;
+.modal-footer {
+  border: solid 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 }
 
-
-
-
+.btn-cerrar-InformacionPersonalTrabajador {
+  border: black solid 1px;
+  width: 90%;
+  height: 50px;
+  transition: all 100ms;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  font-family: "Comfortaa", cursive;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+}
+.btn-cerrar-InformacionPersonalTrabajador:hover {
+  background-color: white;
+  color: black;
+  transition: all 100ms;
+  text-decoration: none;
+  border: black solid 3px;
+}
 
 /* VENTANA COSTO TRABAJADOR */
-.input-costoTrabajoTrabajador-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.input-costoTrabajoTrabajador-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.input-costoTrabajoTrabajador-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.input-costoTrabajoTrabajador-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
-.body-div-grid-inputs-costoTrabajoTrabajador{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,auto);
-    row-gap: 20px;
+.body-div-grid-inputs-costoTrabajoTrabajador {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 20px;
 }
-
-
-
-
 
 /* VENTANA CALENDARIO */
-.modal-body-fechaNacimientoTrabajador{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modal-body-fechaNacimientoTrabajador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* VENTANA SEXO TRABAJADOR */
-.form-control-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    width: 100%;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.form-control-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  width: 100%;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.form-control-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.form-control-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
 
 /* VENTANA NUMERO TRABAJADOR */
-.body-div-grid-inputs-numeroTrabajador{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,auto);
-    row-gap: 20px;
+.body-div-grid-inputs-numeroTrabajador {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 20px;
 }
-.input-numeroTrabajador-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.input-numeroTrabajador-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.input-numeroTrabajador-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.input-numeroTrabajador-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
-
 
 /* VENTANA DIRECCION TRABAJADOR */
 
-.body-div-grid-inputs-direccionTrabajador{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,auto);
-    row-gap: 20px;
+.body-div-grid-inputs-direccionTrabajador {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 20px;
 }
 
-.input-direccionTrabajador-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.input-direccionTrabajador-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.input-direccionTrabajador-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.input-direccionTrabajador-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
-
 
 /* VENTANA CONTRASEÑA TRABAJADOR */
-.input-contrasenaTrabajador-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.input-contrasenaTrabajador-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.input-contrasenaTrabajador-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.input-contrasenaTrabajador-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
-.body-div-grid-inputs-ContrasenaTrabajador{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,auto);
-    row-gap: 20px;
+.body-div-grid-inputs-ContrasenaTrabajador {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 20px;
 }
 
 /* VENTANA CORREO TRABAJADOR */
 
-.input-correoActualTrabajador-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.input-correoActualTrabajador-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.input-correoActualTrabajador-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.input-correoActualTrabajador-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
-.input-correoNuevoTrabajador-InformacionPersonalTrabajador{
-    border: 2px solid gray;
-    font-family: "Comfortaa", cursive;
-    border-radius: 15px;
-    padding-top: 8px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    height: 45px;
-    box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
+.input-correoNuevoTrabajador-InformacionPersonalTrabajador {
+  border: 2px solid gray;
+  font-family: "Comfortaa", cursive;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  height: 45px;
+  box-shadow: 0 6px 5px 3px rgba(128, 98, 96, 0.16);
 }
-.input-correoNuevoTrabajador-InformacionPersonalTrabajador:hover{
-    border: 3px solid gray;
-    box-shadow: 0px 0px 8px 1px grey;
+.input-correoNuevoTrabajador-InformacionPersonalTrabajador:hover {
+  border: 3px solid gray;
+  box-shadow: 0px 0px 8px 1px grey;
 }
-.body-div-grid-inputs-CorreoTrabajador{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,auto);
-    row-gap: 20px;
+.body-div-grid-inputs-CorreoTrabajador {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 20px;
 }
-
 
 /* QUE LA BARRA SE QUEDE QUIETA */
-.menu-fixed{
-    position: fixed;
-    z-index: 1000;
-    background-color: white;
-    width: 100%;
-    box-shadow: 0px 4px 3px rgb(0,0,0,0.5);
+.menu-fixed-informacion-personal-trabajador {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.informacion-fixed-informacion-personal-trabajador {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .informacion-fixed-informacion-personal-trabajador {
+    padding-top: 12%;
   }
-  .cards-fixed{
-    padding-top: 9%;
-  }
-  @media only screen and (max-width: 1215px){
-    .cards-fixed{
-      padding-top: 12%;
+  @media only screen and (max-width: 930px) {
+    .informacion-fixed-informacion-personal-trabajador {
+      padding-top: 15%;
     }
-    @media only screen and (max-width: 930px){
-      .cards-fixed{
-        padding-top: 15%;
+    @media only screen and (max-width: 760px) {
+      .informacion-fixed-informacion-personal-trabajador {
+        padding-top: 18%;
       }
-      @media only screen and (max-width: 760px){
-        .cards-fixed{
-          padding-top: 18%;
+      @media only screen and (max-width: 620px) {
+        .informacion-fixed-informacion-personal-trabajador {
+          padding-top: 21%;
         }
-        @media only screen and (max-width: 620px){
-          .cards-fixed{
-            padding-top: 21%;
+        @media only screen and (max-width: 530px) {
+          .informacion-fixed-informacion-personal-trabajador {
+            padding-top: 24%;
           }
-          @media only screen and (max-width: 530px){
-            .cards-fixed{
-              padding-top: 24%;
+          @media only screen and (max-width: 450px) {
+            .informacion-fixed-informacion-personal-trabajador {
+              padding-top: 25%;
             }
-            @media only screen and (max-width: 450px){
-              .cards-fixed{
-                padding-top: 25%;
-              }
-              @media only screen and (max-width: 355px){
-                .cards-fixed{
-                  padding-top: 27%;
-                }
+            @media only screen and (max-width: 355px) {
+              .informacion-fixed-informacion-personal-trabajador {
+                padding-top: 27%;
               }
             }
           }
@@ -294,4 +275,4 @@
       }
     }
   }
-  
+}

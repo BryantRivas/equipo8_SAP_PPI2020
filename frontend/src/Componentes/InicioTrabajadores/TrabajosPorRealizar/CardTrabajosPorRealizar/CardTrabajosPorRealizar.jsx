@@ -13,6 +13,8 @@ class CardTrabajosPorRealizar extends Component {
     const { data1 } = this.props;
     return (
       <div>
+        <header>
+        <nav className="menu-fixed-cards-trabajos-por-realizar">
         <div className="btnFlechaRegistroBarberos">
         <div className="btnRegistroBarberos">
           <Link to="/TrabajadoresInicio/TrabajosPorRealizar">
@@ -35,10 +37,9 @@ class CardTrabajosPorRealizar extends Component {
           </div>
         </div>
       </div>
-
-
-
-
+      </nav>
+        </header>
+        <div className="cards-fixed-trabajos-por-realizar">
         <div className="div-top-CardTrabajosPorRealizar">
           <div className="div-img-perfil_trabajador-CardTrabajosPorRealizar">
             <div className="div-div-img-perfil_trabajador-CardTrabajosPorRealizar">
@@ -125,6 +126,7 @@ class CardTrabajosPorRealizar extends Component {
               FINALIZADO
             </Link>
           </div>
+        </div>
         </div>
       </div>
     );

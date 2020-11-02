@@ -11,6 +11,8 @@ class MiPerfilComoTrabajador extends Component {
   render() {
     return (
       <div>
+        <header>
+        <nav className="menu-fixed-mi-perfil-como-trabajador">
         <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/TrabajadoresInicio">
@@ -33,7 +35,9 @@ class MiPerfilComoTrabajador extends Component {
             </div>
           </div>
         </div>
-
+        </nav>
+        </header>
+        <div className="informacion-fixed-mi-perfil-como-trabajador">
         <div className="div-img-fotoPerfiltrabajador-InformacionTrabajador">
           <div className="div-img-grid-fotoPerfiltrabajador-InformacionTrabajador">
             <div className="div-div-img-fotoPerfil-Trabajador">
@@ -285,7 +289,7 @@ class MiPerfilComoTrabajador extends Component {
             </div>
           </div>
         </div>
-
+        </div>
       </div>
     );
   }

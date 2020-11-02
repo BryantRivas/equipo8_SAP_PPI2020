@@ -19,6 +19,8 @@ class InformacionPersonalTrabajador extends Component {
     const { date } = this.onChange;
     return (
       <div>
+        <header>
+        <nav className="menu-fixed-informacion-personal-trabajador">
         <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/TrabajadoresInicio/MiPerfilComoTrabajador">
@@ -41,7 +43,9 @@ class InformacionPersonalTrabajador extends Component {
             </div>
           </div>
         </div>
-
+        </nav>
+        </header>
+        <div className="informacion-fixed-informacion-personal-trabajador">
         <div className="div-padre-grid-formulario-InformacionPersonal">
           <div className="div-correoTrabajador-InformacionPersonal">
             <div className="texto-descriptivo-superior-InformacionPersonal">
@@ -571,6 +575,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     );

@@ -13,6 +13,8 @@ class busquedaTrabajosPorRealizarJ extends Component {
     const { data1 } = this.props;
     return (
       <div>
+        <header>
+        <nav className="menu-fixed-busqueda-trabajos-por-realizar">
         <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/TrabajadoresInicio/TrabajosPorRealizar">
@@ -35,8 +37,10 @@ class busquedaTrabajosPorRealizarJ extends Component {
             </div>
           </div>
         </div>
+        </nav>
+        </header>
 
-        <div className="">
+        <div className="busqueda-fixed-trabajos-por-realizar">
           <div className="div-texto-buscar-buscarTrabajosPorRealizar">Buscar</div>
           <div className="div-input-buscar-buscarTrabajosPorRealizar">
             <input

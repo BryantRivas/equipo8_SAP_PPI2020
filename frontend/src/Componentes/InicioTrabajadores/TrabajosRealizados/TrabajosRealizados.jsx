@@ -12,6 +12,8 @@ class TrabajosRealizados extends Component {
     const { data1 } = this.props;
     return (
       <div>
+        <header>
+        <nav className="menu-fixed-trabajosRealizados">
         <div className="btnFlecha-TrabajosRealizados">
           <div className="btn_TrabajosRealizados">
             <Link to="/TrabajadoresInicio">
@@ -45,6 +47,9 @@ class TrabajosRealizados extends Component {
             </Link>
           </div>
         </div>
+        </nav>
+        </header>
+        <div className="cards-fixed-trabajosRealizados">
         {data1.map((datosT, index) => {
           return (
             <div className="divCardTrabajosRealizados">
@@ -85,6 +90,7 @@ class TrabajosRealizados extends Component {
             </div>
           );
         })}
+        </div>
       </div>
     );
   }
