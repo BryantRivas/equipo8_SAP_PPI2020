@@ -3,16 +3,21 @@ import "./StylesInicioUsuarios.css";
 
 import { Link } from "react-router-dom";
 
+
+
 class inicioUsuarios extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
   render() {
     const { data1 } = this.props;
-
+   
     return (
       <div className="div_Padre_UsuariosInicio">
+        <header>
+        <nav className="menu-fixed">
         <div className="btnFlechaInicioUsuarios">
           <div className="btnInicioUsuarios">
             <Link exact to="/Inicio">
@@ -46,7 +51,9 @@ class inicioUsuarios extends Component {
             </Link>
           </div>
         </div>
-
+        </nav>
+        </header>
+        <div className="cards-fixed">
         {data1.map((datosT, index) => {
           return (
             <div className="divCardUsuariosInicio">
@@ -101,6 +108,7 @@ class inicioUsuarios extends Component {
             </div>
           );
         })}
+        </div>
       </div>
     );
   }
