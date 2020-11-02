@@ -207,12 +207,10 @@
 }
 
 /* FORM-CONTROL */
-.form-control{
+.form-control {
   font-family: "Comfortaa", cursive;
   font-weight: bold;
 }
-
-
 
 /* POSICION DE LAS IMAGENES Y ANIMACION */
 
@@ -257,4 +255,52 @@
   position: absolute;
   top: 20%;
   right: 2%;
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed-ingresarTrabajador {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.campos-fixed-ingresarTrabajador {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .campos-fixed-ingresarTrabajador {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .campos-fixed-ingresarTrabajador {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .campos-fixed-ingresarTrabajador {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .campos-fixed-ingresarTrabajador {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .campos-fixed-ingresarTrabajador {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .campos-fixed-ingresarTrabajador {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .campos-fixed-ingresarTrabajador {
+                padding-top: 27%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

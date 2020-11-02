@@ -17,7 +17,7 @@ class inicioUsuarios extends Component {
     return (
       <div className="div_Padre_UsuariosInicio">
         <header>
-        <nav className="menu-fixed">
+        <nav className="menu-fixed-usuariosInicio">
         <div className="btnFlechaInicioUsuarios">
           <div className="btnInicioUsuarios">
             <Link exact to="/Inicio">
@@ -53,7 +53,7 @@ class inicioUsuarios extends Component {
         </div>
         </nav>
         </header>
-        <div className="cards-fixed">
+        <div className="cards-fixed-usuariosInicio">
         {data1.map((datosT, index) => {
           return (
             <div className="divCardUsuariosInicio">

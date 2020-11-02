@@ -11,6 +11,8 @@ class PerfilTrabajadorUsuario1 extends Component {
   render() {
     return (
       <div>
+        <header>
+        <nav className="menu-fixed-perfilTrabajador-usuario1">
         <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/UsuariosInicio">
@@ -33,7 +35,9 @@ class PerfilTrabajadorUsuario1 extends Component {
             </div>
           </div>
         </div>
-
+        </nav>
+        </header>
+        <div className="informacion-fixed-perfilTrabajador-usuario1">
         <div className="div-top-PerfilTrabajadorUsuario1">
           <div className="div-img-perfil_trabajador-PerfilTrabajadorUsuario1">
             <div className="div-div-img-perfil_trabajador-PerfilTrabajadorUsuario1">
@@ -115,6 +119,7 @@ class PerfilTrabajadorUsuario1 extends Component {
                 SOLICITAR
             </Link>
           </div>
+        </div>
         </div>
       </div>
     );

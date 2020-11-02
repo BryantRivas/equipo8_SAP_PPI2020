@@ -165,3 +165,51 @@
   text-decoration: none;
   border: black solid 3px;
 }
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed-registroBarberos {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.campos-fixed-registroBarberos {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .campos-fixed-registroBarberos {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .campos-fixed-registroBarberos {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .campos-fixed-registroBarberos {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .campos-fixed-registroBarberos {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .campos-fixed-registroBarberos {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .campos-fixed-registroBarberos {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .campos-fixed-registroBarberos {
+                padding-top: 27%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

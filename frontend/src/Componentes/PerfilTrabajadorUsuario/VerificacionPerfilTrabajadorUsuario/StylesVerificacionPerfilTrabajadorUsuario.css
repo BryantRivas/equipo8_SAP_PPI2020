@@ -119,31 +119,30 @@
 
 /* PRECIO A PAGAR */
 
-.div-texto-precioTrabajo{
+.div-texto-precioTrabajo {
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.div-div-texto-precioTrabajo{
+.div-div-texto-precioTrabajo {
   font-size: 35px;
   color: black;
   font-weight: bold;
   font-family: "Comfortaa", cursive;
-
 }
 
 /* INFORMACION DEL TRABAJADOR A CONTRATAR */
 
 .div-informacionTrabajador {
- border-bottom: 1px solid grey;
- padding-left: 5%;
- padding-top: 0%;
- padding-bottom: 2%;
- padding-right: 5%;
+  border-bottom: 1px solid grey;
+  padding-left: 5%;
+  padding-top: 0%;
+  padding-bottom: 2%;
+  padding-right: 5%;
 }
 
-.div-descripcionTrabajador-VerificacionInformacion{
+.div-descripcionTrabajador-VerificacionInformacion {
   border-bottom: solid 1px grey;
   padding-top: 7px;
   padding-bottom: 3px;
@@ -152,19 +151,19 @@
   font-family: "Comfortaa", cursive;
 }
 
-.div-grid-InformacionTrabajador-VerificarInformacion{
+.div-grid-InformacionTrabajador-VerificarInformacion {
   display: grid;
   grid-template-columns: 150px auto;
   grid-template-rows: repeat(4, auto);
 }
-.div-div-grid-fotoDePerfil-VerificacionInformacion{
+.div-div-grid-fotoDePerfil-VerificacionInformacion {
   grid-column: 1/2;
   grid-row: 1/5;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.div-div-grid-NombreTrabajador-VerificacionInformacion{
+.div-div-grid-NombreTrabajador-VerificacionInformacion {
   grid-column: 2/3;
   grid-row: 1/2;
   color: black;
@@ -172,7 +171,7 @@
   font-size: 40px;
   font-family: "Comfortaa", cursive;
 }
-.div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+.div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
   grid-column: 2/3;
   grid-row: 2/3;
   color: black;
@@ -180,7 +179,7 @@
   font-family: "Comfortaa", cursive;
   opacity: 0.7;
 }
-.div-div-grid-direccionTrabajador-VerificacionInformacion{
+.div-div-grid-direccionTrabajador-VerificacionInformacion {
   grid-column: 2/3;
   grid-row: 3/4;
   color: black;
@@ -188,7 +187,7 @@
   font-family: "Comfortaa", cursive;
   opacity: 0.7;
 }
-.div-div-grid-correoTrabajador-VerificacionInformacion{
+.div-div-grid-correoTrabajador-VerificacionInformacion {
   grid-column: 2/3;
   grid-row: 4/5;
   color: black;
@@ -196,8 +195,6 @@
   font-family: "Comfortaa", cursive;
   opacity: 0.7;
 }
-
-
 
 /* CURSOR CUSTOM */
 
@@ -208,64 +205,64 @@ body {
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 490px){
+@media only screen and (max-width: 490px) {
   .img-fotoperfilTrabajador-VerificacionPerfil {
     width: 120px;
     height: 120px;
   }
-  .div-div-grid-NombreTrabajador-VerificacionInformacion{
+  .div-div-grid-NombreTrabajador-VerificacionInformacion {
     font-size: 35px;
   }
-  .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+  .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
     font-size: 15px;
   }
-  .div-div-grid-direccionTrabajador-VerificacionInformacion{
+  .div-div-grid-direccionTrabajador-VerificacionInformacion {
     font-size: 15px;
   }
-  .div-div-grid-correoTrabajador-VerificacionInformacion{
+  .div-div-grid-correoTrabajador-VerificacionInformacion {
     font-size: 15px;
   }
-  .div-descripcionTrabajador-VerificacionInformacion{
+  .div-descripcionTrabajador-VerificacionInformacion {
     font-size: 13px;
   }
-  @media only screen and (max-width: 400px){
+  @media only screen and (max-width: 400px) {
     .img-fotoperfilTrabajador-VerificacionPerfil {
       width: 100px;
       height: 100px;
     }
-    .div-div-grid-NombreTrabajador-VerificacionInformacion{
+    .div-div-grid-NombreTrabajador-VerificacionInformacion {
       font-size: 30px;
     }
-    .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+    .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
       font-size: 13px;
     }
-    .div-div-grid-direccionTrabajador-VerificacionInformacion{
+    .div-div-grid-direccionTrabajador-VerificacionInformacion {
       font-size: 13px;
     }
-    .div-div-grid-correoTrabajador-VerificacionInformacion{
+    .div-div-grid-correoTrabajador-VerificacionInformacion {
       font-size: 13px;
     }
-    .div-descripcionTrabajador-VerificacionInformacion{
+    .div-descripcionTrabajador-VerificacionInformacion {
       font-size: 12px;
     }
-    @media only screen and (max-width: 370px){
+    @media only screen and (max-width: 370px) {
       .img-fotoperfilTrabajador-VerificacionPerfil {
         width: 100px;
         height: 100px;
       }
-      .div-div-grid-NombreTrabajador-VerificacionInformacion{
+      .div-div-grid-NombreTrabajador-VerificacionInformacion {
         font-size: 23px;
       }
-      .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion{
+      .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
         font-size: 11px;
       }
-      .div-div-grid-direccionTrabajador-VerificacionInformacion{
+      .div-div-grid-direccionTrabajador-VerificacionInformacion {
         font-size: 11px;
       }
-      .div-div-grid-correoTrabajador-VerificacionInformacion{
+      .div-div-grid-correoTrabajador-VerificacionInformacion {
         font-size: 11px;
       }
-      .div-descripcionTrabajador-VerificacionInformacion{
+      .div-descripcionTrabajador-VerificacionInformacion {
         font-size: 10px;
       }
       .div-informacionTrabajador {
@@ -273,17 +270,17 @@ body {
         padding-top: 0%;
         padding-bottom: 2%;
         padding-right: 2%;
-       }
-       .div-grid-InformacionTrabajador-VerificarInformacion{
+      }
+      .div-grid-InformacionTrabajador-VerificarInformacion {
         display: grid;
         grid-template-columns: 100px auto;
         grid-template-rows: repeat(4, auto);
       }
-      .div-div-grid-fotoDePerfil-VerificacionInformacion{
+      .div-div-grid-fotoDePerfil-VerificacionInformacion {
         margin: 0%;
         margin-right: 5px;
       }
-      @media only screen and (max-width: 320px){
+      @media only screen and (max-width: 320px) {
         .botonFacebookPerfilTrabajadorUsuario2 {
           font-size: 13px;
           height: 40px;
@@ -291,6 +288,54 @@ body {
         .botonGooglePerfilTrabajadorUsuario2 {
           font-size: 13px;
           height: 40px;
+        }
+      }
+    }
+  }
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed-verificacionPerfil-Trabajador {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.informacion-fixed-verificacionPerfil-Trabajador {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .informacion-fixed-verificacionPerfil-Trabajador {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .informacion-fixed-verificacionPerfil-Trabajador {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .informacion-fixed-verificacionPerfil-Trabajador {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .informacion-fixed-verificacionPerfil-Trabajador {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .informacion-fixed-verificacionPerfil-Trabajador {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .informacion-fixed-verificacionPerfil-Trabajador {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .informacion-fixed-verificacionPerfil-Trabajador {
+                padding-top: 27%;
+              }
+            }
+          }
         }
       }
     }

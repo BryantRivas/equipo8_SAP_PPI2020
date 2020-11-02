@@ -1,15 +1,14 @@
-
 /* CSS BOTONES */
-.div-botones-centro-MiAgendaTrabajador{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.div-botones-centro-MiAgendaTrabajador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.div-div-grid-botones-MiAgendaTrabajador{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    row-gap: 20px;
+.div-div-grid-botones-MiAgendaTrabajador {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 20px;
 }
 .boton-MiAgendaTrabajador {
   border: black solid 1px;
@@ -31,4 +30,52 @@
   transition: all 100ms;
   text-decoration: none;
   border: black solid 3px;
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed-miAgendaTrabajador {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.informacion-fixed-miAgendaTrabajador {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .informacion-fixed-miAgendaTrabajador {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .informacion-fixed-miAgendaTrabajador {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .informacion-fixed-miAgendaTrabajador {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .informacion-fixed-miAgendaTrabajador {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .informacion-fixed-miAgendaTrabajador {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .informacion-fixed-miAgendaTrabajador {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .informacion-fixed-miAgendaTrabajador {
+                padding-top: 27%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

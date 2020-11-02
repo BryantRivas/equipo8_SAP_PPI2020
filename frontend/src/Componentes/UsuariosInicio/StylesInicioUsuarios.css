@@ -515,44 +515,44 @@
   }
 }
 
-
 /* QUE LA BARRA SE QUEDE QUIETA */
-.menu-fixed{
+.menu-fixed-usuariosInicio {
   position: fixed;
+  border-radius: 10px;
   z-index: 1000;
-  background-color: white;
+  background-color: rgb(241, 241, 241);
   width: 100%;
-  box-shadow: 0px 4px 3px rgb(0,0,0,0.5);
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
 }
-.cards-fixed{
+.cards-fixed-usuariosInicio {
   padding-top: 9%;
 }
-@media only screen and (max-width: 1215px){
-  .cards-fixed{
+@media only screen and (max-width: 1215px) {
+  .cards-fixed-usuariosInicio {
     padding-top: 12%;
   }
-  @media only screen and (max-width: 930px){
-    .cards-fixed{
+  @media only screen and (max-width: 930px) {
+    .cards-fixed-usuariosInicio {
       padding-top: 15%;
     }
-    @media only screen and (max-width: 760px){
-      .cards-fixed{
+    @media only screen and (max-width: 760px) {
+      .cards-fixed-usuariosInicio {
         padding-top: 18%;
       }
-      @media only screen and (max-width: 620px){
-        .cards-fixed{
+      @media only screen and (max-width: 620px) {
+        .cards-fixed-usuariosInicio {
           padding-top: 21%;
         }
-        @media only screen and (max-width: 530px){
-          .cards-fixed{
+        @media only screen and (max-width: 530px) {
+          .cards-fixed-usuariosInicio {
             padding-top: 24%;
           }
-          @media only screen and (max-width: 450px){
-            .cards-fixed{
+          @media only screen and (max-width: 450px) {
+            .cards-fixed-usuariosInicio {
               padding-top: 25%;
             }
-            @media only screen and (max-width: 355px){
-              .cards-fixed{
+            @media only screen and (max-width: 355px) {
+              .cards-fixed-usuariosInicio {
                 padding-top: 27%;
               }
             }
@@ -562,7 +562,6 @@
     }
   }
 }
-
 
 /* Scroll Personalizado */
 .div_Padre_UsuariosInicio::-webkit-scrollbar {

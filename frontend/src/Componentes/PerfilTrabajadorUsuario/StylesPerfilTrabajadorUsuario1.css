@@ -167,7 +167,7 @@
 }
 .boton-Solicitar-PerfilTrabajadorUsuario1:hover {
   background-color: black;
-  border:white solid 3px;
+  border: white solid 3px;
   color: white;
   transition: all 100ms;
   text-decoration: none;
@@ -265,6 +265,54 @@
             padding-top: 10px;
             padding-bottom: 20px;
             font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed-perfilTrabajador-usuario1 {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.informacion-fixed-perfilTrabajador-usuario1 {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .informacion-fixed-perfilTrabajador-usuario1 {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .informacion-fixed-perfilTrabajador-usuario1 {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .informacion-fixed-perfilTrabajador-usuario1 {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .informacion-fixed-perfilTrabajador-usuario1 {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .informacion-fixed-perfilTrabajador-usuario1 {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .informacion-fixed-perfilTrabajador-usuario1 {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .informacion-fixed-perfilTrabajador-usuario1 {
+                padding-top: 27%;
+              }
+            }
           }
         }
       }

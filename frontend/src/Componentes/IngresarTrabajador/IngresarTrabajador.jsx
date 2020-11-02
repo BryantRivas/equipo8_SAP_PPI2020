@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const IngresarTrabajador = () => {
   return (
     <div>
+      <header>
+      <nav className="menu-fixed-ingresarTrabajador">
       <div className="btnFlechaRegistroBarberos">
         <div className="btnRegistroBarberos">
           <Link to="/Inicio">
@@ -29,7 +31,9 @@ const IngresarTrabajador = () => {
           </div>
         </div>
       </div>
-
+      </nav>
+      </header>
+      <div className="campos-fixed-ingresarTrabajador">
       <div className="divFatherIngresarTrabajador">
         <div className="divFormIngresarTrabajador">
           <h1 className="h1IngresarTrabajador">Iniciar</h1>
@@ -96,6 +100,7 @@ const IngresarTrabajador = () => {
             </Link>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

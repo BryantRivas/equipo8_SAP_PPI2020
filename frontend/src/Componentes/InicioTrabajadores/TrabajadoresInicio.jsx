@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const TrabajadoresInicio = () => {
   return (
     <div className="divFatherIngresarTrabajador">
+      <header>
+      <nav className="menu-fixed-trabajadoresInicio">
       <div className="btnFlechaRegistroBarberos">
         <div className="btnRegistroBarberos">
           <Link to="/IngresarTrabajador">
@@ -28,6 +30,8 @@ const TrabajadoresInicio = () => {
           </div>
         </div>
       </div>
+      </nav>
+      </header>
       {/* 
       <div>
         <img
@@ -62,6 +66,7 @@ const TrabajadoresInicio = () => {
         />
       </div>
       */}
+      <div className="informacion-fixed-trabajadoresInicio">
       <div className="divGridFOTOTRABAJADORTrabajadoresInicio">
         <div className="divimgFotoPerfilTrabajadoresInicio">
           <Link to="/TrabajadoresInicio/MiPerfilComoTrabajador">
@@ -109,6 +114,7 @@ const TrabajadoresInicio = () => {
             AGENDA
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

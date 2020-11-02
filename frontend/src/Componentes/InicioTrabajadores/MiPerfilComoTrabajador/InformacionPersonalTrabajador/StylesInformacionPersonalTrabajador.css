@@ -246,3 +246,52 @@
     grid-template-rows: repeat(3,auto);
     row-gap: 20px;
 }
+
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed{
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 4px 3px rgb(0,0,0,0.5);
+  }
+  .cards-fixed{
+    padding-top: 9%;
+  }
+  @media only screen and (max-width: 1215px){
+    .cards-fixed{
+      padding-top: 12%;
+    }
+    @media only screen and (max-width: 930px){
+      .cards-fixed{
+        padding-top: 15%;
+      }
+      @media only screen and (max-width: 760px){
+        .cards-fixed{
+          padding-top: 18%;
+        }
+        @media only screen and (max-width: 620px){
+          .cards-fixed{
+            padding-top: 21%;
+          }
+          @media only screen and (max-width: 530px){
+            .cards-fixed{
+              padding-top: 24%;
+            }
+            @media only screen and (max-width: 450px){
+              .cards-fixed{
+                padding-top: 25%;
+              }
+              @media only screen and (max-width: 355px){
+                .cards-fixed{
+                  padding-top: 27%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

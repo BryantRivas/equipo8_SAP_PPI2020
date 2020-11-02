@@ -66,13 +66,11 @@
 .divimgPrincipalTrabajadoresInicio {
   grid-column: 2/3;
 }
-.divGridFOTOTRABAJADORTrabajadoresInicio{
+.divGridFOTOTRABAJADORTrabajadoresInicio {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
 }
-
-
 
 @media only screen and (max-width: 688px) {
   .imgLogoPrincipalTrabajadoresInicio {
@@ -164,15 +162,14 @@
       height: 100%;
     }
   }
-  @media only screen and (max-width: 400px){
+  @media only screen and (max-width: 400px) {
     .divGridPrincipalTrabajadoresInicio {
       display: flex;
       justify-content: center;
-
     }
     .divimgPrincipalTrabajadoresInicio {
-     display: flex;
-     justify-content: center;
+      display: flex;
+      justify-content: center;
     }
     .imgLogoPrincipalTrabajadoresInicio {
       width: 300px;
@@ -192,10 +189,9 @@
   }
 }
 
-
 /* POSICION DE LAS IMAGENES Y ANIMACION */
 
-.img-1-TrabajadoresInicio{
+.img-1-TrabajadoresInicio {
   width: 150px;
   height: 150px;
   position: absolute;
@@ -236,4 +232,52 @@
   position: absolute;
   top: 20%;
   right: 2%;
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed-trabajadoresInicio {
+  position: fixed;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+}
+.informacion-fixed-trabajadoresInicio {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .informacion-fixed-trabajadoresInicio {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .informacion-fixed-trabajadoresInicio {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .informacion-fixed-trabajadoresInicio {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .informacion-fixed-trabajadoresInicio {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .informacion-fixed-trabajadoresInicio {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .informacion-fixed-trabajadoresInicio {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .informacion-fixed-trabajadoresInicio {
+                padding-top: 27%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

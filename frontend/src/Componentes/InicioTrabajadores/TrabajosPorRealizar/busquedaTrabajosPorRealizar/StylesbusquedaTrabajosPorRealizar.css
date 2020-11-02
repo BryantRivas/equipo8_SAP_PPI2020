@@ -1,22 +1,69 @@
-.div-texto-buscar-buscarTrabajosPorRealizar{
-    font-weight: bold;
-    font-family: "Comfortaa", cursive;
-    color: black;
-    font-size: 300%;
+.div-texto-buscar-buscarTrabajosPorRealizar {
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  color: black;
+  font-size: 300%;
 }
-.input-buscar-buscarTabajosPorRealizar{
-    border-radius: 4px;
-    border: solid 2px black;
-    width: 90%;
-    font-family: "Comfortaa", cursive;
-    font-weight: bold;
-    padding-top: 4px;
-    padding-bottom: 4px;
+.input-buscar-buscarTabajosPorRealizar {
+  border-radius: 4px;
+  border: solid 2px black;
+  width: 90%;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
-.div-input-buscar-buscarTrabajosPorRealizar{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-bottom: solid 1px grey;
-    padding-bottom: 10px;
+.div-input-buscar-buscarTrabajosPorRealizar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px grey;
+  padding-bottom: 10px;
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed {
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 4px 3px rgb(0, 0, 0, 0.5);
+}
+.cards-fixed {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .cards-fixed {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .cards-fixed {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .cards-fixed {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .cards-fixed {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .cards-fixed {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .cards-fixed {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .cards-fixed {
+                padding-top: 27%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

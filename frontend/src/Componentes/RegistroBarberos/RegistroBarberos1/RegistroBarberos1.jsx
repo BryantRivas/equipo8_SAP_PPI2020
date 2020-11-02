@@ -42,6 +42,8 @@ function RegistroBarberos1() {
 
   return (
     <div>
+      <header>
+      <nav className="menu-fixed-registroBarberos-1">
       <div className="btnFlechaRegistroBarberos">
         <div className="btnRegistroBarberos">
           <Link to="/RegistroBarberos">
@@ -64,7 +66,9 @@ function RegistroBarberos1() {
           </div>
         </div>
       </div>
-
+      </nav>
+      </header>
+      <div className="campos-fixed-registroBarberos-1">
       <div className="DivFatherFather">
         <h1 className="h4Header">Registrarse</h1>
         <div className="divFather">
@@ -150,6 +154,7 @@ function RegistroBarberos1() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

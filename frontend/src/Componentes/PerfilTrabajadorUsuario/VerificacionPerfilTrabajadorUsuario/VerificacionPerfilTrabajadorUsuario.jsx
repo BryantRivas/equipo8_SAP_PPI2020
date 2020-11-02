@@ -11,6 +11,8 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
   render() {
     return (
       <div>
+        <header>
+        <div className="menu-fixed-verificacionPerfil-Trabajador">          
         <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/PerfilTrabajadorUsuario1">
@@ -33,7 +35,9 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
             </div>
           </div>
         </div>
-
+        </div>
+        </header>
+        <div className="informacion-fixed-verificacionPerfil-Trabajador">
         <div className="div-botones-inicioSesionUsuarios-Padre">
           <div className="div-botones-incioSesionUsuarios">
             <div className="div-div-boton-IniciarConFacebook">
@@ -119,6 +123,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
             voluptate atque error dolorum velit deleniti odio, asperiores
             incidunt? Voluptatum et quo commodi alias aspernatur laudantium?
           </div>
+        </div>
         </div>
       </div>
     );

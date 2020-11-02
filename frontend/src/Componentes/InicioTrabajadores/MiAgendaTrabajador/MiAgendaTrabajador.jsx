@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const MiAgendaTrabajador = () => {
   return (
     <div>
+      <header>
+      <nav className="menu-fixed-miAgendaTrabajador">
       <div className="btnFlechaRegistroBarberos">
           <div className="btnRegistroBarberos">
             <Link to="/TrabajadoresInicio">
@@ -28,9 +30,9 @@ const MiAgendaTrabajador = () => {
             </div>
           </div>
         </div>
-        <div>
-          
-        </div>
+        </nav>
+      </header>
+        <div className="informacion-fixed-miAgendaTrabajador">
         <div className="div-div-grid-botones-MiAgendaTrabajador">
           <div className="div-botones-centro-MiAgendaTrabajador">
           <button type="button" className="btn boton-MiAgendaTrabajador">
@@ -42,6 +44,7 @@ const MiAgendaTrabajador = () => {
             IR A GOOGLE CALENDAR
           </button>
           </div>
+        </div>
         </div>
     </div>
   );

@@ -164,12 +164,7 @@
   border: black solid 3px;
 }
 
-
-
-
 /* ------------------------------------------- */
-
-
 
 /* NUEVO DISEÑO RESPONSIVE */
 .img-perfil_trabajador-CardTrabajosPorRealizar {
@@ -341,7 +336,7 @@
 }
 .boton-Solicitar-CardTrabajosPorRealizar:hover {
   background-color: black;
-  border:white solid 3px;
+  border: white solid 3px;
   color: white;
   transition: all 100ms;
   text-decoration: none;
@@ -439,6 +434,53 @@
             padding-top: 10px;
             padding-bottom: 20px;
             font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* QUE LA BARRA SE QUEDE QUIETA */
+.menu-fixed {
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 4px 3px rgb(0, 0, 0, 0.5);
+}
+.cards-fixed {
+  padding-top: 9%;
+}
+@media only screen and (max-width: 1215px) {
+  .cards-fixed {
+    padding-top: 12%;
+  }
+  @media only screen and (max-width: 930px) {
+    .cards-fixed {
+      padding-top: 15%;
+    }
+    @media only screen and (max-width: 760px) {
+      .cards-fixed {
+        padding-top: 18%;
+      }
+      @media only screen and (max-width: 620px) {
+        .cards-fixed {
+          padding-top: 21%;
+        }
+        @media only screen and (max-width: 530px) {
+          .cards-fixed {
+            padding-top: 24%;
+          }
+          @media only screen and (max-width: 450px) {
+            .cards-fixed {
+              padding-top: 25%;
+            }
+            @media only screen and (max-width: 355px) {
+              .cards-fixed {
+                padding-top: 27%;
+              }
+            }
           }
         }
       }
