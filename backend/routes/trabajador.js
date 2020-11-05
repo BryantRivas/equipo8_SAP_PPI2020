@@ -23,7 +23,7 @@ trabajador.get('/trabajador', (req,res)=>{
 // OBJETIVO: La ingresar un usuario a la respectiva card de un trabajador de su agrado, 
 // podrá visualizar una información mucho más detallada acerca del trabajador, además podrá solicitarlo.
 // URL: /PerfilTrabajadorUsuario1
-trabajador.get('/trabajador/:id', (req,res)=>{
+trabajador.get('/trabajador/cardperfiltrabajador/:id', (req,res)=>{
     const { id } = req.params;
     mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
         if(!err){
@@ -39,7 +39,7 @@ trabajador.get('/trabajador/:id', (req,res)=>{
 // OBJETIVO: El trabajador en el apartado de “MI PERFIL”, puede consultar su información más personal,
 // además la puede modificar.
 // URL: /TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal
-trabajador.get('/trabajador/:id', (req,res)=>{
+trabajador.get('/trabajador/informacionpersonal/:id', (req,res)=>{
     const { id } = req.params;
     mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
         if(!err){
@@ -56,7 +56,7 @@ trabajador.get('/trabajador/:id', (req,res)=>{
 // foto de perfil, nombres, apellidos, tipo de trabajador, descripción. Además puede modificar en el momento que sea pertinente
 // sus datos.  
 // URL: /TrabajadoresInicio/MiPerfilComoTrabajador
-trabajador.get('/trabajador/:id', (req,res)=>{
+trabajador.get('/trabajador/miperfilcomotrabajador/:id', (req,res)=>{
     const { id } = req.params;
     mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
         if(!err){
@@ -108,7 +108,7 @@ trabajador.post('/nuevo-trabajador', (req,res)=>{
     });
 });
 
-// tercer servicio, actualizacion de la informacion de un trabajador GOOD PERO NO ACTUALIZA
+// tercer servicio, actualizacion de la informacion de un trabajador GOOD
 trabajador.put('/trabajador/put/:numero_id_trabajador', (req,res)=>{
     
     const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
