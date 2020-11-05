@@ -108,8 +108,8 @@ trabajador.post('/nuevo-trabajador', (req,res)=>{
     });
 });
 
-// tercer servicio, actualizacion de la informacion de un trabajador NOT GOOD
-trabajador.put('/trabajador/:id', (req,res)=>{
+// tercer servicio, actualizacion de la informacion de un trabajador GOOD PERO NO ACTUALIZA
+trabajador.put('/trabajador/put/:numero_id_trabajador', (req,res)=>{
     
     const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
     const { numero_id_trabajador } = req.params;
@@ -123,8 +123,8 @@ trabajador.put('/trabajador/:id', (req,res)=>{
     });
 });
 
-// cuarto servicio, eliminacion de un registro de una tabla NOT GOOD
-trabajador.delete('/trabajador:id', (req,res)=>{
+// cuarto servicio, eliminacion de un registro de una tabla GOOD
+trabajador.delete('/trabajador/delete/:numero_id_trabajador', (req,res)=>{
     const { numero_id_trabajador } = req.params;
 
     mysqlConnection.query('DELETE FROM trabajador WHERE numero_id_trabajador=?',[numero_id_trabajador], (err, rows, fields)=>{
