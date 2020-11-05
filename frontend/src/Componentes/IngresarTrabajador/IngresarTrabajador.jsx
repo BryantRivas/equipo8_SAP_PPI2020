@@ -96,7 +96,7 @@ const IngresarTrabajador = () => {
         <div className="divButonIngresarTrabajador">
           <div className="divbutonIngresarTrabajador_Principal">
             <Link className="" exact to="/TrabajadoresInicio">
-              <button className="btn ButonIngresarTrabajador">ENTRAR</button>
+              <button className="btn ButonIngresarTrabajador">Entrar</button>
             </Link>
           </div>
         </div>
