@@ -6,9 +6,15 @@ const mysqlConnection = require('../db/db');
 // Consultar todas las citas que se encuentran en la tabla cita
 // que poseen el numero_id_trabajador de un trabajador.
 
-// FALTA HACERLO BIEN
-cita.get('/cita', (req,res)=>{
-    mysqlConnection.query('SELECT * FROM cita', (err, rows, fields)=>{
+ 
+// TABLA: Trabajos realizados 
+// OBJETIVO: El trabajador puede visualizar los trabajos que a realizado, estos se visualizaran en forma de cards,
+// por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita,
+// y ya ha terminado.
+// URL: /TrabajadoresInicio/TrabajosRealizados
+cita.get('/cita/cards/:numero_id_trabajador', (req,res)=>{
+    const { numero_id_trabajador } = req.params;
+    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ?',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -18,14 +24,13 @@ cita.get('/cita', (req,res)=>{
 });
 
 
-// TRABAJOS POR REALIZAR 
-// TABLA: Información personal "INFORMACION MAS PERSONAL"
-// OBJETIVO: El trabajador en el apartado de “MI PERFIL”, puede consultar su información más personal,
-// además la puede modificar.
-// URL: /TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal
-cita.get('/cita/:id', (req,res)=>{
-    const { id } = req.params;
-    mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
+// TABLA: Trabajos por realizar 
+// OBJETIVO: El trabajador puede visualizar los trabajos que debe realizar, estos se visualizaran en forma de cards,
+// por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita. 
+// URL: /TrabajadoresInicio/TrabajosPorRealizar
+cita.get('/cita/cards/:numero_id_trabajador', (req,res)=>{
+    const { numero_id_trabajador } = req.params;
+    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ?',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -33,8 +38,6 @@ cita.get('/cita/:id', (req,res)=>{
         }
     });
 });
-
-
 
 
 

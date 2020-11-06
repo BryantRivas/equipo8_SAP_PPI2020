@@ -68,9 +68,62 @@ trabajador.get('/trabajador/miperfilcomotrabajador/:id', (req,res)=>{
 });
 
 
+// TABLA: Registro de trabajador 
+// OBJETIVO: Si el cliente que quiere ser trabajador de nuestra plataforma no cuenta con un registro en la base de datos,
+// podrá registrarse completando los datos necesarios; una vez los datos estén completamente diligenciados se enviaran a la 
+// base de datos.
+// URL: /RegistroBarberos/RegistroBarberos3
+trabajador.post('/nuevo-trabajador/registro', (req,res)=>{
+    const { direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
+    const trabajador = [  direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador ];
+
+    const nuevoTrabajador = `INSERT INTO trabajador(direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+
+    mysqlConnection.query(nuevoTrabajador, trabajador, (err, results, fields)=>{
+        if(err){
+            return console.error(err.message);
+        }else{
+            res.json({message: `trabajador agregado`});
+        }
+    });
+});
 
 
+// TABLA: Editar información personal
+// OBJETIVO: El trabajador podrá editar sus datos personales como lo son: correo, contraseña, dirección, 
+// número de teléfono, sexo, fecha de nacimiento y consto del trabajo.
+// URL: /TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal
+trabajador.put('/trabajador/put/editar-informacion-personal/:numero_id_trabajador', (req,res)=>{
+    
+    const { direccion_trabajador,contrasena_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador  } = req.body;
+    const { numero_id_trabajador } = req.params;
 
+    mysqlConnection.query(`UPDATE trabajador SET direccion_trabajador = ?,contrasena_trabajador = ?,telefono_trabajador = ?,correo_electronico_trabajador = ?, precio_trabajador = ? WHERE numero_id_trabajador= ?`, [ direccion_trabajador,contrasena_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se han actualizado los datos mas personales del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+
+// TABLA: Editar mi perfil como trabajador
+// OBJETIVO: El trabajador podrá editar sus datos del perfil como lo son su nombre, apellido, tipo de trabajador, su descripción y su foto de perfil.
+// URL: /TrabajadoresInicio/MiPerfilComoTrabajador
+trabajador.put('/trabajador/put/editar-mi-perfil-como-trabajador/editar-informacion-personal/:numero_id_trabajador', (req,res)=>{
+    
+    const { tipo_trabajador,nombres_trabajador,apellidos_trabajador,pais_trabajador,ciudad_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET tipo_trabajador = ?,nombres_trabajador = ?,apellidos_trabajador = ?,pais_trabajador = ?,ciudad_trabajador = ? WHERE numero_id_trabajador= ?`, [ tipo_trabajador,nombres_trabajador,apellidos_trabajador,pais_trabajador,ciudad_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se han actualizado los datos de mi perfil como trabajador del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
 
 
 
