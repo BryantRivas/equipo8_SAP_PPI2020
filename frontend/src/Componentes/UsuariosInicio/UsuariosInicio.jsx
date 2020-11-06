@@ -24,7 +24,7 @@ class inicioUsuarios extends Component {
               <button className="btn">
                 <img
                   className="InicioUsuariosFlecha"
-                  src="https://1.bp.blogspot.com/-Kx3H603WVwI/X07UEW5JQAI/AAAAAAAAHO8/dYMvzLNDFbk9N6QCHaanQQUFckaTGkW1gCLcBGAsYHQ/s1280/Retroseder.png"
+                  src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
                   alt="Retroceder"
                 />
               </button>
@@ -44,7 +44,7 @@ class inicioUsuarios extends Component {
             <button className="btn imgBuscarInicioUsuariosLogo">
               <img
                 className="imgBuscarInicioUsuariosBarppi"
-                src="https://1.bp.blogspot.com/--XV_byQLSAY/X1QgjWxRh3I/AAAAAAAAHP0/rGuxK8rYUWgFy0sQfftCmqohdBXqD1ugwCLcBGAsYHQ/s1280/BotonBuscarSinfondo.jpg"
+                src="https://1.bp.blogspot.com/-U4pggTu48lw/X6Ra_MTe7yI/AAAAAAAAIUc/6ZJ68yG58xMhVzSh_O3z4dH41Hg69JR7gCLcBGAsYHQ/s1053/Lupa.png"
                 alt="LogoBarppi"
               />
             </button>

@@ -27,7 +27,7 @@ class InformacionPersonalTrabajador extends Component {
               <button className="btn">
                 <img
                   className="RegistroBarberosFlecha"
-                  src="https://1.bp.blogspot.com/-Kx3H603WVwI/X07UEW5JQAI/AAAAAAAAHO8/dYMvzLNDFbk9N6QCHaanQQUFckaTGkW1gCLcBGAsYHQ/s1280/Retroseder.png"
+                  src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
                   alt="Retroceder"
                 />
               </button>
