@@ -1,7 +1,6 @@
 import React from "react";
 import "./StylesRegistroBarberos3.css";
 
-
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
@@ -15,7 +14,7 @@ function RegistroBarberos3() {
     PrimerNombre: "",
     SegundoNombre: "",
     PrimerApellido: "",
-    SegundoApellido: ""
+    SegundoApellido: "",
   });
 
   const handleInputChange = (event) => {
@@ -65,7 +64,10 @@ function RegistroBarberos3() {
           <div className="divFather">
             <div className="divBox">
               <h4 className="h1Header">Eres...</h4>
-              <form className="col FormMain1C" onSubmit={handleSubmit(onSubmit)}>
+              <form
+                className="col FormMain1C"
+                onSubmit={handleSubmit(onSubmit)}
+              >
                 <div className="divBoxes">
                   <p className="pCampoText">Eres...</p>
 
@@ -98,7 +100,7 @@ function RegistroBarberos3() {
                     data-target="#staticBackdrop"
                   >
                     Subir Fotografia
-                </button>
+                  </button>
 
                   <div
                     class="modal fade"
@@ -114,7 +116,7 @@ function RegistroBarberos3() {
                         <div class="modal-header">
                           <h5 class="modal-title" id="staticBackdropLabel">
                             Elige tu foto de perfil
-                        </h5>
+                          </h5>
                           <button
                             type="button"
                             className="close"
@@ -124,9 +126,7 @@ function RegistroBarberos3() {
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div className="modal-body">
-                          En esta parte ira
-                      </div>
+                        <div className="modal-body">En esta parte ira</div>
                         <div className="modal-footer">
                           <button
                             type="button"
@@ -134,7 +134,7 @@ function RegistroBarberos3() {
                             data-dismiss="modal"
                           >
                             Oky
-                        </button>
+                          </button>
                         </div>
                       </div>
                     </div>

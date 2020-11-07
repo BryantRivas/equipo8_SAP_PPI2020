@@ -7,30 +7,30 @@ const TrabajadoresInicio = () => {
   return (
     <div className="divFatherIngresarTrabajador">
       <header>
-      <nav className="menu-fixed-trabajadoresInicio">
-      <div className="btnFlechaRegistroBarberos">
-        <div className="btnRegistroBarberos">
-          <Link to="/IngresarTrabajador">
-            <button className="btn">
-              <img
-                className="RegistroBarberosFlecha"
-                src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
-                alt="Retroceder"
-              />
-            </button>
-          </Link>
-        </div>
-        <div className="divimgRegistroBarberosBarppi">
-          <div className="imgRegistroBarberosLogo">
-            <img
-              className="imgRegistroBarberosBarppi"
-              src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
-              alt="LogoBarppi"
-            />
+        <nav className="menu-fixed-trabajadoresInicio">
+          <div className="btnFlechaRegistroBarberos">
+            <div className="btnRegistroBarberos">
+              <Link to="/IngresarTrabajador">
+                <button className="btn">
+                  <img
+                    className="RegistroBarberosFlecha"
+                    src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
+                    alt="Retroceder"
+                  />
+                </button>
+              </Link>
+            </div>
+            <div className="divimgRegistroBarberosBarppi">
+              <div className="imgRegistroBarberosLogo">
+                <img
+                  className="imgRegistroBarberosBarppi"
+                  src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
+                  alt="LogoBarppi"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      </nav>
+        </nav>
       </header>
       {/* 
       <div>
@@ -67,54 +67,54 @@ const TrabajadoresInicio = () => {
       </div>
       */}
       <div className="informacion-fixed-trabajadoresInicio">
-      <div className="divGridFOTOTRABAJADORTrabajadoresInicio">
-        <div className="divimgFotoPerfilTrabajadoresInicio">
-          <Link to="/TrabajadoresInicio/MiPerfilComoTrabajador">
-            <button className="btn BTN300">
-              <img
-                className="imgLogoFotoPerfilTrabajadoresInicio"
-                src="https://www.scalperstudio.com/wp-content/uploads/2019/02/Daniel-Castillo-600x900.jpg"
-                alt=""
-              />
+        <div className="divGridFOTOTRABAJADORTrabajadoresInicio">
+          <div className="divimgFotoPerfilTrabajadoresInicio">
+            <Link to="/TrabajadoresInicio/MiPerfilComoTrabajador">
+              <button className="btn BTN300">
+                <img
+                  className="imgLogoFotoPerfilTrabajadoresInicio"
+                  src="https://www.scalperstudio.com/wp-content/uploads/2019/02/Daniel-Castillo-600x900.jpg"
+                  alt=""
+                />
 
-              <div className="divMiPerfilTrabajadoresInicio">MI PERFIL</div>
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <div>
-        <div className="divGridPrincipalTrabajadoresInicio">
-          <div className="divimgPrincipalTrabajadoresInicio">
-            <img
-              className="imgLogoPrincipalTrabajadoresInicio"
-              src="https://1.bp.blogspot.com/-03a8qmALrxM/X03AZ0jV5LI/AAAAAAAAHOc/AVcOiDX1mvEM45J9VASPR9coUqJJRaZ2gCLcBGAsYHQ/s1000/Barppilogo.png"
-              alt=""
-            />
+                <div className="divMiPerfilTrabajadoresInicio">MI PERFIL</div>
+              </button>
+            </Link>
           </div>
         </div>
 
-        <div className="divBotonesTrabajadoresInicio">
-          <Link
-            className="btn ButonTrabajadoresInicio"
-            to="/TrabajadoresInicio/TrabajosPorRealizar"
-          >
-            TRABAJOS POR REALIZAR
-          </Link>
-          <Link
-            className="btn ButonTrabajadoresInicio"
-            to="/TrabajadoresInicio/TrabajosRealizados"
-          >
-            TRABAJOS REALIZADOS
-          </Link>
-          <Link
-            to="/TrabajadoresInicio/MiAgendaTrabajador"
-            className="btn ButonTrabajadoresInicio"
-          >
-            AGENDA
-          </Link>
+        <div>
+          <div className="divGridPrincipalTrabajadoresInicio">
+            <div className="divimgPrincipalTrabajadoresInicio">
+              <img
+                className="imgLogoPrincipalTrabajadoresInicio"
+                src="https://1.bp.blogspot.com/-03a8qmALrxM/X03AZ0jV5LI/AAAAAAAAHOc/AVcOiDX1mvEM45J9VASPR9coUqJJRaZ2gCLcBGAsYHQ/s1000/Barppilogo.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="divBotonesTrabajadoresInicio">
+            <Link
+              className="btn ButonTrabajadoresInicio"
+              to="/TrabajadoresInicio/TrabajosPorRealizar"
+            >
+              TRABAJOS POR REALIZAR
+            </Link>
+            <Link
+              className="btn ButonTrabajadoresInicio"
+              to="/TrabajadoresInicio/TrabajosRealizados"
+            >
+              TRABAJOS REALIZADOS
+            </Link>
+            <Link
+              to="/TrabajadoresInicio/MiAgendaTrabajador"
+              className="btn ButonTrabajadoresInicio"
+            >
+              AGENDA
+            </Link>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

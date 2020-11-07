@@ -52,10 +52,16 @@ const InicioPrincipal = () => {
 
         <div className="divInicioPrincipalBot">
           <div className="divInicioPrincipal">
-            <Link className="btn btnInicioPrincipalU boton2" to="/UsuariosInicio">
+            <Link
+              className="btn btnInicioPrincipalU boton2"
+              to="/UsuariosInicio"
+            >
               USUARIO
             </Link>
-            <Link to="/IngresarTrabajador" className="btn btnInicioPrincipalT boton">
+            <Link
+              to="/IngresarTrabajador"
+              className="btn btnInicioPrincipalT boton"
+            >
               TRABAJADOR
             </Link>
           </div>

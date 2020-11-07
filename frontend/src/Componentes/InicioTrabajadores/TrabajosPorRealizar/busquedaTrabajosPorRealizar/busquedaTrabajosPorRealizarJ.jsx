@@ -14,34 +14,36 @@ class busquedaTrabajosPorRealizarJ extends Component {
     return (
       <div>
         <header>
-        <nav className="menu-fixed-busqueda-trabajos-por-realizar">
-        <div className="btnFlechaRegistroBarberos">
-          <div className="btnRegistroBarberos">
-            <Link to="/TrabajadoresInicio/TrabajosPorRealizar">
-              <button className="btn">
-                <img
-                  className="RegistroBarberosFlecha"
-                  src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
-                  alt="Retroceder"
-                />
-              </button>
-            </Link>
-          </div>
-          <div className="divimgRegistroBarberosBarppi">
-            <div className="imgRegistroBarberosLogo">
-              <img
-                className="imgRegistroBarberosBarppi"
-                src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
-                alt="LogoBarppi"
-              />
+          <nav className="menu-fixed-busqueda-trabajos-por-realizar">
+            <div className="btnFlechaRegistroBarberos">
+              <div className="btnRegistroBarberos">
+                <Link to="/TrabajadoresInicio/TrabajosPorRealizar">
+                  <button className="btn">
+                    <img
+                      className="RegistroBarberosFlecha"
+                      src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
+                      alt="Retroceder"
+                    />
+                  </button>
+                </Link>
+              </div>
+              <div className="divimgRegistroBarberosBarppi">
+                <div className="imgRegistroBarberosLogo">
+                  <img
+                    className="imgRegistroBarberosBarppi"
+                    src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
+                    alt="LogoBarppi"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        </nav>
+          </nav>
         </header>
 
         <div className="busqueda-fixed-trabajos-por-realizar">
-          <div className="div-texto-buscar-buscarTrabajosPorRealizar">Buscar</div>
+          <div className="div-texto-buscar-buscarTrabajosPorRealizar">
+            Buscar
+          </div>
           <div className="div-input-buscar-buscarTrabajosPorRealizar">
             <input
               placeholder="Nombre del trabajo por realizar"

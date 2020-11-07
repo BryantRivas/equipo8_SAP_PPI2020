@@ -1,7 +1,6 @@
 import React from "react";
 import "./StylesRegistroBarberos.css";
 
-
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
@@ -15,7 +14,7 @@ function RegistroBarberos1() {
     PrimerNombre: "",
     SegundoNombre: "",
     PrimerApellido: "",
-    SegundoApellido: ""
+    SegundoApellido: "",
   });
 
   const handleInputChange = (event) => {
@@ -64,7 +63,10 @@ function RegistroBarberos1() {
           <div className="divFather">
             <div className="divBox">
               <h4 className="1Header">Correo y Contraseña</h4>
-              <form className="col FormMain1C" onSubmit={handleSubmit(onSubmit)}>
+              <form
+                className="col FormMain1C"
+                onSubmit={handleSubmit(onSubmit)}
+              >
                 <div className="divBoxes">
                   <p className="pCampoText">Correo</p>
                   <input

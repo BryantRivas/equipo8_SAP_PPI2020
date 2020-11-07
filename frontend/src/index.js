@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
+import Popper from "popper.js";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import InicioAppP from "./Paginas/InicioAppP";
 import InicioPrincipalP from "./Paginas/InicioPrincipalP";
@@ -28,14 +28,11 @@ import BusquedaTrabajosRealizadosP from "./Paginas/BusquedaTrabajosRealizadosP";
 import BusquedaTrabajosPorRealizarP from "./Paginas/BusquedaTrabajosPorRealizarP";
 import BuscarTrabajadorUsuariosInicioP from "./Paginas/BuscarTrabajadorUsuariosInicioP";
 
-
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-     <Router>
-      
+    <Router>
       <Switch>
         <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar">
           <TrabajosPorRealizarP />
@@ -45,24 +42,34 @@ ReactDOM.render(
           <BuscarTrabajadorUsuariosInicioP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar">
+        <Route
+          exact
+          path="/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar"
+        >
           <BusquedaTrabajosPorRealizarP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/TrabajosRealizados/busquedaTrabajosRealizados">
+        <Route
+          exact
+          path="/TrabajadoresInicio/TrabajosRealizados/busquedaTrabajosRealizados"
+        >
           <BusquedaTrabajosRealizadosP />
         </Route>
 
-
-
-        <Route exact path="/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados">
+        <Route
+          exact
+          path="/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados"
+        >
           <CardTrabajosRealizadosP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar">
+        <Route
+          exact
+          path="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar"
+        >
           <CardTrabajosPorRealizarP />
         </Route>
-        
+
         <Route exact path="/TrabajadoresInicio/TrabajosRealizados">
           <TrabajosRealizadosP />
         </Route>
@@ -78,7 +85,7 @@ ReactDOM.render(
         <Route exact path="/PerfilTrabajadorUsuario2">
           <VerificacionPerfilTrabajadorUsuario2P />
         </Route>
-        
+
         <Route exact path="/RegistroBarberos">
           <RegistroBarberosP />
         </Route>
@@ -108,7 +115,10 @@ ReactDOM.render(
           <MiPerfilComoTrabajadorP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal">
+        <Route
+          exact
+          path="/TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal"
+        >
           <InformacionPersonalTrabajadorP />
         </Route>
 
@@ -119,9 +129,8 @@ ReactDOM.render(
         <Route exact path="/">
           <InicioAppP />
         </Route>
-
       </Switch>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

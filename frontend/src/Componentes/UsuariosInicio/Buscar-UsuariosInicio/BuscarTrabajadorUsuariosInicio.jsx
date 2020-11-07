@@ -14,34 +14,36 @@ class BuscarTrabajadorUsuariosInicio extends Component {
     return (
       <div>
         <header>
-        <nav className="menu-fixed-buscarTrabajador">
-        <div className="btnFlechaRegistroBarberos">
-          <div className="btnRegistroBarberos">
-            <Link to="/UsuariosInicio">
-              <button className="btn">
-                <img
-                  className="RegistroBarberosFlecha"
-                  src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
-                  alt="Retroceder"
-                />
-              </button>
-            </Link>
-          </div>
-          <div className="divimgRegistroBarberosBarppi">
-            <div className="imgRegistroBarberosLogo">
-              <img
-                className="imgRegistroBarberosBarppi"
-                src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
-                alt="LogoBarppi"
-              />
+          <nav className="menu-fixed-buscarTrabajador">
+            <div className="btnFlechaRegistroBarberos">
+              <div className="btnRegistroBarberos">
+                <Link to="/UsuariosInicio">
+                  <button className="btn">
+                    <img
+                      className="RegistroBarberosFlecha"
+                      src="https://1.bp.blogspot.com/-OYlVxSxCItI/X6Ra_EEz0kI/AAAAAAAAIUY/dP6wDIIGGwY5LXcU-M4KM972oLfNJruOwCLcBGAsYHQ/s1054/Flecha.png"
+                      alt="Retroceder"
+                    />
+                  </button>
+                </Link>
+              </div>
+              <div className="divimgRegistroBarberosBarppi">
+                <div className="imgRegistroBarberosLogo">
+                  <img
+                    className="imgRegistroBarberosBarppi"
+                    src="https://1.bp.blogspot.com/-5RT03EhuKo4/X03AaXpDoPI/AAAAAAAAHOo/rQpTJBbrX-8J66PwoQjW_GsjKrrZAAysACLcBGAsYHQ/s1000/Blogo.png"
+                    alt="LogoBarppi"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        </nav>
+          </nav>
         </header>
 
         <div className="buscar-fixed-buscarTrabajador">
-          <div className="div-texto-buscar-buscarTrabajosPorRealizar">Buscar</div>
+          <div className="div-texto-buscar-buscarTrabajosPorRealizar">
+            Buscar
+          </div>
           <div className="div-input-buscar-buscarTrabajosPorRealizar">
             <input
               placeholder="Nombre del trabajador"
