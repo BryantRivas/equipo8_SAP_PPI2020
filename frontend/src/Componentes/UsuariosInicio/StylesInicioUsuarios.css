@@ -44,11 +44,11 @@
   grid-row: 1/2;
 }
 .imgBuscarInicioUsuariosLogo {
-  padding: 0%;
+  padding: 10px;
 }
 .imgBuscarInicioUsuariosBarppi {
-  width: 140px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 .imgFotoPerfilUsuariosInicio {
   display: flex;
@@ -399,15 +399,15 @@
               width: 100%;
             }
             .InicioUsuariosFlecha {
-              width: 80px;
-              height: 50px;
+              width: 60px;
+              height: 60px;
             }
             .imgInicioUsuariosBarppi {
               width: 80px;
               height: 80px;
             }
             .imgBuscarInicioUsuariosBarppi {
-              width: 118px;
+              width: 60px;
               height: 60px;
             }
             @media only screen and (max-width: 400px) {
@@ -447,15 +447,15 @@
                 width: 100%;
               }
               .InicioUsuariosFlecha {
-                width: 80px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
               }
               .imgInicioUsuariosBarppi {
                 width: 80px;
                 height: 80px;
               }
               .imgBuscarInicioUsuariosBarppi {
-                width: 118px;
+                width: 60px;
                 height: 60px;
               }
               @media only screen and (max-width: 340px) {
@@ -496,15 +496,15 @@
                 }
                 .InicioUsuariosFlecha {
                   width: 50px;
-                  height: 30px;
-                }
-                .imgInicioUsuariosBarppi {
-                  width: 50px;
                   height: 50px;
                 }
+                .imgInicioUsuariosBarppi {
+                  width: 60px;
+                  height: 60px;
+                }
                 .imgBuscarInicioUsuariosBarppi {
-                  width: 80px;
-                  height: 40px;
+                  width: 45px;
+                  height: 45px;
                 }
               }
             }

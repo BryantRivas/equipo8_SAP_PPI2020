@@ -14,7 +14,7 @@ function RegistroBarberos() {
     PrimerNombre: "",
     SegundoNombre: "",
     PrimerApellido: "",
-    SegundoApellido: "",
+    SegundoApellido: ""
   });
 
   const handleInputChange = (event) => {

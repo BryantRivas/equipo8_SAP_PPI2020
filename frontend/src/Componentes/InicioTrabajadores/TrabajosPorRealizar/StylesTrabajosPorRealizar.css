@@ -131,8 +131,8 @@
   grid-row: 1/2;
 }
 .TrabajosPorRealizar_Flecha {
-  width: 100px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
 }
 .divimg_TrabajosPorRealizar {
   display: flex;
@@ -153,10 +153,10 @@
   grid-row: 1/2;
 }
 .imgBuscar_TrabajosPorRealizar_Logo {
-  padding: 0%;
+  padding: 10px;
 }
 .imgBuscar_TrabajosPorRealizar_Barppi {
-  width: 140px;
+  width: 80px;
   height: 80px;
 }
 
@@ -330,16 +330,16 @@
             text-decoration: none;
           }
           .imgBuscar_TrabajosPorRealizar_Barppi {
-            width: 110px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
           }
           .img_TrabajosPorRealizar_Barppi {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
           }
           .TrabajosPorRealizar_Flecha {
-            width: 80px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
           }
           @media only screen and (max-width: 360px) {
             .Nombre_Trabajador_TrabajosPorRealizar {
@@ -369,16 +369,16 @@
               height: 60px;
             }
             .imgBuscar_TrabajosPorRealizar_Barppi {
-              width: 110px;
-              height: 50px;
+              width: 60px;
+              height: 60px;
             }
             .img_TrabajosPorRealizar_Barppi {
-              width: 70px;
-              height: 70px;
+              width: 80px;
+              height: 80px;
             }
             .TrabajosPorRealizar_Flecha {
-              width: 80px;
-              height: 50px;
+              width: 55px;
+              height: 55px;
             }
             @media only screen and (max-width: 310px) {
               .Nombre_Trabajador_TrabajosPorRealizar {
@@ -408,16 +408,16 @@
                 height: 55px;
               }
               .imgBuscar_TrabajosPorRealizar_Barppi {
-                width: 90px;
-                height: 40px;
+                width: 55px;
+                height: 55px;
               }
               .img_TrabajosPorRealizar_Barppi {
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
               }
               .TrabajosPorRealizar_Flecha {
-                width: 70px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
               }
               @media only screen and (max-width: 260px) {
                 .Nombre_Trabajador_TrabajosPorRealizar {
@@ -447,16 +447,16 @@
                   height: 50px;
                 }
                 .imgBuscar_TrabajosPorRealizar_Barppi {
-                  width: 90px;
-                  height: 40px;
+                  width: 45px;
+                  height: 45px;
                 }
                 .img_TrabajosPorRealizar_Barppi {
                   width: 60px;
                   height: 60px;
                 }
                 .TrabajosPorRealizar_Flecha {
-                  width: 70px;
-                  height: 40px;
+                  width: 45px;
+                  height: 45px;
                 }
                 .divCardTrabajosPorRealizar {
                   padding-left: 1%;

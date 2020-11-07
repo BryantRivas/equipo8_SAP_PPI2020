@@ -12,10 +12,10 @@ function RegistroBarberos1() {
   const { register, handleSubmit, errors } = useForm();
 
   const [datos, setdatos] = useState({
-    ConfirmarCorreo: "",
-    Correo: "",
-    Contrasena: "",
-    ConfirmarContrasena: ""
+    PrimerNombre: "",
+    SegundoNombre: "",
+    PrimerApellido: "",
+    SegundoApellido: ""
   });
 
   const handleInputChange = (event) => {
