@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
     }
 });
 
+
 const cargImage = multer({
     storage,
     limits:{
@@ -37,11 +38,6 @@ routes.post('/images/uploads', (req, res)=>{
         };
     })
 })
-
-
-
-
-
 
 
 
