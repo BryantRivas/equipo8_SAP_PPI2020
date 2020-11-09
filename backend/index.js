@@ -1,11 +1,20 @@
 'use strict';
 //IMPORTACIÓN DE LOS ELEMENTOS A UTILIZAR
 const express = require('express');
+
+//path para utilizar el dirname
 const path = require('path');
+
 const morgan = require('morgan');
 const trabajador = require('./routes/trabajador');
 const cita = require('./routes/cita');
 const cliente = require('./routes/cliente');
+
+// Para subir archivos
+const multer = require('multer');
+// uuid para cambiar el nombre de los archivos
+const uuid = require('uuid');
+
 // Inicializacion de espress
 const app = express();
 
@@ -27,6 +36,22 @@ app.get('/', (req, res) => {
 app.use('/api', trabajador);
 app.use('/api/cliente', cliente);
 app.use('/api/cita', cita);
+
+
+// Esta es la parte donde se realiza la parte de subir una imagen o archivo
+// Middlewares necesarios 
+
+// multer middleware
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, 'public/uploads'),
+    filename: (req,file, cb) => {
+        cb(null, uuid() + path.extname(file.originalname));
+    }
+});
+
+app.use(multer({storage}).single('image'));
+
+
 
 
 
