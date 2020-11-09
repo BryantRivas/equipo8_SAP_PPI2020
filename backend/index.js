@@ -45,13 +45,14 @@ app.use('/api/cita', cita);
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/uploads'),
     filename: (req,file, cb) => {
-        cb(null, uuid() + path.extname(file.originalname));
+        cb(null, uuid + path.extname(file.originalname));
     }
 });
 
 app.use(multer({storage}).single('image'));
 
-
+//routes use
+app.use(require('./routes/routes'));
 
 
 
