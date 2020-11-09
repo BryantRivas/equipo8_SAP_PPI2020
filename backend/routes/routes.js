@@ -26,6 +26,7 @@ const cargImage = multer({
 }).single('image');
 
 
+// Esta es la funcion para realizar la subida de una imagen o un documento a la carpeta dentro de public y uploads
 routes.post('/images/uploads', (req, res)=>{
     cargImage(req, res, (err) =>{
         if(err){

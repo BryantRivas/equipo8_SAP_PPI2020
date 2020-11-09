@@ -13,7 +13,7 @@ const cliente = require('./routes/cliente');
 // Para subir archivos
 const multer = require('multer');
 // uuid para cambiar el nombre de los archivos
-const uuid = require('uuid');
+const { uuid    } = require('uuidv4');
 
 // Inicializacion de espress
 const app = express();
@@ -45,7 +45,7 @@ app.use('/api/cita', cita);
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/uploads'),
     filename: (req,file, cb) => {
-        cb(null, uuid + path.extname(file.originalname));
+        cb(null, uuid() + path.extname(file.originalname));
     }
 });
 
