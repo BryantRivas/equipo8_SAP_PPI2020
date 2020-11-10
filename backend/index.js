@@ -13,7 +13,7 @@ const cliente = require('./routes/cliente');
 // Para subir archivos
 const multer = require('multer');
 // uuid para cambiar el nombre de los archivos
-const { uuid    } = require('uuidv4');
+const { uuid } = require('uuidv4');
 
 // Inicializacion de espress
 const app = express();
@@ -53,7 +53,6 @@ app.use(multer({storage}).single('image'));
 
 //routes use
 app.use(require('./routes/routes'));
-
 
 
 
