@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./StylesInicioUsuarios.css";
 
 import { Link } from "react-router-dom";
@@ -6,11 +7,26 @@ import { Link } from "react-router-dom";
 class inicioUsuarios extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      datos: []
+    };
+  }
+  
+  componentDidMount(){
+    axios.get('https://rickandmortyapi.com/api/character')
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datos: res.data.results
+        })
+    }).catch(err=>{
+      console.log(err.massage)
+    })
   }
 
   render() {
-    const { data1 } = this.props;
+    console.log(this.state.datos)
+    const characters = this.state.datos;
 
     return (
       <div className="div_Padre_UsuariosInicio">
@@ -51,8 +67,11 @@ class inicioUsuarios extends Component {
             </div>
           </nav>
         </header>
+
+
+
         <div className="cards-fixed-usuariosInicio">
-          {data1.map((datosT, index) => {
+          {characters.map((datosT) => {
             return (
               <div className="divCardUsuariosInicio">
                 <div className="card ">
@@ -61,7 +80,7 @@ class inicioUsuarios extends Component {
                       <div className="imgdivcenterFotoPerfil_UsuariosInicio">
                         <img
                           className="imgFotoPerfilUsuariosInicio"
-                          src={datosT.fototrabajador}
+                          src={datosT.image}
                           alt="Foto_Perfil"
                         />
                       </div>
@@ -71,8 +90,7 @@ class inicioUsuarios extends Component {
                         <div className="div_Grid_TopCard_UsuariosInicio">
                           <div className="div-Nombre_Trabajador_UsuariosInicio">
                             <h3 className="Nombre_Trabajador_UsuariosInicio">
-                              {datosT.primernombre} {datosT.segundonombre}{" "}
-                              {datosT.primerapellido} {datosT.segundoapellido}
+                              {datosT.name}
                             </h3>
                           </div>
 
@@ -107,6 +125,9 @@ class inicioUsuarios extends Component {
             );
           })}
         </div>
+
+
+
       </div>
     );
   }
