@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { useForm } from "react-hook-form";
 
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function RegistroBarberos3() {
   const { register, handleSubmit, errors } = useForm();
