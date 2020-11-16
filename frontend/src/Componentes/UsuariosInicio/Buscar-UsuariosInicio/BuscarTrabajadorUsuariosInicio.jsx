@@ -10,7 +10,6 @@ class BuscarTrabajadorUsuariosInicio extends Component {
   }
 
   render() {
-    const { data1 } = this.props;
     return (
       <div>
         <header>

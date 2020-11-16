@@ -7,10 +7,10 @@ const mysqlConnection = mysql.createConnection({
     database: 'barppi',
     multipleStatements: true
     */
-    host: 'bhaqbqsi7rk3cziponvh-mysql.services.clever-cloud.com',
-    user: 'ugi91hgl8n5pxl9y',
-    password: 'VyzFXw4cLJ70jn92a5Fl',
-    database: 'bhaqbqsi7rk3cziponvh',
+    host: 'bvqlsznzogljhux9cl4n-mysql.services.clever-cloud.com',
+    user: 'unuhd0ihp409jhdi',
+    password: '5CCWg51ZVo8Y5eaA7HdF',
+    database: 'bvqlsznzogljhux9cl4n',
     multipleStatements: true
 });
 
