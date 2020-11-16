@@ -1,14 +1,35 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./StylesPerfilTrabajadorUsuario1.css";
 
 import { Link } from "react-router-dom";
 
+
+
+
 class PerfilTrabajadorUsuario1 extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      datos: []
+    };
+  }
+  
+  componentDidMount(){
+    axios.get(`https://rickandmortyapi.com/api/character`)
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datos: res.data
+        })
+    }).catch(err=>{
+      console.log(err.massage)
+    })
   }
   render() {
+    console.log(this.state.datos)
+    const characters = this.state.datos;
+
     return (
       <div>
         <header>
@@ -37,13 +58,16 @@ class PerfilTrabajadorUsuario1 extends Component {
             </div>
           </nav>
         </header>
+
+
+
         <div className="informacion-fixed-perfilTrabajador-usuario1">
           <div className="div-top-PerfilTrabajadorUsuario1">
             <div className="div-img-perfil_trabajador-PerfilTrabajadorUsuario1">
               <div className="div-div-img-perfil_trabajador-PerfilTrabajadorUsuario1">
                 <img
                   className="img-perfil_trabajador-PerfilTrabajadorUsuario1"
-                  src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6"
+                  src={characters.image}
                   alt=""
                 />
               </div>
@@ -114,13 +138,15 @@ class PerfilTrabajadorUsuario1 extends Component {
             <div className="div-div-boton-bot-SOLICITAR-PerfilTrabajadorUsuario1">
               <Link
                 className="btn boton-Solicitar-PerfilTrabajadorUsuario1"
-                to="/PerfilTrabajadorUsuario2"
+                to={`/PerfilTrabajadorUsuario2/${characters.id}`}
               >
                 SOLICITAR
               </Link>
             </div>
           </div>
         </div>
+
+
       </div>
     );
   }

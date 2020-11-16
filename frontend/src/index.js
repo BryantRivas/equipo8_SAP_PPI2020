@@ -78,11 +78,11 @@ ReactDOM.render(
           <UsuariosInicioP />
         </Route>
 
-        <Route exact path="/PerfilTrabajadorUsuario1">
+        <Route exact path="/PerfilTrabajadorUsuario1/:id">
           <PerfilTrabajadorUsuario1P />
         </Route>
 
-        <Route exact path="/PerfilTrabajadorUsuario2">
+        <Route exact path="/PerfilTrabajadorUsuario2/:id">
           <VerificacionPerfilTrabajadorUsuario2P />
         </Route>
 

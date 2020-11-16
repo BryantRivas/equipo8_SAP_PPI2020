@@ -93,11 +93,10 @@ class inicioUsuarios extends Component {
                               {datosT.name}
                             </h3>
                           </div>
-
                           <div className="divButtonSolicitarUsuariosInicio">
                             <Link
                               className="btn ButonUsuariosInicio"
-                              to="/PerfilTrabajadorUsuario1"
+                              to={`/PerfilTrabajadorUsuario1/${datosT.id}`}
                             >
                               Solicitar
                             </Link>

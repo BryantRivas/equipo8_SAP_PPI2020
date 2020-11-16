@@ -8,6 +8,10 @@ class TrabajosRealizados extends Component {
     super(props);
     this.state = {};
   }
+
+
+  
+
   render() {
     const { data1 } = this.props;
     return (

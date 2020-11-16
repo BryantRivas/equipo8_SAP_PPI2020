@@ -1,14 +1,33 @@
 import React, { Component } from "react";
 import "./StylesVerificacionPerfilTrabajadorUsuario.css";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
 class VerificacionPerfilTrabajadorUsuario extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      datos: []
+    };
   }
+  
+  componentDidMount(){
+    axios.get(`https://rickandmortyapi.com/api/character/4`)
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datos: res.data
+        })
+    }).catch(err=>{
+      console.log(err.massage)
+    })
+  }
+
   render() {
+    console.log(this.state.datos)
+    const characters = this.state.datos
+
     return (
       <div>
         <header>
@@ -37,6 +56,9 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
             </div>
           </div>
         </header>
+
+
+
         <div className="informacion-fixed-verificacionPerfil-Trabajador">
           <div className="div-botones-inicioSesionUsuarios-Padre">
             <div className="div-botones-incioSesionUsuarios">
@@ -125,6 +147,8 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
             </div>
           </div>
         </div>
+
+
       </div>
     );
   }
