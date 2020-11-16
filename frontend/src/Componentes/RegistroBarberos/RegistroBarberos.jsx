@@ -38,6 +38,13 @@ class RegistroBarberos extends Component {
     };
     console.log(user);
   };
+
+  validacionForm = () =>{
+    if(this.state.form.primerNombre.value == "" ){
+      console.log("Nombre invalido");
+    }
+  }
+
   render() {
     const datosForm = this.state.form;
     return (
@@ -83,6 +90,7 @@ class RegistroBarberos extends Component {
                       placeholder="Primer Nombre"
                       type="text"
                       name="primerNombre"
+                      autoComplete="off"
                       onChange={this.handleChange}
                       value={datosForm.primerNombre}
                     />
@@ -94,6 +102,7 @@ class RegistroBarberos extends Component {
                       placeholder="Segundo Nombre"
                       type="text"
                       name="segundoNombre"
+                      autoComplete="off"
                       onChange={this.handleChange}
                       value={datosForm.segundoNombre}
                     />
@@ -104,6 +113,7 @@ class RegistroBarberos extends Component {
                       className="form-control borderBox"
                       placeholder="Primer Apellido"
                       type="text"
+                      autoComplete="off"
                       name="primerApellido"
                       onChange={this.handleChange}
                       value={datosForm.primerApellido}
@@ -117,6 +127,7 @@ class RegistroBarberos extends Component {
                       placeholder="Segundo Apellido"
                       type="text"
                       name="segundoApellido"
+                      autoComplete="off"
                       onChange={this.handleChange}
                       value={datosForm.segundoApellido}
                     />
@@ -124,7 +135,7 @@ class RegistroBarberos extends Component {
                 </form>
                 <div className="DivButon">
                   <Link to="/RegistroBarberos/RegistroBarberos1">
-                    <button type="submit" className="btn Buton">
+                    <button type="submit" className="btn Buton" >
                       SIGUIENTE
                     </button>
                   </Link>
