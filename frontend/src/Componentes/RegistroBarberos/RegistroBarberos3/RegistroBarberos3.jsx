@@ -9,11 +9,40 @@ class RegistroBarberos3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {},
+      form3: {
+        tipoTrabajador: '',
+        Precio: '',
+        Descripcion: ''
+      },
     };
   }
 
+
+  handleChange = async (e) => {
+    e.persist();
+    await this.setState({
+      form3: {
+        ...this.state.form3,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form3);
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const user3 = {
+      tipoTrabajador: this.state.tipoTrabajador,
+      Precio: this.state.Precio,
+      Documento: this.state.Documento,
+      Descripcion: this.state.Descripcion,
+    };
+    console.log(user3);
+  };
+
+
   render() {
+    const datosForm3 = this.state.form3;
     return (
       <div>
         <header>
@@ -49,7 +78,7 @@ class RegistroBarberos3 extends Component {
             <div className="divFather">
               <div className="divBox">
                 <h4 className="h1Header">Eres...</h4>
-                <form className="col FormMain1C">
+                <form className="col FormMain1C" onSubmit={this.handleSubmit}>
                   <div className="divBoxes">
                     <p className="pCampoText">Eres...</p>
 
@@ -57,6 +86,9 @@ class RegistroBarberos3 extends Component {
                       class="form-control borderBox"
                       type="radio"
                       name="tipoTrabajador"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm3.tipoTrabajador}
                     >
                       <option selected>Eres...</option>
                       <option>Barbero</option>
@@ -98,7 +130,9 @@ class RegistroBarberos3 extends Component {
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <div className="modal-body">En esta parte ira</div>
+                          <div className="modal-body">
+                            En esta parte ira
+                            </div>
                           <div className="modal-footer">
                             <button
                               type="button"
@@ -119,6 +153,9 @@ class RegistroBarberos3 extends Component {
                       className="form-control borderBox"
                       type="number"
                       name="Precio"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm3.Precio}
                     />
                   </div>
 
@@ -129,6 +166,9 @@ class RegistroBarberos3 extends Component {
                       className="form-control borderBox"
                       type="text"
                       name="Descripcion"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm3.Descripcion}
                     />
                   </div>
                 </form>

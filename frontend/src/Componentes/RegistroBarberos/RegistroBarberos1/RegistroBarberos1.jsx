@@ -1,7 +1,7 @@
 import React from "react";
 import "./StylesRegistroBarberos.css";
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Component } from "react";
 
@@ -9,11 +9,43 @@ class RegistroBarberos1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {},
+      form1: {
+        Correo: '',
+        ConfirmarCorreo: '',
+        Contrasena: '',
+        ConfirmarContrasena: ''
+      },
     };
   }
 
+
+  handleChange = async (e) => {
+    e.persist();
+    await this.setState({
+      form1: {
+        ...this.state.form1,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form1);
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const user1 = {
+      Correo: this.state.Correo,
+      ConfirmarCorreo: this.state.ConfirmarCorreo,
+      Contrasena: this.state.Contrasena,
+      ConfirmarContrasena: this.state.ConfirmarContrasena,
+    };
+    console.log(user1);
+  };
+
+
+
+
   render() {
+    const datosForm1 = this.state.form1;
     return (
       <div>
         <header>
@@ -42,13 +74,15 @@ class RegistroBarberos1 extends Component {
             </div>
           </nav>
         </header>
+
+
         <div className="campos-fixed-registroBarberos-1">
           <div className="DivFatherFather">
             <h1 className="h4Header">Registrarse</h1>
             <div className="divFather">
               <div className="divBox">
                 <h4 className="1Header">Correo y Contraseña</h4>
-                <form className="col FormMain1C">
+                <form className="col FormMain1C" onSubmit={this.handleSubmit}>
                   <div className="divBoxes">
                     <p className="pCampoText">Correo</p>
                     <input
@@ -56,6 +90,9 @@ class RegistroBarberos1 extends Component {
                       className="form-control borderBox"
                       type="email"
                       name="Correo"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm1.Correo}
                     />
                   </div>
                   <div className="divBoxes">
@@ -65,6 +102,9 @@ class RegistroBarberos1 extends Component {
                       className="form-control borderBox"
                       type="email"
                       name="ConfirmarCorreo"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm1.ConfirmarCorreo}
                     />
                   </div>
                   <div className="divBoxes">
@@ -74,6 +114,9 @@ class RegistroBarberos1 extends Component {
                       className="form-control borderBox"
                       type="password"
                       name="Contrasena"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm1.Contrasena}
                     />
                   </div>
 
@@ -84,6 +127,9 @@ class RegistroBarberos1 extends Component {
                       className="form-control borderBox"
                       type="password"
                       name="ConfirmarContrasena"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm1.ConfirmarContrasena}
                     />
                   </div>
                 </form>

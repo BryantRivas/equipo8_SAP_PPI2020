@@ -16,7 +16,7 @@ class PerfilTrabajadorUsuario1 extends Component {
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character`)
+    axios.get(`https://rickandmortyapi.com/api/character/2`)
       .then(res =>{
         console.log(res.data)
         this.setState({

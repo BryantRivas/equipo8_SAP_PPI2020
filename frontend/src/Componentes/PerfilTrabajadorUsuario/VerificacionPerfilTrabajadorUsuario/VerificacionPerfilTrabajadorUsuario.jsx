@@ -13,7 +13,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/4`)
+    axios.get(`https://rickandmortyapi.com/api/character/2`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -119,7 +119,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
               <div className="div-div-grid-fotoDePerfil-VerificacionInformacion">
                 <img
                   className="img-fotoperfilTrabajador-VerificacionPerfil"
-                  src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6"
+                  src={characters.image}
                   alt=""
                 />
               </div>

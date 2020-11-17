@@ -1,7 +1,7 @@
 import React from "react";
 import "./StylesRegistroBarberos2.css";
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Component } from "react";
 
@@ -9,11 +9,42 @@ class RegistroBarberos2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {},
+      form2: {
+        TelefonoCelular: '',
+        DireccionResidencial: '',
+        Documento: '',
+        Pais: '',
+        Ciudad: ''
+      },
     };
   }
 
+
+  handleChange = async (e) => {
+    e.persist();
+    await this.setState({
+      form2: {
+        ...this.state.form2,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form2);
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const user2 = {
+      TelefonoCelular: this.state.TelefonoCelular,
+      DireccionResidencial: this.state.DireccionResidencial,
+      Documento: this.state.Documento,
+      Pais: this.state.Pais,
+      Ciudad: this.state.Ciudad
+    };
+    console.log(user2);
+  };
+
   render() {
+    const datosForm2 = this.state.form2;
     return (
       <div>
         <header>
@@ -49,7 +80,7 @@ class RegistroBarberos2 extends Component {
             <div className="divFather">
               <div className="divBox">
                 <h4 className="1Header">Adicionales</h4>
-                <form className="col FormMain1C">
+                <form className="col FormMain1C" onSubmit={this.handleSubmit}>
                   <div className="divBoxes">
                     <p className="pCampoText">Teléfono Celular</p>
                     <input
@@ -57,6 +88,9 @@ class RegistroBarberos2 extends Component {
                       className="form-control borderBox"
                       type="number"
                       name="TelefonoCelular"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm2.TelefonoCelular}
                     />
                   </div>
                   <div className="divBoxes">
@@ -66,6 +100,9 @@ class RegistroBarberos2 extends Component {
                       className="form-control borderBox"
                       type="text"
                       name="DireccionResidencial"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm2.DireccionResidencial}
                     />
                   </div>
                   <div className="divBoxes">
@@ -75,6 +112,9 @@ class RegistroBarberos2 extends Component {
                       className="form-control borderBox"
                       type="number"
                       name="Documento"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm2.Documento}
                     />
                   </div>
 
@@ -85,6 +125,9 @@ class RegistroBarberos2 extends Component {
                       className="form-control borderBox"
                       type="text"
                       name="Pais"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm2.Pais}
                     />
                   </div>
 
@@ -95,6 +138,9 @@ class RegistroBarberos2 extends Component {
                       className="form-control borderBox"
                       type="text"
                       name="Ciudad"
+                      autoComplete="off"
+                      onChange={this.handleChange}
+                      value={datosForm2.Ciudad}
                     />
                   </div>
                 </form>
