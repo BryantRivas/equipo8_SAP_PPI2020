@@ -89,6 +89,7 @@ class RegistroBarberos extends Component {
                       className="form-control borderBox"
                       placeholder="Primer Nombre"
                       type="text"
+                      id="PRIMERNOMBRE"
                       name="primerNombre"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -101,6 +102,7 @@ class RegistroBarberos extends Component {
                       className="form-control borderBox"
                       placeholder="Segundo Nombre"
                       type="text"
+                      id="SEGUNDONOMBRE"
                       name="segundoNombre"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -113,6 +115,7 @@ class RegistroBarberos extends Component {
                       className="form-control borderBox"
                       placeholder="Primer Apellido"
                       type="text"
+                      id="PRIMERAPELLIDO"
                       autoComplete="off"
                       name="primerApellido"
                       onChange={this.handleChange}
@@ -127,6 +130,7 @@ class RegistroBarberos extends Component {
                       placeholder="Segundo Apellido"
                       type="text"
                       name="segundoApellido"
+                      id="SEGUNDOAPELLIDO"
                       autoComplete="off"
                       onChange={this.handleChange}
                       value={datosForm.segundoApellido}
