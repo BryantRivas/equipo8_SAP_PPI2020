@@ -2,6 +2,9 @@
 //IMPORTACIÓN DE LOS ELEMENTOS A UTILIZAR
 const express = require('express');
 
+// CORS
+const cors = require('cors');
+
 //path para utilizar el dirname
 const path = require('path');
 
@@ -18,8 +21,8 @@ const { uuid } = require('uuidv4');
 // Inicializacion de espress
 const app = express();
 
-// CORS
-const cors = require('cors');
+//CORS
+app.use(cors({origin: '*'}));
 
 // Middlewares
 app.use(morgan('dev'));
@@ -39,8 +42,7 @@ app.use('/api/cliente', cliente);
 app.use('/api/cita', cita);
 
 
-//CORS
-app.use(cors({origin: '*'}));
+
 
 
 
