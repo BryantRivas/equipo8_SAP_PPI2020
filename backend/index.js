@@ -18,7 +18,8 @@ const { uuid } = require('uuidv4');
 // Inicializacion de espress
 const app = express();
 
-
+// CORS
+const cors = require('cors');
 
 // Middlewares
 app.use(morgan('dev'));
@@ -36,6 +37,11 @@ app.get('/', (req, res) => {
 app.use('/api', trabajador);
 app.use('/api/cliente', cliente);
 app.use('/api/cita', cita);
+
+
+//CORS
+app.use(cors({origin: '*'}));
+
 
 
 // Esta es la parte donde se realiza la parte de subir una imagen o archivo
@@ -58,7 +64,7 @@ app.use(require('./routes/routes'));
 
 
 // Configuraciones
-app.set('port', 4020);
+app.set('port', process.env.PORT || 4020);
 
 // Incializacion del servidor
 app.listen(app.get('port'), () => {
