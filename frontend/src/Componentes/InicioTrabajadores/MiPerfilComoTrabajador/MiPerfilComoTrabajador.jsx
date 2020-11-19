@@ -1,14 +1,143 @@
 import React, { Component } from "react";
 import "./StylesMiPerfilComoTrabajador.css";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
 class MiPerfilComoTrabajador extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      datos: [],
+      form1T: {
+
+      },
+      form2T:{
+
+      },
+      form3T:{
+
+      },
+      form4T:{
+
+      }
+    };
   }
+  
+  //Form1T
+  handleChange1T = async (e) => {
+    e.persist();
+    await this.setState({
+      form1T: {
+        ...this.state.form1T,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form1T);
+  };
+
+  handleSubmit1T = (e) => {
+    e.preventDefault();
+    const user1T = {
+      Correo: this.state.Correo,
+      ConfirmarCorreo: this.state.ConfirmarCorreo,
+      Contrasena: this.state.Contrasena,
+    };
+    console.log(user1T);
+  };
+
+  //FIN
+  //Form2T
+  handleChange2T = async (e) => {
+    e.persist();
+    await this.setState({
+      form1: {
+        ...this.state.form2T,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form2T);
+  };
+
+  handleSubmit2T = (e) => {
+    e.preventDefault();
+    const user2T = {
+      Correo: this.state.Correo,
+      ConfirmarCorreo: this.state.ConfirmarCorreo,
+      Contrasena: this.state.Contrasena,
+      ConfirmarContrasena: this.state.ConfirmarContrasena,
+    };
+    console.log(user2T);
+  };
+  //Fin
+  //Form3T
+  handleChange3T = async (e) => {
+    e.persist();
+    await this.setState({
+      form3T: {
+        ...this.state.form3T,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form3T);
+  };
+
+  handleSubmit3T = (e) => {
+    e.preventDefault();
+    const user3T = {
+      Correo: this.state.Correo,
+      ConfirmarCorreo: this.state.ConfirmarCorreo,
+      Contrasena: this.state.Contrasena,
+      ConfirmarContrasena: this.state.ConfirmarContrasena,
+    };
+    console.log(user3T);
+  };
+  //Fin
+  //Form4T
+  handleChange4T = async (e) => {
+    e.persist();
+    await this.setState({
+      form4T: {
+        ...this.state.form4T,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form4T);
+  };
+
+  handleSubmit4T = (e) => {
+    e.preventDefault();
+    const user4T = {
+      Correo: this.state.Correo,
+      ConfirmarCorreo: this.state.ConfirmarCorreo,
+      Contrasena: this.state.Contrasena
+    };
+    console.log(user4T);
+  };
+  //Fin
+
+
+  componentDidMount(){
+    axios.get(`https://rickandmortyapi.com/api/character/1`)
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datos: res.data
+        })
+    }).catch(err=>{
+      console.log(err.massage)
+    })
+  }
+
   render() {
+    console.log(this.state.datos)
+    const characters = this.state.datos;
+
+    const datosForm1T = this.state.form1T;
+    const datosForm2T = this.state.form2T;
+    const datosForm3T = this.state.form3T;
+    const datosForm4T = this.state.form4T;
+
     return (
       <div>
         <header>
@@ -37,14 +166,15 @@ class MiPerfilComoTrabajador extends Component {
             </div>
           </nav>
         </header>
+
         <div className="informacion-fixed-mi-perfil-como-trabajador">
           <div className="div-img-fotoPerfiltrabajador-InformacionTrabajador">
             <div className="div-img-grid-fotoPerfiltrabajador-InformacionTrabajador">
               <div className="div-div-img-fotoPerfil-Trabajador">
                 <img
                   className="img-fotoPerfil-InformacionTrabajador"
-                  src="https://st3.depositphotos.com/12071432/18627/i/450/depositphotos_186272986-stock-photo-serious-handsome-barber-holding-razor.jpg"
-                  alt=""
+                  src={characters.image}
+                  alt="FotoPerfil"
                 />
               </div>
               <div className="div-div-cambiarFotoPerfil-Trabajador">
@@ -61,7 +191,7 @@ class MiPerfilComoTrabajador extends Component {
                 type="button"
                 className="btn"
               >
-                <div>Nombres del trabajador</div>
+                <div>{characters.name}</div>
               </button>
             </div>
             <div className="div-apellidosTrabajador-Perfil">
@@ -72,7 +202,7 @@ class MiPerfilComoTrabajador extends Component {
                 type="button"
                 className="btn"
               >
-                <div>Apellidos del trabajador</div>
+                <div>{characters.name}</div>
               </button>
             </div>
             <div className="div-tipoTrabajador-Perfil">
@@ -284,6 +414,7 @@ class MiPerfilComoTrabajador extends Component {
             </div>
           </div>
         </div>
+
       </div>
     );
   }
