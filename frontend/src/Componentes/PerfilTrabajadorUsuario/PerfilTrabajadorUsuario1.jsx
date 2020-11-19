@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 
 
-
 class PerfilTrabajadorUsuario1 extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +15,7 @@ class PerfilTrabajadorUsuario1 extends Component {
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/2`)
+    axios.get(`https://rickandmortyapi.com/api/character/1`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -68,7 +67,7 @@ class PerfilTrabajadorUsuario1 extends Component {
                 <img
                   className="img-perfil_trabajador-PerfilTrabajadorUsuario1"
                   src={characters.image}
-                  alt=""
+                  alt="FotoPerfil"
                 />
               </div>
             </div>

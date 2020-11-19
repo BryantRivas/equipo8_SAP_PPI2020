@@ -1,16 +1,31 @@
 import React, { Component } from "react";
 import "./StylesTrabajosPorRealizar.css";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
 class TrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      datos: []
+    };
+  }
+
+  componentDidMount(){
+    axios.get('https://rickandmortyapi.com/api/character')
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datos: res.data.results
+        })
+    }).catch(err=>{
+      console.log(err.massage)
+    })
   }
 
   render() {
-    const { data1 } = this.props;
+    const characters = this.state.datos;
     return (
       <div>
         <header>
@@ -50,13 +65,15 @@ class TrabajosPorRealizar extends Component {
             </div>
           </nav>
         </header>
+
+
         <div className="cards-fixed-trabajos-por-realizar">
-          {data1.map((datosT, index) => {
+          {characters.map((datosT) => {
             return (
               <div className="divCardTrabajosPorRealizar">
                 <Link
                   className="link_TrabajosPorRealizar"
-                  to="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar"
+                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${datosT.id}`}
                 >
                   <div className="card-TrabajosPorRealizar">
                     <div className="CardGrid_TrabajosPorRealizar">
@@ -64,7 +81,7 @@ class TrabajosPorRealizar extends Component {
                         <div className="imgdivcenterFotoPerfil_TrabajosPorRealizar">
                           <img
                             className="imgFotoPerfil_TrabajosPorRealizar"
-                            src={datosT.fototrabajador}
+                            src={datosT.image}
                             alt="Foto_Perfil"
                           />
                         </div>
@@ -73,8 +90,7 @@ class TrabajosPorRealizar extends Component {
                         <div className="card_body_TrabajosPorRealizar">
                           <div className="div_TopCard_TrabajosPorRealizar">
                             <h5 className="Nombre_Trabajador_TrabajosPorRealizar">
-                              {datosT.primernombre} {datosT.segundonombre}{" "}
-                              {datosT.primerapellido} {datosT.segundoapellido}
+                              {datosT.name}
                             </h5>
                           </div>
                           <div className="div-grid-numero-direccion-TrabajosPorRealizar">
@@ -93,6 +109,8 @@ class TrabajosPorRealizar extends Component {
               </div>
             );
           })}
+
+
         </div>
       </div>
     );

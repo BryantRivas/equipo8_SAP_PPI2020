@@ -1,15 +1,32 @@
 import React, { Component } from "react";
 import "./StylesCardTrabajosRealizados.css";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
 class CardTrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      datos: []
+    };
+  }
+  
+  componentDidMount(){
+    axios.get(`https://rickandmortyapi.com/api/character/1`)
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datos: res.data
+        })
+    }).catch(err=>{
+      console.log(err.massage)
+    })
   }
 
   render() {
+    console.log(this.state.datos)
+    const characters = this.state.datos;
     return (
       <div>
         <header>
@@ -38,20 +55,21 @@ class CardTrabajosPorRealizar extends Component {
             </div>
           </nav>
         </header>
+
         <div className="cards-fixed-trabajosRealizados">
           <div className="div-top-CardTrabajosRealizados">
             <div className="div-img-perfil_trabajador-CardTrabajosRealizados">
               <div className="div-div-img-perfil_trabajador-CardTrabajosRealizados">
                 <img
                   className="img-perfil_trabajador-CardTrabajosRealizados"
-                  src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6"
-                  alt=""
+                  src={characters.image}
+                  alt="FotoPerfil"
                 />
               </div>
             </div>
             <div className="div-nombreTrabajador-CardTrabajosRealizados">
               <div className="div-nombreCompletoDelTrabajador-CardTrabajosRealizados">
-                Jane Smith
+                {characters.name}
               </div>
             </div>
             <div className="div-nombreCiudadTrabajador-CardTrabajosRealizados">
@@ -111,6 +129,7 @@ class CardTrabajosPorRealizar extends Component {
             </div>
           </div>
         </div>
+
       </div>
     );
   }

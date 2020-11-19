@@ -40,8 +40,12 @@ class RegistroBarberos extends Component {
   };
 
   validacionForm = () =>{
-    if(this.state.form.primerNombre.value == "" ){
-      console.log("Nombre invalido");
+    let pNombre = document.getElementById("PRIMERNOMBRE"), sNombre = document.getElementById("SEGUNDONOMBRE");
+    let pApellido = document.getElementById("PRIMERAPELLIDO"), sApellido = document.getElementById("SEGUNDOAPELLIDO");
+    if(pNombre.value != "" && sNombre != "" && pApellido != "" && sApellido != ""){
+      if(this.state.form.primerNombre == ""){
+        console.log("El primer nombre esta vacido");
+      }
     }
   }
 
@@ -139,7 +143,7 @@ class RegistroBarberos extends Component {
                 </form>
                 <div className="DivButon">
                   <Link to="/RegistroBarberos/RegistroBarberos1">
-                    <button type="submit" className="btn Buton" >
+                    <button type="submit" className="btn Buton"  >
                       SIGUIENTE
                     </button>
                   </Link>

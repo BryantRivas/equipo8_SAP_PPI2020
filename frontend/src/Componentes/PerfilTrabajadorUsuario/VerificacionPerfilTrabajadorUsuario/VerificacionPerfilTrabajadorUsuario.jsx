@@ -8,10 +8,35 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      datos: []
+      datos: [],
+      formU:{
+        usuarioDireccion:'',
+        usuarioTelefono: ''
+      }
     };
   }
   
+  handleChange = async (e) => {
+    e.persist();
+    await this.setState({
+      formU: {
+        ...this.state.formU,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.formU);
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const userU = {
+      usuarioDireccion: this.state.usuarioDireccion,
+      usuarioTelefono: this.state.usuarioTelefono,
+    };
+    console.log(userU);
+  };
+
+
   componentDidMount(){
     axios.get(`https://rickandmortyapi.com/api/character/2`)
       .then(res =>{
@@ -27,7 +52,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
   render() {
     console.log(this.state.datos)
     const characters = this.state.datos
-
+    const datosFormU = this.state.formU;
     return (
       <div>
         <header>
@@ -85,15 +110,21 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
               </div>
             </div>
           </div>
-          <form className="form-datosUsuario-VerificacionTrabajador">
+
+          <form className="form-datosUsuario-VerificacionTrabajador" onSubmit={this.handleSubmit}>
             <div className="div-MiDireccion-Form-VerificacionPerfilTrabajador">
               <div className="div-textoSuperior-VerificacionTrabajador">
                 Mi Dirección
               </div>
-              <div className="">
+              <div>
                 <input
                   className="input-borderbox-PerfilTrabajadorUsuario2"
                   type="text"
+                  id="DIRECCION"
+                  name="usuarioDireccion"
+                  autoComplete="off"
+                  onChange={this.handleChange}
+                  value={datosFormU.usuarioDireccion}
                 />
               </div>
             </div>
@@ -101,10 +132,15 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
               <div className="div-textoSuperior-VerificacionTrabajador">
                 Mi Teléfono
               </div>
-              <div className="">
+              <div>
                 <input
                   className="input-borderbox-PerfilTrabajadorUsuario2"
                   type="number"
+                  id="TELEFONO"
+                  name="usuarioTelefono"
+                  autoComplete="off"
+                  onChange={this.handleChange}
+                  value={datosFormU.usuarioTelefono}
                 />
               </div>
             </div>
@@ -120,11 +156,11 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
                 <img
                   className="img-fotoperfilTrabajador-VerificacionPerfil"
                   src={characters.image}
-                  alt=""
+                  alt="FotoPerfil"
                 />
               </div>
               <div className="div-div-grid-NombreTrabajador-VerificacionInformacion">
-                Jane Smith
+                {characters.name}
               </div>
               <div className="div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion">
                 Número telefonico del trabajador
