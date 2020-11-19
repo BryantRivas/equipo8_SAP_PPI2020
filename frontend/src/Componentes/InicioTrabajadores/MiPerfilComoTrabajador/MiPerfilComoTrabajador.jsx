@@ -10,16 +10,18 @@ class MiPerfilComoTrabajador extends Component {
     this.state = {
       datos: [],
       form1T: {
-
+        primerNombreT: '',
+        segundoNombreT: ''
       },
       form2T:{
-
+        primerApellidoT: '',
+        segundoApellidoT: ''
       },
       form3T:{
 
       },
       form4T:{
-
+        descripcionTrabajador: ''
       }
     };
   }
@@ -39,9 +41,8 @@ class MiPerfilComoTrabajador extends Component {
   handleSubmit1T = (e) => {
     e.preventDefault();
     const user1T = {
-      Correo: this.state.Correo,
-      ConfirmarCorreo: this.state.ConfirmarCorreo,
-      Contrasena: this.state.Contrasena,
+      primerNombreT: this.state.primerNombreT,
+      segundoNombreT: this.state.segundoNombreT,
     };
     console.log(user1T);
   };
@@ -51,7 +52,7 @@ class MiPerfilComoTrabajador extends Component {
   handleChange2T = async (e) => {
     e.persist();
     await this.setState({
-      form1: {
+      form2T: {
         ...this.state.form2T,
         [e.target.name]: e.target.value,
       },
@@ -62,10 +63,8 @@ class MiPerfilComoTrabajador extends Component {
   handleSubmit2T = (e) => {
     e.preventDefault();
     const user2T = {
-      Correo: this.state.Correo,
-      ConfirmarCorreo: this.state.ConfirmarCorreo,
-      Contrasena: this.state.Contrasena,
-      ConfirmarContrasena: this.state.ConfirmarContrasena,
+      primerApellidoT: this.state.primerApellidoT,
+      segundoApellidoT: this.state.segundoApellidoT,
     };
     console.log(user2T);
   };
@@ -108,9 +107,7 @@ class MiPerfilComoTrabajador extends Component {
   handleSubmit4T = (e) => {
     e.preventDefault();
     const user4T = {
-      Correo: this.state.Correo,
-      ConfirmarCorreo: this.state.ConfirmarCorreo,
-      Contrasena: this.state.Contrasena
+      descripcionTrabajador: this.state.descripcionTrabajador,
     };
     console.log(user4T);
   };
@@ -260,6 +257,7 @@ class MiPerfilComoTrabajador extends Component {
             </Link>
           </div>
 
+          {/* NOMBRES DEL TRABAJADOR */}
           <div className="div-nombresDelTrabajador-modal-MiPerfilComoTrabajador">
             <div
               class="modal fade"
@@ -274,7 +272,7 @@ class MiPerfilComoTrabajador extends Component {
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">
-                      Costo trabajo
+                      Tus Nombres
                     </h5>
                     <button
                       type="button"
@@ -286,18 +284,30 @@ class MiPerfilComoTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body">
+                  <form onSubmit={this.handleSubmit1T}>
                     <div className="body-div-grid-inputs-costoTrabajoTrabajador">
                       <input
                         placeholder="Primer nombre"
                         className="input-costoTrabajoTrabajador-InformacionPersonalTrabajador"
-                        type=""
+                        type="text"
+                        id="PRIMERNOMBRET"
+                        name="primerNombreT"
+                        autoComplete="off"
+                        onChange={this.handleChange1T}
+                        value={datosForm1T.primerNombreT}
                       />
                       <input
                         placeholder="Segundo nombre"
                         className="input-costoTrabajoTrabajador-InformacionPersonalTrabajador"
-                        type=""
+                        type="text"
+                        id="SEGUNDONOMBRET"
+                        name="segundoNombreT"
+                        autoComplete="off"
+                        onChange={this.handleChange1T}
+                        value={datosForm1T.segundoNombreT}
                       />
                     </div>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button
@@ -313,6 +323,7 @@ class MiPerfilComoTrabajador extends Component {
             </div>
           </div>
 
+          {/* APELLIDOS DEL TRABAJADOR */}
           <div className="div-apellidosDelTrabajador-modal-MiPerfilComoTrabajador">
             <div
               class="modal fade"
@@ -327,7 +338,7 @@ class MiPerfilComoTrabajador extends Component {
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">
-                      Costo trabajo
+                      Tus Apellidos
                     </h5>
                     <button
                       type="button"
@@ -339,18 +350,30 @@ class MiPerfilComoTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body">
+                    <form onSubmit={this.handleSubmit2T}>
                     <div className="body-div-grid-inputs-costoTrabajoTrabajador">
                       <input
                         placeholder="Primer apellido"
                         className="input-costoTrabajoTrabajador-InformacionPersonalTrabajador"
-                        type=""
+                        type="text"
+                        id="PRIMERAPELLIDOT"
+                        name="primerApellidoT"
+                        autoComplete="off"
+                        onChange={this.handleChange2T}
+                        value={datosForm2T.primerApellidoT}
                       />
                       <input
                         placeholder="Segundo apellido"
                         className="input-costoTrabajoTrabajador-InformacionPersonalTrabajador"
-                        type=""
+                        type="text"
+                        id="SEGUNDOAPELLIDOT"
+                        name="segundoApellidoT"
+                        autoComplete="off"
+                        onChange={this.handleChange2T}
+                        value={datosForm2T.segundoApellidoT}
                       />
                     </div>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button
@@ -365,7 +388,8 @@ class MiPerfilComoTrabajador extends Component {
               </div>
             </div>
           </div>
-
+          
+          {/* DESCRIPCION DEL TRABAJADOR */}
           <div className="div-descripcionDelTrabajador-modal-MiPerfilComoTrabajador">
             <div
               class="modal fade"
@@ -392,13 +416,20 @@ class MiPerfilComoTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body">
+                    <form onSubmit={this.handleSubmit4T}>
                     <div className="body-div-grid-inputs-costoTrabajoTrabajador">
                       <input
                         placeholder="Escribe en este apartado tu descripcion como trabajador"
                         className="input-costoTrabajoTrabajador-InformacionPersonalTrabajador"
-                        type=""
+                        type="text"
+                        id="DESCRIPCIONTRABAJADOR"
+                        name="descripcionTrabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange4T}
+                        value={datosForm4T.descripcionTrabajador}
                       />
                     </div>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button
