@@ -53,22 +53,22 @@ class RegistroBarberos1 extends Component {
       if(correo.value == ""){
         correo.style.borderColor = "red";
         correo.value = "Parametro obligatorio";
-        this.time(correo, "email");
+        this.time1(correo, "email");
       }
       if(confirmarcorreo.value == ""){
         confirmarcorreo.style.borderColor = "red";
         confirmarcorreo.value = "Parametro obligatorio";
-        this.time(confirmarcorreo, "email");
+        this.time1(confirmarcorreo, "email");
       }
       if(contrasena.value == ""){
         contrasena.style.borderColor = "red";
         contrasena.value = "Parametro obligatorio";
-        this.time(contrasena, "password");
+        this.time1(contrasena, "password");
       }
       if(confirmarcontrasena.value == ""){
         confirmarcontrasena.style.borderColor = "red";
         confirmarcontrasena.value = "Parametro obligatorio";
-        this.time(confirmarcontrasena, "password");
+        this.time1(confirmarcontrasena, "password");
       }
     }else{
       if(correo.value != "" && confirmarcorreo != "" && contrasena != "" && confirmarcontrasena != ""){
@@ -90,7 +90,7 @@ class RegistroBarberos1 extends Component {
     }
   }
 
-  time = (input, type) => {
+  time1 = (input, type) => {
     setTimeout(function () {
       input.type = type;
       input.style.borderColor = "grey";

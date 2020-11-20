@@ -1,7 +1,7 @@
 import React from "react";
 import "./StylesRegistroBarberos3.css";
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { withRouter, Link, Redirect } from "react-router-dom";
 
 import { Component } from "react";
 
@@ -9,6 +9,7 @@ class RegistroBarberos3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      boolean3: false,
       form3: {
         tipoTrabajador: '',
         Precio: '',
@@ -39,6 +40,53 @@ class RegistroBarberos3 extends Component {
     };
     console.log(user3);
   };
+
+
+  validacionForm3 = () => {
+    let tipoTrabajador = document.getElementById("TIPOTRABAJADOR");
+    let precioTrabajo = document.getElementById("PRECIOTRABAJO");
+    let descripcionTrabajador = document.getElementById("DESCRIPCIONTRABAJADOR");
+
+    if(tipoTrabajador.value == "" || precioTrabajo.value == "" || descripcionTrabajador.value == "" ){
+      if(tipoTrabajador.value == ""){
+        tipoTrabajador.style.borderColor = "red";
+        tipoTrabajador.value = "Parametro obligatorio";
+        
+      }
+      if(precioTrabajo.value == ""){
+        precioTrabajo.style.borderColor = "red";
+        precioTrabajo.value = "Parametro obligatorio";
+        
+      }
+      if(descripcionTrabajador.value == ""){
+        descripcionTrabajador.style.borderColor = "red";
+        descripcionTrabajador.value = "Parametro obligatorio";
+        
+      }
+    }else{
+      if(tipoTrabajador.value != "" || precioTrabajo.value != "" || descripcionTrabajador.value != ""){
+        if(tipoTrabajador.value != ""){
+          tipoTrabajador.style.borderColor = "green";
+        }
+        if(precioTrabajo.value != ""){
+          precioTrabajo.style.borderColor = "green";
+        }
+        if(descripcionTrabajador.value != ""){
+          descripcionTrabajador.style.borderColor = "green";
+        }
+      }
+      this.state.boolean3 = true;
+    }
+  }
+
+  time3 = (input, type) => {
+    setTimeout(function () {
+      input.type = type;
+      input.style.borderColor = "grey";
+      input.value = ""
+    }, 1500)
+  }
+
 
 
   render() {
@@ -84,7 +132,8 @@ class RegistroBarberos3 extends Component {
 
                     <select
                       class="form-control borderBox"
-                      type="radio"
+                      type="text"
+                      id="TIPOTRABAJADOR"
                       name="tipoTrabajador"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -105,7 +154,7 @@ class RegistroBarberos3 extends Component {
                     >
                       Subir Fotografia
                     </button>
-
+                    {/* MODAL SUBIR FOTO*/}
                     <div
                       class="modal fade"
                       id="staticBackdrop"
@@ -145,6 +194,7 @@ class RegistroBarberos3 extends Component {
                         </div>
                       </div>
                     </div>
+                    {/* FIN MODAL */}
                   </div>
                   <div className="divBoxes">
                     <p className="pCampoText">Precio</p>
@@ -152,6 +202,7 @@ class RegistroBarberos3 extends Component {
                       placeholder="Precio"
                       className="form-control borderBox"
                       type="number"
+                      id="PRECIOTRABAJO"
                       name="Precio"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -165,6 +216,7 @@ class RegistroBarberos3 extends Component {
                       placeholder="Escribe tu descripción como trabajador"
                       className="form-control borderBox"
                       type="text"
+                      id="DESCRIPCIONTRABAJADOR"
                       name="Descripcion"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -173,14 +225,14 @@ class RegistroBarberos3 extends Component {
                   </div>
                 </form>
                 <div className="DivButon">
-                  <Link to="/IngresarTrabajador">
-                    <button className="btn Buton">SIGUIENTE</button>
-                  </Link>
+                  {/* <Link to="/IngresarTrabajador"></Link> */}
+                    <button className="btn Buton" onClick={this.validacionForm3}>SIGUIENTE</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {this.state.boolean3 && <Redirect to={{pathname:"/RegistroBarberos/RegistroBarberos3", state:{}}} />}
       </div>
     );
   }

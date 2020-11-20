@@ -1,7 +1,7 @@
 import React from "react";
 import "./StylesRegistroBarberos2.css";
 
-import { Link } from "react-router-dom";
+import { withRouter,Link,Redirect } from "react-router-dom";
 
 import { Component } from "react";
 
@@ -9,6 +9,7 @@ class RegistroBarberos2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      boolean2: false,
       form2: {
         TelefonoCelular: '',
         DireccionResidencial: '',
@@ -42,6 +43,69 @@ class RegistroBarberos2 extends Component {
     };
     console.log(user2);
   };
+
+  validacionForm2 = () => {
+    let telefonoCelularTrabajador = document.getElementById("TELEFONOCELULARTRABAJADOR");
+    let direccionResidencialTrabajador = document.getElementById("DIRECCIONRESIDENCIALTRABAJADOR");
+    let documentoTrabajador = document.getElementById("DOCUMENTOTRABAJADOR");
+    let paisTrabajador = document.getElementById("PAISTRABAJADOR");
+    let ciudadTrabajador = document.getElementById("CIUDADTRABAJADOR");
+
+    if(telefonoCelularTrabajador.value == "" || direccionResidencialTrabajador.value == "" || documentoTrabajador.value == "" || paisTrabajador.value == "" || ciudadTrabajador.value == ""){
+      if(telefonoCelularTrabajador.value == ""){
+        telefonoCelularTrabajador.style.borderColor = "red";
+        telefonoCelularTrabajador.value = "Parametro obligatorio";
+        this.time2(telefonoCelularTrabajador, "number");
+      }
+      if(direccionResidencialTrabajador.value == ""){
+        direccionResidencialTrabajador.style.borderColor = "red";
+        direccionResidencialTrabajador.value = "Parametro obligatorio";
+        this.time2(direccionResidencialTrabajador, "text");
+      }
+      if(documentoTrabajador.value == ""){
+        documentoTrabajador.style.borderColor = "red";
+        documentoTrabajador.value = "Parametro obligatorio";
+        this.time2(documentoTrabajador, "number");
+      }
+      if(paisTrabajador.value == ""){
+        paisTrabajador.style.borderColor = "red";
+        paisTrabajador.value = "Parametro obligatorio";
+        this.time2(paisTrabajador, "text");
+      }
+      if(ciudadTrabajador.value == ""){
+        ciudadTrabajador.style.borderColor = "red";
+        ciudadTrabajador.value = "Parametro obligatorio";
+        this.time2(ciudadTrabajador, "text");
+      }
+    }else{
+      if(telefonoCelularTrabajador.value != "" || direccionResidencialTrabajador.value != "" || documentoTrabajador.value != "" || paisTrabajador.value != "" || ciudadTrabajador.value != ""){
+        if(telefonoCelularTrabajador.value != ""){
+          telefonoCelularTrabajador.style.borderColor = "green";
+        }
+        if(direccionResidencialTrabajador.value != ""){
+          direccionResidencialTrabajador.style.borderColor = "green";
+        }
+        if(documentoTrabajador.value != ""){
+          documentoTrabajador.style.borderColor = "green";
+        }
+        if(paisTrabajador.value != ""){
+          paisTrabajador.style.borderColor = "green";
+        }
+        if(ciudadTrabajador.value != ""){
+          ciudadTrabajador.style.borderColor = "green";
+        }
+      }
+      this.state.boolean2 = true;
+    }
+  }
+
+  time2 = (input, type) => {
+    setTimeout(function () {
+      input.type = type;
+      input.style.borderColor = "grey";
+      input.value = ""
+    }, 1500)
+  }
 
   render() {
     const datosForm2 = this.state.form2;
@@ -87,7 +151,7 @@ class RegistroBarberos2 extends Component {
                       placeholder="Teléfono Celular"
                       className="form-control borderBox"
                       type="number"
-                      id=""
+                      id="TELEFONOCELULARTRABAJADOR"
                       name="TelefonoCelular"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -100,6 +164,7 @@ class RegistroBarberos2 extends Component {
                       placeholder="Dirección Residencial"
                       className="form-control borderBox"
                       type="text"
+                      id="DIRECCIONRESIDENCIALTRABAJADOR"
                       name="DireccionResidencial"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -112,6 +177,7 @@ class RegistroBarberos2 extends Component {
                       placeholder="Identificación"
                       className="form-control borderBox"
                       type="number"
+                      id="DOCUMENTOTRABAJADOR"
                       name="Documento"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -126,6 +192,7 @@ class RegistroBarberos2 extends Component {
                       className="form-control borderBox"
                       type="text"
                       name="Pais"
+                      id="PAISTRABAJADOR"
                       autoComplete="off"
                       onChange={this.handleChange}
                       value={datosForm2.Pais}
@@ -138,6 +205,7 @@ class RegistroBarberos2 extends Component {
                       placeholder="Nombre Ciudad"
                       className="form-control borderBox"
                       type="text"
+                      id="CIUDADTRABAJADOR"
                       name="Ciudad"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -146,17 +214,17 @@ class RegistroBarberos2 extends Component {
                   </div>
                 </form>
                 <div className="DivButon">
-                  <Link to="/RegistroBarberos/RegistroBarberos3">
-                    <button className="btn Buton">SIGUIENTE</button>
-                  </Link>
+                  {/* <Link to="/RegistroBarberos/RegistroBarberos3"></Link> */}
+                    <button className="btn Buton" onClick={this.validacionForm2}>SIGUIENTE</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {this.state.boolean2 && <Redirect to={{pathname:"/RegistroBarberos/RegistroBarberos3", state:{}}}/>}
       </div>
     );
   }
 }
 
-export default RegistroBarberos2;
+export default withRouter(RegistroBarberos2);
