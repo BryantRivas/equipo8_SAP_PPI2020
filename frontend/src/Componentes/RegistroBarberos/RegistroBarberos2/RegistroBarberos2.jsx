@@ -87,6 +87,7 @@ class RegistroBarberos2 extends Component {
                       placeholder="Teléfono Celular"
                       className="form-control borderBox"
                       type="number"
+                      id=""
                       name="TelefonoCelular"
                       autoComplete="off"
                       onChange={this.handleChange}

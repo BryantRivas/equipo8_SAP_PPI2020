@@ -2,12 +2,13 @@ import React from "react";
 import { Component } from "react";
 import "./StylesRegistroBarberos.css";
 
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class RegistroBarberos extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      boolean: false,
       form: {
         primerNombre: "",
         segundoNombre: "",
@@ -42,11 +43,50 @@ class RegistroBarberos extends Component {
   validacionForm = () =>{
     let pNombre = document.getElementById("PRIMERNOMBRE"), sNombre = document.getElementById("SEGUNDONOMBRE");
     let pApellido = document.getElementById("PRIMERAPELLIDO"), sApellido = document.getElementById("SEGUNDOAPELLIDO");
-    if(pNombre.value != "" && sNombre != "" && pApellido != "" && sApellido != ""){
-      if(this.state.form.primerNombre == ""){
-        console.log("El primer nombre esta vacido");
+    
+    if(pNombre.value == "" || sNombre == "" || pApellido == "" || sApellido == ""){
+      console.log("El primer nombre esta vacido");
+      if(pNombre.value == ""){
+        pNombre.style.borderColor = "red";
+        pNombre.value = "Parametro obligatorio";
+        this.time(pNombre, "text");
       }
+        
+
+      if(pApellido.value == ""){
+        pApellido.style.borderColor = "red";
+        pApellido.value = "Parametro obligatorio";
+        this.time(pApellido, "text");
+      }
+      
+    }else{
+      if(pNombre.value != "" || sNombre != "" || pApellido != "" || sApellido != ""){
+        if(pNombre.value != ""){
+          pNombre.style.borberColor= "green";
+        }
+        if(sNombre.value != ""){
+          sNombre.style.borderColor= "green";
+        }
+        if(pApellido.value != ""){
+          pApellido.style.borderColor= "green";
+        }
+        if(sApellido.value != ""){
+          sApellido.style.borderColor= "green";
+        }
+        this.state.boolean = true;
+      console.log(this.state.boolean);
+      }
+      
     }
+  
+  }
+
+  time = (input, type) => {
+    setTimeout(function () {
+      input.type = type;
+      input.style.borderColor= "gray";
+      input.value= "";
+    }, 1500)
   }
 
   render() {
@@ -99,6 +139,9 @@ class RegistroBarberos extends Component {
                       onChange={this.handleChange}
                       value={datosForm.primerNombre}
                     />
+                    <div>
+                      {this.state.advertencia}
+                    </div>
                   </div>
                   <div className="divBoxes">
                     <p className="pCampoText">Segundo Nombre</p>
@@ -142,16 +185,16 @@ class RegistroBarberos extends Component {
                   </div>
                 </form>
                 <div className="DivButon">
-                  <Link to="/RegistroBarberos/RegistroBarberos1">
-                    <button type="submit" className="btn Buton"  >
+                  {/*<Link to=""></Link>*/}
+                  <button type="submit" className="btn Buton" onClick={this.validacionForm} >
                       SIGUIENTE
                     </button>
-                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {this.state.boolean && <Redirect to={{pathname:"/RegistroBarberos/RegistroBarberos1", state:{form:this.state.form}}}/>}
       </div>
     );
   }

@@ -4,6 +4,8 @@ import axios from "axios";
 
 import { Link } from "react-router-dom";
 
+
+
 class VerificacionPerfilTrabajadorUsuario extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
       }
     };
   }
+  
   
   handleChange = async (e) => {
     e.persist();

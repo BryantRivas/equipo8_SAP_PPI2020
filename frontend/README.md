@@ -3,3 +3,5 @@ Este proyecto fue creado por Emanuel Acevedo Muñoz,Juan Jose Posada Garcia,Marl
 Nuestro proyecto se llama Barppi
 
 Deploy: https://barppi.vercel.app/
+
+Deploy Backend: https://barppi.herokuapp.com/

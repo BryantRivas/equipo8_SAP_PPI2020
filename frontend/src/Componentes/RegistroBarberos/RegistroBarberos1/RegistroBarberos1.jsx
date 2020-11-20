@@ -1,7 +1,7 @@
 import React from "react";
 import "./StylesRegistroBarberos.css";
 
-import { Link } from "react-router-dom";
+import { withRouter ,Link, Redirect } from "react-router-dom";
 
 import { Component } from "react";
 
@@ -9,6 +9,8 @@ class RegistroBarberos1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      boolean1: false,
+      form:this.props.location.state.form,
       form1: {
         Correo: '',
         ConfirmarCorreo: '',
@@ -41,8 +43,60 @@ class RegistroBarberos1 extends Component {
     console.log(user1);
   };
 
+  validacionForm1 = () =>{
+    let correo = document.getElementById("CORREOTRABAJADOR")
+    let confirmarcorreo = document.getElementById("CONFIRMARCORREOTRABAJADOR")
+    let contrasena = document.getElementById("CONTRASENATRABAJADOR")
+    let confirmarcontrasena = document.getElementById("CONFIRMARCONTRASENATRABAJADOR")
 
+    if(correo.value == "" || confirmarcorreo == "" || contrasena == "" || confirmarcontrasena== ""){
+      if(correo.value == ""){
+        correo.style.borderColor = "red";
+        correo.value = "Parametro obligatorio";
+        this.time(correo, "email");
+      }
+      if(confirmarcorreo.value == ""){
+        confirmarcorreo.style.borderColor = "red";
+        confirmarcorreo.value = "Parametro obligatorio";
+        this.time(confirmarcorreo, "email");
+      }
+      if(contrasena.value == ""){
+        contrasena.style.borderColor = "red";
+        contrasena.value = "Parametro obligatorio";
+        this.time(contrasena, "password");
+      }
+      if(confirmarcontrasena.value == ""){
+        confirmarcontrasena.style.borderColor = "red";
+        confirmarcontrasena.value = "Parametro obligatorio";
+        this.time(confirmarcontrasena, "password");
+      }
+    }else{
+      if(correo.value != "" && confirmarcorreo != "" && contrasena != "" && confirmarcontrasena != ""){
+        if(correo.value != ""){
+          correo.style.borderColor = "green";
+        }
+        if(confirmarcorreo.value != ""){
+          confirmarcorreo.style.borderColor = "green";
+        }
+        if(contrasena.value != ""){
+          contrasena.style.borderColor = "green";
+        }
+        if(confirmarcontrasena.value != ""){
+          confirmarcontrasena.style.borderColor = "green"
+        }
+        
+      }
+      this.state.boolean1 = true;
+    }
+  }
 
+  time = (input, type) => {
+    setTimeout(function () {
+      input.type = type;
+      input.style.borderColor = "grey";
+      input.value = ""
+    }, 1500)
+  }
 
   render() {
     const datosForm1 = this.state.form1;
@@ -89,6 +143,7 @@ class RegistroBarberos1 extends Component {
                       placeholder="Correo"
                       className="form-control borderBox"
                       type="email"
+                      id="CORREOTRABAJADOR"
                       name="Correo"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -101,6 +156,7 @@ class RegistroBarberos1 extends Component {
                       placeholder="Confirmar Correo"
                       className="form-control borderBox"
                       type="email"
+                      id="CONFIRMARCORREOTRABAJADOR"
                       name="ConfirmarCorreo"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -113,6 +169,7 @@ class RegistroBarberos1 extends Component {
                       placeholder="Contraseña"
                       className="form-control borderBox"
                       type="password"
+                      id="CONTRASENATRABAJADOR"
                       name="Contrasena"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -126,6 +183,7 @@ class RegistroBarberos1 extends Component {
                       placeholder="Confirmar Contraseña"
                       className="form-control borderBox"
                       type="password"
+                      id="CONFIRMARCONTRASENATRABAJADOR"
                       name="ConfirmarContrasena"
                       autoComplete="off"
                       onChange={this.handleChange}
@@ -134,17 +192,17 @@ class RegistroBarberos1 extends Component {
                   </div>
                 </form>
                 <div className="DivButon">
-                  <Link to="/RegistroBarberos/RegistroBarberos2">
-                    <button className="btn Buton">SIGUIENTE</button>
-                  </Link>
+                  {/*<Link to="/RegistroBarberos/RegistroBarberos2"></Link>*/}
+                    <button className="btn Buton" onClick={this.validacionForm1}>SIGUIENTE</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {this.state.boolean1 && <Redirect to={{pathname:"/RegistroBarberos/RegistroBarberos2", state:{form:this.state.form}}}/>}
       </div>
     );
   }
 }
 
-export default RegistroBarberos1;
+export default withRouter(RegistroBarberos1);

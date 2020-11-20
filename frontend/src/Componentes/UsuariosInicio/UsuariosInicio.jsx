@@ -13,6 +13,7 @@ class inicioUsuarios extends Component {
   }
   
   componentDidMount(){
+    //https://barppi.herokuapp.com/api/trabajador
     axios.get('https://rickandmortyapi.com/api/character')
       .then(res =>{
         console.log(res.data)
@@ -91,12 +92,13 @@ class inicioUsuarios extends Component {
                           <div className="div-Nombre_Trabajador_UsuariosInicio">
                             <h3 className="Nombre_Trabajador_UsuariosInicio">
                               {datosT.name}
+                              {datosT.nombres_trabajador}{` `}{datosT.apellidos_trabajador}
                             </h3>
                           </div>
                           <div className="divButtonSolicitarUsuariosInicio">
                             <Link
                               className="btn ButonUsuariosInicio"
-                              to={`/PerfilTrabajadorUsuario1/${datosT.id}`}
+                              to={`/PerfilTrabajadorUsuario1/${datosT.numero_id_trabajador}`}
                             >
                               Solicitar
                             </Link>
@@ -104,10 +106,10 @@ class inicioUsuarios extends Component {
                         </div>
                         <div className="div_Informarcionadicional_UsuariosInicio">
                           <p className="Numero_UsuarioInicio">
-                            Número telefonico: {datosT.telefono}
+                            Número telefonico: {datosT.telefono_trabajador}
                           </p>
                           <p className="Numero_UsuarioInicio">
-                            Dirección: {datosT.direccion}
+                            Dirección: {datosT.direccion_trabajador}
                           </p>
                         </div>
                         <textarea
