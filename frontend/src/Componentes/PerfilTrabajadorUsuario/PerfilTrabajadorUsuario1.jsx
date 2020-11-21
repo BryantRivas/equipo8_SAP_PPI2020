@@ -10,12 +10,13 @@ class PerfilTrabajadorUsuario1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id:"",
       datos: []
     };
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/1`)
+    axios.get(`https://rickandmortyapi.com/api/character/${this.state.id}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
