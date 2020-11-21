@@ -21,9 +21,6 @@ import InformacionPersonalTrabajadorP from "./Paginas/InformacionPersonalTrabaja
 import MiAgendaTrabajadorP from "./Paginas/MiAgendaTrabajadorP";
 import CardTrabajosPorRealizarP from "./Paginas/CardTrabajosPorRealizarP";
 import CardTrabajosRealizadosP from "./Paginas/CardTrabajosRealizadosP";
-import RegistroBarberos1P from "./Paginas/RegistroBarberos1P";
-import RegistroBarberos2P from "./Paginas/RegistroBarberos2P";
-import RegistroBarberos3P from "./Paginas/RegistroBarberos3P";
 import BusquedaTrabajosRealizadosP from "./Paginas/BusquedaTrabajosRealizadosP";
 import BusquedaTrabajosPorRealizarP from "./Paginas/BusquedaTrabajosPorRealizarP";
 import BuscarTrabajadorUsuariosInicioP from "./Paginas/BuscarTrabajadorUsuariosInicioP";
@@ -88,15 +85,6 @@ ReactDOM.render(
 
         <Route exact path="/RegistroBarberos">
           <RegistroBarberosP />
-        </Route>
-        <Route exact path="/RegistroBarberos/RegistroBarberos1">
-          <RegistroBarberos1P />
-        </Route>
-        <Route exact path="/RegistroBarberos/RegistroBarberos2">
-          <RegistroBarberos2P />
-        </Route>
-        <Route exact path="/RegistroBarberos/RegistroBarberos3">
-          <RegistroBarberos3P />
         </Route>
 
         <Route exact path="/Inicio">
