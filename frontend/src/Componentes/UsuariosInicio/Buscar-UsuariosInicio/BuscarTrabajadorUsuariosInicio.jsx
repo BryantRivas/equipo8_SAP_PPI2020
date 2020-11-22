@@ -8,7 +8,9 @@ class BuscarTrabajadorUsuariosInicio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      datos: []
+      busqueda: "",
+      datos: [],
+      datosB : []
     };
   }
   
@@ -18,16 +20,41 @@ class BuscarTrabajadorUsuariosInicio extends Component {
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data.results
+          datos: res.data.results,
+          datosB: res.data.results
         })
     }).catch(err=>{
       console.log(err.massage)
     })
   }
 
+  filtrarElementos = () => {
+    var search = this.state.datos.filter(item => {
+      if(item.name.includes(this.state.busqueda) || 
+      item.name.toLowerCase().includes(this.state.busqueda) ||
+      item.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.name.toUpperCase().includes(this.state.busqueda) ||
+      item.name.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda)
+      ){
+        return item;
+      }
+    });
+    this.setState({datosB: search})
+  }
+
+  onChange = async (e) => {
+    e.persist();
+    await this.setState({busqueda: e.target.value});
+    this.filtrarElementos();
+    console.log(this.state.busqueda);
+  };
+
+
+
   render() {
     console.log(this.state.datos)
-    const characters = this.state.datos;
+    console.log(this.state.datosB)
+    const characters = this.state.datosB;
     return (
       <div>
         <header>
@@ -66,6 +93,11 @@ class BuscarTrabajadorUsuariosInicio extends Component {
               placeholder="Nombre del trabajador"
               className="input-buscar-buscarTabajosPorRealizar"
               type="text"
+              id="BUSQUEDA"
+              name="busqueda"
+              autoComplete="off"
+              value={this.state.busqueda}
+              onChange={this.onChange}
             />
           </div>
         </div>
