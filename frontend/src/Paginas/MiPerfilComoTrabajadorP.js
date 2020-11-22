@@ -1,10 +1,12 @@
 import React from "react";
 import MiPerfilComoTrabajador from "../Componentes/InicioTrabajadores/MiPerfilComoTrabajador/MiPerfilComoTrabajador";
+import { useParams } from "react-router-dom";
 
-function MiPerfilComoTrabajadorP() {
+const MiPerfilComoTrabajadorP = () => {
+  const { numero_id_trabajador } = useParams();
   return (
     <div>
-      <MiPerfilComoTrabajador />
+      <MiPerfilComoTrabajador numero_id_trabajador = {numero_id_trabajador} />
     </div>
   );
 }

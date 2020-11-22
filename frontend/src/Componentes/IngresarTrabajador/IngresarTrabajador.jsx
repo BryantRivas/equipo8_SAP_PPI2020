@@ -8,6 +8,7 @@ class IngresarTrabajador extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: 8,
       login:{
         correo: '',
         contraseña: ''
@@ -170,7 +171,7 @@ class IngresarTrabajador extends Component {
             <div className="divButonIngresarTrabajador">
               <div className="divbutonIngresarTrabajador_Principal">
                 {/* onClick={() => this.iniciarSesion()} */}
-                <Link className="" exact to="/TrabajadoresInicio">
+                <Link className="" exact to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}>
                   <button className="btn ButonIngresarTrabajador" >Entrar</button>
                 </Link>
               </div>

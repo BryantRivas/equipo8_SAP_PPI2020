@@ -8,12 +8,13 @@ class CardTrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_citaPorRealizar: this.props.numero_id,
       datos: []
     };
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/1`)
+    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_citaPorRealizar}`)
       .then(res =>{
         console.log(res.data)
         this.setState({

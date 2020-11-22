@@ -2,30 +2,34 @@ import React, { Component } from "react";
 import "./StylesTrabajadoresInicio.css";
 import axios from "axios";
 
-
 import { Link } from "react-router-dom";
 
 class TrabajadoresInicio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      datos: []
+      numero_id_trabajador: this.props.numero_id_trabajador,
+      datos: [],
     };
   }
-  
-  componentDidMount(){
-    axios.get('https://rickandmortyapi.com/api/character/1')
-      .then(res =>{
-        console.log(res.data)
+
+  componentDidMount() {
+    axios
+      .get(
+        `https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`
+      )
+      .then((res) => {
+        console.log(res.data);
         this.setState({
-          datos: res.data
-        })
-    }).catch(err=>{
-      console.log(err.massage)
-    })
+          datos: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err.massage);
+      });
   }
-  render(){
-    console.log(this.state.datos)
+  render() {
+    console.log(this.state.datos);
     const characters = this.state.datos;
     return (
       <div className="divFatherIngresarTrabajador">
@@ -92,20 +96,22 @@ class TrabajadoresInicio extends Component {
         <div className="informacion-fixed-trabajadoresInicio">
           <div className="divGridFOTOTRABAJADORTrabajadoresInicio">
             <div className="divimgFotoPerfilTrabajadoresInicio">
-              <Link to="/TrabajadoresInicio/MiPerfilComoTrabajador">
+              <Link to={`/TrabajadoresInicio/MiPerfilComoTrabajador/${this.state.numero_id_trabajador}`}>
                 <button className="btn BTN300">
                   <img
                     className="imgLogoFotoPerfilTrabajadoresInicio"
                     src={characters.image}
                     alt="Foto-Perfil"
                   />
-  
-      <div className="divMiPerfilTrabajadoresInicio">{characters.name}</div>
+
+                  <div className="divMiPerfilTrabajadoresInicio">
+                    {characters.name}
+                  </div>
                 </button>
               </Link>
             </div>
           </div>
-  
+
           <div>
             <div className="divGridPrincipalTrabajadoresInicio">
               <div className="divimgPrincipalTrabajadoresInicio">
@@ -116,7 +122,7 @@ class TrabajadoresInicio extends Component {
                 />
               </div>
             </div>
-  
+
             <div className="divBotonesTrabajadoresInicio">
               <Link
                 className="btn ButonTrabajadoresInicio"
@@ -141,8 +147,7 @@ class TrabajadoresInicio extends Component {
         </div>
       </div>
     );
-  };
   }
-  
+}
 
 export default TrabajadoresInicio;

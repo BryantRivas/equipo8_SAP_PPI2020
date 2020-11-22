@@ -8,22 +8,23 @@ class TrabajosRealizados extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      datos: []
+      datos: [],
     };
   }
 
-  componentDidMount(){
-    axios.get('https://rickandmortyapi.com/api/character')
-      .then(res =>{
-        console.log(res.data)
+  componentDidMount() {
+    axios
+      .get("https://rickandmortyapi.com/api/character")
+      .then((res) => {
+        console.log(res.data);
         this.setState({
-          datos: res.data.results
-        })
-    }).catch(err=>{
-      console.log(err.massage)
-    })
+          datos: res.data.results,
+        });
+      })
+      .catch((err) => {
+        console.log(err.massage);
+      });
   }
-  
 
   render() {
     const characters = this.state.datos;
@@ -67,7 +68,6 @@ class TrabajosRealizados extends Component {
           </nav>
         </header>
 
-
         <div className="cards-fixed-trabajosRealizados">
           {characters.map((datosT) => {
             return (
@@ -110,7 +110,6 @@ class TrabajosRealizados extends Component {
               </div>
             );
           })}
-
         </div>
       </div>
     );

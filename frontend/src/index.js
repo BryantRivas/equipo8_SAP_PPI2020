@@ -95,11 +95,11 @@ ReactDOM.render(
           <IngresarTrabajadorP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio">
+        <Route exact path="/TrabajadoresInicio/:numero_id_trabajador">
           <TrabajadoresInicioP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/MiPerfilComoTrabajador">
+        <Route exact path="/TrabajadoresInicio/MiPerfilComoTrabajador/:numero_id_trabajador">
           <MiPerfilComoTrabajadorP />
         </Route>
 

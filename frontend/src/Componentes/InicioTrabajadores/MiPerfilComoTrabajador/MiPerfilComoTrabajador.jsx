@@ -8,6 +8,7 @@ class MiPerfilComoTrabajador extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: this.props.numero_id_trabajador,
       datos: [],
       form1T: {
         primerNombreT: '',
@@ -115,7 +116,7 @@ class MiPerfilComoTrabajador extends Component {
 
 
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/1`)
+    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({

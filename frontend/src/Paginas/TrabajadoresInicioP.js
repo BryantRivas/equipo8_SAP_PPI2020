@@ -1,10 +1,13 @@
 import React from "react";
 import TrabajadoresInicio from "../Componentes/InicioTrabajadores/TrabajadoresInicio";
+import { useParams } from "react-router-dom";
 
-function TrabajadoresInicioP() {
+const TrabajadoresInicioP = () => {
+  const { numero_id_trabajador } = useParams();
+  console.log(numero_id_trabajador)
   return (
     <div>
-      <TrabajadoresInicio />
+      <TrabajadoresInicio numero_id_trabajador = { numero_id_trabajador } />
     </div>
   );
 }
