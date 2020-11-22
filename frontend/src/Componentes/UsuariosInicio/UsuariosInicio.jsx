@@ -99,9 +99,7 @@ class inicioUsuarios extends Component {
                             <Link
                               className="btn ButonUsuariosInicio"
                               to={`/PerfilTrabajadorUsuario1/${datosT.id}`}
-                              
                             >
-                              {/*  */}
                               Solicitar
                             </Link>
                           </div>
