@@ -10,13 +10,15 @@ class PerfilTrabajadorUsuario1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id:"",
+      numero_id_trabajador: this.props.numero_id,
       datos: []
     };
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/${this.state.id}`)
+    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/:id
+    // https://rickandmortyapi.com/api/character/${this.state.id}
+    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -27,6 +29,7 @@ class PerfilTrabajadorUsuario1 extends Component {
     })
   }
   render() {
+    
     console.log(this.state.datos)
     const characters = this.state.datos;
 
@@ -74,7 +77,7 @@ class PerfilTrabajadorUsuario1 extends Component {
             </div>
             <div className="div-nombreTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1">
-                Jane Smith
+                {characters.name}
               </div>
             </div>
             <div className="div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1">

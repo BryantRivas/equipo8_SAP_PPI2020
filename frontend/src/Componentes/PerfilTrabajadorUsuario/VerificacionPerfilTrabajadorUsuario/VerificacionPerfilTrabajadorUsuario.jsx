@@ -10,6 +10,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: this.props.numero_id,
       datos: [],
       formU:{
         usuarioDireccion:'',
@@ -41,7 +42,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
 
 
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/2`)
+    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -62,7 +63,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
           <div className="menu-fixed-verificacionPerfil-Trabajador">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to="/PerfilTrabajadorUsuario1">
+                <Link to={`/PerfilTrabajadorUsuario1/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"
