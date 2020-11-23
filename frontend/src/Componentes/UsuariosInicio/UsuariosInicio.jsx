@@ -14,11 +14,12 @@ class inicioUsuarios extends Component {
   
   componentDidMount(){
     //https://barppi.herokuapp.com/api/trabajador
-    axios.get('https://rickandmortyapi.com/api/character')
+    //https://rickandmortyapi.com/api/character
+    axios.get('http://localhost:4020/api/trabajador')
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data.results
+          datos: res.data
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -81,7 +82,7 @@ class inicioUsuarios extends Component {
                       <div className="imgdivcenterFotoPerfil_UsuariosInicio">
                         <img
                           className="imgFotoPerfilUsuariosInicio"
-                          src={datosT.image}
+                          src={datosT.FotoPerfil}
                           alt="Foto_Perfil"
                         />
                       </div>
@@ -91,14 +92,14 @@ class inicioUsuarios extends Component {
                         <div className="div_Grid_TopCard_UsuariosInicio">
                           <div className="div-Nombre_Trabajador_UsuariosInicio">
                             <h3 className="Nombre_Trabajador_UsuariosInicio">
-                              {datosT.name}
-                              {datosT.nombres_trabajador}{` `}{datosT.apellidos_trabajador}
+                              {datosT.nombre1_trabajador}{` `}{datosT.nombre2_trabajador}
+                              {` `}{datosT.apellido1_trabajador}{` `}{datosT.apellido2_trabajador}
                             </h3>
                           </div>
                           <div className="divButtonSolicitarUsuariosInicio">
                             <Link
                               className="btn ButonUsuariosInicio"
-                              to={`/PerfilTrabajadorUsuario1/${datosT.id}`}
+                              to={`/PerfilTrabajadorUsuario1/${datosT.numero_id_trabajador}`}
                             >
                               Solicitar
                             </Link>
@@ -116,7 +117,7 @@ class inicioUsuarios extends Component {
                           className="textarea_Descripcion_UsuariosInicio"
                           readonly="readonly"
                         >
-                          {datosT.descripcion}
+                          {datosT.descripcion_trabajador}
                         </textarea>
                       </div>
                     </div>

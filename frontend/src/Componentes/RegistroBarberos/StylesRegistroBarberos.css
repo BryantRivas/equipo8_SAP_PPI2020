@@ -865,3 +865,35 @@
     }
   }
 }
+
+
+/* CSS MODAL */
+.foto-perfil-img-trabajador{
+  border-radius: 100%;
+  width: 160px;
+  height: 160px;
+  box-shadow: 4px 6px 10px rgb(0, 0, 0, 0.3);
+  position: flex;
+  justify-content: center;
+  align-content: center;
+}
+.div-subir-img-foto-perfil-trabajador{
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.foto-perfil-subida-img-trabajador{
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.input-subir-img{
+  color: white;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  border: solid black 2px;
+  border-radius: 5px;
+  background-color: black;
+}

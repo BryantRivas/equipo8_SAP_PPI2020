@@ -2,6 +2,9 @@
 //IMPORTACIÓN DE LOS ELEMENTOS A UTILIZAR
 const express = require('express');
 
+// BODY-PARSE
+const bodyParser = require('body-parser');
+
 // CORS
 const cors = require('cors');
 
@@ -30,6 +33,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 
+// BODY-PARSE
+app.use(bodyParser.json({limit: '100mb'}));
+app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));
 
 
 app.get('/', (req, res) => {

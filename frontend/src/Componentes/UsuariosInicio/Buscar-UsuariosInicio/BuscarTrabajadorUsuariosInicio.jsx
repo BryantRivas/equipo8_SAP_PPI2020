@@ -16,12 +16,13 @@ class BuscarTrabajadorUsuariosInicio extends Component {
   
   componentDidMount(){
     //https://barppi.herokuapp.com/api/trabajador
-    axios.get('https://rickandmortyapi.com/api/character')
+    //https://rickandmortyapi.com/api/character
+    axios.get('https://barppi.herokuapp.com/api/trabajador')
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data.results,
-          datosB: res.data.results
+          datos: res.data,
+          datosB: res.data
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -30,11 +31,23 @@ class BuscarTrabajadorUsuariosInicio extends Component {
 
   filtrarElementos = () => {
     var search = this.state.datos.filter(item => {
-      if(item.name.includes(this.state.busqueda) || 
-      item.name.toLowerCase().includes(this.state.busqueda) ||
-      item.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.name.toUpperCase().includes(this.state.busqueda) ||
-      item.name.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda)
+      if(item.nombres_trabajador.includes(this.state.busqueda) || 
+      item.nombres_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.nombres_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.nombres_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.nombres_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+
+      item.apellidos_trabajador.includes(this.state.busqueda) || 
+      item.apellidos_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.apellidos_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.apellidos_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.apellidos_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      
+      item.ciudad_trabajador.includes(this.state.busqueda) || 
+      item.ciudad_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.ciudad_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.ciudad_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.ciudad_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda)
       ){
         return item;
       }
@@ -122,14 +135,13 @@ class BuscarTrabajadorUsuariosInicio extends Component {
                         <div className="div_Grid_TopCard_UsuariosInicio">
                           <div className="div-Nombre_Trabajador_UsuariosInicio">
                             <h3 className="Nombre_Trabajador_UsuariosInicio">
-                              {datosT.name}
                               {datosT.nombres_trabajador}{` `}{datosT.apellidos_trabajador}
                             </h3>
                           </div>
                           <div className="divButtonSolicitarUsuariosInicio">
                             <Link
                               className="btn ButonUsuariosInicio"
-                              to={`/PerfilTrabajadorUsuario1/${datosT.id}`}
+                              to={`/PerfilTrabajadorUsuario1/${datosT.numero_id_trabajador}`}
                             >
                               Solicitar
                             </Link>

@@ -11,14 +11,16 @@ class PerfilTrabajadorUsuario1 extends Component {
     super(props);
     this.state = {
       numero_id_trabajador: this.props.numero_id,
-      datos: []
+      datos: [{
+
+      }]
     };
   }
   
   componentDidMount(){
     // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/:id
     // https://rickandmortyapi.com/api/character/${this.state.id}
-    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`)
+    axios.get(`https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -31,7 +33,7 @@ class PerfilTrabajadorUsuario1 extends Component {
   render() {
     
     console.log(this.state.datos)
-    const characters = this.state.datos;
+    const characters = this.state.datos[0];
 
     return (
       <div>
@@ -70,19 +72,19 @@ class PerfilTrabajadorUsuario1 extends Component {
               <div className="div-div-img-perfil_trabajador-PerfilTrabajadorUsuario1">
                 <img
                   className="img-perfil_trabajador-PerfilTrabajadorUsuario1"
-                  src={characters.image}
+                  src=""
                   alt="FotoPerfil"
                 />
               </div>
             </div>
             <div className="div-nombreTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1">
-                {characters.name}
+                {characters.nombres_trabajador}
               </div>
             </div>
             <div className="div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1">
-                Ciudad
+              {characters.ciudad_trabajador}
               </div>
             </div>
             <div className="div-tipoTrabajador-PerfilTrabajadorUsuario1">
@@ -92,7 +94,7 @@ class PerfilTrabajadorUsuario1 extends Component {
             </div>
             <div className="div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1">
-                $12.0000
+              {characters.precio_trabajador}
               </div>
             </div>
           </div>
@@ -116,7 +118,7 @@ class PerfilTrabajadorUsuario1 extends Component {
                 Dirección
               </div>
               <div className="div-div-TextodireccionTrabajador-PerfilTrabajadorUsuario1">
-                Carrera lorem
+              {characters.direccion_trabajador}
               </div>
             </div>
             <div className="div-CorreoElectronicoTrabajador-PerfilTrabajadorUsuario1">
@@ -124,7 +126,7 @@ class PerfilTrabajadorUsuario1 extends Component {
                 Correo Electronico
               </div>
               <div className="div-div-TextoCorreoElectronicoTrabajador-PerfilTrabajadorUsuario1">
-                Example@gmail.com
+              {characters.correo_electronico_trabajador}
               </div>
             </div>
             <div className="div-numeroTelefonicoTrabajador-PerfilTrabajadorUsuario1">
@@ -132,7 +134,7 @@ class PerfilTrabajadorUsuario1 extends Component {
                 Número Télefonico
               </div>
               <div className="div-div-TextonumeroTelefonicoTrabajador-PerfilTrabajadorUsuario1">
-                4187277
+                {characters.telefono_trabajador}
               </div>
             </div>
           </div>

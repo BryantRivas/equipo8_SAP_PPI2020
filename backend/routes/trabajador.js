@@ -74,10 +74,10 @@ trabajador.get('/trabajador/miperfilcomotrabajador/:id', (req,res)=>{
 // base de datos.
 // URL: /RegistroBarberos/RegistroBarberos3
 trabajador.post('/nuevo-trabajador/registro', (req,res)=>{
-    const { direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
-    const trabajador = [  direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador ];
+    const { nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil } = req.body;
+    const trabajador = [ nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil ];
 
-    const nuevoTrabajador = `INSERT INTO trabajador(direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+    const nuevoTrabajador = `INSERT INTO trabajador(nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
     mysqlConnection.query(nuevoTrabajador, trabajador, (err, results, fields)=>{
         if(err){

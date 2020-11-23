@@ -1,8 +1,11 @@
 import React from "react";
 import { Component } from "react";
 import "./StylesRegistroBarberos.css";
+import axios from "axios";
 
 import { Link, Redirect, withRouter } from "react-router-dom";
+
+let aja2 = "";
 
 class RegistroBarberos extends Component {
   constructor(props) {
@@ -10,22 +13,23 @@ class RegistroBarberos extends Component {
     this.state = {
       boolean: false,
       form: {
-        primerNombre: "",
-        segundoNombre: "",
-        primerApellido: "",
-        segundoApellido: "",
-        Correo: "",
-        ConfirmarCorreo: "",
-        Contrasena: "",
-        ConfirmarContrasena: "",
-        TelefonoCelular: "",
-        DireccionResidencial: "",
-        Documento: "",
-        Pais: "",
-        Ciudad: "",
-        tipoTrabajador: "",
-        Precio: "",
-        Descripcion: ""
+        nombre1_trabajador: "",
+        nombre2_trabajador: "",
+        apellido1_trabajador: "",
+        apellido2_trabajador: "",
+        correo_electronico_trabajador: "",
+        /*1*/ConfirmarCorreo: "",
+        contrasena_trabajador: "",
+        /*2*/ConfirmarContrasena: "",
+        telefono_trabajador: "",
+        direccion_trabajador: "",
+        documento_Trabajador: "",
+        pais_trabajador: "",
+        ciudad_trabajador: "",
+        tipo_trabajador: "",
+        precio_trabajador: "",
+        descripcion_trabajador: "",
+        FotoPerfil: aja2
       },
     };
   }
@@ -36,6 +40,7 @@ class RegistroBarberos extends Component {
       form: {
         ...this.state.form,
         [e.target.name]: e.target.value,
+        FotoPerfil: aja2
       },
     });
     console.log(this.state.form);
@@ -44,23 +49,27 @@ class RegistroBarberos extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const user = {
-      primerNombre: this.state.form.primerNombre,
-      segundoNombre: this.state.form.segundoNombre,
-      primerApellido: this.state.form.primerApellido,
-      segundoApellido: this.state.form.segundoApellido,
-      Correo: this.state.form.Correo,
+      nombre1_trabajador: this.state.form.nombre1_trabajador,
+      nombre2_trabajador: this.state.form.nombre2_trabajador,
+      apellido1_trabajador: this.state.form.apellido1_trabajador,
+      apellido2_trabajador: this.state.form.apellido2_trabajador,
+      correo_electronico_trabajador: this.state.form.correo_electronico_trabajador,
       ConfirmarCorreo: this.state.form.ConfirmarCorreo,
-      Contrasena: this.state.form.Contrasena,
+      contrasena_trabajador: this.state.form.contrasena_trabajador,
       ConfirmarContrasena: this.state.form.ConfirmarContrasena,
-      TelefonoCelular: this.state.form.TelefonoCelular,
-      DireccionResidencial: this.state.form.DireccionResidencial,
-      Documento: this.state.form.Documento,
-      Pais: this.state.form.Pais,
-      Ciudad: this.state.form.Ciudad,
-      tipoTrabajador: this.state.form.tipoTrabajador,
-      Precio: this.state.form.Precio,
-      Descripcion: this.state.form.Descripcion
+      telefono_trabajador: this.state.form.telefono_trabajador,
+      direccion_trabajador: this.state.form.direccion_trabajador,
+      documento_Trabajador: this.state.form.documento_Trabajador,
+      pais_trabajador: this.state.form.pais_trabajador,
+      ciudad_trabajador: this.state.form.ciudad_trabajador,
+      tipo_trabajador: this.state.form.tipo_trabajador,
+      precio_trabajador: this.state.form.precio_trabajador,
+      descripcion_trabajador: this.state.form.descripcion_trabajador,
+      FotoPerfil: aja2
     };
+    this.setState({
+      form:user
+    })
     console.log(user);
   };
 
@@ -279,8 +288,47 @@ class RegistroBarberos extends Component {
     }, 1500);
   };
 
+  Subir = () => {
+    let inpu = document.getElementById("FOTOPERFIL");
+    if (inpu.files && inpu.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("fotoPrev").src = e.target.result;
+            aja2 = e.target.result;
+        }
+        reader.readAsDataURL(inpu.files[0]);
+    }
+}
+
+  Subir2 = () => {
+  let inpu = document.getElementById("FOTOPERFIL");
+  if (inpu.files && inpu.files[0]) {
+    this.state.form.FotoPerfil = aja2;
+    // this.setState({form:{
+      // FotoPerfil: aja2,
+    // }})
+      // await this.putAvatar();
+      // UsuarioI[0].avatar = aja2;
+      // document.getElementById("FotoPerfíl").style.backgroundImage = "url(" + UsuarioI[0].avatar + ")";
+  }
+}
+// https://barppi.herokuapp.com/api/nuevo-trabajador/registro
+// http://localhost:4020/api/nuevo-trabajador/registro
+peticionPost=async () =>{
+  delete this.state.form.ConfirmarContrasena
+  delete this.state.form.ConfirmarCorreo
+   await axios.post('http://localhost:4020/api/nuevo-trabajador/registro', this.state.form)
+   .then(response =>{
+     console.log("Se ha creado un nuevo trabajador");
+   }).catch(error=>{
+    console.log(error.message);
+  })
+   
+ }
+
   render() {
     const datosForm = this.state.form;
+    console.log(this.state.form.FotoPerfil);
     return (
       <div>
         <header>
@@ -326,10 +374,10 @@ class RegistroBarberos extends Component {
                         placeholder="Primer Nombre"
                         type="text"
                         id="PRIMERNOMBRE"
-                        name="primerNombre"
+                        name="nombre1_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.primerNombre}
+                        value={datosForm.nombre1_trabajador}
                       />
                       <div>{this.state.advertencia}</div>
                     </div>
@@ -340,10 +388,10 @@ class RegistroBarberos extends Component {
                         placeholder="Segundo Nombre"
                         type="text"
                         id="SEGUNDONOMBRE"
-                        name="segundoNombre"
+                        name="nombre2_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.segundoNombre}
+                        value={datosForm.nombre2_trabajador}
                       />
                     </div>
                     <div className="divBoxes">
@@ -354,9 +402,9 @@ class RegistroBarberos extends Component {
                         type="text"
                         id="PRIMERAPELLIDO"
                         autoComplete="off"
-                        name="primerApellido"
+                        name="apellido1_trabajador"
                         onChange={this.handleChange}
-                        value={datosForm.primerApellido}
+                        value={datosForm.apellido1_trabajador}
                       />
                     </div>
 
@@ -366,11 +414,11 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         placeholder="Segundo Apellido"
                         type="text"
-                        name="segundoApellido"
+                        name="apellido2_trabajador"
                         id="SEGUNDOAPELLIDO"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.segundoApellido}
+                        value={datosForm.apellido2_trabajador}
                       />
                     </div>
                   </div>
@@ -385,10 +433,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="email"
                         id="CORREOTRABAJADOR"
-                        name="Correo"
+                        name="correo_electronico_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Correo}
+                        value={datosForm.correo_electronico_trabajador}
                       />
                     </div>
                     <div className="divBoxes">
@@ -411,10 +459,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="password"
                         id="CONTRASENATRABAJADOR"
-                        name="Contrasena"
+                        name="contrasena_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Contrasena}
+                        value={datosForm.contrasena_trabajador}
                       />
                     </div>
 
@@ -442,10 +490,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="number"
                         id="TELEFONOCELULARTRABAJADOR"
-                        name="TelefonoCelular"
+                        name="telefono_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.TelefonoCelular}
+                        value={datosForm.telefono_trabajador}
                       />
                     </div>
                     <div className="divBoxes">
@@ -455,10 +503,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="text"
                         id="DIRECCIONRESIDENCIALTRABAJADOR"
-                        name="DireccionResidencial"
+                        name="direccion_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.DireccionResidencial}
+                        value={datosForm.direccion_trabajador}
                       />
                     </div>
                     <div className="divBoxes">
@@ -468,10 +516,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="number"
                         id="DOCUMENTOTRABAJADOR"
-                        name="Documento"
+                        name="documento_Trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Documento}
+                        value={datosForm.documento_Trabajador}
                       />
                     </div>
 
@@ -481,11 +529,11 @@ class RegistroBarberos extends Component {
                         placeholder="País"
                         className="form-control borderBox"
                         type="text"
-                        name="Pais"
+                        name="pais_trabajador"
                         id="PAISTRABAJADOR"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Pais}
+                        value={datosForm.pais_trabajador}
                       />
                     </div>
 
@@ -496,10 +544,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="text"
                         id="CIUDADTRABAJADOR"
-                        name="Ciudad"
+                        name="ciudad_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Ciudad}
+                        value={datosForm.ciudad_trabajador}
                       />
                     </div>
                   </div>
@@ -513,9 +561,9 @@ class RegistroBarberos extends Component {
                         class="form-control borderBox"
                         type="text"
                         id="TIPOTRABAJADOR"
-                        name="tipoTrabajador"
+                        name="tipo_trabajador"
                         onChange={this.handleChange}
-                        value={datosForm.tipoTrabajador}
+                        value={datosForm.tipo_trabajador}
                       >
                         <option selected>Eres...</option>
                         <option>Barbero</option>
@@ -557,7 +605,19 @@ class RegistroBarberos extends Component {
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <div className="modal-body">En esta parte ira</div>
+                            <div className="modal-body">
+                            <form id="formProta" encType="multipart/form-data">
+                                <input className="input-subir-img" id="FOTOPERFIL" accept="image/*" onChange={this.Subir} type="file" />
+                            </form>
+                            <div className="foto-perfil-subida-img-trabajador">
+                            <img className="foto-perfil-img-trabajador" id="fotoPrev" src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6" alt="FOTOPERFIL"/>
+                            </div>
+                            <div className="div-subir-img-foto-perfil-trabajador">
+                            <button className="Buton" onClick={this.Subir2}>
+                              SUBIR
+                            </button>
+                            </div>
+                            </div>
                             <div className="modal-footer">
                               <button
                                 type="button"
@@ -579,10 +639,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="number"
                         id="PRECIOTRABAJO"
-                        name="Precio"
+                        name="precio_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Precio}
+                        value={datosForm.precio_trabajador}
                       />
                     </div>
 
@@ -593,10 +653,10 @@ class RegistroBarberos extends Component {
                         className="form-control borderBox"
                         type="text"
                         id="DESCRIPCIONTRABAJADOR"
-                        name="Descripcion"
+                        name="descripcion_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange}
-                        value={datosForm.Descripcion}
+                        value={datosForm.descripcion_trabajador}
                       />
                     </div>
                   </div>
@@ -606,7 +666,7 @@ class RegistroBarberos extends Component {
                   <button
                     type="submit"
                     className="btn Buton"
-                    onClick={this.validacionForm}
+                    onClick={this.peticionPost}
                   >
                     SIGUIENTE
                   </button>
