@@ -1,11 +1,12 @@
 import React from "react";
 import TrabajosPorRealizar from "../Componentes/InicioTrabajadores/TrabajosPorRealizar/TrabajaosPorRealizar";
+import { useParams } from "react-router-dom";
 
-
-function TrabajosPorRealizarP() {
+const TrabajosPorRealizarP = () => {
+  const { numero_id_trabajador } = useParams();
   return (
     <div>
-      <TrabajosPorRealizar />
+      <TrabajosPorRealizar numero_id_trabajador = { numero_id_trabajador } />
     </div>
   );
 }

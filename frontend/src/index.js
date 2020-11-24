@@ -31,7 +31,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar">
+        <Route exact path="/TrabajadoresInicio/TrabajosPorRealizar/:numero_id_trabajador">
           <TrabajosPorRealizarP />
         </Route>
 
@@ -41,14 +41,14 @@ ReactDOM.render(
 
         <Route
           exact
-          path="/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar"
+          path="/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar/:numero_id_trabajador"
         >
           <BusquedaTrabajosPorRealizarP />
         </Route>
 
         <Route
           exact
-          path="/TrabajadoresInicio/TrabajosRealizados/busquedaTrabajosRealizados"
+          path="/TrabajadoresInicio/TrabajosRealizados/busquedaTrabajosRealizados/:numero_id_trabajador"
         >
           <BusquedaTrabajosRealizadosP />
         </Route>
@@ -67,7 +67,7 @@ ReactDOM.render(
           <CardTrabajosPorRealizarP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/TrabajosRealizados">
+        <Route exact path="/TrabajadoresInicio/TrabajosRealizados/:numero_id_trabajador">
           <TrabajosRealizadosP />
         </Route>
 
@@ -110,7 +110,7 @@ ReactDOM.render(
           <InformacionPersonalTrabajadorP />
         </Route>
 
-        <Route exact path="/TrabajadoresInicio/MiAgendaTrabajador">
+        <Route exact path="/TrabajadoresInicio/MiAgendaTrabajador/:numero_id_trabajador">
           <MiAgendaTrabajadorP />
         </Route>
 

@@ -8,6 +8,7 @@ class BusquedaTrabajosRealizados extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: this.props.numero_id_trabajador,
       busqueda: "",
       datos: [],
       datosB: [],
@@ -71,7 +72,7 @@ class BusquedaTrabajosRealizados extends Component {
           <nav className="menu-fixed-busqueda-trabajosRealizados">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to="/TrabajadoresInicio/TrabajosRealizados">
+                <Link to={`/TrabajadoresInicio/TrabajosRealizados/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"

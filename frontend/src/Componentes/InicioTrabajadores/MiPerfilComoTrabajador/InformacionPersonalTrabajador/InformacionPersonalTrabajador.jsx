@@ -15,22 +15,22 @@ class InformacionPersonalTrabajador extends Component {
       datos:[],
       form1T:{
         correoElectronicoActual:'',
-        nuevoCorreoElectronico: '',
+        correo_electronico_trabajador: '',
         confirmarCorreoElectronico: ''
       },
       form2T:{
         contrasenaActual: '',
-        nuevaContrasena: '',
+        contrasena_trabajador: '',
         confirmarNuevaContrasena: ''
       },
       form3T:{
         direccionActual: '',
-        nuevaDireccion: '',
+        direccion_trabajador: '',
         confirmarNuevaDireccion: ''
       },
       form4T:{
         numeroTelefonicoActual: '',
-        nuevoNumeroTelefonico: '',
+        telefono_trabajador: '',
         confirmarNuevoNumeroTelefonico: ''
       },
       form5T:{
@@ -42,6 +42,15 @@ class InformacionPersonalTrabajador extends Component {
       form7T:{
         costoActualTrabajo: '',
         nuevoCostoTrabajo: ''
+      },
+      form8T:{
+
+      },
+      form9T:{
+
+      },
+      form10T:{
+        
       }
     };
   }
@@ -210,6 +219,47 @@ class InformacionPersonalTrabajador extends Component {
 
 
   onChange = (date) => this.setState({ date });
+
+
+  peticionPutCorreo = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}`, { correo_electronico_trabajador: this.state.form1T.correo_electronico_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo el correo del trabajador')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
+  peticionPutContrasena = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}`, { contrasena_trabajador: this.state.form2T.contrasena_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo la contraseña del trabajador')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
+  peticionPutDireccion = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}`, { direccion_trabajador: this.state.form3T.direccion_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo la direccion del trabajador')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
+  peticionPutTelefonoTrabajador = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}`, { telefono_trabajador: this.state.form4T.telefono_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo el telefono del trabajador')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
 
   render() {
     const { date } = this.onChange;
@@ -589,10 +639,10 @@ class InformacionPersonalTrabajador extends Component {
                         placeholder="Nueva dirección"
                         className="input-direccionTrabajador-InformacionPersonalTrabajador"
                         id="NUEVADIRECCION"
-                        name="nuevaDireccion"
+                        name="direccion_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange3T}
-                        value={datosForm3T.nuevaDireccion}
+                        value={datosForm3T.direccion_trabajador}
                       />
                       <input
                         type="text"
@@ -612,6 +662,7 @@ class InformacionPersonalTrabajador extends Component {
                       type="button"
                       class="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutDireccion}
                     >
                       OKY
                     </button>
@@ -665,10 +716,10 @@ class InformacionPersonalTrabajador extends Component {
                         className="input-numeroTrabajador-InformacionPersonalTrabajador"
                         type="tel"
                         id="NUEVONUMEROTELEFONICO"
-                        name="nuevoNumeroTelefonico"
+                        name="telefono_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange4T}
-                        value={datosForm4T.nuevoNumeroTelefonico}
+                        value={datosForm4T.telefono_trabajador}
                       />
                       <input
                         placeholder="Confirmar número teléfonico"
@@ -688,6 +739,7 @@ class InformacionPersonalTrabajador extends Component {
                       type="button"
                       class="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutTelefonoTrabajador}
                     >
                       OKY
                     </button>
@@ -741,10 +793,10 @@ class InformacionPersonalTrabajador extends Component {
                         className="input-correoNuevoTrabajador-InformacionPersonalTrabajador"
                         type="email"
                         id="NUEVOCORREOELECTRONICO"
-                        name="nuevoCorreoElectronico"
+                        name="correo_electronico_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange1T}
-                        value={datosForm1T.nuevoCorreoElectronico}
+                        value={datosForm1T.correo_electronico_trabajador}
                       />
                       <input
                         placeholder="Confirmar correo electronico"
@@ -764,6 +816,7 @@ class InformacionPersonalTrabajador extends Component {
                       type="button"
                       className="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutCorreo}
                     >
                       OKY
                     </button>
@@ -817,10 +870,10 @@ class InformacionPersonalTrabajador extends Component {
                         placeholder="Nueva contraseña"
                         className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
                         id="NUEVACONTRASENA"
-                        name="nuevaContrasena"
+                        name="contrasena_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange2T}
-                        value={datosForm2T.nuevaContrasena}
+                        value={datosForm2T.contrasena_trabajador}
                       />
                       <input
                         type="new-password"
@@ -840,6 +893,7 @@ class InformacionPersonalTrabajador extends Component {
                       type="button"
                       className="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutContrasena}
                     >
                       OKY
                     </button>

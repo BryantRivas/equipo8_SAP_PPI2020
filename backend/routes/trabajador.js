@@ -225,7 +225,7 @@ trabajador.put('/trabajador/put/descripcionTrabajador/:numero_id_trabajador', (r
 });
 
 // ACTUALIZACION DE TIPO DE TRABAJADOR
-// 
+// FUNCIONA BIEN
 trabajador.put('/trabajador/put/tipoTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { tipo_trabajador } = req.body;
@@ -239,6 +239,74 @@ trabajador.put('/trabajador/put/tipoTrabajador/:numero_id_trabajador', (req,res)
         }
     });
 });
+
+
+// ESTAS SON LAS PETICIONES PARA EL APARTADO DE MI INFORMACION MAS PERSONAL DEL TRABAJADOR
+
+// ACTUALIZACION DE CORREO DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/correoTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { correo_electronico_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET correo_electronico_trabajador = ? WHERE numero_id_trabajador= ?`, [ correo_electronico_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el tipo de trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DE CONTRASEÑA DEL TRABAJADOR
+// FUNCIONA BIEN 
+trabajador.put('/trabajador/put/contrasenaTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { contrasena_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET contrasena_trabajador = ? WHERE numero_id_trabajador= ?`, [ contrasena_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado la contraseña del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DE DIRECCION DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/direccionTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { direccion_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET direccion_trabajador = ? WHERE numero_id_trabajador= ?`, [ direccion_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado la direccion del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DEL NUMERO TELEFONICO DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/telefonoTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { telefono_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET telefono_trabajador = ? WHERE numero_id_trabajador= ?`, [ telefono_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el numero de telefono del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
 
 
 // LOS SIGUIENTES SON LAS FORMAS DE HACER PETICIONES

@@ -1,10 +1,12 @@
 import React from "react";
 import MiAgendaTrabajador from "../Componentes/InicioTrabajadores/MiAgendaTrabajador/MiAgendaTrabajador";
+import { useParams } from "react-router-dom";
 
-function MiAgendaTrabajadorP() {
+const MiAgendaTrabajadorP = () => {
+  const { numero_id_trabajador } = useParams();
   return (
     <div>
-      <MiAgendaTrabajador />
+      <MiAgendaTrabajador numero_id_trabajador = { numero_id_trabajador } />
     </div>
   );
 }

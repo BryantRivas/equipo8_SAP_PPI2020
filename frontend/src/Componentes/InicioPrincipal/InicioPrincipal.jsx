@@ -14,9 +14,8 @@ const InicioPrincipal = () => {
             alt="BarppiPrincipal"
           />
         </div>
-        {/* 
+         {/*
         <div>
-        
           <img
             className="img-1 my-custom-shake shake-constant "
             src="https://1.bp.blogspot.com/-zzLuzcxIFJs/X161jaOCfSI/AAAAAAAAHTI/qhevsGCXwP88ffCTX1RrweVY94SuUxWNwCLcBGAsYHQ/s300/1.png"

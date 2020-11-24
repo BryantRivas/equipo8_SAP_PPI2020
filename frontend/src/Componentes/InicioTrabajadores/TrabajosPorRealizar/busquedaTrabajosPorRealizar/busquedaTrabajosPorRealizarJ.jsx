@@ -8,6 +8,7 @@ class busquedaTrabajosPorRealizarJ extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: this.props.numero_id_trabajador,
       busqueda: "",
       datos: [],
       datosB: [],
@@ -70,7 +71,7 @@ class busquedaTrabajosPorRealizarJ extends Component {
           <nav className="menu-fixed-busqueda-trabajos-por-realizar">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to="/TrabajadoresInicio/TrabajosPorRealizar">
+                <Link to={`/TrabajadoresInicio/TrabajosPorRealizar/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"

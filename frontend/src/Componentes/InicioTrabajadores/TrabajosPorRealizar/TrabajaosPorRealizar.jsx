@@ -8,6 +8,7 @@ class TrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: this.props.numero_id_trabajador,
       datos: []
     };
   }
@@ -32,7 +33,7 @@ class TrabajosPorRealizar extends Component {
           <nav className="menu-fixed-trabajos-por-realizar">
             <div className="btnFlecha-TrabajosPorRealizar">
               <div className="btn_TrabajosPorRealizar">
-                <Link to="/TrabajadoresInicio">
+                <Link to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="TrabajosPorRealizar_Flecha"
@@ -52,7 +53,7 @@ class TrabajosPorRealizar extends Component {
                 </div>
               </div>
               <div className="divBuscar_TrabajosPorRealizar">
-                <Link to="/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar">
+                <Link to={`/TrabajadoresInicio/TrabajosPorRealizar/busquedaTrabajosPorRealizar/${this.state.numero_id_trabajador}`}>
                   <button className="btn imgBuscar_TrabajosPorRealizar_Logo">
                     <img
                       className="imgBuscar_TrabajosPorRealizar_Barppi"

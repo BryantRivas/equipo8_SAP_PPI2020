@@ -95,18 +95,18 @@ class TrabajadoresInicio extends Component {
             <div className="divBotonesTrabajadoresInicio">
               <Link
                 className="btn ButonTrabajadoresInicio"
-                to={`/TrabajadoresInicio/TrabajosPorRealizar`}
+                to={`/TrabajadoresInicio/TrabajosPorRealizar/${this.state.numero_id_trabajador}`}
               >
                 TRABAJOS POR REALIZAR
               </Link>
               <Link
                 className="btn ButonTrabajadoresInicio"
-                to={`/TrabajadoresInicio/TrabajosRealizados`}
+                to={`/TrabajadoresInicio/TrabajosRealizados/${this.state.numero_id_trabajador}`}
               >
                 TRABAJOS REALIZADOS
               </Link>
               <Link
-                to={`/TrabajadoresInicio/MiAgendaTrabajador`}
+                to={`/TrabajadoresInicio/MiAgendaTrabajador/${this.state.numero_id_trabajador}`}
                 className="btn ButonTrabajadoresInicio"
               >
                 AGENDA
