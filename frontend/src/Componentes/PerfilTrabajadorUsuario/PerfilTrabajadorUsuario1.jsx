@@ -18,13 +18,18 @@ class PerfilTrabajadorUsuario1 extends Component {
   }
   
   componentDidMount(){
-    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/:id
-    // https://rickandmortyapi.com/api/character/${this.state.id}
-    axios.get(`https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
+    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
+
+    // ESTE LINK DA ERROR
+    //http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/
+    // ESTE NO DA ERROR
+    //http://localhost:4020/api/trabajador/cardperfiltrabajador/
+    axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data
+          datos: res.data[0]
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -33,7 +38,7 @@ class PerfilTrabajadorUsuario1 extends Component {
   render() {
     
     console.log(this.state.datos)
-    const characters = this.state.datos[0];
+    const characters = this.state.datos;
 
     return (
       <div>
@@ -72,14 +77,14 @@ class PerfilTrabajadorUsuario1 extends Component {
               <div className="div-div-img-perfil_trabajador-PerfilTrabajadorUsuario1">
                 <img
                   className="img-perfil_trabajador-PerfilTrabajadorUsuario1"
-                  src=""
+                  src={characters.FotoPerfil}
                   alt="FotoPerfil"
                 />
               </div>
             </div>
             <div className="div-nombreTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1">
-                {characters.nombres_trabajador}
+                {characters.nombre1_trabajador}{` `}{characters.nombre2_trabajador}{` `}{characters.apellido1_trabajador}{` `}{characters.apellido2_trabajador}
               </div>
             </div>
             <div className="div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1">
@@ -89,12 +94,12 @@ class PerfilTrabajadorUsuario1 extends Component {
             </div>
             <div className="div-tipoTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-div-tipoTrabajador-PerfilTrabajadorUsuario1">
-                BARBERO
+                {characters.tipo_trabajador}
               </div>
             </div>
             <div className="div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-div-contoTrabajoTrabajador-PerfilTrabajadorUsuario1">
-              {characters.precio_trabajador}
+              ${characters.precio_trabajador},00
               </div>
             </div>
           </div>
@@ -105,12 +110,7 @@ class PerfilTrabajadorUsuario1 extends Component {
                 DESCRIPCION
               </div>
               <div className="div-div-TextoDescripcion-PerfilTrabajadorUsuario1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia optio omnis voluptate aliquam voluptatibus adipisci
-                incidunt sit accusamus, veritatis possimus harum quam
-                recusandae, pariatur atque unde voluptatum magni labore sint.
-                Deserunt possimus exercitationem porro, temporibus laborum quasi
-                iusto aliquam libero cupiditate.
+                {characters.descripcion_trabajador}
               </div>
             </div>
             <div className="div-direccionTrabajador-PerfilTrabajadorUsuario">
@@ -143,7 +143,7 @@ class PerfilTrabajadorUsuario1 extends Component {
             <div className="div-div-boton-bot-SOLICITAR-PerfilTrabajadorUsuario1">
               <Link
                 className="btn boton-Solicitar-PerfilTrabajadorUsuario1"
-                to={`/PerfilTrabajadorUsuario2/${characters.id}`}
+                to={`/PerfilTrabajadorUsuario2/${characters.numero_id_trabajador}`}
               >
                 SOLICITAR
               </Link>

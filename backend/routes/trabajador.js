@@ -8,6 +8,7 @@ const mysqlConnection = require('../db/db');
 // las cuales contendrán la información del trabajador que se encuentra registrado en nuestra base de datos. 
 // Es necesario pedir los datos que se encuentran alojados en el lado del servidor.
 // URL : /UsuariosInicio 
+// LA ESTOY UTILIZANDO
 trabajador.get('/trabajador', (req,res)=>{
     mysqlConnection.query('SELECT * FROM trabajador', (err, rows, fields)=>{
         if(!err){
@@ -23,6 +24,7 @@ trabajador.get('/trabajador', (req,res)=>{
 // OBJETIVO: La ingresar un usuario a la respectiva card de un trabajador de su agrado, 
 // podrá visualizar una información mucho más detallada acerca del trabajador, además podrá solicitarlo.
 // URL: /PerfilTrabajadorUsuario1
+// LA ESTOY UTILIZANDO
 trabajador.get('/trabajador/cardperfiltrabajador/:id', (req,res)=>{
     const { id } = req.params;
     mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
@@ -34,6 +36,35 @@ trabajador.get('/trabajador/cardperfiltrabajador/:id', (req,res)=>{
     });
 });
 
+// TABLA: Card 2 perfil trabajador usuario2
+// URL: /PerfilTrabajadorUsuario2
+// LA ESTOY UTILIZANDO
+trabajador.get('/trabajador/cardperfiltrabajador/verificacionPerfil/:id', (req,res)=>{
+    const { numero_id_trabajador } = req.params;
+    mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[numero_id_trabajador], (err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// TABLA : Inicio Trabajador
+// OBJETIVO : Realizar el inicio del trabajador,realizar login
+// completo con la contraseña y el correo del trabajador
+// URL : /IngresarTrabajador 
+// LA ESTOY UTILIZANDO
+trabajador.get('/trabajador/login/:correo_electronico_trabajador', (req,res)=>{
+    const { correo_electronico_trabajador } = req.params;
+    mysqlConnection.query('SELECT correo_electronico_trabajador,contrasena_trabajador,numero_id_trabajador FROM trabajador WHERE correo_electronico_trabajador = ? ',[correo_electronico_trabajador], (err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+    });
+});
 
 // TABLA: Información personal "INFORMACION MAS PERSONAL"
 // OBJETIVO: El trabajador en el apartado de “MI PERFIL”, puede consultar su información más personal,
@@ -73,6 +104,7 @@ trabajador.get('/trabajador/miperfilcomotrabajador/:id', (req,res)=>{
 // podrá registrarse completando los datos necesarios; una vez los datos estén completamente diligenciados se enviaran a la 
 // base de datos.
 // URL: /RegistroBarberos/RegistroBarberos3
+// LA ESTOY UTILIZANDO
 trabajador.post('/nuevo-trabajador/registro', (req,res)=>{
     const { nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil } = req.body;
     const trabajador = [ nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil ];

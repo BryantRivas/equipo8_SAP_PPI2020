@@ -41,12 +41,19 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
   };
 
 
-  componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`)
+  async componentDidMount(){
+    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
+
+    // ESTE LINK DA ERROR
+    //http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/
+    // ESTE NO DA ERROR
+    //http://localhost:4020/api/trabajador/cardperfiltrabajador/
+    await axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data
+          datos: res.data[0]
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -55,6 +62,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
 
   render() {
     console.log(this.state.datos)
+    console.log(this.state.numero_id_trabajador)
     const characters = this.state.datos
     const datosFormU = this.state.formU;
     return (
@@ -96,7 +104,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
                   <img
                     className="img-boton-iconFacebook-IniciarSesionUsuario"
                     src="https://1.bp.blogspot.com/-LMxlVmBE-Mc/X2E83PdpHcI/AAAAAAAAHsU/KhuhTSrAnvs5KQhFivdsINc8QAC7Hr00gCLcBGAsYHQ/s2048/Facebook.png"
-                    alt=""
+                    alt="Facebook"
                   />
                   INICIAR CON FACEBOOK
                 </button>
@@ -107,7 +115,7 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
                   <img
                     className="img-boton-iconGoogle-IniciarSesionUsuario"
                     src="https://1.bp.blogspot.com/-Icc_DFXm9DQ/X2E83GL1-LI/AAAAAAAAHsQ/T038TKJC5WsKvnjihxUnZIAPtGxSIJ71gCLcBGAsYHQ/s733/Google.png"
-                    alt=""
+                    alt="Google"
                   />
                   INICIAR CON GOOGLE
                 </button>
@@ -151,7 +159,9 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
           </form>
 
           <div className="div-texto-precioTrabajo">
-            <div className="div-div-texto-precioTrabajo">$12.000,00</div>
+            <div className="div-div-texto-precioTrabajo">
+              ${characters.precio_trabajador},00
+              </div>
           </div>
 
           <div className="div-informacionTrabajador">
@@ -159,31 +169,25 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
               <div className="div-div-grid-fotoDePerfil-VerificacionInformacion">
                 <img
                   className="img-fotoperfilTrabajador-VerificacionPerfil"
-                  src={characters.image}
+                  src={characters.FotoPerfil}
                   alt="FotoPerfil"
                 />
               </div>
               <div className="div-div-grid-NombreTrabajador-VerificacionInformacion">
-                {characters.name}
+                {characters.nombre1_trabajador}{` `}{characters.nombre2_trabajador}{` `}{characters.apellido1_trabajador}{` `}{characters.apellido2_trabajador}
               </div>
               <div className="div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion">
-                Número telefonico del trabajador
+                Telefono:{characters.telefono_trabajador}
               </div>
               <div className="div-div-grid-direccionTrabajador-VerificacionInformacion">
-                Dirección del Trabajador
+                Dirección:{characters.direccion_trabajador}
               </div>
               <div className="div-div-grid-correoTrabajador-VerificacionInformacion">
-                Correo del trabajador
+                Correo:{characters.correo_electronico_trabajador}
               </div>
             </div>
             <div className="div-descripcionTrabajador-VerificacionInformacion">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit qui dolorem sed amet est illum neque corrupti in,
-              libero, minus sequi! Tempore dolor dolores omnis vel mollitia qui
-              sapiente provident! Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Provident, in similique facilis temporibus, non
-              voluptate atque error dolorum velit deleniti odio, asperiores
-              incidunt? Voluptatum et quo commodi alias aspernatur laudantium?
+              {characters.descripcion_trabajador}
             </div>
           </div>
         </div>

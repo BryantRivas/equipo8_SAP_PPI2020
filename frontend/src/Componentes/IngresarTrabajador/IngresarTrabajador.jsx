@@ -8,13 +8,11 @@ class IngresarTrabajador extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numero_id_trabajador: 8,
       login:{
-        correo: '',
+        correo_electronico_trabajador: '',
         contrasena: ''
       },
-      datos:[],
-      datosB:[]
+      datos:[]
     };
   }
 
@@ -29,12 +27,11 @@ class IngresarTrabajador extends Component {
 
   iniciarSesion = async () =>{
     // https://barppi.herokuapp.com/api/trabajador
-    await axios.get('http://localhost:4020/api/trabajador', {params: {correo_electronico_trabajador: this.state.login.correo, contrasena_trabajador: this.state.login.contrasena}})
+    await axios.get(`http://localhost:4020/api/trabajador/login/${this.state.login.correo_electronico_trabajador}`)
     .then(response => {
       console.log(response.data);
       this.setState({
-        datos: response.data,
-        datosB: response.data
+        datos: response.data[0]
       })
     })
     .catch(error => {
@@ -78,7 +75,9 @@ class IngresarTrabajador extends Component {
   }
 
   render(){
-
+    console.log(this.state.datos)
+    console.log(this.state.datos[0])
+    const loginTrabajador = this.state.datos[0]
     return (
       <div>
         <header>
@@ -119,7 +118,7 @@ class IngresarTrabajador extends Component {
                   className="form-control borderBoxIngresarTrabajador"
                   type="email"
                   id="CORREOTRABAJADOR"
-                  name="correo"
+                  name="correo_electronico_trabajador"
                   onChange={this.handleChange}
                 />
                 <input
@@ -147,6 +146,9 @@ class IngresarTrabajador extends Component {
                   <button className="btn ButonIngresarTrabajador" onClick={() => this.iniciarSesion()} >Entrar</button>
                 
               </div>
+              <Link exact to={`/TrabajadoresInicio/${this.state.datos.numero_id_trabajador}`}>
+                IR A LA PARTE DEL TRABAJADOR
+              </Link>
             </div>
           </div>
         </div>

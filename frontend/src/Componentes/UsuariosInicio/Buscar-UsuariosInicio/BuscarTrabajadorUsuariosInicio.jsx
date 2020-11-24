@@ -16,8 +16,8 @@ class BuscarTrabajadorUsuariosInicio extends Component {
   
   componentDidMount(){
     //https://barppi.herokuapp.com/api/trabajador
-    //https://rickandmortyapi.com/api/character
-    axios.get('https://barppi.herokuapp.com/api/trabajador')
+    //http://localhost:4020/api/trabajador
+    axios.get('http://localhost:4020/api/trabajador')
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -31,17 +31,29 @@ class BuscarTrabajadorUsuariosInicio extends Component {
 
   filtrarElementos = () => {
     var search = this.state.datos.filter(item => {
-      if(item.nombres_trabajador.includes(this.state.busqueda) || 
-      item.nombres_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.nombres_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.nombres_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.nombres_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      if(item.nombre1_trabajador.includes(this.state.busqueda) || 
+      item.nombre1_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.nombre1_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.nombre1_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.nombre1_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
 
-      item.apellidos_trabajador.includes(this.state.busqueda) || 
-      item.apellidos_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.apellidos_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.apellidos_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.apellidos_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.nombre2_trabajador.includes(this.state.busqueda) || 
+      item.nombre2_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.nombre2_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.nombre2_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.nombre2_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+
+      item.apellido1_trabajador.includes(this.state.busqueda) || 
+      item.apellido1_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.apellido1_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.apellido1_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.apellido1_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+
+      item.apellido2_trabajador.includes(this.state.busqueda) || 
+      item.apellido2_trabajador.toLowerCase().includes(this.state.busqueda) ||
+      item.apellido2_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
+      item.apellido2_trabajador.toUpperCase().includes(this.state.busqueda) ||
+      item.apellido2_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
       
       item.ciudad_trabajador.includes(this.state.busqueda) || 
       item.ciudad_trabajador.toLowerCase().includes(this.state.busqueda) ||
@@ -125,7 +137,7 @@ class BuscarTrabajadorUsuariosInicio extends Component {
                       <div className="imgdivcenterFotoPerfil_UsuariosInicio">
                         <img
                           className="imgFotoPerfilUsuariosInicio"
-                          src={datosT.image}
+                          src={datosT.FotoPerfil}
                           alt="Foto_Perfil"
                         />
                       </div>
@@ -135,7 +147,8 @@ class BuscarTrabajadorUsuariosInicio extends Component {
                         <div className="div_Grid_TopCard_UsuariosInicio">
                           <div className="div-Nombre_Trabajador_UsuariosInicio">
                             <h3 className="Nombre_Trabajador_UsuariosInicio">
-                              {datosT.nombres_trabajador}{` `}{datosT.apellidos_trabajador}
+                              {datosT.nombre1_trabajador}{` `}{datosT.nombre2_trabajador}
+                              {` `}{datosT.apellido1_trabajador}{` `}{datosT.apellido2_trabajador}
                             </h3>
                           </div>
                           <div className="divButtonSolicitarUsuariosInicio">
@@ -159,7 +172,7 @@ class BuscarTrabajadorUsuariosInicio extends Component {
                           className="textarea_Descripcion_UsuariosInicio"
                           readonly="readonly"
                         >
-                          {datosT.descripcion}
+                          {datosT.descripcion_trabajador}
                         </textarea>
                       </div>
                     </div>
