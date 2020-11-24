@@ -10,7 +10,9 @@ class InformacionPersonalTrabajador extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numero_id_trabajador: this.props.numero_id_trabajador,
       date: new Date(),
+      datos:[],
       form1T:{
         correoElectronicoActual:'',
         nuevoCorreoElectronico: '',
@@ -191,12 +193,15 @@ class InformacionPersonalTrabajador extends Component {
   };
   //FIN
 
+  //PETICION DE AXIOS PARA TRAER LA INFORMACION DEL TRABAJADOR
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/1`)
+    // https://barppi.herokuapp.com/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}
+    axios.get(`http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data
+          datos: res.data[0]
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -210,6 +215,7 @@ class InformacionPersonalTrabajador extends Component {
     const { date } = this.onChange;
 
     console.log(this.state.datos)
+    console.log(this.state.numero_id_trabajador)
     const characters = this.state.datos;
 
     const datosForm1T = this.state.form1T;
@@ -227,7 +233,7 @@ class InformacionPersonalTrabajador extends Component {
           <nav className="menu-fixed-informacion-personal-trabajador">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to="/TrabajadoresInicio/MiPerfilComoTrabajador">
+                <Link to={`/TrabajadoresInicio/MiPerfilComoTrabajador/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"
@@ -268,7 +274,7 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  Example@gmail.com
+                  {characters.correo_electronico_trabajador}
                 </button>
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
@@ -290,7 +296,7 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  1000306848
+                  {characters.contrasena_trabajador}
                 </button>
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
@@ -311,7 +317,7 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  Plaza lorem 27A
+                  {characters.direccion_trabajador}
                 </button>
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
@@ -332,7 +338,7 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  4187277
+                  {characters.telefono_trabajador}
                 </button>
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
@@ -341,6 +347,7 @@ class InformacionPersonalTrabajador extends Component {
               <div className="texto-descriptivo-superior-InformacionPersonal">
                 Sexo
               </div>
+              {/* TENEMOS QUE ELIMINAR LA PARTE DE SEXO PUES LA PERSONA NO TIENE UN SEXO DEFINICO EN EL REGISTRO */}
               <div className="texto-informacion-inferior-InformacionPersonal">
                 <button
                   data-toggle="modal"
@@ -353,11 +360,13 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  Mujer
+                  
                 </button>
               </div>
+              {/* FIN DEL SEXO */}
               <hr className="hr-InformacionPersonalTrabajador" />
             </div>
+            {/* LA PERSONA NO TIENE UN SEXO DEFINIDO EN LA BASE DE DATOS */}
             <div className="div-fechaNacimiento-InformacionPersonal">
               <div className="texto-descriptivo-superior-InformacionPersonal">
                 Fecha de nacimiento
@@ -379,6 +388,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
             </div>
+            {/* FIN FECHA DE NACIMIENTO */}
             <div className="div-costoTrabajo-InformacionPersonal">
               <div className="texto-descriptivo-superior-InformacionPersonal">
                 Costo de trabajo
@@ -395,11 +405,86 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  $12.000,00
+                  ${characters.precio_trabajador},00
                 </button>
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
             </div>
+            {/* FIN */}
+
+            {/* DOCUMENTO DEL TRABAJADOR */}
+            <div className="div-costoTrabajo-InformacionPersonal">
+              <div className="texto-descriptivo-superior-InformacionPersonal">
+                Documento trabajador
+              </div>
+              <div className="texto-informacion-inferior-InformacionPersonal">
+                <button
+                  data-toggle="modal"
+                  data-target="#documentoTrabajador"
+                  className="btn "
+                  type="button"
+                >
+                  <img
+                    src="https://1.bp.blogspot.com/-eQaGiv5RUks/X2gBeBKnHfI/AAAAAAAAHwA/MN0bpte2sakz3rbHOkCQv2_bk1wMrgH2gCLcBGAsYHQ/s1535/Recurso%2B1.png"
+                    alt=""
+                    className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
+                  />
+                  {characters.documento_Trabajador}
+                </button>
+              </div>
+              <hr className="hr-InformacionPersonalTrabajador" />
+            </div>
+            {/* FIN */}
+
+            {/* PAIS DEL TRABAJADOR */}
+            <div className="div-costoTrabajo-InformacionPersonal">
+              <div className="texto-descriptivo-superior-InformacionPersonal">
+                País trabajador
+              </div>
+              <div className="texto-informacion-inferior-InformacionPersonal">
+                <button
+                  data-toggle="modal"
+                  data-target="#paisTrabajador"
+                  className="btn "
+                  type="button"
+                >
+                  <img
+                    src="https://1.bp.blogspot.com/-eQaGiv5RUks/X2gBeBKnHfI/AAAAAAAAHwA/MN0bpte2sakz3rbHOkCQv2_bk1wMrgH2gCLcBGAsYHQ/s1535/Recurso%2B1.png"
+                    alt=""
+                    className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
+                  />
+                  {characters.pais_trabajador}
+                </button>
+              </div>
+              <hr className="hr-InformacionPersonalTrabajador" />
+            </div>
+            {/* FIN */}
+
+            {/* CIUDAD DEL TRABAJADOR */}
+            <div className="div-costoTrabajo-InformacionPersonal">
+              <div className="texto-descriptivo-superior-InformacionPersonal">
+                Ciudad trabajador
+              </div>
+              <div className="texto-informacion-inferior-InformacionPersonal">
+                <button
+                  data-toggle="modal"
+                  data-target="#ciudadTrabajador"
+                  className="btn "
+                  type="button"
+                >
+                  <img
+                    src="https://1.bp.blogspot.com/-eQaGiv5RUks/X2gBeBKnHfI/AAAAAAAAHwA/MN0bpte2sakz3rbHOkCQv2_bk1wMrgH2gCLcBGAsYHQ/s1535/Recurso%2B1.png"
+                    alt=""
+                    className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
+                  />
+                  {characters.ciudad_trabajador}
+                </button>
+              </div>
+              <hr className="hr-InformacionPersonalTrabajador" />
+            </div>
+            {/* FIN */}
+
+            {/* HACE FALTA UN APARTADO DE CIUDAD Y UNO DE PAIS */}
           </div>
 
           {/* SEXO DEL TRABAJADOR */}
@@ -873,6 +958,136 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
+          
+          {/* DOCUMENTO TRABAJADOR */}
+          <div className="div-fechaNacimiento-modal">
+            <div
+              class="modal fade"
+              id="documentoTrabajador"
+              data-backdrop="static"
+              data-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                      Documento trabajador
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body-fechaNacimientoTrabajador">
+                    En este lugar ba el documento del trabajador
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-cerrar-InformacionPersonalTrabajador"
+                      data-dismiss="modal"
+                    >
+                      OKY
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* PAIS TRABAJADOR */}
+          <div className="div-paisTrabajador-modal">
+            <div
+              class="modal fade"
+              id="paisTrabajador"
+              data-backdrop="static"
+              data-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                      País trabajador
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body-fechaNacimientoTrabajador">
+                    En este lugar va el select del país del trabajador
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-cerrar-InformacionPersonalTrabajador"
+                      data-dismiss="modal"
+                    >
+                      OKY
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* CIUDAD TRABAJADOR */}
+          <div className="div-ciudad-modal">
+            <div
+              class="modal fade"
+              id="ciudadTrabajador"
+              data-backdrop="static"
+              data-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                      Ciudad trabajador
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body-fechaNacimientoTrabajador">
+                    EN ESTE LUGAR VA EL INPUT DE LA CIUDAD
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-cerrar-InformacionPersonalTrabajador"
+                      data-dismiss="modal"
+                    >
+                      OKY
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
         </div>
       </div>
     );

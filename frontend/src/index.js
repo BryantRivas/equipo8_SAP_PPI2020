@@ -105,7 +105,7 @@ ReactDOM.render(
 
         <Route
           exact
-          path="/TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal"
+          path="/TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal/:numero_id_trabajador"
         >
           <InformacionPersonalTrabajadorP />
         </Route>

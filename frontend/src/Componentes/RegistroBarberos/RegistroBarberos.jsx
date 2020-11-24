@@ -570,11 +570,12 @@ peticionPost=async () =>{
                         <option>Peluquero</option>
                       </select>
                     </div>
+
                     <div className="divBoxes">
                       <p className="pCampoText">Foto</p>
                       <button
                         type="button"
-                        class="btn btnimgUploader"
+                        className="btn btnimgUploader"
                         data-toggle="modal"
                         data-target="#staticBackdrop"
                       >
@@ -582,7 +583,7 @@ peticionPost=async () =>{
                       </button>
                       {/* MODAL SUBIR FOTO*/}
                       <div
-                        class="modal fade"
+                        className="modal fade"
                         id="staticBackdrop"
                         data-backdrop="static"
                         data-keyboard="false"
@@ -632,6 +633,7 @@ peticionPost=async () =>{
                       </div>
                       {/* FIN MODAL */}
                     </div>
+
                     <div className="divBoxes">
                       <p className="pCampoText">Precio</p>
                       <input

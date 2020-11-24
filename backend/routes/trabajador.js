@@ -40,8 +40,8 @@ trabajador.get('/trabajador/cardperfiltrabajador/:id', (req,res)=>{
 // URL: /PerfilTrabajadorUsuario2
 // LA ESTOY UTILIZANDO
 trabajador.get('/trabajador/cardperfiltrabajador/verificacionPerfil/:id', (req,res)=>{
-    const { numero_id_trabajador } = req.params;
-    mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[numero_id_trabajador], (err, rows, fields)=>{
+    const { id } = req.params;
+    mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -50,7 +50,7 @@ trabajador.get('/trabajador/cardperfiltrabajador/verificacionPerfil/:id', (req,r
     });
 });
 
-// TABLA : Inicio Trabajador
+// TABLA : Login Trabajador
 // OBJETIVO : Realizar el inicio del trabajador,realizar login
 // completo con la contraseña y el correo del trabajador
 // URL : /IngresarTrabajador 
@@ -158,10 +158,87 @@ trabajador.put('/trabajador/put/editar-mi-perfil-como-trabajador/editar-informac
 });
 
 
+// ESTAS SON LAS PETICIONES PARA EL APARTADO DE MI PERFIL COMO TRABAJADOR
 
+// ACTUALIZACION DE FOTO DE PERFIL DEL TRABAJADOR
+// FUNCIONAL BIEN
+trabajador.put('/trabajador/put/fotoPerfil/:numero_id_trabajador', (req,res)=>{
+    
+    const { FotoPerfil } = req.body;
+    const { numero_id_trabajador } = req.params;
 
+    mysqlConnection.query(`UPDATE trabajador SET FotoPerfil = ? WHERE numero_id_trabajador= ?`, [ FotoPerfil,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado la foto de perdil del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
 
+// ACTUALIZACION DE LOS NOMBRE DEL PERFIL DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/nombresTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { nombre1_trabajador, nombre2_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
 
+    mysqlConnection.query(`UPDATE trabajador SET nombre1_trabajador = ?, nombre2_trabajador = ? WHERE numero_id_trabajador= ?`, [ nombre1_trabajador,nombre2_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado los nombres del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DE LOS APELLIDOS DEL PERFIL DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/apellidosTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { apellido1_trabajador, apellido2_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET apellido1_trabajador = ?, apellido2_trabajador = ? WHERE numero_id_trabajador= ?`, [ apellido1_trabajador,apellido2_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado los apellidos del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DE LA DESCRIPCION DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/descripcionTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { descripcion_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET descripcion_trabajador = ? WHERE numero_id_trabajador= ?`, [ descripcion_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado la descripcion del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DE TIPO DE TRABAJADOR
+// 
+trabajador.put('/trabajador/put/tipoTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { tipo_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET tipo_trabajador = ? WHERE numero_id_trabajador= ?`, [ tipo_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el tipo de trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
 
 
 // LOS SIGUIENTES SON LAS FORMAS DE HACER PETICIONES

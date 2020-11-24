@@ -42,14 +42,9 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
 
 
   async componentDidMount(){
-    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
-    // http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
-
-    // ESTE LINK DA ERROR
-    //http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/
-    // ESTE NO DA ERROR
-    //http://localhost:4020/api/trabajador/cardperfiltrabajador/
-    await axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
+    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}
+    await axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
