@@ -307,6 +307,69 @@ trabajador.put('/trabajador/put/telefonoTrabajador/:numero_id_trabajador', (req,
     });
 });
 
+// ACTUALIZACION DEL PRECIO DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/precioTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { precio_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET precio_trabajador = ? WHERE numero_id_trabajador= ?`, [ precio_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el precio del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DEL DOCUMENTO DEL TRABAJADOR
+// FUNCIONA BIEN
+trabajador.put('/trabajador/put/documentoTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { documento_Trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET documento_Trabajador = ? WHERE numero_id_trabajador= ?`, [ documento_Trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el documento del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DEL PAIS DE RECIDENCIA DEL TRABAJADOR
+// 
+trabajador.put('/trabajador/put/paisTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { pais_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET pais_trabajador = ? WHERE numero_id_trabajador= ?`, [ pais_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el país del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+// ACTUALIZACION DE LA CIUDAD DE RECIDENCIA DEL TRABAJADOR
+// 
+trabajador.put('/trabajador/put/ciudadTrabajador/:numero_id_trabajador', (req,res)=>{
+    
+    const { ciudad_trabajador } = req.body;
+    const { numero_id_trabajador } = req.params;
+
+    mysqlConnection.query(`UPDATE trabajador SET ciudad_trabajador = ? WHERE numero_id_trabajador= ?`, [ ciudad_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado la ciudad del trabajador'});
+        }else{
+            console.log(err);
+        }
+    });
+});
 
 
 // LOS SIGUIENTES SON LAS FORMAS DE HACER PETICIONES

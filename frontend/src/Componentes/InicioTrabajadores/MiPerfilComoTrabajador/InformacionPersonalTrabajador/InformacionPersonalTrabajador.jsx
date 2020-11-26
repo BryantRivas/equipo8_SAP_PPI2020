@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./StylesInformacionPersonalTrabajador.css";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import axios from "axios";
 
@@ -11,7 +10,6 @@ class InformacionPersonalTrabajador extends Component {
     super(props);
     this.state = {
       numero_id_trabajador: this.props.numero_id_trabajador,
-      date: new Date(),
       datos:[],
       form1T:{
         correoElectronicoActual:'',
@@ -37,20 +35,21 @@ class InformacionPersonalTrabajador extends Component {
         tipoSexoTrabajador: ''
       },
       form6T:{
-
+        documento_Trabajador: '',
+        documentoActualTrabajador: '',
+        confirmarNuevoDocumento: ''
       },
       form7T:{
         costoActualTrabajo: '',
-        nuevoCostoTrabajo: ''
+        precio_trabajador: ''
       },
       form8T:{
-
+        ciudad_trabajador: '',
+        ciudadActualTrabajador: ''
       },
       form9T:{
-
-      },
-      form10T:{
-        
+        pais_trabajador: '',
+        paisActualTrabajador: ''
       }
     };
   }
@@ -202,6 +201,49 @@ class InformacionPersonalTrabajador extends Component {
   };
   //FIN
 
+   //FORM8T CIUDAD TRABAJADOR
+   handleChange8T = async (e) => {
+    e.persist();
+    await this.setState({
+      form8T: {
+        ...this.state.form8T,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form8T);
+  };
+
+  handleSubmit8T = (e) => {
+    e.preventDefault();
+    const user8T = {
+      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo
+    };
+    console.log(user8T);
+  };
+  //FIN
+
+   //FORM9T PAIS TRABAJADOR
+   handleChange9T = async (e) => {
+    e.persist();
+    await this.setState({
+      form9T: {
+        ...this.state.form9T,
+        [e.target.name]: e.target.value,
+      },
+    });
+    console.log(this.state.form9T);
+  };
+
+  handleSubmit9T = (e) => {
+    e.preventDefault();
+    const user9T = {
+      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo
+    };
+    console.log(user9T);
+  };
+  //FIN
+
+
   //PETICION DE AXIOS PARA TRAER LA INFORMACION DEL TRABAJADOR
   componentDidMount(){
     // https://barppi.herokuapp.com/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}
@@ -216,9 +258,6 @@ class InformacionPersonalTrabajador extends Component {
       console.log(err.massage)
     })
   }
-
-
-  onChange = (date) => this.setState({ date });
 
 
   peticionPutCorreo = async () => {
@@ -251,6 +290,16 @@ class InformacionPersonalTrabajador extends Component {
    })
   }
 
+  peticionPutPrecio = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}`, { precio_trabajador: this.state.form7T.precio_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo el precio del trabajador')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
   peticionPutTelefonoTrabajador = async () => {
     await axios.put(`http://localhost:4020/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}`, { telefono_trabajador: this.state.form4T.telefono_trabajador})
     .then(response =>{
@@ -260,10 +309,39 @@ class InformacionPersonalTrabajador extends Component {
      console.log(error.message);
    })
   }
+  
+  peticionPutDocumento = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}`, { documento_Trabajador: this.state.form6T.documento_Trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo el documento del trabajador ')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
+  peticionPutPais = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}`, { pais_trabajador: this.state.form9T.pais_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo el país del trabajador ')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
+  peticionPutCiudad = async () => {
+    await axios.put(`http://localhost:4020/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}`, { ciudad_trabajador: this.state.form8T.ciudad_trabajador})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo la ciudad del trabajador ')
+    }).catch(error=>{
+     console.log(error.message);
+   })
+  }
+
 
   render() {
-    const { date } = this.onChange;
-
     console.log(this.state.datos)
     console.log(this.state.numero_id_trabajador)
     const characters = this.state.datos;
@@ -275,6 +353,8 @@ class InformacionPersonalTrabajador extends Component {
     const datosForm5T = this.state.form5T;
     const datosForm6T = this.state.form6T;
     const datosForm7T = this.state.form7T;
+    const datosForm8T = this.state.form8T;
+    const datosForm9T = this.state.form9T;
     
 
     return (
@@ -393,52 +473,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
             </div>
-            <div className="div-sexoTrabajador-InformacionPersonal">
-              <div className="texto-descriptivo-superior-InformacionPersonal">
-                Sexo
-              </div>
-              {/* TENEMOS QUE ELIMINAR LA PARTE DE SEXO PUES LA PERSONA NO TIENE UN SEXO DEFINICO EN EL REGISTRO */}
-              <div className="texto-informacion-inferior-InformacionPersonal">
-                <button
-                  data-toggle="modal"
-                  data-target="#sexoTrabajador"
-                  className="btn "
-                  type="button"
-                >
-                  <img
-                    src="https://1.bp.blogspot.com/-eQaGiv5RUks/X2gBeBKnHfI/AAAAAAAAHwA/MN0bpte2sakz3rbHOkCQv2_bk1wMrgH2gCLcBGAsYHQ/s1535/Recurso%2B1.png"
-                    alt=""
-                    className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
-                  />
-                  
-                </button>
-              </div>
-              {/* FIN DEL SEXO */}
-              <hr className="hr-InformacionPersonalTrabajador" />
-            </div>
-            {/* LA PERSONA NO TIENE UN SEXO DEFINIDO EN LA BASE DE DATOS */}
-            <div className="div-fechaNacimiento-InformacionPersonal">
-              <div className="texto-descriptivo-superior-InformacionPersonal">
-                Fecha de nacimiento
-              </div>
-              <div className="texto-informacion-inferior-InformacionPersonal">
-                <button
-                  data-toggle="modal"
-                  data-target="#fechanacimiento"
-                  className="btn "
-                  type="button"
-                >
-                  <img
-                    src="https://1.bp.blogspot.com/-eQaGiv5RUks/X2gBeBKnHfI/AAAAAAAAHwA/MN0bpte2sakz3rbHOkCQv2_bk1wMrgH2gCLcBGAsYHQ/s1535/Recurso%2B1.png"
-                    alt=""
-                    className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
-                  />
-                  {date}
-                </button>
-              </div>
-              <hr className="hr-InformacionPersonalTrabajador" />
-            </div>
-            {/* FIN FECHA DE NACIMIENTO */}
+
             <div className="div-costoTrabajo-InformacionPersonal">
               <div className="texto-descriptivo-superior-InformacionPersonal">
                 Costo de trabajo
@@ -537,63 +572,6 @@ class InformacionPersonalTrabajador extends Component {
             {/* HACE FALTA UN APARTADO DE CIUDAD Y UNO DE PAIS */}
           </div>
 
-          {/* SEXO DEL TRABAJADOR */}
-          <div className="div-sexoTabajador-modal">
-            <div
-              class="modal fade"
-              id="sexoTrabajador"
-              data-backdrop="static"
-              data-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
-                      Tipo de sexo
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form onSubmit={this.handleSubmit5T}>
-                    <div className="form-group">
-                      <select
-                        className="form-control-InformacionPersonalTrabajador"
-                        id="TIPOSEXOTRABAJADOR"
-                        name="tipoSexoTrabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange5T}
-                        value={datosForm5T.tipoSexoTrabajador}
-                      >
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                        <option>Otro...</option>
-                      </select>
-                    </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-cerrar-InformacionPersonalTrabajador"
-                      data-dismiss="modal"
-                    >
-                      OKY
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* DIRECCIÓN DEL TRABAJADOR */}
           <div className="div-direccionTrabajador-modal">
@@ -946,10 +924,10 @@ class InformacionPersonalTrabajador extends Component {
                         className="input-costoTrabajoTrabajador-InformacionPersonalTrabajador"
                         type="number"
                         id="NUEVOCOSTOTRABAJO"
-                        name="nuevoCostoTrabajo"
+                        name="precio_trabajador"
                         autoComplete="off"
                         onChange={this.handleChange7T}
-                        value={datosForm7T.nuevoCostoTrabajo}
+                        value={datosForm7T.precio_trabajador}
                       />
                     </div>
                   </div>
@@ -958,52 +936,7 @@ class InformacionPersonalTrabajador extends Component {
                       type="button"
                       class="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
-                    >
-                      OKY
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* FECHA DE NACIMIENTO */}
-          <div className="div-fechaNacimiento-modal">
-            <div
-              class="modal fade"
-              id="fechanacimiento"
-              data-backdrop="static"
-              data-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
-                      Fecha nacimiento trabajador
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body-fechaNacimientoTrabajador">
-                    <Calendar
-                      onChange={this.onChange}
-                      value={this.state.data}
-                    />
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-cerrar-InformacionPersonalTrabajador"
-                      data-dismiss="modal"
+                      onClick={this.peticionPutPrecio}
                     >
                       OKY
                     </button>
@@ -1040,13 +973,47 @@ class InformacionPersonalTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body-fechaNacimientoTrabajador">
-                    En este lugar ba el documento del trabajador
+                  <form onSubmit={this.handleSubmit6T}>
+                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                      <input
+                        type="number"
+                        placeholder="Documento actual"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="DOCUMENTOACTUALTRABAJADOR"
+                        name="documentoActualTrabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange6T}
+                        value={datosForm6T.documentoActualTrabajador}
+                      />
+                      <input
+                        type="number"
+                        placeholder="Nuevo documento"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="NUEVODOCUMENTOTRABAJADOR"
+                        name="documento_Trabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange6T}
+                        value={datosForm6T.documento_Trabajador}
+                      />
+                      <input
+                        type="number"
+                        placeholder="Confirmar nuevo documento"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="CONFIRMARNUEVODOCUMENTO"
+                        name="confirmarNuevoDocumento"
+                        autoComplete="off"
+                        onChange={this.handleChange6T}
+                        value={datosForm6T.confirmarNuevoDocumento}
+                      />
+                    </div>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button
                       type="button"
                       class="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutDocumento}
                     >
                       OKY
                     </button>
@@ -1083,13 +1050,39 @@ class InformacionPersonalTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body-fechaNacimientoTrabajador">
-                    En este lugar va el select del país del trabajador
+                    
+                  <form onSubmit={this.handleSubmit9T}>
+                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                    <input
+                        type="text"
+                        placeholder="País actual"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="PAISACTUALTRABAJADOR"
+                        name="paisActualTrabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange9T}
+                        value={datosForm9T.paisActualTrabajador}
+                      />
+                      <input
+                        type="text"
+                        placeholder="Nuevo país"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="PAISTRABAJADOR"
+                        name="pais_trabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange9T}
+                        value={datosForm9T.pais_trabajador}
+                      />
+                    </div>
+                    </form>
+
                   </div>
                   <div class="modal-footer">
                     <button
                       type="button"
                       class="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutPais}
                     >
                       OKY
                     </button>
@@ -1126,13 +1119,40 @@ class InformacionPersonalTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body-fechaNacimientoTrabajador">
-                    EN ESTE LUGAR VA EL INPUT DE LA CIUDAD
+                    
+                  <form onSubmit={this.handleSubmit8T}>
+                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                    <input
+                        type="text"
+                        placeholder="Ciudad actual"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="CIUDADACTUALTRABAJADOR"
+                        name="ciudadActualTrabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange8T}
+                        value={datosForm8T.ciudadActualTrabajador}
+                      />
+                      <input
+                        type="text"
+                        placeholder="Nueva ciudad"
+                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                        id="NUEVACIUDADTRABAJADOR"
+                        name="ciudad_trabajador"
+                        autoComplete="off"
+                        onChange={this.handleChange8T}
+                        value={datosForm8T.ciudad_trabajador}
+                      />
+                      
+                    </div>
+                    </form>
+
                   </div>
                   <div class="modal-footer">
                     <button
                       type="button"
                       class="btn btn-cerrar-InformacionPersonalTrabajador"
                       data-dismiss="modal"
+                      onClick={this.peticionPutCiudad}
                     >
                       OKY
                     </button>

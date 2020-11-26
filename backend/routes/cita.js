@@ -6,6 +6,17 @@ const mysqlConnection = require('../db/db');
 // Consultar todas las citas que se encuentran en la tabla cita
 // que poseen el numero_id_trabajador de un trabajador.
 
+//MOSTRAR TODAS LAS CITAS QUE SE ENCUENTRAN AGENDADAS
+cita.get('/citas', (req,res)=>{
+    mysqlConnection.query('SELECT * FROM cita', (err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+    });
+});
+
 // CREACION DE UNA NUEVA CITA CON LOS DATOS DEL USUARIO Y EL TRABAJADOR
 // LO ESTOY UTILIZANDO
 cita.post('/nueva-cita/solicitud-cita', (req,res)=>{
