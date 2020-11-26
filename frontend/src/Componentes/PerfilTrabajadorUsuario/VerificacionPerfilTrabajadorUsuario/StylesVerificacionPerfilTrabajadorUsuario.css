@@ -1,6 +1,6 @@
 .botonFacebookPerfilTrabajadorUsuario2 {
   border: black solid 1px;
-  width: 90%;
+  width: 100%;
   height: 50px;
   transition: all 100ms;
   text-decoration: none;
@@ -21,7 +21,7 @@
 }
 .botonGooglePerfilTrabajadorUsuario2 {
   border: black solid 1px;
-  width: 90%;
+  width: 100%;
   height: 50px;
   transition: all 100ms;
   text-decoration: none;
@@ -81,6 +81,7 @@
   grid-template-rows: repeat(2, auto);
   row-gap: 15px;
   width: 100%;
+  padding-bottom: 7%;
 }
 .div-botones-inicioSesionUsuarios-Padre {
   display: flex;
@@ -205,7 +206,7 @@
     height: 120px;
   }
   .div-div-grid-NombreTrabajador-VerificacionInformacion {
-    font-size: 35px;
+    font-size: 18px;
   }
   .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
     font-size: 15px;
@@ -225,7 +226,7 @@
       height: 100px;
     }
     .div-div-grid-NombreTrabajador-VerificacionInformacion {
-      font-size: 30px;
+      font-size: 16px;
     }
     .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
       font-size: 13px;
@@ -245,7 +246,7 @@
         height: 100px;
       }
       .div-div-grid-NombreTrabajador-VerificacionInformacion {
-        font-size: 23px;
+        font-size: 16px;
       }
       .div-div-grid-numeroTelefonoTrabajador-VerificacionInformacion {
         font-size: 11px;
@@ -308,6 +309,9 @@
     .informacion-fixed-verificacionPerfil-Trabajador {
       padding-top: 15%;
     }
+    .div-div-grid-NombreTrabajador-VerificacionInformacion {
+      font-size: 30px;
+    }
     @media only screen and (max-width: 760px) {
       .informacion-fixed-verificacionPerfil-Trabajador {
         padding-top: 18%;
@@ -315,6 +319,9 @@
       @media only screen and (max-width: 620px) {
         .informacion-fixed-verificacionPerfil-Trabajador {
           padding-top: 21%;
+        }
+        .div-div-grid-NombreTrabajador-VerificacionInformacion {
+          font-size: 25px;
         }
         @media only screen and (max-width: 530px) {
           .informacion-fixed-verificacionPerfil-Trabajador {
@@ -334,4 +341,48 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 1215px) {
+  .div-botones-incioSesionUsuarios {
+    padding-bottom: 7%;
+  }
+  @media only screen and (max-width: 930px) {
+    .div-botones-incioSesionUsuarios {
+      padding-bottom: 7%;
+    }
+    @media only screen and (max-width: 760px) {
+      .div-botones-incioSesionUsuarios {
+        padding-bottom: 10%;
+      }
+      @media only screen and (max-width: 620px) {
+        .div-botones-incioSesionUsuarios {
+          padding-bottom: 12%;
+        }
+        @media only screen and (max-width: 530px) {
+          .div-botones-incioSesionUsuarios {
+            padding-bottom: 14%;
+          }
+          @media only screen and (max-width: 450px) {
+            .div-botones-incioSesionUsuarios {
+              padding-bottom: 16%;
+            }
+            @media only screen and (max-width: 355px) {
+              .div-botones-incioSesionUsuarios {
+                padding-bottom: 18%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.link-verificacion-trabajador{
+  width: 90%;
+  text-decoration: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }

@@ -12,33 +12,13 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
     this.state = {
       numero_id_trabajador: this.props.numero_id,
       datos: [],
-      formU:{
-        usuarioDireccion:'',
-        usuarioTelefono: ''
-      }
     };
   }
   
   
-  handleChange = async (e) => {
-    e.persist();
-    await this.setState({
-      formU: {
-        ...this.state.formU,
-        [e.target.name]: e.target.value,
-      },
-    });
-    console.log(this.state.formU);
-  };
+  
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const userU = {
-      usuarioDireccion: this.state.usuarioDireccion,
-      usuarioTelefono: this.state.usuarioTelefono,
-    };
-    console.log(userU);
-  };
+  
 
 
   async componentDidMount(){
@@ -95,63 +75,34 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
           <div className="div-botones-inicioSesionUsuarios-Padre">
             <div className="div-botones-incioSesionUsuarios">
               <div className="div-div-boton-IniciarConFacebook">
+                <Link className="link-verificacion-trabajador" exact to={`/PerfilTrabajadorUsuario2/inicioUsuarios/${this.state.numero_id_trabajador}`}>
                 <button className="btn botonFacebookPerfilTrabajadorUsuario2">
                   <img
                     className="img-boton-iconFacebook-IniciarSesionUsuario"
                     src="https://1.bp.blogspot.com/-LMxlVmBE-Mc/X2E83PdpHcI/AAAAAAAAHsU/KhuhTSrAnvs5KQhFivdsINc8QAC7Hr00gCLcBGAsYHQ/s2048/Facebook.png"
                     alt="Facebook"
                   />
-                  INICIAR CON FACEBOOK
+                  INICIAR SESIÓN
                 </button>
+                </Link>
               </div>
 
               <div className="div-div-boton-IniciarGoogle">
+              <Link className="link-verificacion-trabajador" exact to={`/PerfilTrabajadorUsuario2/inicioUsuarios/registroUsuarios/${this.state.numero_id_trabajador}`}>
                 <button className="btn botonGooglePerfilTrabajadorUsuario2">
                   <img
                     className="img-boton-iconGoogle-IniciarSesionUsuario"
                     src="https://1.bp.blogspot.com/-Icc_DFXm9DQ/X2E83GL1-LI/AAAAAAAAHsQ/T038TKJC5WsKvnjihxUnZIAPtGxSIJ71gCLcBGAsYHQ/s733/Google.png"
                     alt="Google"
                   />
-                  INICIAR CON GOOGLE
+                  REGISTRARSE
+                  
                 </button>
+                </Link>
               </div>
             </div>
           </div>
 
-          <form className="form-datosUsuario-VerificacionTrabajador" onSubmit={this.handleSubmit}>
-            <div className="div-MiDireccion-Form-VerificacionPerfilTrabajador">
-              <div className="div-textoSuperior-VerificacionTrabajador">
-                Mi Dirección
-              </div>
-              <div>
-                <input
-                  className="input-borderbox-PerfilTrabajadorUsuario2"
-                  type="text"
-                  id="DIRECCION"
-                  name="usuarioDireccion"
-                  autoComplete="off"
-                  onChange={this.handleChange}
-                  value={datosFormU.usuarioDireccion}
-                />
-              </div>
-            </div>
-            <div className="div-MiTelefono-Form-VerificacionPerfilTrabajador">
-              <div className="div-textoSuperior-VerificacionTrabajador">
-                Mi Teléfono
-              </div>
-              <div>
-                <input
-                  className="input-borderbox-PerfilTrabajadorUsuario2"
-                  type="number"
-                  id="TELEFONO"
-                  name="usuarioTelefono"
-                  autoComplete="off"
-                  onChange={this.handleChange}
-                  value={datosFormU.usuarioTelefono}
-                />
-              </div>
-            </div>
-          </form>
 
           <div className="div-texto-precioTrabajo">
             <div className="div-div-texto-precioTrabajo">

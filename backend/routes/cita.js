@@ -6,7 +6,23 @@ const mysqlConnection = require('../db/db');
 // Consultar todas las citas que se encuentran en la tabla cita
 // que poseen el numero_id_trabajador de un trabajador.
 
- 
+// CREACION DE UNA NUEVA CITA CON LOS DATOS DEL USUARIO Y EL TRABAJADOR
+// LO ESTOY UTILIZANDO
+cita.post('/nueva-cita/solicitud-cita', (req,res)=>{
+    const { codigo_cliente, numero_id_trabajador, estado_cita } = req.body;
+    const cita = [ codigo_cliente, numero_id_trabajador, estado_cita ];
+
+    const nuevaCita = `INSERT INTO cita(codigo_cliente, numero_id_trabajador, estado_cita) VALUES (?,?,?)`;
+
+    mysqlConnection.query(nuevaCita, cita, (err, results, fields)=>{
+        if(err){
+            return console.error(err.message);
+        }else{
+            res.json({message: `Se ha agregado una nueva cita`});
+        }
+    });
+});
+
 // TABLA: Trabajos realizados 
 // OBJETIVO: El trabajador puede visualizar los trabajos que a realizado, estos se visualizaran en forma de cards,
 // por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita,
