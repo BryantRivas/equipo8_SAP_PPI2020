@@ -8,17 +8,19 @@ class CardTrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numero_id_citaPorRealizar: this.props.numero_id,
+      codigo_cliente: this.props.numero_id,
       datos: []
     };
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_citaPorRealizar}`)
+    // https://barppi.herokuapp.com/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}
+    // http://localhost:4020/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}
+    axios.get(`http://localhost:4020/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data
+          datos: res.data[0]
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -34,7 +36,7 @@ class CardTrabajosPorRealizar extends Component {
           <nav className="menu-fixed-cards-trabajos-por-realizar">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to="/TrabajadoresInicio/TrabajosPorRealizar">
+                <Link to={`/TrabajadoresInicio/TrabajosPorRealizar`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"
@@ -63,14 +65,14 @@ class CardTrabajosPorRealizar extends Component {
               <div className="div-div-img-perfil_trabajador-CardTrabajosPorRealizar">
                 <img
                   className="img-perfil_trabajador-CardTrabajosPorRealizar"
-                  src={characters.image}
+                  src={characters.FotoPerfil}
                   alt="FotoPerfil"
                 />
               </div>
             </div>
             <div className="div-nombreTrabajador-CardTrabajosPorRealizar">
               <div className="div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar">
-                {characters.name}
+                {characters.nombre1_Cliente}{` `}{characters.nombre2_Cliente}{` `}{characters.apellido1_Cliente}{` `}{characters.apellido2_Cliente}
               </div>
             </div>
             <div className="div-nombreCiudadTrabajador-CardTrabajosPorRealizar">
@@ -91,25 +93,12 @@ class CardTrabajosPorRealizar extends Component {
           </div>
 
           <div className="div-bot-CardTrabajosPorRealizar">
-            <div className="div-DescripciondelTrabajador-CardTrabajosPorRealizar">
-              <div className="div-div-TituloDescripcion-CardTrabajosPorRealizar">
-                DESCRIPCION
-              </div>
-              <div className="div-div-TextoDescripcion-CardTrabajosPorRealizar">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia optio omnis voluptate aliquam voluptatibus adipisci
-                incidunt sit accusamus, veritatis possimus harum quam
-                recusandae, pariatur atque unde voluptatum magni labore sint.
-                Deserunt possimus exercitationem porro, temporibus laborum quasi
-                iusto aliquam libero cupiditate.
-              </div>
-            </div>
             <div className="div-direccionTrabajador-CardTrabajosPorRealizar">
               <div className="div-div-TitulodireccionTrabajador-CardTrabajosPorRealizar">
                 Dirección
               </div>
               <div className="div-div-TextodireccionTrabajador-CardTrabajosPorRealizar">
-                Carrera lorem
+                {characters.direccion_cliente}
               </div>
             </div>
             <div className="div-CorreoElectronicoTrabajador-CardTrabajosPorRealizar">
@@ -117,7 +106,7 @@ class CardTrabajosPorRealizar extends Component {
                 Correo Electronico
               </div>
               <div className="div-div-TextoCorreoElectronicoTrabajador-CardTrabajosPorRealizar">
-                Example@gmail.com
+                {characters.correo_electronico_cliente}
               </div>
             </div>
             <div className="div-numeroTelefonicoTrabajador-CardTrabajosPorRealizar">
@@ -125,7 +114,7 @@ class CardTrabajosPorRealizar extends Component {
                 Número Télefonico
               </div>
               <div className="div-div-TextonumeroTelefonicoTrabajador-CardTrabajosPorRealizar">
-                4187277
+                {characters.telefono_cliente}
               </div>
             </div>
           </div>

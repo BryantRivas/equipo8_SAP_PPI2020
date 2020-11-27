@@ -14,11 +14,13 @@ class TrabajosPorRealizar extends Component {
   }
 
   componentDidMount(){
-    axios.get('https://rickandmortyapi.com/api/character')
+    // https://barppi.herokuapp.com/api/cita/cita/cards/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/cita/cita/cards/${this.state.numero_id_trabajador}
+    axios.get(`http://localhost:4020/api/cita/cita/cards/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
-          datos: res.data.results
+          datos: res.data
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -74,7 +76,7 @@ class TrabajosPorRealizar extends Component {
               <div className="divCardTrabajosPorRealizar">
                 <Link
                   className="link_TrabajosPorRealizar"
-                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${datosT.id}`}
+                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${datosT.codigo_cliente}`}
                 >
                   <div className="card-TrabajosPorRealizar">
                     <div className="CardGrid_TrabajosPorRealizar">

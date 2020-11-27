@@ -340,7 +340,7 @@ trabajador.put('/trabajador/put/documentoTrabajador/:numero_id_trabajador', (req
 });
 
 // ACTUALIZACION DEL PAIS DE RECIDENCIA DEL TRABAJADOR
-// 
+// FUNCIONA BIEN
 trabajador.put('/trabajador/put/paisTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { pais_trabajador } = req.body;
@@ -356,7 +356,7 @@ trabajador.put('/trabajador/put/paisTrabajador/:numero_id_trabajador', (req,res)
 });
 
 // ACTUALIZACION DE LA CIUDAD DE RECIDENCIA DEL TRABAJADOR
-// 
+// FUNCIONA BIEN
 trabajador.put('/trabajador/put/ciudadTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { ciudad_trabajador } = req.body;
@@ -370,6 +370,8 @@ trabajador.put('/trabajador/put/ciudadTrabajador/:numero_id_trabajador', (req,re
         }
     });
 });
+
+
 
 
 // LOS SIGUIENTES SON LAS FORMAS DE HACER PETICIONES

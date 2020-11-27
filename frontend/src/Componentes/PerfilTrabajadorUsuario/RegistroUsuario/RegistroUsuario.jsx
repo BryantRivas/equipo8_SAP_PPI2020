@@ -5,7 +5,7 @@ import axios from "axios";
 
 import { Link, Redirect, withRouter } from "react-router-dom";
 
-
+let aja2 = "";
 
 class RegistroUsuario extends Component {
   constructor(props) {
@@ -24,7 +24,8 @@ class RegistroUsuario extends Component {
         apellido2_Cliente: '',
         nombre2_Cliente: '',
         nombre1_Cliente: '',
-        documento_Cliente: ''
+        documento_Cliente: '',
+        FotoPerfil: aja2
       },
     };
   }
@@ -35,6 +36,7 @@ class RegistroUsuario extends Component {
       formU: {
         ...this.state.formU,
         [e.target.name]: e.target.value,
+        FotoPerfil: aja2
       },
     });
     console.log(this.state.formU);
@@ -53,215 +55,183 @@ class RegistroUsuario extends Component {
       apellido2_Cliente: this.state.formU.apellido2_Cliente,
       nombre2_Cliente: this.state.formU.nombre2_Cliente,
       nombre1_Cliente: this.state.formU.nombre1_Cliente,
-      documento_Cliente: this.state.formU.documento_Cliente
+      documento_Cliente: this.state.formU.documento_Cliente,
+      FotoPerfil : aja2
     };
     console.log(userU);
   };
 
-  validacionForm = () => {
-    let pNombre = document.getElementById("PRIMERNOMBRE");
-    let sNombre = document.getElementById("SEGUNDONOMBRE");
-    let pApellido = document.getElementById("PRIMERAPELLIDO");
-    let sApellido = document.getElementById("SEGUNDOAPELLIDO");
-    let correoTrabajador = document.getElementById("CORREOTRABAJADOR");
-    let confirmarCorreoTrabajador = document.getElementById("CONFIRMARCORREOTRABAJADOR");
-    let contrasenaTrabajador = document.getElementById("CONTRASENATRABAJADOR");
-    let confirmarContrasenaTrabajador = document.getElementById("CONFIRMARCONTRASENATRABAJADOR");
-    let telefonoCelularTrabajador = document.getElementById("TELEFONOCELULARTRABAJADOR");
-    let direccionResidencialTrabajador = document.getElementById("DIRECCIONRESIDENCIALTRABAJADOR");
-    let documentoTrabajador = document.getElementById("DOCUMENTOTRABAJADOR");
-    let paisTrabajador = document.getElementById("PAISTRABAJADOR");
-    let ciudadTrabajador = document.getElementById("CIUDADTRABAJADOR");
-    let tipoTrabajador = document.getElementById("TIPOTRABAJADOR");
-    let precioTrabajo = document.getElementById("PRECIOTRABAJO");
-    let descripcionTrabajador = document.getElementById("DESCRIPCIONTRABAJADOR");
+  Subir = () => {
+    let inpu = document.getElementById("FOTOPERFIL");
+    if (inpu.files && inpu.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            console.log(e.target.result)
+            aja2 = e.target.result;
+            document.getElementById("body").innerHTML = "<canvas id='tempCanvas' width='300' height='300' style='display:none'></canvas>";
+                    var canvas = document.getElementById("tempCanvas");
+                    var ctx = canvas.getContext("2d");
+                    var cw = canvas.width;
+                    var ch = canvas.height;
+                    var maxW = 300;
+                    var maxH = 300;
+                    var img = new Image;
+                    img.src = this.result;
+                    img.onload = function () {
+                        var iw = img.width;
+                        var ih = img.height;
+                        if (ih > 300 || iw > 300) {
+                        var scale = Math.min((maxW / iw), (maxH / ih));
+                        var iwScaled = iw * scale;
+                        var ihScaled = ih * scale;
+                        canvas.width = iwScaled;
+                        canvas.height = ihScaled;
+                        ctx.drawImage(img, 0, 0, iwScaled, ihScaled);
+                        aja2 = canvas.toDataURL("image/jpeg");
+                        console.log(canvas.toDataURL("image/jpeg"));
+                        document.getElementById("tempCanvas").remove();
+                        }
+                      }
+                      document.getElementById("fotoPrev").src = aja2;
+        }
+        reader.readAsDataURL(inpu.files[0]);
+    }
+}
 
-    if (
-      pNombre.value == "" ||
-      sNombre.value == "" ||
-      pApellido.value == "" ||
-      sApellido.value == "" ||
-      correoTrabajador.value == "" ||
-      confirmarCorreoTrabajador.value == "" ||
-      contrasenaTrabajador.value == "" ||
-      confirmarContrasenaTrabajador.value == "" ||
-      telefonoCelularTrabajador.value == "" ||
-      direccionResidencialTrabajador.value == "" ||
-      documentoTrabajador.value == "" ||
-      paisTrabajador.value == "" ||
-      ciudadTrabajador.value == "" ||
-      tipoTrabajador.value == "" ||
-      precioTrabajo.value == "" ||
-      descripcionTrabajador.value == ""
-    ) {
-      console.log("El primer nombre esta vacido");
-      if (pNombre.value == "") {
+  Subir2 = () => {
+  let inpu = document.getElementById("FOTOPERFIL");
+  if (inpu.files && inpu.files[0]) {
+    this.state.formU.FotoPerfil = aja2;
+  }
+}
+
+  validacionForm = () => {
+    let pNombre = document.getElementById("PRIMERNOMBREUSUARIO");
+    let sNombre = document.getElementById("SEGUNDONOMBREUSUARIO");
+    let pApellido = document.getElementById("PRIMERAPELLIDOUSUARIO");
+    let sApellido = document.getElementById("SEGUNDOAPELLIDOUSUARIO");
+    let correoCliente = document.getElementById("CORREOELECTRONICOUSUARIO");
+    let confirmarCorreoCliente = document.getElementById("CONFIRMARCORREOELECTRONICOUSUARIO");
+    let contrasenaCliente = document.getElementById("CONTRASENAUSUARIO");
+    let confirmarContrasenaCliente = document.getElementById("CONFIRMARCONTRASENAUSUARIO");
+    let telefonoCliente = document.getElementById("TELEFONOCELULARUSUARIO");
+    let direccionCliente = document.getElementById("DIRECCIONRESIDENCIALUSUARIO");
+    let documentoCliente = document.getElementById("DOCUMENTOUSUARIO");
+
+    if(pNombre.value == "" || 
+    sNombre.value == "" || 
+    pApellido.value == "" || 
+    sApellido.value == "" || 
+    correoCliente.value == "" ||
+    confirmarCorreoCliente.value == "" ||
+    contrasenaCliente.value == "" ||
+    confirmarContrasenaCliente.value == "" ||
+    telefonoCliente.value == "" ||
+    direccionCliente.value == "" ||
+    documentoCliente.value == "" 
+    ){
+      if(pNombre.value == ""){
         pNombre.style.borderColor = "red";
         pNombre.value = "Parametro obligatorio";
         this.time(pNombre);
       }
-
-      if (pApellido.value == "") {
+      if(sNombre.value == ""){
+        sNombre.style.borderColor = "red";
+        sNombre.value = "Parametro obligatorio";
+        this.time(sNombre);
+      }
+      if(pApellido.value == ""){
         pApellido.style.borderColor = "red";
         pApellido.value = "Parametro obligatorio";
         this.time(pApellido);
       }
-
-      if (correoTrabajador.value == "") {
-        correoTrabajador.style.borderColor = "red";
-        correoTrabajador.value = "Parametro obligatorio";
-        this.time(correoTrabajador);
+      if(sApellido.value == ""){
+        sApellido.style.borderColor = "red";
+        sApellido.value = "Parametro obligatorio";
+        this.time(sApellido);
       }
-
-      if (confirmarCorreoTrabajador.value == "") {
-        confirmarCorreoTrabajador.style.borderColor = "red";
-        confirmarCorreoTrabajador.value = "Parametro obligatorio";
-        this.time(confirmarCorreoTrabajador);
+      if(correoCliente.value == ""){
+        correoCliente.style.borderColor = "red";
+        correoCliente.value = "Parametro obligatorio";
+        this.time(correoCliente);
       }
-
-      if (contrasenaTrabajador.value == "") {
-        contrasenaTrabajador.style.borderColor = "red";
-        contrasenaTrabajador.value = "Parametro obligatorio";
-        this.time(contrasenaTrabajador);
+      if(confirmarCorreoCliente.value == ""){
+        confirmarCorreoCliente.style.borderColor = "red";
+        confirmarCorreoCliente.value = "Parametro obligatorio";
+        this.time(confirmarCorreoCliente);
       }
-
-      if (confirmarContrasenaTrabajador.value == "") {
-        confirmarContrasenaTrabajador.style.borderColor = "red";
-        confirmarContrasenaTrabajador.value = "Parametro obligatorio";
-        this.time(confirmarContrasenaTrabajador);
+      if(contrasenaCliente.value == ""){
+        contrasenaCliente.style.borderColor = "red";
+        contrasenaCliente.value = "Parametro obligatorio";
+        this.time(contrasenaCliente);
       }
-
-      if (telefonoCelularTrabajador.value == "") {
-        telefonoCelularTrabajador.style.borderColor = "red";
-        telefonoCelularTrabajador.value = "Parametro obligatorio";
-        this.time(telefonoCelularTrabajador);
+      if(confirmarContrasenaCliente.value == ""){
+        confirmarContrasenaCliente.style.borderColor = "red";
+        confirmarContrasenaCliente.value = "Parametro obligatorio";
+        this.time(confirmarContrasenaCliente);
       }
-
-      if (direccionResidencialTrabajador.value == "") {
-        direccionResidencialTrabajador.style.borderColor = "red";
-        direccionResidencialTrabajador.value = "Parametro obligatorio";
-        this.time(direccionResidencialTrabajador);
+      if(telefonoCliente.value == ""){
+        telefonoCliente.style.borderColor = "red";
+        telefonoCliente.value = "Parametro obligatorio";
+        this.time(telefonoCliente);
       }
-
-      if (documentoTrabajador.value == "") {
-        documentoTrabajador.style.borderColor = "red";
-        documentoTrabajador.value = "Parametro obligatorio";
-        this.time(documentoTrabajador);
+      if(direccionCliente.value == ""){
+        direccionCliente.style.borderColor = "red";
+        direccionCliente.value = "Parametro obligatorio";
+        this.time(direccionCliente);
       }
-
-      if (paisTrabajador.value == "") {
-        paisTrabajador.style.borderColor = "red";
-        paisTrabajador.value = "Parametro obligatorio";
-        this.time(paisTrabajador);
+      if(documentoCliente.value == ""){
+        documentoCliente.style.borderColor = "red";
+        documentoCliente.value = "Parametro obligatorio";
+        this.time(documentoCliente);
       }
-
-      if (ciudadTrabajador.value == "") {
-        ciudadTrabajador.style.borderColor = "red";
-        ciudadTrabajador.value = "Parametro obligatorio";
-        this.time(ciudadTrabajador);
+    }else{
+      if(pNombre.value != ""){
+        pNombre.style.borberColor = "green";
       }
-
-      if (tipoTrabajador.value == "") {
-        tipoTrabajador.style.borderColor = "red";
-        tipoTrabajador.value = "Parametro obligatorio";
-        this.time(tipoTrabajador);
+      if(sNombre.value != ""){
+        sNombre.style.borberColor = "green";
       }
-
-      if (precioTrabajo.value == "") {
-        precioTrabajo.style.borderColor = "red";
-        precioTrabajo.value = "Parametro obligatorio";
-        this.time(precioTrabajo);
+      if(pApellido.value != ""){
+        pApellido.style.borberColor = "green";
       }
-
-      if (descripcionTrabajador.value == "") {
-        descripcionTrabajador.style.borderColor = "red";
-        descripcionTrabajador.value = "Parametro obligatorio";
-        this.time(descripcionTrabajador);
+      if(sApellido.value != ""){
+        sApellido.style.borberColor = "green";
       }
-
-
-    } else {
-      if (
-        pNombre.value != "" ||
-        sNombre.value != "" ||
-        pApellido.value != "" ||
-        sApellido.value != "" ||
-        correoTrabajador.value != "" ||
-        confirmarCorreoTrabajador.value != "" ||
-        contrasenaTrabajador.value != "" ||
-        confirmarContrasenaTrabajador.value != "" ||
-        telefonoCelularTrabajador.value != "" ||
-        direccionResidencialTrabajador.value != "" ||
-        documentoTrabajador.value != "" ||
-        paisTrabajador.value != "" ||
-        ciudadTrabajador.value != "" ||
-        tipoTrabajador.value != "" ||
-        precioTrabajo.value != "" ||
-        descripcionTrabajador.value != ""
-      ) {
-        if (pNombre.value != "") {
-          pNombre.style.borberColor = "green";
-        }
-        if (sNombre.value != "") {
-          sNombre.style.borderColor = "green";
-        }
-        if (pApellido.value != "") {
-          pApellido.style.borderColor = "green";
-        }
-        if (sApellido.value != "") {
-          sApellido.style.borderColor = "green";
-        }
-
-        if (correoTrabajador.value != "") {
-          correoTrabajador.style.borderColor = "green";
-        }
-
-        if (confirmarCorreoTrabajador.value != "") {
-          confirmarCorreoTrabajador.style.borderColor = "green";
-        }
-
-        if (contrasenaTrabajador.value != "") {
-          contrasenaTrabajador.style.borderColor = "green";
-        }
-
-        if (confirmarContrasenaTrabajador.value != "") {
-          confirmarContrasenaTrabajador.style.borderColor = "green";
-        }
-
-        if (telefonoCelularTrabajador.value != "") {
-          telefonoCelularTrabajador.style.borderColor = "green";
-        }
-
-        if (direccionResidencialTrabajador.value != "") {
-          direccionResidencialTrabajador.style.borderColor = "green";
-        }
-
-        if (documentoTrabajador.value != "") {
-          documentoTrabajador.style.borderColor = "green";
-        }
-
-        if (paisTrabajador.value != "") {
-          paisTrabajador.style.borderColor = "green";
-        }
-
-        if (ciudadTrabajador.value != "") {
-          ciudadTrabajador.style.borderColor = "green";
-        }
-
-        if (tipoTrabajador.value != "") {
-          tipoTrabajador.style.borderColor = "green";
-        }
-
-        if (precioTrabajo.value != "") {
-          precioTrabajo.style.borderColor = "green";
-        }
-
-        if (descripcionTrabajador.value != "") {
-          descripcionTrabajador.style.borderColor = "green";
-        }
-
-        //this.state.boolean = true;
-        //console.log(this.state.boolean);
+      if(correoCliente.value != ""){
+        correoCliente.style.borberColor = "green";
+      }
+      if(confirmarCorreoCliente.value != ""){
+        confirmarCorreoCliente.style.borberColor = "green";
+      }
+      if(contrasenaCliente.value != ""){
+        contrasenaCliente.style.borberColor = "green";
+      }
+      if(confirmarContrasenaCliente.value != ""){
+        confirmarContrasenaCliente.style.borberColor = "green";
+      }
+      if(telefonoCliente.value != ""){
+        telefonoCliente.style.borberColor = "green";
+      }
+      if(direccionCliente.value != ""){
+        direccionCliente.style.borberColor = "green";
+      }
+      if(documentoCliente.value != ""){
+        documentoCliente.style.borberColor = "green";
+      }
+      if(pNombre.value != "" && 
+      sNombre.value != "" &&
+      pApellido.value != "" && 
+      sApellido.value != "" && 
+      correoCliente.value != "" &&
+      confirmarCorreoCliente.value != "" &&
+      contrasenaCliente.value != "" &&
+      confirmarContrasenaCliente.value != "" &&
+      telefonoCliente.value != "" &&
+      direccionCliente.value != "" &&
+      documentoCliente.value != "" ){
+        this.state.boolean = true;
+        this.peticionPost();
       }
     }
   };
@@ -273,11 +243,12 @@ class RegistroUsuario extends Component {
     }, 1500);
   };
 
-// https://barppi.herokuapp.com/api/cliente/nuevo-cliente/solicitud-registro
-// http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro
+
 peticionPost=async () =>{
   delete this.state.formU.ConfirmarContrasena
   delete this.state.formU.ConfirmarCorreo
+  // https://barppi.herokuapp.com/api/cliente/nuevo-cliente/solicitud-registro
+  // http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro
    await axios.post('http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU)
    .then(response =>{
      console.log("Se ha creado un nuevo cliente");
@@ -289,6 +260,7 @@ peticionPost=async () =>{
 
   render() {
     const datosFormU = this.state.formU;
+    console.log(this.state.formU.FotoPerfil)
     return (
       <div>
         <header>
@@ -482,6 +454,68 @@ peticionPost=async () =>{
                         value={datosFormU.documento_Cliente}
                       />
                     </div>
+                    <div className="divBoxes">
+                      <p className="pCampoText">Foto</p>
+                      <button
+                        type="button"
+                        className="btn btnimgUploader"
+                        data-toggle="modal"
+                        data-target="#staticBackdrop"
+                      >
+                        Subir Fotografia
+                      </button>
+                      {/* MODAL SUBIR FOTO*/}
+                      <div
+                        className="modal fade"
+                        id="staticBackdrop"
+                        data-backdrop="static"
+                        data-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">
+                                Elige tu foto de perfil
+                              </h5>
+                              <button
+                                type="button"
+                                className="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div className="modal-body">
+                            <form id="formProta" encType="multipart/form-data">
+                                <input className="input-subir-img" id="FOTOPERFIL" accept="image/*" onChange={this.Subir} type="file" />
+                            </form>
+                            <div className="foto-perfil-subida-img-trabajador">
+                            <img className="foto-perfil-img-trabajador" id="fotoPrev" src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6" alt="FOTOPERFIL"/>
+                            </div>
+                            <div className="div-subir-img-foto-perfil-trabajador">
+                            <button className="Buton" onClick={this.Subir2}>
+                              SUBIR
+                            </button>
+                            </div>
+                            </div>
+                            <div className="modal-footer">
+                              <button
+                                type="button"
+                                className="btn btnimgUploader"
+                                data-dismiss="modal"
+                              >
+                                Oky
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FIN MODAL */}
+                    </div>
                   </div>
                   
                 </form>
@@ -490,9 +524,9 @@ peticionPost=async () =>{
                   <button
                     type="submit"
                     className="btn Buton"
-                    onClick={this.peticionPost}
+                    onClick={this.validacionForm}
                   >
-                    SIGUIENTE
+                    REGISTRAR
                   </button>
                 </div>
               </div>
@@ -500,9 +534,12 @@ peticionPost=async () =>{
           </div>
         </div>
         {this.state.boolean && (
-          <Redirect to={{ pathname: "/RegistroBarberos/RegistroBarberos1" }} />
+          <Redirect to={{ pathname: `/PerfilTrabajadorUsuario2/inicioUsuarios/${this.state.numero_id_trabajador}` }} />
         )}
         {/* , state:{form:this.state.form} */}
+        <div className="none" id="body">
+
+        </div>
       </div>
     );
   }

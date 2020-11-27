@@ -40,6 +40,13 @@ class LoginUsuarios extends Component {
       this.setState({
         datos: response.data[0]
       })
+      this.setState({
+        cita:{
+          codigo_cliente: this.state.datos.codigo_cliente,
+          numero_id_trabajador: this.state.numero_id_trabajador,
+          estado_cita: 'Activa'
+        }
+      })
     })
     .catch(error => {
       console.log(error);
@@ -48,15 +55,7 @@ class LoginUsuarios extends Component {
 
 
   peticionPostCita=async () =>{
-    //
     // http://localhost:4020/api/cita/nueva-cita/solicitud-cita
-    this.setState({
-      cita:{
-        codigo_cliente: this.state.datos.codigo_cliente,
-        numero_id_trabajador: this.state.numero_id_trabajador,
-        estado_cita: 'Activa'
-      }
-    })
      await axios.post('http://localhost:4020/api/cita/nueva-cita/solicitud-cita', this.state.cita)
      .then(response =>{
        console.log("Se ha creado una nueva cita");
@@ -104,6 +103,7 @@ class LoginUsuarios extends Component {
 
   render(){
     console.log(this.state.datos)
+    console.log(this.state.cita)
     console.log(this.state.datos[0])
     const loginTrabajador = this.state.datos[0]
     return (
@@ -171,7 +171,9 @@ class LoginUsuarios extends Component {
               <div className="divbutonIngresarTrabajador_Principal">
                 {/* onClick={() => this.iniciarSesion()} */}
                 {/* <Link exact to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}></Link> */}
-                  <button className="btn ButonIngresarTrabajador" onClick={() => this.iniciarSesion()} >Entrar</button>
+                  <button className="btn ButonIngresarTrabajador" onClick={() => this.iniciarSesion()} >
+                    Agendar  
+                  </button>
                 
               </div>
               <div>
@@ -179,9 +181,6 @@ class LoginUsuarios extends Component {
                   AGENDAR CITA
                 </button>
               </div>
-              <Link exact to={`/TrabajadoresInicio/${this.state.datos.numero_id_trabajador}`}>
-                IR A LA PARTE DEL TRABAJADOR
-              </Link>
             </div>
           </div>
         </div>

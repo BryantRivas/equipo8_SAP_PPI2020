@@ -18,9 +18,9 @@ class RegistroBarberos extends Component {
         apellido1_trabajador: "",
         apellido2_trabajador: "",
         correo_electronico_trabajador: "",
-        /*1*/ConfirmarCorreo: "",
+        /*1*/ ConfirmarCorreo: "",
         contrasena_trabajador: "",
-        /*2*/ConfirmarContrasena: "",
+        /*2*/ ConfirmarContrasena: "",
         telefono_trabajador: "",
         direccion_trabajador: "",
         documento_Trabajador: "",
@@ -29,7 +29,7 @@ class RegistroBarberos extends Component {
         tipo_trabajador: "",
         precio_trabajador: "",
         descripcion_trabajador: "",
-        FotoPerfil: aja2
+        FotoPerfil: aja2,
       },
     };
   }
@@ -40,7 +40,7 @@ class RegistroBarberos extends Component {
       form: {
         ...this.state.form,
         [e.target.name]: e.target.value,
-        FotoPerfil: aja2
+        FotoPerfil: aja2,
       },
     });
     console.log(this.state.form);
@@ -53,7 +53,8 @@ class RegistroBarberos extends Component {
       nombre2_trabajador: this.state.form.nombre2_trabajador,
       apellido1_trabajador: this.state.form.apellido1_trabajador,
       apellido2_trabajador: this.state.form.apellido2_trabajador,
-      correo_electronico_trabajador: this.state.form.correo_electronico_trabajador,
+      correo_electronico_trabajador: this.state.form
+        .correo_electronico_trabajador,
       ConfirmarCorreo: this.state.form.ConfirmarCorreo,
       contrasena_trabajador: this.state.form.contrasena_trabajador,
       ConfirmarContrasena: this.state.form.ConfirmarContrasena,
@@ -65,11 +66,11 @@ class RegistroBarberos extends Component {
       tipo_trabajador: this.state.form.tipo_trabajador,
       precio_trabajador: this.state.form.precio_trabajador,
       descripcion_trabajador: this.state.form.descripcion_trabajador,
-      FotoPerfil: aja2
+      FotoPerfil: aja2,
     };
     this.setState({
-      form:user
-    })
+      form: user,
+    });
     console.log(user);
   };
 
@@ -79,17 +80,27 @@ class RegistroBarberos extends Component {
     let pApellido = document.getElementById("PRIMERAPELLIDO");
     let sApellido = document.getElementById("SEGUNDOAPELLIDO");
     let correoTrabajador = document.getElementById("CORREOTRABAJADOR");
-    let confirmarCorreoTrabajador = document.getElementById("CONFIRMARCORREOTRABAJADOR");
+    let confirmarCorreoTrabajador = document.getElementById(
+      "CONFIRMARCORREOTRABAJADOR"
+    );
     let contrasenaTrabajador = document.getElementById("CONTRASENATRABAJADOR");
-    let confirmarContrasenaTrabajador = document.getElementById("CONFIRMARCONTRASENATRABAJADOR");
-    let telefonoCelularTrabajador = document.getElementById("TELEFONOCELULARTRABAJADOR");
-    let direccionResidencialTrabajador = document.getElementById("DIRECCIONRESIDENCIALTRABAJADOR");
+    let confirmarContrasenaTrabajador = document.getElementById(
+      "CONFIRMARCONTRASENATRABAJADOR"
+    );
+    let telefonoCelularTrabajador = document.getElementById(
+      "TELEFONOCELULARTRABAJADOR"
+    );
+    let direccionResidencialTrabajador = document.getElementById(
+      "DIRECCIONRESIDENCIALTRABAJADOR"
+    );
     let documentoTrabajador = document.getElementById("DOCUMENTOTRABAJADOR");
     let paisTrabajador = document.getElementById("PAISTRABAJADOR");
     let ciudadTrabajador = document.getElementById("CIUDADTRABAJADOR");
     let tipoTrabajador = document.getElementById("TIPOTRABAJADOR");
     let precioTrabajo = document.getElementById("PRECIOTRABAJO");
-    let descripcionTrabajador = document.getElementById("DESCRIPCIONTRABAJADOR");
+    let descripcionTrabajador = document.getElementById(
+      "DESCRIPCIONTRABAJADOR"
+    );
 
     if (
       pNombre.value == "" ||
@@ -192,70 +203,69 @@ class RegistroBarberos extends Component {
         descripcionTrabajador.value = "Parametro obligatorio";
         this.time(descripcionTrabajador);
       }
-
-
     } else {
-        if (pNombre.value != "") {
-          pNombre.style.borberColor = "green";
-        }
-        if (sNombre.value != "") {
-          sNombre.style.borderColor = "green";
-        }
-        if (pApellido.value != "") {
-          pApellido.style.borderColor = "green";
-        }
-        if (sApellido.value != "") {
-          sApellido.style.borderColor = "green";
-        }
+      if (pNombre.value != "") {
+        pNombre.style.borberColor = "green";
+      }
+      if (sNombre.value != "") {
+        sNombre.style.borderColor = "green";
+      }
+      if (pApellido.value != "") {
+        pApellido.style.borderColor = "green";
+      }
+      if (sApellido.value != "") {
+        sApellido.style.borderColor = "green";
+      }
 
-        if (correoTrabajador.value != "") {
-          correoTrabajador.style.borderColor = "green";
-        }
+      if (correoTrabajador.value != "") {
+        correoTrabajador.style.borderColor = "green";
+      }
 
-        if (confirmarCorreoTrabajador.value != "") {
-          confirmarCorreoTrabajador.style.borderColor = "green";
-        }
+      if (confirmarCorreoTrabajador.value != "") {
+        confirmarCorreoTrabajador.style.borderColor = "green";
+      }
 
-        if (contrasenaTrabajador.value != "") {
-          contrasenaTrabajador.style.borderColor = "green";
-        }
+      if (contrasenaTrabajador.value != "") {
+        contrasenaTrabajador.style.borderColor = "green";
+      }
 
-        if (confirmarContrasenaTrabajador.value != "") {
-          confirmarContrasenaTrabajador.style.borderColor = "green";
-        }
+      if (confirmarContrasenaTrabajador.value != "") {
+        confirmarContrasenaTrabajador.style.borderColor = "green";
+      }
 
-        if (telefonoCelularTrabajador.value != "") {
-          telefonoCelularTrabajador.style.borderColor = "green";
-        }
+      if (telefonoCelularTrabajador.value != "") {
+        telefonoCelularTrabajador.style.borderColor = "green";
+      }
 
-        if (direccionResidencialTrabajador.value != "") {
-          direccionResidencialTrabajador.style.borderColor = "green";
-        }
+      if (direccionResidencialTrabajador.value != "") {
+        direccionResidencialTrabajador.style.borderColor = "green";
+      }
 
-        if (documentoTrabajador.value != "") {
-          documentoTrabajador.style.borderColor = "green";
-        }
+      if (documentoTrabajador.value != "") {
+        documentoTrabajador.style.borderColor = "green";
+      }
 
-        if (paisTrabajador.value != "") {
-          paisTrabajador.style.borderColor = "green";
-        }
+      if (paisTrabajador.value != "") {
+        paisTrabajador.style.borderColor = "green";
+      }
 
-        if (ciudadTrabajador.value != "") {
-          ciudadTrabajador.style.borderColor = "green";
-        }
+      if (ciudadTrabajador.value != "") {
+        ciudadTrabajador.style.borderColor = "green";
+      }
 
-        if (tipoTrabajador.value != "") {
-          tipoTrabajador.style.borderColor = "green";
-        }
+      if (tipoTrabajador.value != "") {
+        tipoTrabajador.style.borderColor = "green";
+      }
 
-        if (precioTrabajo.value != "") {
-          precioTrabajo.style.borderColor = "green";
-        }
+      if (precioTrabajo.value != "") {
+        precioTrabajo.style.borderColor = "green";
+      }
 
-        if (descripcionTrabajador.value != "") {
-          descripcionTrabajador.style.borderColor = "green";
-        }
-        if(pNombre.value != "" &&
+      if (descripcionTrabajador.value != "") {
+        descripcionTrabajador.style.borderColor = "green";
+      }
+      if (
+        pNombre.value != "" &&
         sNombre.value != "" &&
         pApellido.value != "" &&
         sApellido.value != "" &&
@@ -270,14 +280,14 @@ class RegistroBarberos extends Component {
         ciudadTrabajador.value != "" &&
         tipoTrabajador.value != "" &&
         precioTrabajo.value != "" &&
-        descripcionTrabajador.value != ""){
-          this.state.boolean = true;
-          this.peticionPost();
-        }
+        descripcionTrabajador.value != ""
+      ) {
+        this.state.boolean = true;
+        this.peticionPost();
+      }
 
-        //this.state.boolean = true;
-        //console.log(this.state.boolean);
-      
+      //this.state.boolean = true;
+      //console.log(this.state.boolean);
     }
   };
 
@@ -291,40 +301,64 @@ class RegistroBarberos extends Component {
   Subir = () => {
     let inpu = document.getElementById("FOTOPERFIL");
     if (inpu.files && inpu.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            document.getElementById("fotoPrev").src = e.target.result;
-            aja2 = e.target.result;
-        }
-        reader.readAsDataURL(inpu.files[0]);
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        console.log(e.target.result);
+        aja2 = e.target.result;
+        document.getElementById("body").innerHTML =
+          "<canvas id='tempCanvas' width='300' height='300' style='display:none'></canvas>";
+        var canvas = document.getElementById("tempCanvas");
+        var ctx = canvas.getContext("2d");
+        var cw = canvas.width;
+        var ch = canvas.height;
+        var maxW = 300;
+        var maxH = 300;
+        var img = new Image();
+        img.src = this.result;
+        img.onload = function () {
+          var iw = img.width;
+          var ih = img.height;
+          if (ih > 300 || iw > 300) {
+            var scale = Math.min(maxW / iw, maxH / ih);
+            var iwScaled = iw * scale;
+            var ihScaled = ih * scale;
+            canvas.width = iwScaled;
+            canvas.height = ihScaled;
+            ctx.drawImage(img, 0, 0, iwScaled, ihScaled);
+            aja2 = canvas.toDataURL("image/jpeg");
+            console.log(canvas.toDataURL("image/jpeg"));
+            document.getElementById("tempCanvas").remove();
+          }
+        };
+        document.getElementById("fotoPrev").src = aja2;
+      };
+      reader.readAsDataURL(inpu.files[0]);
     }
-}
+  };
 
   Subir2 = () => {
-  let inpu = document.getElementById("FOTOPERFIL");
-  if (inpu.files && inpu.files[0]) {
-    this.state.form.FotoPerfil = aja2;
-    // this.setState({form:{
-      // FotoPerfil: aja2,
-    // }})
-      // await this.putAvatar();
-      // UsuarioI[0].avatar = aja2;
-      // document.getElementById("FotoPerfíl").style.backgroundImage = "url(" + UsuarioI[0].avatar + ")";
-  }
-}
-// https://barppi.herokuapp.com/api/nuevo-trabajador/registro
-// http://localhost:4020/api/nuevo-trabajador/registro
-peticionPost=async () =>{
-  delete this.state.form.ConfirmarContrasena
-  delete this.state.form.ConfirmarCorreo
-   await axios.post('http://localhost:4020/api/nuevo-trabajador/registro', this.state.form)
-   .then(response =>{
-     console.log("Se ha creado un nuevo trabajador");
-   }).catch(error=>{
-    console.log(error.message);
-  })
-   
- }
+    let inpu = document.getElementById("FOTOPERFIL");
+    if (inpu.files && inpu.files[0]) {
+      this.state.form.FotoPerfil = aja2;
+    }
+  };
+  // https://barppi.herokuapp.com/api/nuevo-trabajador/registro
+  // http://localhost:4020/api/nuevo-trabajador/registro
+  peticionPost = async () => {
+    delete this.state.form.ConfirmarContrasena;
+    delete this.state.form.ConfirmarCorreo;
+    await axios
+      .post(
+        "http://localhost:4020/api/nuevo-trabajador/registro",
+        this.state.form
+      )
+      .then((response) => {
+        console.log("Se ha creado un nuevo trabajador");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   render() {
     const datosForm = this.state.form;
@@ -607,17 +641,31 @@ peticionPost=async () =>{
                               </button>
                             </div>
                             <div className="modal-body">
-                            <form id="formProta" encType="multipart/form-data">
-                                <input className="input-subir-img" id="FOTOPERFIL" accept="image/*" onChange={this.Subir} type="file" />
-                            </form>
-                            <div className="foto-perfil-subida-img-trabajador">
-                            <img className="foto-perfil-img-trabajador" id="fotoPrev" src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6" alt="FOTOPERFIL"/>
-                            </div>
-                            <div className="div-subir-img-foto-perfil-trabajador">
-                            <button className="Buton" onClick={this.Subir2}>
-                              SUBIR
-                            </button>
-                            </div>
+                              <form
+                                id="formProta"
+                                encType="multipart/form-data"
+                              >
+                                <input
+                                  className="input-subir-img"
+                                  id="FOTOPERFIL"
+                                  accept="image/*"
+                                  onChange={this.Subir}
+                                  type="file"
+                                />
+                              </form>
+                              <div className="foto-perfil-subida-img-trabajador">
+                                <img
+                                  className="foto-perfil-img-trabajador"
+                                  id="fotoPrev"
+                                  src="https://us.123rf.com/450wm/naropano/naropano1606/naropano160600550/58727711-fondo-gris-oscuro-el-dise%C3%B1o-de-textura-fondo-del-grunge-.jpg?ver=6"
+                                  alt="FOTOPERFIL"
+                                />
+                              </div>
+                              <div className="div-subir-img-foto-perfil-trabajador">
+                                <button className="Buton" onClick={this.Subir2}>
+                                  SUBIR
+                                </button>
+                              </div>
                             </div>
                             <div className="modal-footer">
                               <button
@@ -679,6 +727,7 @@ peticionPost=async () =>{
         {this.state.boolean && (
           <Redirect to={{ pathname: "/IngresarTrabajador" }} />
         )}
+        <div className="none" id="body"></div>
       </div>
     );
   }

@@ -3,17 +3,15 @@ const cliente = Router();
 const mysqlConnection = require('../db/db');
 
 
-// TABLA: Registro de trabajador 
-// OBJETIVO: Si el cliente que quiere ser trabajador de nuestra plataforma no cuenta con un registro en la base de datos,
-// podrá registrarse completando los datos necesarios; una vez los datos estén completamente diligenciados se enviaran a la 
-// base de datos.
-// URL: /RegistroBarberos/RegistroBarberos3
+// TABLA: Registro de cliente 
+// OBJETIVO: Registrar a los clientes en la aplicacion
+// URL: http://localhost:3000/PerfilTrabajadorUsuario2/inicioUsuarios/registroUsuarios/
 // LOS ESTOY UTILIZANDO
 cliente.post('/nuevo-cliente/solicitud-registro', (req,res)=>{
-    const { correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente } = req.body;
-    const cliente = [ correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente ];
+    const { correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente,FotoPerfil } = req.body;
+    const cliente = [ correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente,FotoPerfil ];
 
-    const nuevoCliente = `INSERT INTO cliente(correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente) VALUES (?,?,?,?,?,?,?,?,?)`;
+    const nuevoCliente = `INSERT INTO cliente(correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente,FotoPerfil) VALUES (?,?,?,?,?,?,?,?,?,?)`;
 
     mysqlConnection.query(nuevoCliente, cliente, (err, results, fields)=>{
         if(err){
@@ -43,7 +41,8 @@ cliente.get('/solicitud-login/loginCliente/:correo_electronico_cliente', (req,re
 // OBJETIVO: El trabajador al ingresar a una de las cards que se encuentran en el apartado de trabajos realizados, 
 // podrá ver las características de dicho trabajo realizado.
 // URL: /TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados
-cliente.get('/cliente/cards/:codigo_cliente', (req,res)=>{
+// 
+cliente.get('/cliente/cards/trabajadorRealizados/:codigo_cliente', (req,res)=>{
     const { codigo_cliente } = req.params;
     mysqlConnection.query('SELECT * FROM cliente WHERE codigo_cliente = ?',[codigo_cliente], (err, rows, fields)=>{
         if(!err){
@@ -59,7 +58,8 @@ cliente.get('/cliente/cards/:codigo_cliente', (req,res)=>{
 // OBJETIVO: El trabajador al ingresar a una de las cards que se encuentran en el apartado de trabajos por realizar,
 // podrá ver las características de dicho trabajo a realizar. 
 // URL: /TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar
-cliente.get('/cliente/cards/:codigo_cliente', (req,res)=>{
+// LA ESTOY UTILIZANDO
+cliente.get('/cliente/cards/trabajosPorRealizar/:codigo_cliente', (req,res)=>{
     const { codigo_cliente } = req.params;
     mysqlConnection.query('SELECT * FROM cliente WHERE codigo_cliente = ?',[codigo_cliente], (err, rows, fields)=>{
         if(!err){

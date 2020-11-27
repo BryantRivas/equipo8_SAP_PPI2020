@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./StylesIngresarTrabajador.css";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 
 class IngresarTrabajador extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      boolean: false,
       correo_verificacion_trabajador: '',
       login:{
         correo_electronico_trabajador: '',
@@ -68,8 +69,7 @@ class IngresarTrabajador extends Component {
           if(passwordTrabajador.value != ""){
             passwordTrabajador.style.borderColor = "green";
           }
-        
-        
+          this.state.boolean = true;
       }
 
     }
@@ -150,20 +150,20 @@ class IngresarTrabajador extends Component {
             <div className="divButonIngresarTrabajador">
               <div className="divbutonIngresarTrabajador_Principal">
                 {/* onClick={() => this.iniciarSesion()} */}
-                {/* <Link className="" exact to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}></Link> */}
-                  <button className="btn ButonIngresarTrabajador" onClick={() => this.validacionLogin()} >Entrar</button>
-                
+                {/* <Link exact to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}></Link> */}
+                {/* <Link exact to={`/TrabajadoresInicio/${this.state.datos.numero_id_trabajador}`}>IR A LA PARTE DEL TRABAJADOR</Link> */}
+                  <button className="btn ButonIngresarTrabajador" onClick={() => this.validacionLogin()} >
+                    Entrar
+                  </button>
               </div>
-              <Link exact to={`/TrabajadoresInicio/${this.state.datos.numero_id_trabajador}`}>
-                IR A LA PARTE DEL TRABAJADOR
-              </Link>
             </div>
           </div>
         </div>
+        {this.state.boolean && (<Redirect to={{ pathname: `/TrabajadoresInicio/${this.state.datos.numero_id_trabajador}` }} />)}
       </div>
     );
   }
   
 };
 
-export default IngresarTrabajador;
+export default withRouter(IngresarTrabajador);
