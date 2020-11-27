@@ -8,6 +8,7 @@ class IngresarTrabajador extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      correo_verificacion_trabajador: '',
       login:{
         correo_electronico_trabajador: '',
         contrasena: ''
@@ -42,6 +43,8 @@ class IngresarTrabajador extends Component {
   validacionLogin = () => {
     let correoTrabajador = document.getElementById("CORREOTRABAJADOR");
     let passwordTrabajador = document.getElementById("PASSWORDTRABAJADOR");
+    let correo_electronico_trabajador = this.state.datos;
+    console.log(correo_electronico_trabajador);
 
     if(correoTrabajador.value == "" || passwordTrabajador.value == "" ){
       if(correoTrabajador.value == ""){
@@ -55,14 +58,20 @@ class IngresarTrabajador extends Component {
         this.timeLogin(passwordTrabajador, "password");
       }
     }else{
-      if(correoTrabajador.value != "" || passwordTrabajador.value != ""){
-        if(correoTrabajador.value != ""){
-          correoTrabajador.style.borderColor = "green";
-        }
-        if(passwordTrabajador.value != ""){
-          passwordTrabajador.style.borderColor = "green";
-        }
+      if(correoTrabajador.value != ""){
+          this.iniciarSesion();
+          if(correoTrabajador.value === correo_electronico_trabajador){
+            correoTrabajador.style.borderColor = "green";
+          }else{
+            correoTrabajador.style.borderColor = "red";
+          }
+          if(passwordTrabajador.value != ""){
+            passwordTrabajador.style.borderColor = "green";
+          }
+        
+        
       }
+
     }
   }
 
@@ -76,8 +85,7 @@ class IngresarTrabajador extends Component {
 
   render(){
     console.log(this.state.datos)
-    console.log(this.state.datos[0])
-    const loginTrabajador = this.state.datos[0]
+    const loginTrabajador = this.state.datos
     return (
       <div>
         <header>
@@ -143,7 +151,7 @@ class IngresarTrabajador extends Component {
               <div className="divbutonIngresarTrabajador_Principal">
                 {/* onClick={() => this.iniciarSesion()} */}
                 {/* <Link className="" exact to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}></Link> */}
-                  <button className="btn ButonIngresarTrabajador" onClick={() => this.iniciarSesion()} >Entrar</button>
+                  <button className="btn ButonIngresarTrabajador" onClick={() => this.validacionLogin()} >Entrar</button>
                 
               </div>
               <Link exact to={`/TrabajadoresInicio/${this.state.datos.numero_id_trabajador}`}>

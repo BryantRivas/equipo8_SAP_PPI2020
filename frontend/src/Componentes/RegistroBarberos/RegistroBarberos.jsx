@@ -109,7 +109,6 @@ class RegistroBarberos extends Component {
       precioTrabajo.value == "" ||
       descripcionTrabajador.value == ""
     ) {
-      console.log("El primer nombre esta vacido");
       if (pNombre.value == "") {
         pNombre.style.borderColor = "red";
         pNombre.value = "Parametro obligatorio";
@@ -196,24 +195,6 @@ class RegistroBarberos extends Component {
 
 
     } else {
-      if (
-        pNombre.value != "" ||
-        sNombre.value != "" ||
-        pApellido.value != "" ||
-        sApellido.value != "" ||
-        correoTrabajador.value != "" ||
-        confirmarCorreoTrabajador.value != "" ||
-        contrasenaTrabajador.value != "" ||
-        confirmarContrasenaTrabajador.value != "" ||
-        telefonoCelularTrabajador.value != "" ||
-        direccionResidencialTrabajador.value != "" ||
-        documentoTrabajador.value != "" ||
-        paisTrabajador.value != "" ||
-        ciudadTrabajador.value != "" ||
-        tipoTrabajador.value != "" ||
-        precioTrabajo.value != "" ||
-        descripcionTrabajador.value != ""
-      ) {
         if (pNombre.value != "") {
           pNombre.style.borberColor = "green";
         }
@@ -274,10 +255,29 @@ class RegistroBarberos extends Component {
         if (descripcionTrabajador.value != "") {
           descripcionTrabajador.style.borderColor = "green";
         }
+        if(pNombre.value != "" &&
+        sNombre.value != "" &&
+        pApellido.value != "" &&
+        sApellido.value != "" &&
+        correoTrabajador.value != "" &&
+        confirmarCorreoTrabajador.value != "" &&
+        contrasenaTrabajador.value != "" &&
+        confirmarContrasenaTrabajador.value != "" &&
+        telefonoCelularTrabajador.value != "" &&
+        direccionResidencialTrabajador.value != "" &&
+        documentoTrabajador.value != "" &&
+        paisTrabajador.value != "" &&
+        ciudadTrabajador.value != "" &&
+        tipoTrabajador.value != "" &&
+        precioTrabajo.value != "" &&
+        descripcionTrabajador.value != ""){
+          this.state.boolean = true;
+          this.peticionPost();
+        }
 
         //this.state.boolean = true;
         //console.log(this.state.boolean);
-      }
+      
     }
   };
 
@@ -285,7 +285,7 @@ class RegistroBarberos extends Component {
     setTimeout(function () {
       input.style.borderColor = "gray";
       input.value = "";
-    }, 1500);
+    }, 2500);
   };
 
   Subir = () => {
@@ -664,13 +664,12 @@ peticionPost=async () =>{
                   </div>
                 </form>
                 <div className="DivButon">
-                  {/*<Link to=""></Link>*/}
                   <button
                     type="submit"
                     className="btn Buton"
-                    onClick={this.peticionPost}
+                    onClick={this.validacionForm}
                   >
-                    SIGUIENTE
+                    FINALIZAR
                   </button>
                 </div>
               </div>
@@ -678,9 +677,8 @@ peticionPost=async () =>{
           </div>
         </div>
         {this.state.boolean && (
-          <Redirect to={{ pathname: "/RegistroBarberos/RegistroBarberos1" }} />
+          <Redirect to={{ pathname: "/IngresarTrabajador" }} />
         )}
-        {/* , state:{form:this.state.form} */}
       </div>
     );
   }

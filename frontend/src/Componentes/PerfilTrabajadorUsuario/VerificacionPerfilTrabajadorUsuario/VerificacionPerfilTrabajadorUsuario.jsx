@@ -79,8 +79,8 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
                 <button className="btn botonFacebookPerfilTrabajadorUsuario2">
                   <img
                     className="img-boton-iconFacebook-IniciarSesionUsuario"
-                    src="https://1.bp.blogspot.com/-LMxlVmBE-Mc/X2E83PdpHcI/AAAAAAAAHsU/KhuhTSrAnvs5KQhFivdsINc8QAC7Hr00gCLcBGAsYHQ/s2048/Facebook.png"
-                    alt="Facebook"
+                    src="https://1.bp.blogspot.com/-9phAiObUAOk/X8BdHu3MhvI/AAAAAAAAIq8/re7gbeTQ214vkvIgjFiys4hNdQIs-eKAACLcBGAsYHQ/s999/login.png"
+                    alt="Login"
                   />
                   INICIAR SESIÓN
                 </button>
@@ -92,8 +92,8 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
                 <button className="btn botonGooglePerfilTrabajadorUsuario2">
                   <img
                     className="img-boton-iconGoogle-IniciarSesionUsuario"
-                    src="https://1.bp.blogspot.com/-Icc_DFXm9DQ/X2E83GL1-LI/AAAAAAAAHsQ/T038TKJC5WsKvnjihxUnZIAPtGxSIJ71gCLcBGAsYHQ/s733/Google.png"
-                    alt="Google"
+                    src="https://1.bp.blogspot.com/-URswGYpZWp4/X8BdIBSY6TI/AAAAAAAAIrA/gN-QAjgCqfAxYhqoplcmbAgymrH9tNpjgCLcBGAsYHQ/s994/Registro.png"
+                    alt="Registro"
                   />
                   REGISTRARSE
                   

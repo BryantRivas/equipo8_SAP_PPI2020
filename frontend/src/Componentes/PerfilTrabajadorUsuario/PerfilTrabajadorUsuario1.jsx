@@ -79,7 +79,9 @@ class PerfilTrabajadorUsuario1 extends Component {
             </div>
             <div className="div-nombreTrabajador-PerfilTrabajadorUsuario1">
               <div className="div-nombreCompletoDelTrabajador-PerfilTrabajadorUsuarios1">
+                <div className="centrar-nombres-trabajador">
                 {characters.nombre1_trabajador}{` `}{characters.nombre2_trabajador}{` `}{characters.apellido1_trabajador}{` `}{characters.apellido2_trabajador}
+                </div>
               </div>
             </div>
             <div className="div-nombreCiudadTrabajador-PerfilTrabajadorUsuario1">
