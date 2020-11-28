@@ -2,9 +2,8 @@ import React from "react";
 import BusquedaTrabajosRealizados from "../Componentes/InicioTrabajadores/TrabajosRealizados/busquedaTrabajosRealizados/BusquedaTrabajosRealizados";
 import { useParams } from "react-router-dom";
 
-function busquedaTrabajosRealizadosP() {
-  const { numero_id_trabajador } = this.props.match.params.id;
-  console.log(numero_id_trabajador)
+const BusquedaTrabajosRealizadosP = () => {
+  const { numero_id_trabajador } = useParams();
   return (
     <div>
       <BusquedaTrabajosRealizados numero_id_trabajador = { numero_id_trabajador } />
@@ -12,4 +11,4 @@ function busquedaTrabajosRealizadosP() {
   );
 }
 
-export default busquedaTrabajosRealizadosP;
+export default BusquedaTrabajosRealizadosP;

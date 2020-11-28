@@ -8,13 +8,14 @@ class CardTrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numero_id_citaPorRealizar: this.props.numero_id,
+      numero_id_trabajador: this.props.numero_id_trabajador,
+      codigo_cita: this.props.codigo_cita,
       datos: []
     };
   }
   
   componentDidMount(){
-    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_citaPorRealizar}`)
+    axios.get(`https://rickandmortyapi.com/api/character/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -34,7 +35,7 @@ class CardTrabajosPorRealizar extends Component {
           <nav className="menu-fixed-cards-trabajosRealizados">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to="/TrabajadoresInicio/TrabajosRealizados">
+                <Link to={`/TrabajadoresInicio/TrabajosRealizados/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"

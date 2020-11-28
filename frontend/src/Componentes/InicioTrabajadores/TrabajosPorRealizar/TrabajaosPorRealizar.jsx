@@ -14,9 +14,9 @@ class TrabajosPorRealizar extends Component {
   }
 
   componentDidMount(){
-    // https://barppi.herokuapp.com/api/cita/cita/cards/${this.state.numero_id_trabajador}
-    // http://localhost:4020/api/cita/cita/cards/${this.state.numero_id_trabajador}
-    axios.get(`http://localhost:4020/api/cita/cita/cards/${this.state.numero_id_trabajador}`)
+    // https://barppi.herokuapp.com/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}
+    axios.get(`http://localhost:4020/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -76,7 +76,7 @@ class TrabajosPorRealizar extends Component {
               <div className="divCardTrabajosPorRealizar">
                 <Link
                   className="link_TrabajosPorRealizar"
-                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${datosT.codigo_cliente}`}
+                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${this.state.numero_id_trabajador}/${datosT.codigo_cliente}`}
                 >
                   <div className="card-TrabajosPorRealizar">
                     <div className="CardGrid_TrabajosPorRealizar">

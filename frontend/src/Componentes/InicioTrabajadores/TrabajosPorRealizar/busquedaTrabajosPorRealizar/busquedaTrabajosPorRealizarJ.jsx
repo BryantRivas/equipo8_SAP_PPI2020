@@ -16,14 +16,15 @@ class busquedaTrabajosPorRealizarJ extends Component {
   }
 
   componentDidMount() {
-    //https://barppi.herokuapp.com/api/trabajador
+    // https://barppi.herokuapp.com/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}
     axios
-      .get("https://rickandmortyapi.com/api/character")
+      .get(`http://localhost:4020/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}`)
       .then((res) => {
         console.log(res.data);
         this.setState({
-          datos: res.data.results,
-          datosB: res.data.results,
+          datos: res.data,
+          datosB: res.data
         });
       })
       .catch((err) => {
@@ -117,7 +118,7 @@ class busquedaTrabajosPorRealizarJ extends Component {
                   <div className="divCardTrabajosPorRealizar">
                     <Link
                       className="link_TrabajosPorRealizar"
-                      to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${datosT.id}`}
+                      to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${this.state.numero_id_trabajador}/${datosT.codigo_cliente}`}
                     >
                       <div className="card-TrabajosPorRealizar">
                         <div className="CardGrid_TrabajosPorRealizar">

@@ -65,14 +65,14 @@ ReactDOM.render(
 
         <Route
           exact
-          path="/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados/:id"
+          path="/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados/:numero_id_trabajador/:codigo_cliente"
         >
           <CardTrabajosRealizadosP />
         </Route>
 
         <Route
           exact
-          path="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/:id"
+          path="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/:numero_id_trabajador/:codigo_cliente"
         >
           <CardTrabajosPorRealizarP />
         </Route>

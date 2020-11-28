@@ -8,7 +8,8 @@ class CardTrabajosPorRealizar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      codigo_cliente: this.props.numero_id,
+      codigo_cliente: this.props.codigo_cliente,
+      numero_id_trabajador: this.props.numero_id_trabajador,
       datos: []
     };
   }
@@ -36,7 +37,7 @@ class CardTrabajosPorRealizar extends Component {
           <nav className="menu-fixed-cards-trabajos-por-realizar">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to={`/TrabajadoresInicio/TrabajosPorRealizar`}>
+                <Link to={`/TrabajadoresInicio/TrabajosPorRealizar/${this.state.numero_id_trabajador}`}>
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"
@@ -75,16 +76,7 @@ class CardTrabajosPorRealizar extends Component {
                 {characters.nombre1_Cliente}{` `}{characters.nombre2_Cliente}{` `}{characters.apellido1_Cliente}{` `}{characters.apellido2_Cliente}
               </div>
             </div>
-            <div className="div-nombreCiudadTrabajador-CardTrabajosPorRealizar">
-              <div className="div-div-nombreCiudadTrabajador-CardTrabajosPorRealizar">
-                Ciudad
-              </div>
-            </div>
-            <div className="div-tipoTrabajador-CardTrabajosPorRealizar">
-              <div className="div-div-tipoTrabajador-CardTrabajosPorRealizar">
-                BARBERO
-              </div>
-            </div>
+
             <div className="div-contoTrabajoTrabajador-CardTrabajosPorRealizar">
               <div className="div-div-contoTrabajoTrabajador-CardTrabajosPorRealizar">
                 $12.0000

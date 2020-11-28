@@ -41,10 +41,10 @@ cita.post('/nueva-cita/solicitud-cita', (req,res)=>{
 // por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita,
 // y ya ha terminado.
 // URL: /TrabajadoresInicio/TrabajosRealizados
-// 
-cita.get('/cita/cards/:numero_id_trabajador', (req,res)=>{
+// FUNCIONA, PERO NECESITO LA INFORMACION DEL CLIENTE ADEMAS DE FILTRAR LA INFORMACION POR EL ESTADO
+cita.get('/cita/cards/trabajosRealizados/:numero_id_trabajador', (req,res)=>{
     const { numero_id_trabajador } = req.params;
-    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ?',[numero_id_trabajador], (err, rows, fields)=>{
+    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ? AND estado_cita = "Finalizada" ',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -58,10 +58,10 @@ cita.get('/cita/cards/:numero_id_trabajador', (req,res)=>{
 // OBJETIVO: El trabajador puede visualizar los trabajos que debe realizar, estos se visualizaran en forma de cards,
 // por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita. 
 // URL: /TrabajadoresInicio/TrabajosPorRealizar
-// 
-cita.get('/cita/cards/:numero_id_trabajador', (req,res)=>{
+// FUNCIONA, PERO NECESITO LA INFORMACION DEL CLIENTE ADEMAS DE FILTRAR LA INFORMACION POR EL ESTADO
+cita.get('/cita/cards/trabajosPorRealizar/:numero_id_trabajador', (req,res)=>{
     const { numero_id_trabajador } = req.params;
-    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ?',[numero_id_trabajador], (err, rows, fields)=>{
+    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ? AND estado_cita = "Activa" ',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{

@@ -3,10 +3,11 @@ import CardTrabajosPorRealizar from "../Componentes/InicioTrabajadores/TrabajosP
 import { useParams } from "react-router-dom";
 
 const CardTrabajosPorRealizarP = () => {
-  const { id } = useParams()
+  const { codigo_cliente } = useParams();
+  const { numero_id_trabajador } = useParams();
   return (
     <div>
-      <CardTrabajosPorRealizar numero_id = { id } />
+      <CardTrabajosPorRealizar codigo_cliente = { codigo_cliente } numero_id_trabajador = { numero_id_trabajador } />
     </div>
   );
 }
