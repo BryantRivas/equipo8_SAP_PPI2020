@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./StylesLoginUsuarios.css";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 
 class LoginUsuarios extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      boolean: false,
       numero_id_trabajador: this.props.numero_id_trabajador,
       login:{
         correo_electronico_cliente: '',
@@ -70,7 +71,7 @@ class LoginUsuarios extends Component {
     let correoUsuario = document.getElementById("CORREOUSUARIO");
     let passwordUsuario = document.getElementById("PASSWORDUSUARIO");
 
-    if(correoUsuario.value == "" || passwordUsuario.value == "" ){
+    if(correoUsuario.value == "" || passwordUsuario.value == ""){
       if(correoUsuario.value == ""){
         correoUsuario.style.borderColor = "red";
         correoUsuario.value = "Parametro obligatorio";
@@ -82,15 +83,17 @@ class LoginUsuarios extends Component {
         this.timeLogin(passwordUsuario, "password");
       }
     }else{
-      if(correoUsuario.value != "" || passwordUsuario.value != ""){
-        if(correoUsuario.value != ""){
-            correoUsuario.style.borderColor = "green";
-        }
+      if(correoUsuario.value != ""){
+        this.iniciarSesion();
+        correoUsuario.style.borderColor = "green";
         if(passwordUsuario.value != ""){
-            passwordUsuario.style.borderColor = "green";
+          passwordUsuario.style.borderColor = "green";
+          this.peticionPostCita();
         }
       }
+      this.state.boolean = true;
     }
+    
   }
 
   timeLogin = (input, type) => {
@@ -171,23 +174,22 @@ class LoginUsuarios extends Component {
               <div className="divbutonIngresarTrabajador_Principal">
                 {/* onClick={() => this.iniciarSesion()} */}
                 {/* <Link exact to={`/TrabajadoresInicio/${this.state.numero_id_trabajador}`}></Link> */}
-                  <button className="btn ButonIngresarTrabajador" onClick={() => this.iniciarSesion()} >
+                  <button className="btn ButonIngresarTrabajador" onClick={this.validacionLogin} >
                     Agendar  
                   </button>
-                
+                {/*{() => this.iniciarSesion()}*/}
+                {/*{this.peticionPostCita}*/}
               </div>
               <div>
-                <button onClick={this.peticionPostCita} >
-                  AGENDAR CITA
-                </button>
               </div>
             </div>
           </div>
         </div>
+        {this.state.boolean && (<Redirect to={{ pathname: `/PerfilTrabajadorUsuario2/inicioUsuarios/infoTrabajador/${this.state.numero_id_trabajador}` }} />)}
       </div>
     );
   }
   
 };
 
-export default LoginUsuarios;
+export default withRouter(LoginUsuarios);

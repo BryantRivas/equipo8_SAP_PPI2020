@@ -26,6 +26,7 @@ import BusquedaTrabajosPorRealizarP from "./Paginas/BusquedaTrabajosPorRealizarP
 import BuscarTrabajadorUsuariosInicioP from "./Paginas/BuscarTrabajadorUsuariosInicioP";
 import RegistroUsuariosP from "./Paginas/RegistroUsuariosP";
 import LoginUsuariosP from "./Paginas/LoginUsuariosP";
+import InfoTrabajadorUsuarioP from "./Paginas/InfoTrabajadorUsuarioP";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -33,6 +34,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
+        <Route exact path="/PerfilTrabajadorUsuario2/inicioUsuarios/infoTrabajador/:numero_id_trabajador">
+          <InfoTrabajadorUsuarioP />
+        </Route>
+
         <Route exact path="/PerfilTrabajadorUsuario2/inicioUsuarios/:numero_id_trabajador">
           <LoginUsuariosP />
         </Route>
