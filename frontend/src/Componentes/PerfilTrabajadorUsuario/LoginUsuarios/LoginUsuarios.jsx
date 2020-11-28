@@ -17,7 +17,7 @@ class LoginUsuarios extends Component {
       datos:[],
       cita:{
         codigo_cliente: '',
-        numero_id_trabajador: '',
+        numero_id_trabajador: this.props.numero_id_trabajador,
         estado_cita: 'Activa'
       }
     };
@@ -32,22 +32,21 @@ class LoginUsuarios extends Component {
     });
   };
 
-  iniciarSesion = async () =>{
+  iniciarSesion = () =>{
     // https://barppi.herokuapp.com/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}
     // http://localhost:4020/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}
-    await axios.get(`http://localhost:4020/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}`)
+     axios.get(`http://localhost:4020/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}`)
     .then(response => {
       console.log(response.data);
       this.setState({
-        datos: response.data[0]
-      })
-      this.setState({
+        datos: response.data[0],
         cita:{
-          codigo_cliente: this.state.datos.codigo_cliente,
-          numero_id_trabajador: this.state.numero_id_trabajador,
+          codigo_cliente: response.data[0].codigo_cliente,
+          numero_id_trabajador: this.props.numero_id_trabajador,
           estado_cita: 'Activa'
         }
       })
+      this.peticionPostCita();
     })
     .catch(error => {
       console.log(error);
@@ -55,17 +54,7 @@ class LoginUsuarios extends Component {
   }
 
 
-  peticionPostCita=async () =>{
-    // http://localhost:4020/api/cita/nueva-cita/solicitud-cita
-     await axios.post('http://localhost:4020/api/cita/nueva-cita/solicitud-cita', this.state.cita)
-     .then(response =>{
-       console.log("Se ha creado una nueva cita");
-     }).catch(error=>{
-      console.log(error.message);
-    })
-     
-   }
-
+  
 
   validacionLogin = () => {
     let correoUsuario = document.getElementById("CORREOUSUARIO");
@@ -83,16 +72,22 @@ class LoginUsuarios extends Component {
         this.timeLogin(passwordUsuario, "password");
       }
     }else{
-      if(correoUsuario.value != ""){
+      if(this.state.cita.codigo_cliente == "" || correoUsuario.value != ""){
         this.iniciarSesion();
+      }
+      if(this.state.cita.codigo_cliente != "" && correoUsuario.value != ""){
+        this.peticionPostCita();
+      }
+      if(correoUsuario.value != ""){
         correoUsuario.style.borderColor = "green";
         if(passwordUsuario.value != ""){
           passwordUsuario.style.borderColor = "green";
-          this.peticionPostCita();
         }
+
       }
       this.state.boolean = true;
     }
+
     
   }
 
@@ -104,11 +99,23 @@ class LoginUsuarios extends Component {
     }, 1500)
   }
 
+
+  peticionPostCita=async () =>{
+    
+    // http://localhost:4020/api/cita/nueva-cita/solicitud-cita
+     await axios.post('http://localhost:4020/api/cita/nueva-cita/solicitud-cita', this.state.cita)
+     .then(response =>{
+       console.log("Se ha creado una nueva cita");
+     }).catch(error=>{
+      console.log(error.message);
+    })
+     
+   }
+
+
   render(){
     console.log(this.state.datos)
     console.log(this.state.cita)
-    console.log(this.state.datos[0])
-    const loginTrabajador = this.state.datos[0]
     return (
       <div>
         <header>

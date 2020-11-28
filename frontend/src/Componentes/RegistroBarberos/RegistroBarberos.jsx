@@ -80,190 +80,183 @@ class RegistroBarberos extends Component {
     let pApellido = document.getElementById("PRIMERAPELLIDO");
     let sApellido = document.getElementById("SEGUNDOAPELLIDO");
     let correoTrabajador = document.getElementById("CORREOTRABAJADOR");
-    let confirmarCorreoTrabajador = document.getElementById(
-      "CONFIRMARCORREOTRABAJADOR"
-    );
+    let confirmarCorreoTrabajador = document.getElementById("CONFIRMARCORREOTRABAJADOR");
     let contrasenaTrabajador = document.getElementById("CONTRASENATRABAJADOR");
-    let confirmarContrasenaTrabajador = document.getElementById(
-      "CONFIRMARCONTRASENATRABAJADOR"
-    );
-    let telefonoCelularTrabajador = document.getElementById(
-      "TELEFONOCELULARTRABAJADOR"
-    );
-    let direccionResidencialTrabajador = document.getElementById(
-      "DIRECCIONRESIDENCIALTRABAJADOR"
-    );
+    let confirmarContrasenaTrabajador = document.getElementById("CONFIRMARCONTRASENATRABAJADOR");
+    let telefonoCelularTrabajador = document.getElementById("TELEFONOCELULARTRABAJADOR");
+    let direccionResidencialTrabajador = document.getElementById("DIRECCIONRESIDENCIALTRABAJADOR");
     let documentoTrabajador = document.getElementById("DOCUMENTOTRABAJADOR");
     let paisTrabajador = document.getElementById("PAISTRABAJADOR");
     let ciudadTrabajador = document.getElementById("CIUDADTRABAJADOR");
     let tipoTrabajador = document.getElementById("TIPOTRABAJADOR");
     let precioTrabajo = document.getElementById("PRECIOTRABAJO");
-    let descripcionTrabajador = document.getElementById(
-      "DESCRIPCIONTRABAJADOR"
-    );
+    let descripcionTrabajador = document.getElementById("DESCRIPCIONTRABAJADOR");
 
-    if (
-      pNombre.value == "" ||
-      sNombre.value == "" ||
-      pApellido.value == "" ||
-      sApellido.value == "" ||
-      correoTrabajador.value == "" ||
-      confirmarCorreoTrabajador.value == "" ||
-      contrasenaTrabajador.value == "" ||
-      confirmarContrasenaTrabajador.value == "" ||
-      telefonoCelularTrabajador.value == "" ||
-      direccionResidencialTrabajador.value == "" ||
-      documentoTrabajador.value == "" ||
-      paisTrabajador.value == "" ||
-      ciudadTrabajador.value == "" ||
-      tipoTrabajador.value == "" ||
-      precioTrabajo.value == "" ||
-      descripcionTrabajador.value == ""
-    ) {
-      if (pNombre.value == "") {
-        pNombre.style.borderColor = "red";
-        pNombre.value = "Parametro obligatorio";
-        this.time(pNombre);
+      if (pNombre.value == "" || pNombre.value != "") {
+        if(pNombre.value == ""){
+          pNombre.style.borderColor = "red";
+          pNombre.value = "Parametro obligatorio";
+          this.time(pNombre);
+        }else{
+          pNombre.style.borderColor = "green";
+        }
       }
 
-      if (pApellido.value == "") {
-        pApellido.style.borderColor = "red";
-        pApellido.value = "Parametro obligatorio";
-        this.time(pApellido);
-      }
-
-      if (correoTrabajador.value == "") {
-        correoTrabajador.style.borderColor = "red";
-        correoTrabajador.value = "Parametro obligatorio";
-        this.time(correoTrabajador);
-      }
-
-      if (confirmarCorreoTrabajador.value == "") {
-        confirmarCorreoTrabajador.style.borderColor = "red";
-        confirmarCorreoTrabajador.value = "Parametro obligatorio";
-        this.time(confirmarCorreoTrabajador);
-      }
-
-      if (contrasenaTrabajador.value == "") {
-        contrasenaTrabajador.style.borderColor = "red";
-        contrasenaTrabajador.value = "Parametro obligatorio";
-        this.time(contrasenaTrabajador);
-      }
-
-      if (confirmarContrasenaTrabajador.value == "") {
-        confirmarContrasenaTrabajador.style.borderColor = "red";
-        confirmarContrasenaTrabajador.value = "Parametro obligatorio";
-        this.time(confirmarContrasenaTrabajador);
-      }
-
-      if (telefonoCelularTrabajador.value == "") {
-        telefonoCelularTrabajador.style.borderColor = "red";
-        telefonoCelularTrabajador.value = "Parametro obligatorio";
-        this.time(telefonoCelularTrabajador);
-      }
-
-      if (direccionResidencialTrabajador.value == "") {
-        direccionResidencialTrabajador.style.borderColor = "red";
-        direccionResidencialTrabajador.value = "Parametro obligatorio";
-        this.time(direccionResidencialTrabajador);
-      }
-
-      if (documentoTrabajador.value == "") {
-        documentoTrabajador.style.borderColor = "red";
-        documentoTrabajador.value = "Parametro obligatorio";
-        this.time(documentoTrabajador);
-      }
-
-      if (paisTrabajador.value == "") {
-        paisTrabajador.style.borderColor = "red";
-        paisTrabajador.value = "Parametro obligatorio";
-        this.time(paisTrabajador);
-      }
-
-      if (ciudadTrabajador.value == "") {
-        ciudadTrabajador.style.borderColor = "red";
-        ciudadTrabajador.value = "Parametro obligatorio";
-        this.time(ciudadTrabajador);
-      }
-
-      if (tipoTrabajador.value == "") {
-        tipoTrabajador.style.borderColor = "red";
-        tipoTrabajador.value = "Parametro obligatorio";
-        this.time(tipoTrabajador);
-      }
-
-      if (precioTrabajo.value == "") {
-        precioTrabajo.style.borderColor = "red";
-        precioTrabajo.value = "Parametro obligatorio";
-        this.time(precioTrabajo);
-      }
-
-      if (descripcionTrabajador.value == "") {
-        descripcionTrabajador.style.borderColor = "red";
-        descripcionTrabajador.value = "Parametro obligatorio";
-        this.time(descripcionTrabajador);
-      }
-    } else {
-      if (pNombre.value != "") {
-        pNombre.style.borberColor = "green";
-      }
-      if (sNombre.value != "") {
+      if (sNombre.value != ""){
         sNombre.style.borderColor = "green";
       }
-      if (pApellido.value != "") {
-        pApellido.style.borderColor = "green";
+
+      if (pApellido.value == "" || pApellido.value != "") {
+        if(pApellido.value == ""){
+          pApellido.style.borderColor = "red";
+          pApellido.value = "Parametro obligatorio";
+          this.time(pApellido);
+        }else{
+          pApellido.style.borderColor = "green";
+        }
       }
+
       if (sApellido.value != "") {
         sApellido.style.borderColor = "green";
       }
 
-      if (correoTrabajador.value != "") {
-        correoTrabajador.style.borderColor = "green";
+      if (correoTrabajador.value != "" && confirmarCorreoTrabajador.value != ""){
+        if (correoTrabajador.value == confirmarCorreoTrabajador.value) {
+          correoTrabajador.style.borderColor = "green";
+          confirmarCorreoTrabajador.style.borderColor = "green";
+        }else{
+          correoTrabajador.style.borderColor = "red";
+          this.timeGreen(correoTrabajador);
+
+          confirmarCorreoTrabajador.style.borderColor = "red";
+          this.timeGreen(confirmarCorreoTrabajador);
+        }
+      }else{
+        if(correoTrabajador.value == ""){
+          correoTrabajador.style.borderColor = "red";
+          correoTrabajador.value = "Parametro obligatorio";
+          this.time(correoTrabajador);
+        }else{
+          correoTrabajador.style.borderColor = "green";
+        }
+        if(confirmarCorreoTrabajador.value == ""){
+          confirmarCorreoTrabajador.style.borderColor = "red";
+          confirmarCorreoTrabajador.value = "Parametro obligatorio";
+          this.time(confirmarCorreoTrabajador);
+        }else{
+          confirmarCorreoTrabajador.style.borderColor = "green";
+        }
+      }
+      
+      if (contrasenaTrabajador.value != "" && confirmarContrasenaTrabajador.value != ""){
+        if (contrasenaTrabajador.value == confirmarContrasenaTrabajador.value) {
+          contrasenaTrabajador.style.borderColor = "green";
+          confirmarContrasenaTrabajador.style.borderColor = "green";
+        }else{
+          contrasenaTrabajador.style.borderColor = "red";
+          this.timeGreen(contrasenaTrabajador);
+
+          confirmarContrasenaTrabajador.style.borderColor = "red";
+          this.timeGreen(confirmarContrasenaTrabajador);
+        }
+      }else{
+        if(contrasenaTrabajador.value == ""){
+          contrasenaTrabajador.style.borderColor = "red";
+          contrasenaTrabajador.value = "Parametro obligatorio";
+          this.time(contrasenaTrabajador);
+        }else{
+          contrasenaTrabajador.style.borderColor = "green";
+        }
+        if(confirmarContrasenaTrabajador.value == ""){
+          confirmarContrasenaTrabajador.style.borderColor = "red";
+          confirmarContrasenaTrabajador.value = "Parametro obligatorio";
+          this.time(confirmarContrasenaTrabajador);
+        }else{
+          confirmarContrasenaTrabajador.style.borderColor = "green";
+        }
       }
 
-      if (confirmarCorreoTrabajador.value != "") {
-        confirmarCorreoTrabajador.style.borderColor = "green";
+      if (telefonoCelularTrabajador.value == "" || telefonoCelularTrabajador.value != "") {
+        if(telefonoCelularTrabajador.value == ""){
+          telefonoCelularTrabajador.style.borderColor = "red";
+          telefonoCelularTrabajador.value = "Parametro obligatorio";
+          this.time(telefonoCelularTrabajador);
+        }else{
+          telefonoCelularTrabajador.style.borderColor = "green";
+        }
       }
 
-      if (contrasenaTrabajador.value != "") {
-        contrasenaTrabajador.style.borderColor = "green";
+      if (direccionResidencialTrabajador.value == "" || direccionResidencialTrabajador.value != "") {
+        if(direccionResidencialTrabajador.value == ""){
+          direccionResidencialTrabajador.style.borderColor = "red";
+          direccionResidencialTrabajador.value = "Parametro obligatorio";
+          this.time(direccionResidencialTrabajador);
+        }else{
+          direccionResidencialTrabajador.style.borderColor = "green";
+        }
       }
 
-      if (confirmarContrasenaTrabajador.value != "") {
-        confirmarContrasenaTrabajador.style.borderColor = "green";
+      if (documentoTrabajador.value == "" || documentoTrabajador.value != "") {
+        if(documentoTrabajador.value == ""){
+          documentoTrabajador.style.borderColor = "red";
+          documentoTrabajador.value = "Parametro obligatorio";
+          this.time(documentoTrabajador);
+        }else{
+          documentoTrabajador.style.borderColor = "green";
+        }
+      }
+      
+      if (paisTrabajador.value == "" || paisTrabajador.value != "") {
+        if(paisTrabajador.value == ""){
+          paisTrabajador.style.borderColor = "red";
+          paisTrabajador.value = "Parametro obligatorio";
+          this.time(paisTrabajador);
+        }else{
+          paisTrabajador.style.borderColor = "green";
+        }
+      }
+      
+      if (ciudadTrabajador.value == "" || ciudadTrabajador.value != "") {
+        if(ciudadTrabajador.value == ""){
+          ciudadTrabajador.style.borderColor = "red";
+          ciudadTrabajador.value = "Parametro obligatorio";
+          this.time(ciudadTrabajador);
+        }else{
+          ciudadTrabajador.style.borderColor = "green";
+        }
       }
 
-      if (telefonoCelularTrabajador.value != "") {
-        telefonoCelularTrabajador.style.borderColor = "green";
+      if (tipoTrabajador.value == "" || tipoTrabajador.value != "") {
+        if(tipoTrabajador.value == ""){
+          tipoTrabajador.style.borderColor = "red";
+          tipoTrabajador.value = "Parametro obligatorio";
+          this.time(tipoTrabajador);
+        }else{
+          tipoTrabajador.style.borderColor = "green";
+        }
       }
 
-      if (direccionResidencialTrabajador.value != "") {
-        direccionResidencialTrabajador.style.borderColor = "green";
+      if (precioTrabajo.value == "" || precioTrabajo.value != "") {
+        if(precioTrabajo.value == ""){
+          precioTrabajo.style.borderColor = "red";
+          precioTrabajo.value = "Parametro obligatorio";
+          this.time(precioTrabajo);
+        }else{
+          precioTrabajo.style.borderColor = "green";
+        }
       }
+      
+      if (descripcionTrabajador.value == "" || descripcionTrabajador.value != "") {
+        if(descripcionTrabajador.value == ""){
+          descripcionTrabajador.style.borderColor = "red";
+          descripcionTrabajador.value = "Parametro obligatorio";
+          this.time(descripcionTrabajador);
+        }else{
+          descripcionTrabajador.style.borderColor = "green";
+        }
+      }
+      
 
-      if (documentoTrabajador.value != "") {
-        documentoTrabajador.style.borderColor = "green";
-      }
-
-      if (paisTrabajador.value != "") {
-        paisTrabajador.style.borderColor = "green";
-      }
-
-      if (ciudadTrabajador.value != "") {
-        ciudadTrabajador.style.borderColor = "green";
-      }
-
-      if (tipoTrabajador.value != "") {
-        tipoTrabajador.style.borderColor = "green";
-      }
-
-      if (precioTrabajo.value != "") {
-        precioTrabajo.style.borderColor = "green";
-      }
-
-      if (descripcionTrabajador.value != "") {
-        descripcionTrabajador.style.borderColor = "green";
-      }
       if (
         pNombre.value != "" &&
         sNombre.value != "" &&
@@ -282,19 +275,23 @@ class RegistroBarberos extends Component {
         precioTrabajo.value != "" &&
         descripcionTrabajador.value != ""
       ) {
-        this.state.boolean = true;
         this.peticionPost();
+        this.state.boolean = !this.state.boolean;
       }
 
-      //this.state.boolean = true;
-      //console.log(this.state.boolean);
-    }
+    
   };
 
   time = (input) => {
     setTimeout(function () {
       input.style.borderColor = "gray";
       input.value = "";
+    }, 2500);
+  };
+
+  timeGreen = (input) => {
+    setTimeout(function () {
+      input.style.borderColor = "gray";
     }, 2500);
   };
 
@@ -342,9 +339,10 @@ class RegistroBarberos extends Component {
       this.state.form.FotoPerfil = aja2;
     }
   };
+
+  peticionPost = async () => {
   // https://barppi.herokuapp.com/api/nuevo-trabajador/registro
   // http://localhost:4020/api/nuevo-trabajador/registro
-  peticionPost = async () => {
     delete this.state.form.ConfirmarContrasena;
     delete this.state.form.ConfirmarCorreo;
     await axios
@@ -662,7 +660,7 @@ class RegistroBarberos extends Component {
                                 />
                               </div>
                               <div className="div-subir-img-foto-perfil-trabajador">
-                                <button className="Buton" onClick={this.Subir2}>
+                                <button className="Buton" >
                                   SUBIR
                                 </button>
                               </div>

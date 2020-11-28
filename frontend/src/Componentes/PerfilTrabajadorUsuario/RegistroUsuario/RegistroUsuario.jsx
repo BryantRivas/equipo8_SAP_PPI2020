@@ -230,9 +230,9 @@ class RegistroUsuario extends Component {
       telefonoCliente.value != "" &&
       direccionCliente.value != "" &&
       documentoCliente.value != "" ){
-        this.state.boolean = true;
         this.peticionPost();
       }
+      this.state.boolean = true;
     }
   };
 
@@ -252,6 +252,7 @@ peticionPost=async () =>{
    await axios.post('http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU)
    .then(response =>{
      console.log("Se ha creado un nuevo cliente");
+     this.state.boolean = true;
    }).catch(error=>{
     console.log(error.message);
   })

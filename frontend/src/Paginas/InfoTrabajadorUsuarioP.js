@@ -1,12 +1,13 @@
 import React from "react";
-import infoTrabajadorUsuario from "../Componentes/infoTrabajadorUsuario/infoTrabajadorUsuario";
+import InfoTrabajadorUsuario from "../Componentes/infoTrabajadorUsuario/InfoTrabajadorUsuario";
 import { useParams } from "react-router-dom";
 
 const InfoTrabajadorUsuarioP = () => {
   const { numero_id_trabajador } = useParams();
+  console.log(numero_id_trabajador)
   return (
     <div>
-      <infoTrabajadorUsuario />
+      <InfoTrabajadorUsuario numero_id_trabajador = { numero_id_trabajador } />
     </div>
   );
 }

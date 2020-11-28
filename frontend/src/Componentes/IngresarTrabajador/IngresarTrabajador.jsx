@@ -33,7 +33,8 @@ class IngresarTrabajador extends Component {
     .then(response => {
       console.log(response.data);
       this.setState({
-        datos: response.data[0]
+        datos: response.data[0],
+        correo_verificacion_trabajador: response.data[0].correo_electronico_trabajador
       })
     })
     .catch(error => {
@@ -44,8 +45,6 @@ class IngresarTrabajador extends Component {
   validacionLogin = () => {
     let correoTrabajador = document.getElementById("CORREOTRABAJADOR");
     let passwordTrabajador = document.getElementById("PASSWORDTRABAJADOR");
-    let correo_electronico_trabajador = this.state.datos;
-    console.log(correo_electronico_trabajador);
 
     if(correoTrabajador.value == "" || passwordTrabajador.value == "" ){
       if(correoTrabajador.value == ""){
@@ -61,7 +60,7 @@ class IngresarTrabajador extends Component {
     }else{
       if(correoTrabajador.value != ""){
           this.iniciarSesion();
-          if(correoTrabajador.value === correo_electronico_trabajador){
+          if(correoTrabajador.value == this.state.correo_verificacion_trabajador){
             correoTrabajador.style.borderColor = "green";
           }else{
             correoTrabajador.style.borderColor = "red";
