@@ -71,6 +71,21 @@ cita.get('/cita/cards/trabajosPorRealizar/:numero_id_trabajador', (req,res)=>{
 });
 
 
+// ACTUALIZACION DEL ESTADO DE LA CITA DEL TRABAJADOR
+// LO ESTOY UTILIZANDO
+cita.put('/cita/put/estadoCita/:codigo_cita', (req,res)=>{
+    
+    const { estado_cita } = req.body;
+    const { codigo_cita } = req.params;
+
+    mysqlConnection.query(`UPDATE cita SET estado_cita = ? WHERE codigo_cita = ?`, [ estado_cita,codigo_cita ], (err, rows, fields)=>{
+        if(!err){
+            res.json({status : 'Se ha actualizado el estado de la cita a Finalizada'});
+        }else{
+            console.log(err);
+        }
+    });
+});
 
 
 module.exports = cita;

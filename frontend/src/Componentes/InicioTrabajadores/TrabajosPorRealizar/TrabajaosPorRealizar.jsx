@@ -76,7 +76,7 @@ class TrabajosPorRealizar extends Component {
               <div className="divCardTrabajosPorRealizar">
                 <Link
                   className="link_TrabajosPorRealizar"
-                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${this.state.numero_id_trabajador}/${datosT.codigo_cliente}`}
+                  to={`/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/${this.state.numero_id_trabajador}/${datosT.codigo_cliente}/${datosT.codigo_cita}`}
                 >
                   <div className="card-TrabajosPorRealizar">
                     <div className="CardGrid_TrabajosPorRealizar">

@@ -57,7 +57,7 @@
   font-family: "Comfortaa", cursive;
 }
 .div-bot-PerfilTrabajadorUsuario {
-  padding-bottom: 2%;
+  padding-bottom: 3%;
   padding-right: 2%;
   padding-top: 3%;
   padding-left: 5%;
@@ -292,10 +292,12 @@
   padding-left: 0%;
 }
 .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
-  font-size: 350%;
+  text-align: center;
+  font-size: 38px;
   color: black;
   font-family: "Comfortaa", cursive;
   font-weight: bold;
+  padding-top: 4%;
 }
 .div-div-nombreCiudadTrabajador-CardTrabajosRealizados {
   font-size: 25px;
@@ -304,7 +306,7 @@
   font-weight: bold;
 }
 .div-div-tipoTrabajador-CardTrabajosRealizados {
-  font-size: 35px;
+  font-size: 37px;
   color: black;
   font-family: "Comfortaa", cursive;
   font-weight: bold;
@@ -345,15 +347,15 @@
 
 @media only screen and (max-width: 990px) {
   .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
-    font-size: 300%;
+    font-size: 33px;
   }
   @media only screen and (max-width: 850px) {
     .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
-      font-size: 250%;
+      font-size: 30px;
     }
     @media only screen and (max-width: 710px) {
       .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
-        font-size: 35px;
+        font-size: 25px;
       }
       .img-perfil_trabajador-CardTrabajosRealizados {
         width: 180px;
@@ -379,7 +381,7 @@
       }
       @media only screen and (max-width: 625px) {
         .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
-          font-size: 30px;
+          font-size: 22px;
         }
         .img-perfil_trabajador-CardTrabajosRealizados {
           width: 170px;
@@ -405,7 +407,7 @@
         }
         @media only screen and (max-width: 530px) {
           .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
-            font-size: 25px;
+            font-size: 19px;
           }
           .img-perfil_trabajador-CardTrabajosRealizados {
             width: 160px;
@@ -438,6 +440,13 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 460px) {
+  .div-nombreCompletoDelTrabajador-CardTrabajosRealizados {
+    font-size: 16px;
+  }
+  
 }
 
 /* QUE LA BARRA SE QUEDE QUIETA */

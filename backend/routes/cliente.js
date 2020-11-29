@@ -41,7 +41,7 @@ cliente.get('/solicitud-login/loginCliente/:correo_electronico_cliente', (req,re
 // OBJETIVO: El trabajador al ingresar a una de las cards que se encuentran en el apartado de trabajos realizados, 
 // podrá ver las características de dicho trabajo realizado.
 // URL: /TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados
-// 
+// LO ESTOY UTILIZANDO
 cliente.get('/cliente/cards/trabajadorRealizados/:codigo_cliente', (req,res)=>{
     const { codigo_cliente } = req.params;
     mysqlConnection.query('SELECT * FROM cliente WHERE codigo_cliente = ?',[codigo_cliente], (err, rows, fields)=>{

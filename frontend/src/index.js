@@ -77,7 +77,7 @@ ReactDOM.render(
 
         <Route
           exact
-          path="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/:numero_id_trabajador/:codigo_cliente"
+          path="/TrabajadoresInicio/TrabajosPorRealizar/CardTrabajosPorRealizar/:numero_id_trabajador/:codigo_cliente/:codigo_cita"
         >
           <CardTrabajosPorRealizarP />
         </Route>

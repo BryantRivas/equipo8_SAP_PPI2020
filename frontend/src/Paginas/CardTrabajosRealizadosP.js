@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 
 const CardTrabajosRealizadosP = () => {
   const { numero_id_trabajador } = useParams();
-  const { codigo_cita } = useParams();
+  const { codigo_cliente } = useParams();
   return (
     <div>
-      <CardTrabajosRealizados numero_id_trabajador =  { numero_id_trabajador } codigo_cita = { codigo_cita } />
+      <CardTrabajosRealizados numero_id_trabajador =  { numero_id_trabajador } codigo_cliente = { codigo_cliente } />
     </div>
   );
 }

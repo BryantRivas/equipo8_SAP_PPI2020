@@ -10,6 +10,7 @@ class CardTrabajosPorRealizar extends Component {
     this.state = {
       codigo_cliente: this.props.codigo_cliente,
       numero_id_trabajador: this.props.numero_id_trabajador,
+      codigo_cita: this.props.codigo_cita,
       datos: []
     };
   }
@@ -26,6 +27,18 @@ class CardTrabajosPorRealizar extends Component {
     }).catch(err=>{
       console.log(err.massage)
     })
+  }
+
+  peticionPutEstadoCita = async () => {
+    // https://barppi.herokuapp.com/api/cita/cita/put/estadoCita/${this.state.codigo_cita}
+    // http://localhost:4020/api/cita/cita/put/estadoCita/${this.state.codigo_cita}
+    await axios.put(`http://localhost:4020/api/cita/cita/put/estadoCita/${this.state.codigo_cita}`, { estado_cita: 'Finalizada'})
+    .then(response =>{
+      this.componentDidMount();
+      console.log('Se actualizo el estado de la cita a Finalizada')
+    }).catch(error=>{
+     console.log(error.message);
+   })
   }
 
   render() {
@@ -121,12 +134,9 @@ class CardTrabajosPorRealizar extends Component {
               </Link>
             </div>
             <div className="div-div-boton-bot-SOLICITAR-PerfilTrabajadorUsuario">
-              <Link
-                className="btn boton-Solicitar-PerfilTrabajadorUsuario"
-                to=""
-              >
+              <button className="btn boton-Solicitar-PerfilTrabajadorUsuario" onClick={this.peticionPutEstadoCita}>
                 FINALIZADO
-              </Link>
+              </button>
             </div>
           </div>
         </div>

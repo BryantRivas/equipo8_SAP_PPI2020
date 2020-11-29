@@ -120,7 +120,7 @@ class BusquedaTrabajosRealizados extends Component {
                 <div className="divCardTrabajosRealizados">
                   <Link
                     className="link_TrabajosRealizados"
-                    to={`/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados/${this.state.numero_id_trabajador}/${datosT.codigo_cita}`}
+                    to={`/TrabajadoresInicio/TrabajosRealizados/CardTrabajosRealizados/${this.state.numero_id_trabajador}/${datosT.codigo_cliente}`}
                   >
                     <div className="card-TrabajosRealizados">
                       <div className="CardGrid_TrabajosRealizados">
