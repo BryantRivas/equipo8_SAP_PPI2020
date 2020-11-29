@@ -276,3 +276,8 @@
     }
   }
 }
+
+.input-password-informacionPersonalTrabajador{
+  border: solid 0px;
+  cursor: pointer;
+}

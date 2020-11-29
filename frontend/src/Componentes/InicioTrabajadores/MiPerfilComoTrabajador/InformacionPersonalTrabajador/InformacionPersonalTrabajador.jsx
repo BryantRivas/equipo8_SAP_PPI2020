@@ -10,47 +10,47 @@ class InformacionPersonalTrabajador extends Component {
     super(props);
     this.state = {
       numero_id_trabajador: this.props.numero_id_trabajador,
-      datos:[],
-      form1T:{
-        correoElectronicoActual:'',
-        correo_electronico_trabajador: '',
-        confirmarCorreoElectronico: ''
+      datos: [],
+      form1T: {
+        correoElectronicoActual: "",
+        correo_electronico_trabajador: "",
+        confirmarCorreoElectronico: "",
       },
-      form2T:{
-        contrasenaActual: '',
-        contrasena_trabajador: '',
-        confirmarNuevaContrasena: ''
+      form2T: {
+        contrasenaActual: "",
+        contrasena_trabajador: "",
+        confirmarNuevaContrasena: "",
       },
-      form3T:{
-        direccionActual: '',
-        direccion_trabajador: '',
-        confirmarNuevaDireccion: ''
+      form3T: {
+        direccionActual: "",
+        direccion_trabajador: "",
+        confirmarNuevaDireccion: "",
       },
-      form4T:{
-        numeroTelefonicoActual: '',
-        telefono_trabajador: '',
-        confirmarNuevoNumeroTelefonico: ''
+      form4T: {
+        numeroTelefonicoActual: "",
+        telefono_trabajador: "",
+        confirmarNuevoNumeroTelefonico: "",
       },
-      form5T:{
-        tipoSexoTrabajador: ''
+      form5T: {
+        tipoSexoTrabajador: "",
       },
-      form6T:{
-        documento_Trabajador: '',
-        documentoActualTrabajador: '',
-        confirmarNuevoDocumento: ''
+      form6T: {
+        documento_Trabajador: "",
+        documentoActualTrabajador: "",
+        confirmarNuevoDocumento: "",
       },
-      form7T:{
-        costoActualTrabajo: '',
-        precio_trabajador: ''
+      form7T: {
+        costoActualTrabajo: "",
+        precio_trabajador: "",
       },
-      form8T:{
-        ciudad_trabajador: '',
-        ciudadActualTrabajador: ''
+      form8T: {
+        ciudad_trabajador: "",
+        ciudadActualTrabajador: "",
       },
-      form9T:{
-        pais_trabajador: '',
-        paisActualTrabajador: ''
-      }
+      form9T: {
+        pais_trabajador: "",
+        paisActualTrabajador: "",
+      },
     };
   }
 
@@ -92,7 +92,7 @@ class InformacionPersonalTrabajador extends Component {
     const user2T = {
       contrasenaActual: this.state.contrasenaActual,
       nuevaContrasena: this.state.nuevaContrasena,
-      confirmarNuevaContrasena: this.state.confirmarNuevaContrasena
+      confirmarNuevaContrasena: this.state.confirmarNuevaContrasena,
     };
     console.log(user2T);
   };
@@ -113,7 +113,7 @@ class InformacionPersonalTrabajador extends Component {
     e.preventDefault();
     const user3T = {
       nuevaDireccion: this.state.nuevaDireccion,
-      confirmarNuevaDireccion: this.state.confirmarNuevaDireccion
+      confirmarNuevaDireccion: this.state.confirmarNuevaDireccion,
     };
     console.log(user3T);
   };
@@ -195,14 +195,14 @@ class InformacionPersonalTrabajador extends Component {
   handleSubmit7T = (e) => {
     e.preventDefault();
     const user7T = {
-      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo
+      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo,
     };
     console.log(user7T);
   };
   //FIN
 
-   //FORM8T CIUDAD TRABAJADOR
-   handleChange8T = async (e) => {
+  //FORM8T CIUDAD TRABAJADOR
+  handleChange8T = async (e) => {
     e.persist();
     await this.setState({
       form8T: {
@@ -216,14 +216,14 @@ class InformacionPersonalTrabajador extends Component {
   handleSubmit8T = (e) => {
     e.preventDefault();
     const user8T = {
-      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo
+      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo,
     };
     console.log(user8T);
   };
   //FIN
 
-   //FORM9T PAIS TRABAJADOR
-   handleChange9T = async (e) => {
+  //FORM9T PAIS TRABAJADOR
+  handleChange9T = async (e) => {
     e.persist();
     await this.setState({
       form9T: {
@@ -237,115 +237,222 @@ class InformacionPersonalTrabajador extends Component {
   handleSubmit9T = (e) => {
     e.preventDefault();
     const user9T = {
-      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo
+      nuevoCostoTrabajo: this.state.nuevoCostoTrabajo,
     };
     console.log(user9T);
   };
   //FIN
 
+  // CALIDACION CONTRASEÑA DEL TRABAJADOR
+
+  validacionContrasena = () => {
+    let contrasenaActual = document.getElementById("CONTRASENAACTUAL");
+    let nuevaContrasena = document.getElementById("NUEVACONTRASENA");
+    let confirmarNuevaContrasena = document.getElementById("CONFIRMARNUEVACONTRASENA");
+
+    if(contrasenaActual.value == "" || nuevaContrasena.value == "" || confirmarNuevaContrasena.value == "" ){
+      if(contrasenaActual.value == ""){
+        contrasenaActual.style.borderColor = "red";
+        contrasenaActual.value = "Parametro obligatorio";
+        this.time(contrasenaActual);
+      }
+      if(nuevaContrasena.value == ""){
+        nuevaContrasena.style.borderColor = "red";
+        nuevaContrasena.value = "Parametro obligatorio";
+        this.time(nuevaContrasena);
+      }
+      if(confirmarNuevaContrasena.value == ""){
+        confirmarNuevaContrasena.style.borderColor = "red";
+        confirmarNuevaContrasena.value = "Parametro obligatorio";
+        this.time(confirmarNuevaContrasena);
+      }
+    }else{
+      if(contrasenaActual.value != "" || nuevaContrasena.value != "" || confirmarNuevaContrasena.value != "" ){
+        if(contrasenaActual.value == this.state.datos.contrasena_trabajador){
+          contrasenaActual.style.borderColor = "green";
+        }else{
+          contrasenaActual.style.borderColor = "red";
+          contrasenaActual.value = "Contraseña actual incorrecta";
+          this.time(contrasenaActual);
+        }
+        if(nuevaContrasena.value == confirmarNuevaContrasena.value){
+          nuevaContrasena.style.borderColor = "green";
+          confirmarNuevaContrasena.style.borderColor = "green";
+        }else{
+          nuevaContrasena.style.borderColor = "red";
+          nuevaContrasena.value = "Las contraseñas no coinciden";
+          this.time(nuevaContrasena);
+
+          confirmarNuevaContrasena.style.borderColor = "red";
+          confirmarNuevaContrasena.value = "Las contraseñas no coinciden";
+          this.time(confirmarNuevaContrasena);
+        }
+      }
+        
+    this.peticionPutContrasena();
+        
+      
+    }
+
+
+  }
+
+  // FIN VALIDACION CONTRASEÑA
+
 
   //PETICION DE AXIOS PARA TRAER LA INFORMACION DEL TRABAJADOR
-  componentDidMount(){
+  componentDidMount() {
     // https://barppi.herokuapp.com/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}
     // http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}
-    axios.get(`http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}`)
-      .then(res =>{
-        console.log(res.data)
+    axios
+      .get(
+        `http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}`
+      )
+      .then((res) => {
+        console.log(res.data);
         this.setState({
-          datos: res.data[0]
-        })
-    }).catch(err=>{
-      console.log(err.massage)
-    })
+          datos: res.data[0],
+        });
+      })
+      .catch((err) => {
+        console.log(err.massage);
+      });
   }
-
 
   peticionPutCorreo = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}`, { correo_electronico_trabajador: this.state.form1T.correo_electronico_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo el correo del trabajador')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}`,
+        {
+          correo_electronico_trabajador: this.state.form1T
+            .correo_electronico_trabajador,
+        }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo el correo del trabajador");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   peticionPutContrasena = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}`, { contrasena_trabajador: this.state.form2T.contrasena_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo la contraseña del trabajador')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}`,
+        { contrasena_trabajador: this.state.form2T.contrasena_trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo la contraseña del trabajador");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   peticionPutDireccion = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}`, { direccion_trabajador: this.state.form3T.direccion_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo la direccion del trabajador')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}`,
+        { direccion_trabajador: this.state.form3T.direccion_trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo la direccion del trabajador");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   peticionPutPrecio = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}`, { precio_trabajador: this.state.form7T.precio_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo el precio del trabajador')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}`,
+        { precio_trabajador: this.state.form7T.precio_trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo el precio del trabajador");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   peticionPutTelefonoTrabajador = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}`, { telefono_trabajador: this.state.form4T.telefono_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo el telefono del trabajador')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
-  
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}`,
+        { telefono_trabajador: this.state.form4T.telefono_trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo el telefono del trabajador");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   peticionPutDocumento = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}`, { documento_Trabajador: this.state.form6T.documento_Trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo el documento del trabajador ')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}`,
+        { documento_Trabajador: this.state.form6T.documento_Trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo el documento del trabajador ");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   peticionPutPais = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}`, { pais_trabajador: this.state.form9T.pais_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo el país del trabajador ')
-    }).catch(error=>{
-     console.log(error.message);
-   })
-  }
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}`,
+        { pais_trabajador: this.state.form9T.pais_trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo el país del trabajador ");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   peticionPutCiudad = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}`, { ciudad_trabajador: this.state.form8T.ciudad_trabajador})
-    .then(response =>{
-      this.componentDidMount();
-      console.log('Se actualizo la ciudad del trabajador ')
-    }).catch(error=>{
-     console.log(error.message);
-   })
+    await axios
+      .put(
+        `http://localhost:4020/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}`,
+        { ciudad_trabajador: this.state.form8T.ciudad_trabajador }
+      )
+      .then((response) => {
+        this.componentDidMount();
+        console.log("Se actualizo la ciudad del trabajador ");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  time = (input) => {
+    setTimeout(function () {
+      input.style.borderColor = "grey";
+      input.value = ""
+    }, 2500)
   }
 
-
   render() {
-    console.log(this.state.datos)
-    console.log(this.state.numero_id_trabajador)
+    console.log(this.state.datos);
+    console.log(this.state.numero_id_trabajador);
     const characters = this.state.datos;
-
     const datosForm1T = this.state.form1T;
     const datosForm2T = this.state.form2T;
     const datosForm3T = this.state.form3T;
@@ -355,7 +462,6 @@ class InformacionPersonalTrabajador extends Component {
     const datosForm7T = this.state.form7T;
     const datosForm8T = this.state.form8T;
     const datosForm9T = this.state.form9T;
-    
 
     return (
       <div>
@@ -363,7 +469,9 @@ class InformacionPersonalTrabajador extends Component {
           <nav className="menu-fixed-informacion-personal-trabajador">
             <div className="btnFlechaRegistroBarberos">
               <div className="btnRegistroBarberos">
-                <Link to={`/TrabajadoresInicio/MiPerfilComoTrabajador/${this.state.numero_id_trabajador}`}>
+                <Link
+                  to={`/TrabajadoresInicio/MiPerfilComoTrabajador/${this.state.numero_id_trabajador}`}
+                >
                   <button className="btn">
                     <img
                       className="RegistroBarberosFlecha"
@@ -426,7 +534,7 @@ class InformacionPersonalTrabajador extends Component {
                     alt=""
                     className="img-botones-lapiz-InformacionPersonalTrabajador my-custom-shake shake-constant"
                   />
-                  {characters.contrasena_trabajador}
+                  <input className="input-password-informacionPersonalTrabajador" type="password" value={characters.contrasena_trabajador} disabled />
                 </button>
               </div>
               <hr className="hr-InformacionPersonalTrabajador" />
@@ -572,7 +680,6 @@ class InformacionPersonalTrabajador extends Component {
             {/* HACE FALTA UN APARTADO DE CIUDAD Y UNO DE PAIS */}
           </div>
 
-
           {/* DIRECCIÓN DEL TRABAJADOR */}
           <div className="div-direccionTrabajador-modal">
             <div
@@ -601,38 +708,38 @@ class InformacionPersonalTrabajador extends Component {
                   </div>
                   <div class="modal-body">
                     <form onSubmit={this.handleSubmit3T}>
-                    <div className="body-div-grid-inputs-direccionTrabajador">
-                      <input
-                        type="text"
-                        placeholder="Dirección actual"
-                        className="input-direccionTrabajador-InformacionPersonalTrabajador"
-                        id="DIRECCIONACTUAL"
-                        name="direccionActual"
-                        autoComplete="off"
-                        onChange={this.handleChange3T}
-                        value={datosForm3T.direccionActual}
-                      />
-                      <input
-                        type="text"
-                        placeholder="Nueva dirección"
-                        className="input-direccionTrabajador-InformacionPersonalTrabajador"
-                        id="NUEVADIRECCION"
-                        name="direccion_trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange3T}
-                        value={datosForm3T.direccion_trabajador}
-                      />
-                      <input
-                        type="text"
-                        placeholder="Confirmar dirección"
-                        className="input-direccionTrabajador-InformacionPersonalTrabajador"
-                        id="CONFIRMARNUEVADIRECCION"
-                        name="confirmarNuevaDireccion"
-                        autoComplete="off"
-                        onChange={this.handleChange3T}
-                        value={datosForm3T.confirmarNuevaDireccion}
-                      />
-                    </div>
+                      <div className="body-div-grid-inputs-direccionTrabajador">
+                        <input
+                          type="text"
+                          placeholder="Dirección actual"
+                          className="input-direccionTrabajador-InformacionPersonalTrabajador"
+                          id="DIRECCIONACTUAL"
+                          name="direccionActual"
+                          autoComplete="off"
+                          onChange={this.handleChange3T}
+                          value={datosForm3T.direccionActual}
+                        />
+                        <input
+                          type="text"
+                          placeholder="Nueva dirección"
+                          className="input-direccionTrabajador-InformacionPersonalTrabajador"
+                          id="NUEVADIRECCION"
+                          name="direccion_trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange3T}
+                          value={datosForm3T.direccion_trabajador}
+                        />
+                        <input
+                          type="text"
+                          placeholder="Confirmar dirección"
+                          className="input-direccionTrabajador-InformacionPersonalTrabajador"
+                          id="CONFIRMARNUEVADIRECCION"
+                          name="confirmarNuevaDireccion"
+                          autoComplete="off"
+                          onChange={this.handleChange3T}
+                          value={datosForm3T.confirmarNuevaDireccion}
+                        />
+                      </div>
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -678,38 +785,38 @@ class InformacionPersonalTrabajador extends Component {
                   </div>
                   <div class="modal-body">
                     <form onSubmit={this.handleSubmit4T}>
-                    <div className="body-div-grid-inputs-numeroTrabajador">
-                      <input
-                        placeholder="Número teléfonico actual"
-                        className="input-numeroTrabajador-InformacionPersonalTrabajador"
-                        type="tel"
-                        id="NUMEROTELEFONICOACTUAL"
-                        name="numeroTelefonicoActual"
-                        autoComplete="off"
-                        onChange={this.handleChange4T}
-                        value={datosForm4T.numeroTelefonicoActual}
-                      />
-                      <input
-                        placeholder="Nuevo número teléfonico"
-                        className="input-numeroTrabajador-InformacionPersonalTrabajador"
-                        type="tel"
-                        id="NUEVONUMEROTELEFONICO"
-                        name="telefono_trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange4T}
-                        value={datosForm4T.telefono_trabajador}
-                      />
-                      <input
-                        placeholder="Confirmar número teléfonico"
-                        className="input-numeroTrabajador-InformacionPersonalTrabajador"
-                        type="tel"
-                        id="CONFIRMARNUEVONUMEROTELEFONICO"
-                        name="confirmarNuevoNumeroTelefonico"
-                        autoComplete="off"
-                        onChange={this.handleChange4T}
-                        value={datosForm4T.confirmarNuevoNumeroTelefonico}
-                      />
-                    </div>
+                      <div className="body-div-grid-inputs-numeroTrabajador">
+                        <input
+                          placeholder="Número teléfonico actual"
+                          className="input-numeroTrabajador-InformacionPersonalTrabajador"
+                          type="tel"
+                          id="NUMEROTELEFONICOACTUAL"
+                          name="numeroTelefonicoActual"
+                          autoComplete="off"
+                          onChange={this.handleChange4T}
+                          value={datosForm4T.numeroTelefonicoActual}
+                        />
+                        <input
+                          placeholder="Nuevo número teléfonico"
+                          className="input-numeroTrabajador-InformacionPersonalTrabajador"
+                          type="tel"
+                          id="NUEVONUMEROTELEFONICO"
+                          name="telefono_trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange4T}
+                          value={datosForm4T.telefono_trabajador}
+                        />
+                        <input
+                          placeholder="Confirmar número teléfonico"
+                          className="input-numeroTrabajador-InformacionPersonalTrabajador"
+                          type="tel"
+                          id="CONFIRMARNUEVONUMEROTELEFONICO"
+                          name="confirmarNuevoNumeroTelefonico"
+                          autoComplete="off"
+                          onChange={this.handleChange4T}
+                          value={datosForm4T.confirmarNuevoNumeroTelefonico}
+                        />
+                      </div>
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -755,38 +862,38 @@ class InformacionPersonalTrabajador extends Component {
                   </div>
                   <div className="modal-body">
                     <form onSubmit={this.handleSubmit1T}>
-                    <div className="body-div-grid-inputs-CorreoTrabajador">
-                      <input
-                        type="email"
-                        placeholder="Correo electronico actual"
-                        className="input-correoActualTrabajador-InformacionPersonalTrabajador"
-                        id="CORREOELECTRONICOACTUAL"
-                        name="correoElectronicoActual"
-                        autoComplete="off"
-                        onChange={this.handleChange1T}
-                        value={datosForm1T.correoElectronicoActual}
-                      />
-                      <input
-                        placeholder="Nuevo correo electronico"
-                        className="input-correoNuevoTrabajador-InformacionPersonalTrabajador"
-                        type="email"
-                        id="NUEVOCORREOELECTRONICO"
-                        name="correo_electronico_trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange1T}
-                        value={datosForm1T.correo_electronico_trabajador}
-                      />
-                      <input
-                        placeholder="Confirmar correo electronico"
-                        className="input-correoNuevoTrabajador-InformacionPersonalTrabajador"
-                        type="email"
-                        id="CONFIRMARCORREOELECTRONICO"
-                        name="confirmarCorreoElectronico"
-                        autoComplete="off"
-                        onChange={this.handleChange1T}
-                        value={datosForm1T.confirmarCorreoElectronico}
-                      />
-                    </div>
+                      <div className="body-div-grid-inputs-CorreoTrabajador">
+                        <input
+                          type="email"
+                          placeholder="Correo electronico actual"
+                          className="input-correoActualTrabajador-InformacionPersonalTrabajador"
+                          id="CORREOELECTRONICOACTUAL"
+                          name="correoElectronicoActual"
+                          autoComplete="off"
+                          onChange={this.handleChange1T}
+                          value={datosForm1T.correoElectronicoActual}
+                        />
+                        <input
+                          placeholder="Nuevo correo electronico"
+                          className="input-correoNuevoTrabajador-InformacionPersonalTrabajador"
+                          type="email"
+                          id="NUEVOCORREOELECTRONICO"
+                          name="correo_electronico_trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange1T}
+                          value={datosForm1T.correo_electronico_trabajador}
+                        />
+                        <input
+                          placeholder="Confirmar correo electronico"
+                          className="input-correoNuevoTrabajador-InformacionPersonalTrabajador"
+                          type="email"
+                          id="CONFIRMARCORREOELECTRONICO"
+                          name="confirmarCorreoElectronico"
+                          autoComplete="off"
+                          onChange={this.handleChange1T}
+                          value={datosForm1T.confirmarCorreoElectronico}
+                        />
+                      </div>
                     </form>
                   </div>
                   <div className="modal-footer">
@@ -803,7 +910,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
-          
+
           {/* CONTRASEÑA DEL TRABAJADOR */}
           <div className="div-contrasenaTrabajador-modal">
             <div
@@ -832,46 +939,46 @@ class InformacionPersonalTrabajador extends Component {
                   </div>
                   <div className="modal-body">
                     <form onSubmit={this.handleSubmit2T}>
-                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
-                      <input
-                        type="current-password"
-                        placeholder="Contraseña actual"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="CONTRASENAACTUAL"
-                        name="contrasenaActual"
-                        autoComplete="off"
-                        onChange={this.handleChange2T}
-                        value={datosForm2T.contrasenaActual}
-                      />
-                      <input
-                        type="new-password"
-                        placeholder="Nueva contraseña"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="NUEVACONTRASENA"
-                        name="contrasena_trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange2T}
-                        value={datosForm2T.contrasena_trabajador}
-                      />
-                      <input
-                        type="new-password"
-                        placeholder="Confirmar nueva contraseña"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="CONFIRMARNUEVACONTRASENA"
-                        name="confirmarNuevaContrasena"
-                        autoComplete="off"
-                        onChange={this.handleChange2T}
-                        value={datosForm2T.confirmarNuevaContrasena}
-                      />
-                    </div>
+                      <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                        <input
+                          type="password"
+                          placeholder="Contraseña actual"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="CONTRASENAACTUAL"
+                          name="contrasenaActual"
+                          autoComplete="off"
+                          onChange={this.handleChange2T}
+                          value={datosForm2T.contrasenaActual}
+                        />
+                        <input
+                          type="password"
+                          placeholder="Nueva contraseña"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="NUEVACONTRASENA"
+                          name="contrasena_trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange2T}
+                          value={datosForm2T.contrasena_trabajador}
+                        />
+                        <input
+                          type="password"
+                          placeholder="Confirmar nueva contraseña"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="CONFIRMARNUEVACONTRASENA"
+                          name="confirmarNuevaContrasena"
+                          autoComplete="off"
+                          onChange={this.handleChange2T}
+                          value={datosForm2T.confirmarNuevaContrasena}
+                        />
+                      </div>
                     </form>
                   </div>
                   <div className="modal-footer">
                     <button
                       type="button"
                       className="btn btn-cerrar-InformacionPersonalTrabajador"
-                      data-dismiss="modal"
-                      onClick={this.peticionPutContrasena}
+                      // data-dismiss="modal"
+                      onClick={this.validacionContrasena}
                     >
                       OKY
                     </button>
@@ -880,7 +987,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
-          
+
           {/* COSTO DE TRABAJO */}
           <div className="div-costoTrabajo-modal">
             <div
@@ -945,7 +1052,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
-          
+
           {/* DOCUMENTO TRABAJADOR */}
           <div className="div-fechaNacimiento-modal">
             <div
@@ -973,39 +1080,39 @@ class InformacionPersonalTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body-fechaNacimientoTrabajador">
-                  <form onSubmit={this.handleSubmit6T}>
-                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
-                      <input
-                        type="number"
-                        placeholder="Documento actual"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="DOCUMENTOACTUALTRABAJADOR"
-                        name="documentoActualTrabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange6T}
-                        value={datosForm6T.documentoActualTrabajador}
-                      />
-                      <input
-                        type="number"
-                        placeholder="Nuevo documento"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="NUEVODOCUMENTOTRABAJADOR"
-                        name="documento_Trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange6T}
-                        value={datosForm6T.documento_Trabajador}
-                      />
-                      <input
-                        type="number"
-                        placeholder="Confirmar nuevo documento"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="CONFIRMARNUEVODOCUMENTO"
-                        name="confirmarNuevoDocumento"
-                        autoComplete="off"
-                        onChange={this.handleChange6T}
-                        value={datosForm6T.confirmarNuevoDocumento}
-                      />
-                    </div>
+                    <form onSubmit={this.handleSubmit6T}>
+                      <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                        <input
+                          type="number"
+                          placeholder="Documento actual"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="DOCUMENTOACTUALTRABAJADOR"
+                          name="documentoActualTrabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange6T}
+                          value={datosForm6T.documentoActualTrabajador}
+                        />
+                        <input
+                          type="number"
+                          placeholder="Nuevo documento"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="NUEVODOCUMENTOTRABAJADOR"
+                          name="documento_Trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange6T}
+                          value={datosForm6T.documento_Trabajador}
+                        />
+                        <input
+                          type="number"
+                          placeholder="Confirmar nuevo documento"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="CONFIRMARNUEVODOCUMENTO"
+                          name="confirmarNuevoDocumento"
+                          autoComplete="off"
+                          onChange={this.handleChange6T}
+                          value={datosForm6T.confirmarNuevoDocumento}
+                        />
+                      </div>
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -1022,7 +1129,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
-          
+
           {/* PAIS TRABAJADOR */}
           <div className="div-paisTrabajador-modal">
             <div
@@ -1050,32 +1157,30 @@ class InformacionPersonalTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body-fechaNacimientoTrabajador">
-                    
-                  <form onSubmit={this.handleSubmit9T}>
-                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
-                    <input
-                        type="text"
-                        placeholder="País actual"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="PAISACTUALTRABAJADOR"
-                        name="paisActualTrabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange9T}
-                        value={datosForm9T.paisActualTrabajador}
-                      />
-                      <input
-                        type="text"
-                        placeholder="Nuevo país"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="PAISTRABAJADOR"
-                        name="pais_trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange9T}
-                        value={datosForm9T.pais_trabajador}
-                      />
-                    </div>
+                    <form onSubmit={this.handleSubmit9T}>
+                      <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                        <input
+                          type="text"
+                          placeholder="País actual"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="PAISACTUALTRABAJADOR"
+                          name="paisActualTrabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange9T}
+                          value={datosForm9T.paisActualTrabajador}
+                        />
+                        <input
+                          type="text"
+                          placeholder="Nuevo país"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="PAISTRABAJADOR"
+                          name="pais_trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange9T}
+                          value={datosForm9T.pais_trabajador}
+                        />
+                      </div>
                     </form>
-
                   </div>
                   <div class="modal-footer">
                     <button
@@ -1091,7 +1196,7 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
-          
+
           {/* CIUDAD TRABAJADOR */}
           <div className="div-ciudad-modal">
             <div
@@ -1119,33 +1224,30 @@ class InformacionPersonalTrabajador extends Component {
                     </button>
                   </div>
                   <div class="modal-body-fechaNacimientoTrabajador">
-                    
-                  <form onSubmit={this.handleSubmit8T}>
-                    <div className="body-div-grid-inputs-ContrasenaTrabajador">
-                    <input
-                        type="text"
-                        placeholder="Ciudad actual"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="CIUDADACTUALTRABAJADOR"
-                        name="ciudadActualTrabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange8T}
-                        value={datosForm8T.ciudadActualTrabajador}
-                      />
-                      <input
-                        type="text"
-                        placeholder="Nueva ciudad"
-                        className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
-                        id="NUEVACIUDADTRABAJADOR"
-                        name="ciudad_trabajador"
-                        autoComplete="off"
-                        onChange={this.handleChange8T}
-                        value={datosForm8T.ciudad_trabajador}
-                      />
-                      
-                    </div>
+                    <form onSubmit={this.handleSubmit8T}>
+                      <div className="body-div-grid-inputs-ContrasenaTrabajador">
+                        <input
+                          type="text"
+                          placeholder="Ciudad actual"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="CIUDADACTUALTRABAJADOR"
+                          name="ciudadActualTrabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange8T}
+                          value={datosForm8T.ciudadActualTrabajador}
+                        />
+                        <input
+                          type="text"
+                          placeholder="Nueva ciudad"
+                          className="input-contrasenaTrabajador-InformacionPersonalTrabajador"
+                          id="NUEVACIUDADTRABAJADOR"
+                          name="ciudad_trabajador"
+                          autoComplete="off"
+                          onChange={this.handleChange8T}
+                          value={datosForm8T.ciudad_trabajador}
+                        />
+                      </div>
                     </form>
-
                   </div>
                   <div class="modal-footer">
                     <button
@@ -1161,7 +1263,6 @@ class InformacionPersonalTrabajador extends Component {
               </div>
             </div>
           </div>
-        
         </div>
       </div>
     );
