@@ -293,10 +293,12 @@
   padding-left: 0%;
 }
 .div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar {
-  font-size: 350%;
+  font-size: 40px;
   color: black;
   font-family: "Comfortaa", cursive;
   font-weight: bold;
+  text-align: center;
+  padding-top: 3%;
 }
 .div-div-nombreCiudadTrabajador-CardTrabajosPorRealizar {
   font-size: 25px;
@@ -346,15 +348,15 @@
 
 @media only screen and (max-width: 990px) {
   .div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar {
-    font-size: 300%;
+    font-size: 32px;
   }
   @media only screen and (max-width: 850px) {
     .div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar {
-      font-size: 250%;
+      font-size: 28px;
     }
     @media only screen and (max-width: 710px) {
       .div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar {
-        font-size: 35px;
+        font-size: 23px;
       }
       .img-perfil_trabajador-CardTrabajosPorRealizar {
         width: 180px;
@@ -380,7 +382,7 @@
       }
       @media only screen and (max-width: 625px) {
         .div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar {
-          font-size: 30px;
+          font-size: 20px;
         }
         .img-perfil_trabajador-CardTrabajosPorRealizar {
           width: 170px;
@@ -406,7 +408,7 @@
         }
         @media only screen and (max-width: 530px) {
           .div-nombreCompletoDelTrabajador-CardTrabajosPorRealizar {
-            font-size: 25px;
+            font-size: 17px;
           }
           .img-perfil_trabajador-CardTrabajosPorRealizar {
             width: 160px;

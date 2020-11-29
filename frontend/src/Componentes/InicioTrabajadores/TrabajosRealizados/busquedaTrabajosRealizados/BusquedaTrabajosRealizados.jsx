@@ -35,15 +35,60 @@ class BusquedaTrabajosRealizados extends Component {
   filtrarElementos = () => {
     var search = this.state.datos.filter((item) => {
       if (
-        item.name.includes(this.state.busqueda) ||
-        item.name.toLowerCase().includes(this.state.busqueda) ||
-        item.name
+        item.nombre1_Cliente.includes(this.state.busqueda) ||
+        item.nombre1_Cliente.toLowerCase().includes(this.state.busqueda) ||
+        item.nombre1_Cliente
           .toLowerCase()
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
           .includes(this.state.busqueda) ||
-        item.name.toUpperCase().includes(this.state.busqueda) ||
-        item.name
+        item.nombre1_Cliente.toUpperCase().includes(this.state.busqueda) ||
+        item.nombre1_Cliente
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+
+
+          item.nombre2_Cliente.includes(this.state.busqueda) ||
+        item.nombre2_Cliente.toLowerCase().includes(this.state.busqueda) ||
+        item.nombre2_Cliente
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.nombre2_Cliente.toUpperCase().includes(this.state.busqueda) ||
+        item.nombre2_Cliente
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+
+
+          item.apellido1_Cliente.includes(this.state.busqueda) ||
+        item.apellido1_Cliente.toLowerCase().includes(this.state.busqueda) ||
+        item.apellido1_Cliente
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.apellido1_Cliente.toUpperCase().includes(this.state.busqueda) ||
+        item.apellido1_Cliente
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+
+
+          item.apellido2_Cliente.includes(this.state.busqueda) ||
+        item.apellido2_Cliente.toLowerCase().includes(this.state.busqueda) ||
+        item.apellido2_Cliente
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.apellido2_Cliente.toUpperCase().includes(this.state.busqueda) ||
+        item.apellido2_Cliente
           .toUpperCase()
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
@@ -128,7 +173,7 @@ class BusquedaTrabajosRealizados extends Component {
                           <div className="imgdivcenterFotoPerfil_TrabajosRealizados">
                             <img
                               className="imgFotoPerfil_TrabajosRealizados"
-                              src={datosT.image}
+                              src={datosT.FotoPerfil}
                               alt="Foto_Perfil"
                             />
                           </div>
@@ -137,15 +182,15 @@ class BusquedaTrabajosRealizados extends Component {
                           <div className="card_body_TrabajosRealizados">
                             <div className="div_TopCard_TrabajosRealizados">
                               <h5 className="Nombre_Trabajador_TrabajosRealizados">
-                                {datosT.name}
+                              {datosT.nombre1_Cliente}{` `}{datosT.nombre2_Cliente}{` `}{datosT.apellido1_Cliente}{` `}{datosT.apellido2_Cliente}
                               </h5>
                             </div>
                             <div className="div-grid-numero-direccion-TrabajosRealizados">
                               <p className="Numero_TrabajosRealizados">
-                                Número telefonico: {datosT.telefono}
+                                Número telefonico: {datosT.telefono_cliente}
                               </p>
                               <p className="direccion_TrabajosRealizados">
-                                Dirección:{datosT.direccion}
+                                Dirección:{datosT.direccion_cliente}
                               </p>
                             </div>
                           </div>

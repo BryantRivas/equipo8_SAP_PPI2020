@@ -85,7 +85,7 @@ class TrabajosRealizados extends Component {
                         <div className="imgdivcenterFotoPerfil_TrabajosRealizados">
                           <img
                             className="imgFotoPerfil_TrabajosRealizados"
-                            src={datosT.image}
+                            src={datosT.FotoPerfil}
                             alt="Foto_Perfil"
                           />
                         </div>
@@ -94,15 +94,15 @@ class TrabajosRealizados extends Component {
                         <div className="card_body_TrabajosRealizados">
                           <div className="div_TopCard_TrabajosRealizados">
                             <h5 className="Nombre_Trabajador_TrabajosRealizados">
-                              {datosT.name}
+                            {datosT.nombre1_Cliente}{` `}{datosT.nombre2_Cliente}{` `}{datosT.apellido1_Cliente}{` `}{datosT.apellido2_Cliente}
                             </h5>
                           </div>
                           <div className="div-grid-numero-direccion-TrabajosRealizados">
                             <p className="Numero_TrabajosRealizados">
-                              Número telefonico: {datosT.telefono}
+                              Número telefonico: {datosT.telefono_cliente}
                             </p>
                             <p className="direccion_TrabajosRealizados">
-                              Dirección:{datosT.direccion}
+                              Dirección:{datosT.direccion_cliente}
                             </p>
                           </div>
                         </div>

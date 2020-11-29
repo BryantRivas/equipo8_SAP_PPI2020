@@ -17,6 +17,7 @@ cita.get('/citas', (req,res)=>{
     });
 });
 
+
 // CREACION DE UNA NUEVA CITA CON LOS DATOS DEL USUARIO Y EL TRABAJADOR
 // LO ESTOY UTILIZANDO
 cita.post('/nueva-cita/solicitud-cita', (req,res)=>{
@@ -36,15 +37,16 @@ cita.post('/nueva-cita/solicitud-cita', (req,res)=>{
     });
 });
 
+
 // TABLA: Trabajos realizados 
 // OBJETIVO: El trabajador puede visualizar los trabajos que a realizado, estos se visualizaran en forma de cards,
 // por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita,
 // y ya ha terminado.
 // URL: /TrabajadoresInicio/TrabajosRealizados
-// FUNCIONA, PERO NECESITO LA INFORMACION DEL CLIENTE ADEMAS DE FILTRAR LA INFORMACION POR EL ESTADO
+// LO ESTOY UTILIZANDO
 cita.get('/cita/cards/trabajosRealizados/:numero_id_trabajador', (req,res)=>{
     const { numero_id_trabajador } = req.params;
-    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ? AND estado_cita = "Finalizada" ',[numero_id_trabajador], (err, rows, fields)=>{
+    mysqlConnection.query('SELECT cliente.FotoPerfil,cliente.nombre1_Cliente,cliente.nombre2_Cliente,cliente.apellido1_Cliente,cliente.apellido2_Cliente, cliente.telefono_cliente,cliente.direccion_cliente,cita.codigo_cita,cita.codigo_cliente, cita.numero_id_trabajador,cita.estado_cita FROM cliente INNER JOIN cita ON cliente.codigo_cliente=cita.codigo_cliente WHERE numero_id_trabajador = ? AND estado_cita = "Finalizada" ',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -58,10 +60,10 @@ cita.get('/cita/cards/trabajosRealizados/:numero_id_trabajador', (req,res)=>{
 // OBJETIVO: El trabajador puede visualizar los trabajos que debe realizar, estos se visualizaran en forma de cards,
 // por ende es necesario consultar los datos que se encuentran en el apartado del cliente, el cual solicito la cita. 
 // URL: /TrabajadoresInicio/TrabajosPorRealizar
-// FUNCIONA, PERO NECESITO LA INFORMACION DEL CLIENTE ADEMAS DE FILTRAR LA INFORMACION POR EL ESTADO
+// LO ESTOY UTILIZANDO
 cita.get('/cita/cards/trabajosPorRealizar/:numero_id_trabajador', (req,res)=>{
     const { numero_id_trabajador } = req.params;
-    mysqlConnection.query('SELECT * FROM cita WHERE numero_id_trabajador = ? AND estado_cita = "Activa" ',[numero_id_trabajador], (err, rows, fields)=>{
+    mysqlConnection.query('SELECT cliente.FotoPerfil,cliente.nombre1_Cliente,cliente.nombre2_Cliente,cliente.apellido1_Cliente,cliente.apellido2_Cliente, cliente.telefono_cliente,cliente.direccion_cliente,cita.codigo_cita,cita.codigo_cliente, cita.numero_id_trabajador,cita.estado_cita FROM cliente INNER JOIN cita ON cliente.codigo_cliente=cita.codigo_cliente WHERE numero_id_trabajador = ? AND estado_cita = "Activa" ',[numero_id_trabajador], (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{

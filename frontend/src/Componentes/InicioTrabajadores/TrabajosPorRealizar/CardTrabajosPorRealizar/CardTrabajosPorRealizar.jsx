@@ -11,7 +11,8 @@ class CardTrabajosPorRealizar extends Component {
       codigo_cliente: this.props.codigo_cliente,
       numero_id_trabajador: this.props.numero_id_trabajador,
       codigo_cita: this.props.codigo_cita,
-      datos: []
+      datos: [],
+      datosT: []
     };
   }
   
@@ -23,6 +24,21 @@ class CardTrabajosPorRealizar extends Component {
         console.log(res.data)
         this.setState({
           datos: res.data[0]
+        })
+        this.datosTrabajador();
+    }).catch(err=>{
+      console.log(err.massage)
+    })
+  }
+
+  datosTrabajador(){
+    // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
+    axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
+      .then(res =>{
+        console.log(res.data)
+        this.setState({
+          datosT: res.data[0]
         })
     }).catch(err=>{
       console.log(err.massage)
@@ -43,6 +59,8 @@ class CardTrabajosPorRealizar extends Component {
 
   render() {
     console.log(this.state.datos)
+    console.log(this.state.datosT)
+    const datosTrabajador = this.state.datosT;
     const characters = this.state.datos;
     return (
       <div>
@@ -92,7 +110,7 @@ class CardTrabajosPorRealizar extends Component {
 
             <div className="div-contoTrabajoTrabajador-CardTrabajosPorRealizar">
               <div className="div-div-contoTrabajoTrabajador-CardTrabajosPorRealizar">
-                $12.0000
+                ${datosTrabajador.precio_trabajador},00
               </div>
             </div>
           </div>
