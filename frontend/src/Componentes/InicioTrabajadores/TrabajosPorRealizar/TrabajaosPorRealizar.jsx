@@ -16,7 +16,7 @@ class TrabajosPorRealizar extends Component {
   componentDidMount(){
     // https://barppi.herokuapp.com/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}
     // http://localhost:4020/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}
-    axios.get(`http://localhost:4020/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}`)
+    axios.get(`https://barppi.herokuapp.com/api/cita/cita/cards/trabajosPorRealizar/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({

@@ -35,7 +35,7 @@ class LoginUsuarios extends Component {
   iniciarSesion = () =>{
     // https://barppi.herokuapp.com/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}
     // http://localhost:4020/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}
-     axios.get(`http://localhost:4020/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}`)
+     axios.get(`https://barppi.herokuapp.com/api/cliente/solicitud-login/loginCliente/${this.state.login.correo_electronico_cliente}`)
     .then(response => {
       console.log(response.data);
       this.setState({
@@ -101,9 +101,9 @@ class LoginUsuarios extends Component {
 
 
   peticionPostCita=async () =>{
-    
-    // http://localhost:4020/api/cita/nueva-cita/solicitud-cita
-     await axios.post('http://localhost:4020/api/cita/nueva-cita/solicitud-cita', this.state.cita)
+    // 'https://barppi.herokuapp.com/api/cita/nueva-cita/solicitud-cita', this.state.cita
+    // 'http://localhost:4020/api/cita/nueva-cita/solicitud-cita', this.state.cita
+     await axios.post('https://barppi.herokuapp.com/api/cita/nueva-cita/solicitud-cita', this.state.cita)
      .then(response =>{
        console.log("Se ha creado una nueva cita");
      }).catch(error=>{

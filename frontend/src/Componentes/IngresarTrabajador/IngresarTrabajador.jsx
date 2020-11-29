@@ -28,8 +28,9 @@ class IngresarTrabajador extends Component {
   };
 
   iniciarSesion = async () =>{
-    // https://barppi.herokuapp.com/api/trabajador
-    await axios.get(`http://localhost:4020/api/trabajador/login/${this.state.login.correo_electronico_trabajador}`)
+    // https://barppi.herokuapp.com/api/trabajador/login/${this.state.login.correo_electronico_trabajador}
+    // http://localhost:4020/api/trabajador/login/${this.state.login.correo_electronico_trabajador}
+    await axios.get(`https://barppi.herokuapp.com/api/trabajador/login/${this.state.login.correo_electronico_trabajador}`)
     .then(response => {
       console.log(response.data);
       this.setState({

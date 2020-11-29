@@ -347,7 +347,7 @@ class RegistroBarberos extends Component {
     delete this.state.form.ConfirmarCorreo;
     await axios
       .post(
-        "http://localhost:4020/api/nuevo-trabajador/registro",
+        "https://barppi.herokuapp.com/api/nuevo-trabajador/registro",
         this.state.form
       )
       .then((response) => {

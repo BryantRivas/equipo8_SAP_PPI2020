@@ -121,7 +121,7 @@ class MiPerfilComoTrabajador extends Component {
     // http://localhost:4020/api/trabajador/miperfilcomotrabajador/${this.state.numero_id_trabajador}
     axios
       .get(
-        `http://localhost:4020/api/trabajador/miperfilcomotrabajador/${this.state.numero_id_trabajador}`
+        `https://barppi.herokuapp.com/api/trabajador/miperfilcomotrabajador/${this.state.numero_id_trabajador}`
       )
       .then((res) => {
         console.log(res.data);
@@ -159,9 +159,9 @@ class MiPerfilComoTrabajador extends Component {
   }
 
   peticionPut=async () =>{
-    //http://localhost:4020/api/trabajador/put/fotoPerfil/${this.state.numero_id_trabajador}
-    //https://barppi.herokuapp.com/api/trabajador/put/fotoPerfil/${this.state.numero_id_trabajador}
-    await axios.put(`http://localhost:4020/api/trabajador/put/fotoPerfil/${this.state.numero_id_trabajador}`, { FotoPerfil: this.state.form.FotoPerfil})
+    // `https://barppi.herokuapp.com/api/trabajador/put/fotoPerfil/${this.state.numero_id_trabajador}`, { FotoPerfil: this.state.form.FotoPerfil}
+    // `http://localhost:4020/api/trabajador/put/fotoPerfil/${this.state.numero_id_trabajador}`, { FotoPerfil: this.state.form.FotoPerfil}
+    await axios.put(`https://barppi.herokuapp.com/api/trabajador/put/fotoPerfil/${this.state.numero_id_trabajador}`, { FotoPerfil: this.state.form.FotoPerfil})
     .then(response =>{
       this.componentDidMount();
       console.log('Se actualizo la foto de perfil')
@@ -172,7 +172,9 @@ class MiPerfilComoTrabajador extends Component {
   }
 
   peticionPutNombres = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/nombresTrabajador/${this.state.numero_id_trabajador}`, { nombre1_trabajador: this.state.form1T.nombre1_trabajador, nombre2_trabajador: this.state.form1T.nombre2_trabajador})
+    // `https://barppi.herokuapp.com/api/trabajador/put/nombresTrabajador/${this.state.numero_id_trabajador}`, { nombre1_trabajador: this.state.form1T.nombre1_trabajador, nombre2_trabajador: this.state.form1T.nombre2_trabajador}
+    // `http://localhost:4020/api/trabajador/put/nombresTrabajador/${this.state.numero_id_trabajador}`, { nombre1_trabajador: this.state.form1T.nombre1_trabajador, nombre2_trabajador: this.state.form1T.nombre2_trabajador}
+    await axios.put(`https://barppi.herokuapp.com/api/trabajador/put/nombresTrabajador/${this.state.numero_id_trabajador}`, { nombre1_trabajador: this.state.form1T.nombre1_trabajador, nombre2_trabajador: this.state.form1T.nombre2_trabajador})
     .then(response =>{
       this.componentDidMount();
       console.log('Se actualizo los nombres del trabajador')
@@ -182,7 +184,9 @@ class MiPerfilComoTrabajador extends Component {
   }
 
   peticionPutApellidos = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/apellidosTrabajador/${this.state.numero_id_trabajador}`, { apellido1_trabajador: this.state.form2T.apellido1_trabajador, apellido2_trabajador: this.state.form2T.apellido2_trabajador})
+    // `https://barppi.herokuapp.com/api/trabajador/put/apellidosTrabajador/${this.state.numero_id_trabajador}`, { apellido1_trabajador: this.state.form2T.apellido1_trabajador, apellido2_trabajador: this.state.form2T.apellido2_trabajador}
+    // `http://localhost:4020/api/trabajador/put/apellidosTrabajador/${this.state.numero_id_trabajador}`, { apellido1_trabajador: this.state.form2T.apellido1_trabajador, apellido2_trabajador: this.state.form2T.apellido2_trabajador}
+    await axios.put(`https://barppi.herokuapp.com/api/trabajador/put/apellidosTrabajador/${this.state.numero_id_trabajador}`, { apellido1_trabajador: this.state.form2T.apellido1_trabajador, apellido2_trabajador: this.state.form2T.apellido2_trabajador})
     .then(response =>{
       this.componentDidMount();
       console.log('Se actualizo los apellidos del trabajador')
@@ -192,7 +196,9 @@ class MiPerfilComoTrabajador extends Component {
   }
 
   peticionPutDescripcion = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/descripcionTrabajador/${this.state.numero_id_trabajador}`, { descripcion_trabajador: this.state.form4T.descripcion_trabajador})
+    // `https://barppi.herokuapp.com/api/trabajador/put/descripcionTrabajador/${this.state.numero_id_trabajador}`, { descripcion_trabajador: this.state.form4T.descripcion_trabajador}
+    // `http://localhost:4020/api/trabajador/put/descripcionTrabajador/${this.state.numero_id_trabajador}`, { descripcion_trabajador: this.state.form4T.descripcion_trabajador}
+    await axios.put(`https://barppi.herokuapp.com/api/trabajador/put/descripcionTrabajador/${this.state.numero_id_trabajador}`, { descripcion_trabajador: this.state.form4T.descripcion_trabajador})
     .then(response =>{
       this.componentDidMount();
       console.log('Se actualizo la descripcion del trabajador')
@@ -202,7 +208,9 @@ class MiPerfilComoTrabajador extends Component {
   }
 
   peticionPutTipoTrabajador = async () => {
-    await axios.put(`http://localhost:4020/api/trabajador/put/tipoTrabajador/${this.state.numero_id_trabajador}`, { tipo_trabajador: this.state.form3T.tipo_trabajador})
+    // `https://barppi.herokuapp.com/api/trabajador/put/tipoTrabajador/${this.state.numero_id_trabajador}`, { tipo_trabajador: this.state.form3T.tipo_trabajador}
+    // `http://localhost:4020/api/trabajador/put/tipoTrabajador/${this.state.numero_id_trabajador}`, { tipo_trabajador: this.state.form3T.tipo_trabajador}
+    await axios.put(`https://barppi.herokuapp.com/api/trabajador/put/tipoTrabajador/${this.state.numero_id_trabajador}`, { tipo_trabajador: this.state.form3T.tipo_trabajador})
     .then(response =>{
       this.componentDidMount();
       console.log('Se actualizo el tipo de trabajador')

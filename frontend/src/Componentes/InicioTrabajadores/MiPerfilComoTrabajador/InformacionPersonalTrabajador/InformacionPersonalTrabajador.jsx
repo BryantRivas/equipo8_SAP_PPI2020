@@ -306,7 +306,7 @@ class InformacionPersonalTrabajador extends Component {
     // http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}
     axios
       .get(
-        `http://localhost:4020/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}`
+        `https://barppi.herokuapp.com/api/trabajador/informacionpersonal/${this.state.numero_id_trabajador}`
       )
       .then((res) => {
         console.log(res.data);
@@ -320,9 +320,11 @@ class InformacionPersonalTrabajador extends Component {
   }
 
   peticionPutCorreo = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/correoTrabajador/${this.state.numero_id_trabajador}`,
         {
           correo_electronico_trabajador: this.state.form1T
             .correo_electronico_trabajador,
@@ -338,9 +340,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutContrasena = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/contrasenaTrabajador/${this.state.numero_id_trabajador}`,
         { contrasena_trabajador: this.state.form2T.contrasena_trabajador }
       )
       .then((response) => {
@@ -353,9 +357,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutDireccion = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/direccionTrabajador/${this.state.numero_id_trabajador}`,
         { direccion_trabajador: this.state.form3T.direccion_trabajador }
       )
       .then((response) => {
@@ -368,9 +374,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutPrecio = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/precioTrabajador/${this.state.numero_id_trabajador}`,
         { precio_trabajador: this.state.form7T.precio_trabajador }
       )
       .then((response) => {
@@ -383,9 +391,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutTelefonoTrabajador = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/telefonoTrabajador/${this.state.numero_id_trabajador}`,
         { telefono_trabajador: this.state.form4T.telefono_trabajador }
       )
       .then((response) => {
@@ -398,9 +408,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutDocumento = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/documentoTrabajador/${this.state.numero_id_trabajador}`,
         { documento_Trabajador: this.state.form6T.documento_Trabajador }
       )
       .then((response) => {
@@ -413,9 +425,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutPais = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/paisTrabajador/${this.state.numero_id_trabajador}`,
         { pais_trabajador: this.state.form9T.pais_trabajador }
       )
       .then((response) => {
@@ -428,9 +442,11 @@ class InformacionPersonalTrabajador extends Component {
   };
 
   peticionPutCiudad = async () => {
+    // https://barppi.herokuapp.com/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}
+    // http://localhost:4020/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}
     await axios
       .put(
-        `http://localhost:4020/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}`,
+        `https://barppi.herokuapp.com/api/trabajador/put/ciudadTrabajador/${this.state.numero_id_trabajador}`,
         { ciudad_trabajador: this.state.form8T.ciudad_trabajador }
       )
       .then((response) => {

@@ -19,7 +19,7 @@ class CardTrabajosPorRealizar extends Component {
   componentDidMount(){
     // https://barppi.herokuapp.com/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}
     // http://localhost:4020/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}
-    axios.get(`http://localhost:4020/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}`)
+    axios.get(`https://barppi.herokuapp.com/api/cliente/cliente/cards/trabajosPorRealizar/${this.state.codigo_cliente}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -34,7 +34,7 @@ class CardTrabajosPorRealizar extends Component {
   datosTrabajador(){
     // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
     // http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}
-    axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
+    axios.get(`https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({
@@ -46,9 +46,9 @@ class CardTrabajosPorRealizar extends Component {
   }
 
   peticionPutEstadoCita = async () => {
-    // https://barppi.herokuapp.com/api/cita/cita/put/estadoCita/${this.state.codigo_cita}
-    // http://localhost:4020/api/cita/cita/put/estadoCita/${this.state.codigo_cita}
-    await axios.put(`http://localhost:4020/api/cita/cita/put/estadoCita/${this.state.codigo_cita}`, { estado_cita: 'Finalizada'})
+    // `https://barppi.herokuapp.com/api/cita/cita/put/estadoCita/${this.state.codigo_cita}`, { estado_cita: 'Finalizada'}
+    // `http://localhost:4020/api/cita/cita/put/estadoCita/${this.state.codigo_cita}`, { estado_cita: 'Finalizada'}
+    await axios.put(`https://barppi.herokuapp.com/api/cita/cita/put/estadoCita/${this.state.codigo_cita}`, { estado_cita: 'Finalizada'})
     .then(response =>{
       this.componentDidMount();
       console.log('Se actualizo el estado de la cita a Finalizada')

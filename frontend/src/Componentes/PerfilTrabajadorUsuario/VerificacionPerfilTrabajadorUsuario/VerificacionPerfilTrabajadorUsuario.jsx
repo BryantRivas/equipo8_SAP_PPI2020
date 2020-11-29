@@ -14,17 +14,11 @@ class VerificacionPerfilTrabajadorUsuario extends Component {
       datos: [],
     };
   }
-  
-  
-  
-
-  
-
 
   async componentDidMount(){
     // https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}
     // http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}
-    await axios.get(`http://localhost:4020/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}`)
+    await axios.get(`https://barppi.herokuapp.com/api/trabajador/cardperfiltrabajador/verificacionPerfil/${this.state.numero_id_trabajador}`)
       .then(res =>{
         console.log(res.data)
         this.setState({

@@ -14,8 +14,8 @@ class inicioUsuarios extends Component {
   
   componentDidMount(){
     //https://barppi.herokuapp.com/api/trabajador
-    //https://rickandmortyapi.com/api/character
-    axios.get('http://localhost:4020/api/trabajador')
+    //http://localhost:4020/api/trabajador
+    axios.get('https://barppi.herokuapp.com/api/trabajador')
       .then(res =>{
         console.log(res.data)
         this.setState({

@@ -247,9 +247,9 @@ class RegistroUsuario extends Component {
 peticionPost=async () =>{
   delete this.state.formU.ConfirmarContrasena
   delete this.state.formU.ConfirmarCorreo
-  // https://barppi.herokuapp.com/api/cliente/nuevo-cliente/solicitud-registro
-  // http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro
-   await axios.post('http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU)
+    // 'http://barppi.herokuapp.com/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU
+    // 'http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU
+   await axios.post('http://barppi.herokuapp.com/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU)
    .then(response =>{
      console.log("Se ha creado un nuevo cliente");
      this.state.boolean = true;
