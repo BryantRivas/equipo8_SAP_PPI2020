@@ -432,7 +432,6 @@
   }
 }
 
-
 /* REGISTROBARBEROS/REGISTROBARBEROS2 */
 .h4Header {
   text-align: center;
@@ -648,7 +647,6 @@
     }
   }
 }
-
 
 /* REGISTROBARBEROS/REGISTROBARBEROS3 */
 .h4Header {
@@ -866,9 +864,8 @@
   }
 }
 
-
 /* CSS MODAL */
-.foto-perfil-img-trabajador{
+.foto-perfil-img-trabajador {
   border-radius: 100%;
   width: 160px;
   height: 160px;
@@ -877,19 +874,19 @@
   justify-content: center;
   align-content: center;
 }
-.div-subir-img-foto-perfil-trabajador{
+.div-subir-img-foto-perfil-trabajador {
   padding-top: 3%;
   display: flex;
   justify-content: center;
   align-content: center;
 }
-.foto-perfil-subida-img-trabajador{
+.foto-perfil-subida-img-trabajador {
   padding-top: 3%;
   display: flex;
   justify-content: center;
   align-content: center;
 }
-.input-subir-img{
+.input-subir-img {
   color: white;
   font-family: "Comfortaa", cursive;
   font-weight: bold;

@@ -7,6 +7,7 @@ const mysqlConnection = require('../db/db');
 // que poseen el numero_id_trabajador de un trabajador.
 
 //MOSTRAR TODAS LAS CITAS QUE SE ENCUENTRAN AGENDADAS
+//LA ESTOY UTILIZANDO
 cita.get('/citas', (req,res)=>{
     mysqlConnection.query('SELECT * FROM cita', (err, rows, fields)=>{
         if(!err){

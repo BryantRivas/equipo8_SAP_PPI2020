@@ -87,6 +87,7 @@ trabajador.get('/trabajador/informacionpersonal/:id', (req,res)=>{
 // foto de perfil, nombres, apellidos, tipo de trabajador, descripción. Además puede modificar en el momento que sea pertinente
 // sus datos.  
 // URL: /TrabajadoresInicio/MiPerfilComoTrabajador
+// NO LO ESTOY UTILIZANDO
 trabajador.get('/trabajador/miperfilcomotrabajador/:id', (req,res)=>{
     const { id } = req.params;
     mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
@@ -125,6 +126,7 @@ trabajador.post('/nuevo-trabajador/registro', (req,res)=>{
 // OBJETIVO: El trabajador podrá editar sus datos personales como lo son: correo, contraseña, dirección, 
 // número de teléfono, sexo, fecha de nacimiento y consto del trabajo.
 // URL: /TrabajadoresInicio/MiPerfilComoTrabajador/InformacionPersonal
+// NO LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/editar-informacion-personal/:numero_id_trabajador', (req,res)=>{
     
     const { direccion_trabajador,contrasena_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador  } = req.body;
@@ -143,6 +145,7 @@ trabajador.put('/trabajador/put/editar-informacion-personal/:numero_id_trabajado
 // TABLA: Editar mi perfil como trabajador
 // OBJETIVO: El trabajador podrá editar sus datos del perfil como lo son su nombre, apellido, tipo de trabajador, su descripción y su foto de perfil.
 // URL: /TrabajadoresInicio/MiPerfilComoTrabajador
+// NO LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/editar-mi-perfil-como-trabajador/editar-informacion-personal/:numero_id_trabajador', (req,res)=>{
     
     const { tipo_trabajador,nombres_trabajador,apellidos_trabajador,pais_trabajador,ciudad_trabajador } = req.body;
@@ -161,7 +164,7 @@ trabajador.put('/trabajador/put/editar-mi-perfil-como-trabajador/editar-informac
 // ESTAS SON LAS PETICIONES PARA EL APARTADO DE MI PERFIL COMO TRABAJADOR
 
 // ACTUALIZACION DE FOTO DE PERFIL DEL TRABAJADOR
-// FUNCIONAL BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/fotoPerfil/:numero_id_trabajador', (req,res)=>{
     
     const { FotoPerfil } = req.body;
@@ -177,7 +180,7 @@ trabajador.put('/trabajador/put/fotoPerfil/:numero_id_trabajador', (req,res)=>{
 });
 
 // ACTUALIZACION DE LOS NOMBRE DEL PERFIL DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY URILIZANDO
 trabajador.put('/trabajador/put/nombresTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { nombre1_trabajador, nombre2_trabajador } = req.body;
@@ -193,7 +196,7 @@ trabajador.put('/trabajador/put/nombresTrabajador/:numero_id_trabajador', (req,r
 });
 
 // ACTUALIZACION DE LOS APELLIDOS DEL PERFIL DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/apellidosTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { apellido1_trabajador, apellido2_trabajador } = req.body;
@@ -209,7 +212,7 @@ trabajador.put('/trabajador/put/apellidosTrabajador/:numero_id_trabajador', (req
 });
 
 // ACTUALIZACION DE LA DESCRIPCION DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/descripcionTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { descripcion_trabajador } = req.body;
@@ -225,7 +228,7 @@ trabajador.put('/trabajador/put/descripcionTrabajador/:numero_id_trabajador', (r
 });
 
 // ACTUALIZACION DE TIPO DE TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/tipoTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { tipo_trabajador } = req.body;
@@ -244,7 +247,7 @@ trabajador.put('/trabajador/put/tipoTrabajador/:numero_id_trabajador', (req,res)
 // ESTAS SON LAS PETICIONES PARA EL APARTADO DE MI INFORMACION MAS PERSONAL DEL TRABAJADOR
 
 // ACTUALIZACION DE CORREO DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/correoTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { correo_electronico_trabajador } = req.body;
@@ -260,7 +263,7 @@ trabajador.put('/trabajador/put/correoTrabajador/:numero_id_trabajador', (req,re
 });
 
 // ACTUALIZACION DE CONTRASEÑA DEL TRABAJADOR
-// FUNCIONA BIEN 
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/contrasenaTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { contrasena_trabajador } = req.body;
@@ -276,7 +279,7 @@ trabajador.put('/trabajador/put/contrasenaTrabajador/:numero_id_trabajador', (re
 });
 
 // ACTUALIZACION DE DIRECCION DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/direccionTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { direccion_trabajador } = req.body;
@@ -292,7 +295,7 @@ trabajador.put('/trabajador/put/direccionTrabajador/:numero_id_trabajador', (req
 });
 
 // ACTUALIZACION DEL NUMERO TELEFONICO DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/telefonoTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { telefono_trabajador } = req.body;
@@ -308,7 +311,7 @@ trabajador.put('/trabajador/put/telefonoTrabajador/:numero_id_trabajador', (req,
 });
 
 // ACTUALIZACION DEL PRECIO DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/precioTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { precio_trabajador } = req.body;
@@ -324,7 +327,7 @@ trabajador.put('/trabajador/put/precioTrabajador/:numero_id_trabajador', (req,re
 });
 
 // ACTUALIZACION DEL DOCUMENTO DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/documentoTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { documento_Trabajador } = req.body;
@@ -340,7 +343,7 @@ trabajador.put('/trabajador/put/documentoTrabajador/:numero_id_trabajador', (req
 });
 
 // ACTUALIZACION DEL PAIS DE RECIDENCIA DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/paisTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { pais_trabajador } = req.body;
@@ -356,7 +359,7 @@ trabajador.put('/trabajador/put/paisTrabajador/:numero_id_trabajador', (req,res)
 });
 
 // ACTUALIZACION DE LA CIUDAD DE RECIDENCIA DEL TRABAJADOR
-// FUNCIONA BIEN
+// LO ESTOY UTILIZANDO
 trabajador.put('/trabajador/put/ciudadTrabajador/:numero_id_trabajador', (req,res)=>{
     
     const { ciudad_trabajador } = req.body;
@@ -370,82 +373,6 @@ trabajador.put('/trabajador/put/ciudadTrabajador/:numero_id_trabajador', (req,re
         }
     });
 });
-
-
-
-
-// LOS SIGUIENTES SON LAS FORMAS DE HACER PETICIONES
-
-// primer servicio, necesito consultar todas las filas de la tabla GOOD
-trabajador.get('/trabajador', (req,res)=>{
-    mysqlConnection.query('SELECT * FROM trabajador', (err, rows, fields)=>{
-        if(!err){
-            res.json(rows);
-        }else{
-            console.log(err);
-        }
-    });
-});
-
-// segundo servicio, necesito ingresar un registro a la tabla trabajadores GOOD
-trabajador.post('/nuevo-trabajador', (req,res)=>{
-    const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
-    const trabajador = [  codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador ];
-
-    const nuevoTrabajador = `INSERT INTO trabajador(codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
-
-    mysqlConnection.query(nuevoTrabajador, trabajador, (err, results, fields)=>{
-        if(err){
-            return console.error(err.message);
-        }else{
-            res.json({message: `trabajador agregado`});
-        }
-    });
-});
-
-// tercer servicio, actualizacion de la informacion de un trabajador GOOD
-trabajador.put('/trabajador/put/:numero_id_trabajador', (req,res)=>{
-    
-    const { codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador } = req.body;
-    const { numero_id_trabajador } = req.params;
-
-    mysqlConnection.query(`UPDATE trabajador SET codigo_cita = ?,direccion_trabajador = ?,contrasena_trabajador = ?,tipo_trabajador = ?,nombres_trabajador = ?,apellidos_trabajador = ?,telefono_trabajador = ?,correo_electronico_trabajador = ?, precio_trabajador = ?, pais_trabajador = ?, ciudad_trabajador = ? WHERE numero_id_trabajador= ?`, [ codigo_cita,direccion_trabajador,contrasena_trabajador,tipo_trabajador,nombres_trabajador,apellidos_trabajador,telefono_trabajador,correo_electronico_trabajador, precio_trabajador, pais_trabajador, ciudad_trabajador,numero_id_trabajador ], (err, rows, fields)=>{
-        if(!err){
-            res.json({status : 'Se han actualizado los datos del trabajador'});
-        }else{
-            console.log(err);
-        }
-    });
-});
-
-// cuarto servicio, eliminacion de un registro de una tabla GOOD
-trabajador.delete('/trabajador/delete/:numero_id_trabajador', (req,res)=>{
-    const { numero_id_trabajador } = req.params;
-
-    mysqlConnection.query('DELETE FROM trabajador WHERE numero_id_trabajador=?',[numero_id_trabajador], (err, rows, fields)=>{
-        if(!err){
-            res.json({status : 'Se elimino el registro'});
-        }else{
-            console.log(err);
-        }
-    });
-})
-
-
-// quinto servicio, consulta por ID GOOD
-trabajador.get('/trabajador/:id', (req,res)=>{
-    const { id } = req.params;
-    mysqlConnection.query('SELECT * FROM trabajador WHERE numero_id_trabajador = ?',[id], (err, rows, fields)=>{
-        if(!err){
-            res.json(rows);
-        }else{
-            console.log(err);
-        }
-    });
-});
-
-
-// FIN DE EJEMPLOS PARA HACER PETICIONES
 
 
 module.exports = trabajador;

@@ -8,26 +8,28 @@ class inicioUsuarios extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      datos: []
+      datos: [],
     };
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     //https://barppi.herokuapp.com/api/trabajador
     //http://localhost:4020/api/trabajador
-    axios.get('https://barppi.herokuapp.com/api/trabajador')
-      .then(res =>{
-        console.log(res.data)
+    axios
+      .get("https://barppi.herokuapp.com/api/trabajador")
+      .then((res) => {
+        console.log(res.data);
         this.setState({
-          datos: res.data
-        })
-    }).catch(err=>{
-      console.log(err.massage)
-    })
+          datos: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err.massage);
+      });
   }
 
   render() {
-    console.log(this.state.datos)
+    console.log(this.state.datos);
     const characters = this.state.datos;
 
     return (
@@ -70,8 +72,6 @@ class inicioUsuarios extends Component {
           </nav>
         </header>
 
-
-
         <div className="cards-fixed-usuariosInicio">
           {characters.map((datosT) => {
             return (
@@ -92,8 +92,13 @@ class inicioUsuarios extends Component {
                         <div className="div_Grid_TopCard_UsuariosInicio">
                           <div className="div-Nombre_Trabajador_UsuariosInicio">
                             <h3 className="Nombre_Trabajador_UsuariosInicio">
-                              {datosT.nombre1_trabajador}{` `}{datosT.nombre2_trabajador}
-                              {` `}{datosT.apellido1_trabajador}{` `}{datosT.apellido2_trabajador}
+                              {datosT.nombre1_trabajador}
+                              {` `}
+                              {datosT.nombre2_trabajador}
+                              {` `}
+                              {datosT.apellido1_trabajador}
+                              {` `}
+                              {datosT.apellido2_trabajador}
                             </h3>
                           </div>
                           <div className="divButtonSolicitarUsuariosInicio">
@@ -127,9 +132,6 @@ class inicioUsuarios extends Component {
             );
           })}
         </div>
-
-
-
       </div>
     );
   }

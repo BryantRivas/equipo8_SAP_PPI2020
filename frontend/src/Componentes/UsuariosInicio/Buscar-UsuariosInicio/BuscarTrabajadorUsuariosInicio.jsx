@@ -10,75 +10,112 @@ class BuscarTrabajadorUsuariosInicio extends Component {
     this.state = {
       busqueda: "",
       datos: [],
-      datosB : []
+      datosB: [],
     };
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     //https://barppi.herokuapp.com/api/trabajador
     //http://localhost:4020/api/trabajador
-    axios.get('https://barppi.herokuapp.com/api/trabajador')
-      .then(res =>{
-        console.log(res.data)
+    axios
+      .get("https://barppi.herokuapp.com/api/trabajador")
+      .then((res) => {
+        console.log(res.data);
         this.setState({
           datos: res.data,
-          datosB: res.data
-        })
-    }).catch(err=>{
-      console.log(err.massage)
-    })
+          datosB: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err.massage);
+      });
   }
 
   filtrarElementos = () => {
-    var search = this.state.datos.filter(item => {
-      if(item.nombre1_trabajador.includes(this.state.busqueda) || 
-      item.nombre1_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.nombre1_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.nombre1_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.nombre1_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-
-      item.nombre2_trabajador.includes(this.state.busqueda) || 
-      item.nombre2_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.nombre2_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.nombre2_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.nombre2_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-
-      item.apellido1_trabajador.includes(this.state.busqueda) || 
-      item.apellido1_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.apellido1_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.apellido1_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.apellido1_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-
-      item.apellido2_trabajador.includes(this.state.busqueda) || 
-      item.apellido2_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.apellido2_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.apellido2_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.apellido2_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      
-      item.ciudad_trabajador.includes(this.state.busqueda) || 
-      item.ciudad_trabajador.toLowerCase().includes(this.state.busqueda) ||
-      item.ciudad_trabajador.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda) ||
-      item.ciudad_trabajador.toUpperCase().includes(this.state.busqueda) ||
-      item.ciudad_trabajador.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").includes(this.state.busqueda)
-      ){
+    var search = this.state.datos.filter((item) => {
+      if (
+        item.nombre1_trabajador.includes(this.state.busqueda) ||
+        item.nombre1_trabajador.toLowerCase().includes(this.state.busqueda) ||
+        item.nombre1_trabajador
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.nombre1_trabajador.toUpperCase().includes(this.state.busqueda) ||
+        item.nombre1_trabajador
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.nombre2_trabajador.includes(this.state.busqueda) ||
+        item.nombre2_trabajador.toLowerCase().includes(this.state.busqueda) ||
+        item.nombre2_trabajador
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.nombre2_trabajador.toUpperCase().includes(this.state.busqueda) ||
+        item.nombre2_trabajador
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.apellido1_trabajador.includes(this.state.busqueda) ||
+        item.apellido1_trabajador.toLowerCase().includes(this.state.busqueda) ||
+        item.apellido1_trabajador
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.apellido1_trabajador.toUpperCase().includes(this.state.busqueda) ||
+        item.apellido1_trabajador
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.apellido2_trabajador.includes(this.state.busqueda) ||
+        item.apellido2_trabajador.toLowerCase().includes(this.state.busqueda) ||
+        item.apellido2_trabajador
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.apellido2_trabajador.toUpperCase().includes(this.state.busqueda) ||
+        item.apellido2_trabajador
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.ciudad_trabajador.includes(this.state.busqueda) ||
+        item.ciudad_trabajador.toLowerCase().includes(this.state.busqueda) ||
+        item.ciudad_trabajador
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda) ||
+        item.ciudad_trabajador.toUpperCase().includes(this.state.busqueda) ||
+        item.ciudad_trabajador
+          .toUpperCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(this.state.busqueda)
+      ) {
         return item;
       }
     });
-    this.setState({datosB: search})
-  }
+    this.setState({ datosB: search });
+  };
 
   onChange = async (e) => {
     e.persist();
-    await this.setState({busqueda: e.target.value});
+    await this.setState({ busqueda: e.target.value });
     this.filtrarElementos();
     console.log(this.state.busqueda);
   };
 
-
-
   render() {
-    console.log(this.state.datos)
-    console.log(this.state.datosB)
+    console.log(this.state.datos);
+    console.log(this.state.datosB);
     const characters = this.state.datosB;
     return (
       <div>
@@ -127,61 +164,66 @@ class BuscarTrabajadorUsuariosInicio extends Component {
           </div>
         </div>
         <main>
-        <div className="cards-fixed-usuariosInicio">
-          {characters.map((datosT) => {
-            return (
-              <div className="divCardUsuariosInicio">
-                <div className="card ">
-                  <div className="CardGridUsuariosInicio">
-                    <div className="divimgFotoPerfilUsuariosInicio">
-                      <div className="imgdivcenterFotoPerfil_UsuariosInicio">
-                        <img
-                          className="imgFotoPerfilUsuariosInicio"
-                          src={datosT.FotoPerfil}
-                          alt="Foto_Perfil"
-                        />
+          <div className="cards-fixed-usuariosInicio">
+            {characters.map((datosT) => {
+              return (
+                <div className="divCardUsuariosInicio">
+                  <div className="card ">
+                    <div className="CardGridUsuariosInicio">
+                      <div className="divimgFotoPerfilUsuariosInicio">
+                        <div className="imgdivcenterFotoPerfil_UsuariosInicio">
+                          <img
+                            className="imgFotoPerfilUsuariosInicio"
+                            src={datosT.FotoPerfil}
+                            alt="Foto_Perfil"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div className="divdatosCuerpoUsuariosInicio">
-                      <div className="card_body">
-                        <div className="div_Grid_TopCard_UsuariosInicio">
-                          <div className="div-Nombre_Trabajador_UsuariosInicio">
-                            <h3 className="Nombre_Trabajador_UsuariosInicio">
-                              {datosT.nombre1_trabajador}{` `}{datosT.nombre2_trabajador}
-                              {` `}{datosT.apellido1_trabajador}{` `}{datosT.apellido2_trabajador}
-                            </h3>
+                      <div className="divdatosCuerpoUsuariosInicio">
+                        <div className="card_body">
+                          <div className="div_Grid_TopCard_UsuariosInicio">
+                            <div className="div-Nombre_Trabajador_UsuariosInicio">
+                              <h3 className="Nombre_Trabajador_UsuariosInicio">
+                                {datosT.nombre1_trabajador}
+                                {` `}
+                                {datosT.nombre2_trabajador}
+                                {` `}
+                                {datosT.apellido1_trabajador}
+                                {` `}
+                                {datosT.apellido2_trabajador}
+                              </h3>
+                            </div>
+                            <div className="divButtonSolicitarUsuariosInicio">
+                              <Link
+                                className="btn ButonUsuariosInicio"
+                                to={`/PerfilTrabajadorUsuario1/${datosT.numero_id_trabajador}`}
+                              >
+                                Solicitar
+                              </Link>
+                            </div>
                           </div>
-                          <div className="divButtonSolicitarUsuariosInicio">
-                            <Link
-                              className="btn ButonUsuariosInicio"
-                              to={`/PerfilTrabajadorUsuario1/${datosT.numero_id_trabajador}`}
-                            >
-                              Solicitar
-                            </Link>
+                          <div className="div_Informarcionadicional_UsuariosInicio">
+                            <p className="Numero_UsuarioInicio">
+                              Número telefonico: {datosT.telefono_trabajador}
+                            </p>
+                            <p className="Numero_UsuarioInicio">
+                              Dirección: {datosT.direccion_trabajador}
+                            </p>
                           </div>
+                          <textarea
+                            className="textarea_Descripcion_UsuariosInicio"
+                            readonly="readonly"
+                          >
+                            {datosT.descripcion_trabajador}
+                          </textarea>
                         </div>
-                        <div className="div_Informarcionadicional_UsuariosInicio">
-                          <p className="Numero_UsuarioInicio">
-                            Número telefonico: {datosT.telefono_trabajador}
-                          </p>
-                          <p className="Numero_UsuarioInicio">
-                            Dirección: {datosT.direccion_trabajador}
-                          </p>
-                        </div>
-                        <textarea
-                          className="textarea_Descripcion_UsuariosInicio"
-                          readonly="readonly"
-                        >
-                          {datosT.descripcion_trabajador}
-                        </textarea>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
         </main>
       </div>
     );

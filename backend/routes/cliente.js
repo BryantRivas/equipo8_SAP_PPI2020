@@ -72,6 +72,7 @@ cliente.get('/cliente/cards/trabajosPorRealizar/:codigo_cliente', (req,res)=>{
 
 
 // MOSTRAR A TODOS LOS CLIENTES
+// LO ESTOY UTILIZANDO
 cliente.get('/clientes', (req,res)=>{
     mysqlConnection.query('SELECT * FROM cliente', (err, rows, fields)=>{
         if(!err){
