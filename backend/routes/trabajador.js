@@ -106,7 +106,7 @@ trabajador.get('/trabajador/miperfilcomotrabajador/:id', (req,res)=>{
 // base de datos.
 // URL: /RegistroBarberos/RegistroBarberos3
 // LA ESTOY UTILIZANDO
-trabajador.post('/nuevo-trabajador/registro', (req,res)=>{
+trabajador.post('/trabajador/nuevo-trabajador/registro', (req,res)=>{
     const { nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil } = req.body;
     const trabajador = [ nombre1_trabajador, nombre2_trabajador, apellido1_trabajador, apellido2_trabajador, correo_electronico_trabajador, contrasena_trabajador, telefono_trabajador, direccion_trabajador, documento_Trabajador, pais_trabajador, ciudad_trabajador, tipo_trabajador, precio_trabajador, descripcion_trabajador, FotoPerfil ];
 

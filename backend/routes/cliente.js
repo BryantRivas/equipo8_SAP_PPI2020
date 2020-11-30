@@ -7,7 +7,7 @@ const mysqlConnection = require('../db/db');
 // OBJETIVO: Registrar a los clientes en la aplicacion
 // URL: http://localhost:3000/PerfilTrabajadorUsuario2/inicioUsuarios/registroUsuarios/
 // LOS ESTOY UTILIZANDO
-cliente.post('/nuevo-cliente/solicitud-registro', (req,res)=>{
+cliente.post('/cliente/nuevo-cliente/solicitud-registro', (req,res)=>{
     const { correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente,FotoPerfil } = req.body;
     const cliente = [ correo_electronico_cliente,direccion_cliente,telefono_cliente,contrasena_Cliente,apellido1_Cliente,apellido2_Cliente,nombre2_Cliente,nombre1_Cliente,documento_Cliente,FotoPerfil ];
 
