@@ -248,7 +248,12 @@ peticionPost=async () =>{
   delete this.state.formU.ConfirmarContrasena
   delete this.state.formU.ConfirmarCorreo
     // 'https://barppi.herokuapp.com/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU
-    // 'https://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU
+    // 'http://localhost:4020/api/cliente/nuevo-cliente/solicitud-registro', this.state.formU
+
+    // 'https://barppi.herokuapp.com/api/cliente/cliente/nuevo-cliente/solicitud-registro', this.state.formU
+    // 'http://localhost:4020/api/cliente/cliente/nuevo-cliente/solicitud-registro', this.state.formU
+
+    // https://barppi.herokuapp.com/api/cita/nueva-cita/solicitud-cita', this.state.cita
    await axios.post('https://barppi.herokuapp.com/api/cliente/cliente/nuevo-cliente/solicitud-registro', this.state.formU)
    .then(response =>{
      console.log("Se ha creado un nuevo cliente");

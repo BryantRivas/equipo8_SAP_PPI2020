@@ -1,5 +1,5 @@
 import React from "react";
-import InfoTrabajadorUsuario from "../Componentes/infoTrabajadorUsuario/InfoTrabajadorUsuario";
+import InfoTrabajadorUsuario from "../Componentes/InfoTrabajadorUsuarioC/InfoTrabajadorUsuarioC";
 import { useParams } from "react-router-dom";
 
 const InfoTrabajadorUsuarioP = () => {

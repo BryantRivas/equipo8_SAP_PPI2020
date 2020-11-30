@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { Link } from "react-router-dom";
 
-class InfoTrabajadorUsuario extends Component {
+class InfoTrabajadorUsuarioC extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -137,4 +137,4 @@ class InfoTrabajadorUsuario extends Component {
   
 };
 
-export default InfoTrabajadorUsuario;
+export default InfoTrabajadorUsuarioC;
